@@ -4,7 +4,7 @@ The goal of this tutorial is to teach developers how to use the VulkanSceneGraph
 
 The tutorial is composed of series of presententations that are coupled with exercises so that developers can learn about each topic then test out what they have learned. The topics covered are:
 
-1. Introduction to Scene Graphs, Vulkan and VulkanSceneGraph
+1. [Introduction](01_introduction/presentation/Introduction.md) to Scene Graphs, Vulkan and VulkanSceneGraph
 2. Memory management - smart pointers, Objects and Allocators
 3. Vector maths - GLSL style vectors, matrices
 4. Scene graph nodes - creating and setting nodes
