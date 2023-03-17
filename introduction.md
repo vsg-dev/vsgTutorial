@@ -19,6 +19,6 @@ Should each of these sections be on a separate page?
 
 Or all on one page?
 
-# Building the VulkanScenegraph projects and exerices {#building}
+# Building the VulkanScenegraph projects and exercises {#building}
 
 I'm thinking sepearate pages.
