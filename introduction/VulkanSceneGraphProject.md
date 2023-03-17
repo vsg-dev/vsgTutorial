@@ -1,9 +1,7 @@
 ---
 layout: page
 title: Introduction to the VulkanSceneGraph Project
-permalink: /introduction/
+permalink: /introduction/VulkanSceneGraphProject
 ---
 
-# Introduction to the VulkanSceneGraph project {#vsg}
-
-Or all on one page?
+TODO - write about VUlkanScenGraph project

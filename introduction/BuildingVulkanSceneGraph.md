@@ -1,9 +1,7 @@
 ---
 layout: page
-title: Introduction to Vulkan and Scene Graphs
-permalink: /introduction/
+title: Building VulkanSceneGraph Projects and Tutorial Exercises
+permalink: /introduction/BuildingVulkanSceneGraph
 ---
 
-# Introduction to Vulkan and Scene Graphs {#introduction}
-
-Should each of these sections be on a separate page?
+TODO - write about building VUlkanScenGraph project and tutorial
