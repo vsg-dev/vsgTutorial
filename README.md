@@ -1,16 +1,7 @@
-## Introduction to VulkanSceneGraph Tutorial
+The VulkanSceneGraph Tutorial provides a multi-part tutorial that introduces developers to the VulkanSceneGraph project and how to use it in their graphics and computate applications.
 
-The goal of this tutorial is to teach developers how to use the VulkanSceneGraph effectively in their graphical and compute applications. The tutorial assumes developers have prior knowledge of using CMake and C++ to build and write applications.  Knowledge of scene graphs, real-time graphics and Vulkan is not assumed, though teaching real-time graphics and Vulkan at depth is beyond the scope of this tutorial, links to 3rd party resources for further learnning will be provided.
+This repository provides presentations that can be browed online and exerices programs that can provide a starting places for deelopers to test out their growing knowledge of how to use the VulkanSceneGraph.
 
-The tutorial is composed of series of presententations that are coupled with exercises so that developers can learn about each topic then test out what they have learned. The topics covered are:
+The website can be browsed at:  [https://robertosfiled.github.io/vsgTutorial](https://robertosfiled.github.io/vsgTutorial)
 
-1. [Introduction](01_introduction/Introduction.md) to Scene Graphs, Vulkan and VulkanSceneGraph
-2. Memory management - smart pointers, Objects and Allocators
-3. Vector maths - GLSL style vectors, matrices
-4. Scene graph nodes - creating and setting nodes
-5. Geometry and State - setting up rendering
-6. Scene graph io - loading images and nodes
-7. Viewer - creating application viewer
-8. Traversals - how to traverse and operate on a scene graph
-9. Threading - scene graph, viewer and io threading
-10. Optimizaton - how to improve performance & low power consumption
+
