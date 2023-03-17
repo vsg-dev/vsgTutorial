@@ -8,7 +8,7 @@ This first part introduce developers to world of Vulkan, Scene Graphs, and how t
 
 1. [Introduction to Vulkan and Scene Graphs](#introduction)
 2. [Introduction to the VulkanSceneGraph project](#vsg)
-3. [Building the VulkanScenegraph projects and exercises](#building)
+3. [Building the VulkanScenegraph projects and vsgTutorial exercises](#building)
 
 
 # Introduction to Vulkan and Scene Graphs {#introduction}
