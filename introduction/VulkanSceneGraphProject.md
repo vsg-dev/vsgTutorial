@@ -6,4 +6,4 @@ permalink: /introduction/VulkanSceneGraphProject
 
 TODO - write about VulkanScenGraph project
 
-Next : TODO
+Next :[Building the VulkanScenegraph projects and vsgTutorial exercises](introduction/BuildingVulkanSceneGraph.md)
