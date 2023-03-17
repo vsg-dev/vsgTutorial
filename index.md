@@ -10,8 +10,8 @@ The goal of this tutorial is to teach developers how to use the VulkanSceneGraph
 The tutorial is composed of series of presententations that are coupled with exercises so that developers can learn about each topic then test out what they have learned. The topics covered are:
 
 Intorduciton
-1. [Introduction to Vulkan and Scene Graphs](introduction/BuildingVulkanSceneGraph.md)
-2. [Introduction to the VulkanSceneGraph project](introduction/VulkanAndSceneGraphProject.md)
+1. [Introduction to Vulkan and Scene Graphs](introduction/VulkanAndSceneGraphs.md)
+2. [Introduction to the VulkanSceneGraph project](introduction/VulkanSceneGraphProject.md)
 3. [Building the VulkanScenegraph projects and vsgTutorial exercises](introduction/BuildingVulkanSceneGraph.md)
 
 Fundations
