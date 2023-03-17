@@ -1,5 +1,5 @@
 ---
 layout: page
-title: Input and Output
+title: IO
 permalink: /io/
 ---

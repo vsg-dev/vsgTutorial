@@ -1,5 +1,5 @@
 ---
 layout: page
-title: Geometry and State
+title: Geometry & State
 permalink: /geometry_and_state/
 ---
