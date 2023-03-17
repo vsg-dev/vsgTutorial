@@ -32,15 +32,10 @@ plugins:
 
 header_pages:
   - introduction.md
-  - memory.md
-  - maths.md
-  - nodes.md
-  - geometry_and_state.md
-  - io.md
-  - viewer.md
-  - traversals.md
-  - theading.md
-  - pptimizaton.md
+  - foundations.md
+  - scenegraph.md
+  - application.md
+  - skills.md
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
