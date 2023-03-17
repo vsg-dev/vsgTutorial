@@ -6,4 +6,4 @@ permalink: /introduction/BuildingVulkanSceneGraph
 
 TODO - write about building VulkanScenGraph project and tutorials
 
-Next : [Foundations](../foundations.md)
+Prev: [Introduction to the VulkanSceneGraph Project](VulkanSceneGraphProject.md) | Next : [Foundations](../foundations.md)

@@ -7,4 +7,4 @@ permalink: /introduction/VulkanAndSceneGraphs
 TODO - write about Vulkan and Scene Graphs
 
 
-Next : [Introduction to the VulkanSceneGraph project](VulkanSceneGraphProject.md)
+Next: [Introduction to the VulkanSceneGraph project](VulkanSceneGraphProject.md)
