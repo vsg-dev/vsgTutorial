@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Apllication
+title: Application
 permalink: /application/
 ---
 
