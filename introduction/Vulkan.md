@@ -6,17 +6,17 @@ permalink: /introduction/Vulkan
 
 Multi-threaded for modern CPUs and GPUs:
 
-    Designed from the ground up for multi-threading, with localization of state within command buffers that applications thread create to explict syncronization primitives for managing CPU and GPU work.
+Designed from the ground up for multi-threading, with localization of state within command buffers that applications thread create to explict syncronization primitives for managing CPU and GPU work.
 
 
 Cross platform: [source Wikipedia](https://en.wikipedia.org/wiki/Vulkan)
 
-    "Vulkan runs natively on Android, Linux, BSD Unix, QNX, Haiku, Nintendo Switch, Raspberry Pi, Stadia, Fuchsia, Tizen, and Windows 7, 8, 10, and 11. MoltenVK provides freely-licensed third-party support for macOS, iOS and tvOS by wrapping over Apple's Metal API."
+"Vulkan runs natively on Android, Linux, BSD Unix, QNX, Haiku, Nintendo Switch, Raspberry Pi, Stadia, Fuchsia, Tizen, and Windows 7, 8, 10, and 11. MoltenVK provides freely-licensed third-party support for macOS, iOS and tvOS by wrapping over Apple's Metal API."
     
 Supports latest hardware features, including:
 
-    * Ray Tracing
-    * Mesh Shaders
+* Ray Tracing
+* Mesh Shaders
 
  Useful links:
 
