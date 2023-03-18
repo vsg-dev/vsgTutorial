@@ -1,13 +1,24 @@
 ---
 layout: page
-title: Vulkan - next generation graphics and compute API
+title: Vulkan - next gen. graphics and compute API
 permalink: /introduction/Vulkan
 ---
 
-Useful websites:
+Multi-threaded for modern CPUs and GPUs:
 
-* [Vulkan on Wikipedia](https://en.wikipedia.org/wiki/Vulkan) mentions the platforms supported by Vulkan:  
- "Vulkan runs natively on Android, Linux, BSD Unix, QNX, Haiku, Nintendo Switch, Raspberry Pi, Stadia, Fuchsia, Tizen, and Windows 7, 8, 10, and 11. MoltenVK provides freely-licensed third-party support for macOS, iOS and tvOS by wrapping over Apple's Metal API."
+    Designed from the ground up for multi-threading, with localization of state within command buffers that applications thread create to explict syncronization primitives for managing CPU and GPU work.
+
+
+Cross platform: [source Wikipedia](https://en.wikipedia.org/wiki/Vulkan)
+
+    "Vulkan runs natively on Android, Linux, BSD Unix, QNX, Haiku, Nintendo Switch, Raspberry Pi, Stadia, Fuchsia, Tizen, and Windows 7, 8, 10, and 11. MoltenVK provides freely-licensed third-party support for macOS, iOS and tvOS by wrapping over Apple's Metal API."
+    
+Supports latest hardware features, including:
+
+    * Ray Tracing
+    * Mesh Shaders
+
+ Useful links:
 
  * [vulkan.org](https://www.vulkan.org/) - official website
     * Learning:

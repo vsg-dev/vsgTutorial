@@ -1,6 +1,6 @@
 ---
 layout: page
-title: VulkanSceneGraph - next generation scene graph
+title: VulkanSceneGraph - next gen. scene graph
 permalink: /introduction/VulkanSceneGraph
 ---
 
