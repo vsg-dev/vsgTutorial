@@ -9,7 +9,7 @@ The goal of this tutorial is to teach developers how to use the VulkanSceneGraph
 
 The tutorial is composed of series of presententations that are coupled with exercises so that developers can learn about each topic then test out what they have learned. The topics covered are:
 
-Intorduciton:
+Introduction:
 1. [Low level APIs](introduction/LowLevelAPIs.md)
 1. [High Level APIs](introduction/HighLevelAPIs.md)
 1. [Vulkan](introduction/Vulkan.md)
