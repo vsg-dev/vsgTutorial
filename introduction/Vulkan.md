@@ -4,7 +4,7 @@ title: Vulkan - graphics and compute API
 permalink: /introduction/Vulkan
 ---
 
-The standards body [Khronos](https://www.khronos.org/) releases, the successor to OpenGL, Vulkan-1.0 in February 2016, ushering in next gneration of Open, Cross Platform API for graphics and compute.
+The standards body [Khronos](https://www.khronos.org/) releases, the successor to OpenGL, Vulkan-1.0 in February 2016, ushering in next generation of Open, Cross Platform API for graphics and compute.
 
 ### Pros:
 * Very low CPU overhead enables lower poew consumption and higher performance.
@@ -33,7 +33,12 @@ Developers must explictly configure settings, allocate and manage memory, transf
 
 ### Useful links:
 
- * [vulkan.org](https://www.vulkan.org/) - official website
+* [VulkanSDK](https://vulkan.lunarg.com/sdk/home) LUNARG's website containing the VulkanSDK -
+provides single package with headers and libs for Windows, Linux and macOS.
+
+* [AndroidNDK](https://developer.android.com/ndk/guides/graphics/index.html) - Googles Android NDK
+
+* [vulkan.org](https://www.vulkan.org/) - official website
     * Learning:
         * [Key Resources](https://www.vulkan.org/learn#key-resources)
         * [Tutorials](https://www.vulkan.org/learn#vulkan-tutorials)
@@ -47,13 +52,7 @@ Developers must explictly configure settings, allocate and manage memory, transf
         * [Profiles](https://www.vulkan.org/tools#vulkan-profiles)
     * [Events](https://www.vulkan.org/events)
     * [News](https://www.vulkan.org/news)
-    * [Vulkan-SC](https://www.khronos.org/vulkansc/)  
-Vulkan SC is a streamlined, deterministic, robust API based on Vulkan 1.2 that enables state-of-the-art GPU-accelerated graphics and computation to be deployed in safety-critical systems that are certified to meet industry functional safety standards.
-
-* [VulkanSDK](https://vulkan.lunarg.com/sdk/home) LUNARG's website containing the VulkanSDK -
-provides single package with headers and libs for Windows, Linux and macOS.
-
-* [AndroidNDK](https://developer.android.com/ndk/guides/graphics/index.html) - Googles Android NDK
+    * [Vulkan-SC](https://www.khronos.org/vulkansc/) Vulkan for safety-critical systems
 
 
  | Next: [Introduction to the VulkanSceneGraph project](VulkanSceneGraph.md)
