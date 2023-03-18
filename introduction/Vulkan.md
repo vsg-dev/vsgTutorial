@@ -32,4 +32,4 @@ provides single package with headers and libs for Windows, Linux and macOS.
 * [AndroidNDK](https://developer.android.com/ndk/guides/graphics/index.html) - Googles Android NDK
 
 
- | Next: [Introduction to the VulkanSceneGraph project](VulkanSceneGraphProject.md)
+ | Next: [Introduction to the VulkanSceneGraph project](VulkanSceneGraph.md)
