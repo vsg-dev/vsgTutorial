@@ -4,7 +4,7 @@ title: VulkanSceneGraph - next generation scene graph
 permalink: /introduction/VulkanSceneGraph
 ---
 
-Useful websites:
+TODO: Write about VulkanSceneGraph
 
 
 
