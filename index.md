@@ -10,9 +10,11 @@ The goal of this tutorial is to teach developers how to use the VulkanSceneGraph
 The tutorial is composed of series of presententations that are coupled with exercises so that developers can learn about each topic then test out what they have learned. The topics covered are:
 
 Intorduciton:
-1. [Introduction to Vulkan and Scene Graphs](introduction/VulkanAndSceneGraphs.md)
-2. [Introduction to the VulkanSceneGraph project](introduction/VulkanSceneGraphProject.md)
-3. [Building the VulkanScenegraph projects and vsgTutorial exercises](introduction/BuildingVulkanSceneGraph.md)
+1. [Low level APIs](introduction/LowLevelAPIs.md)
+1. [High Level APIs](introduction/HighLevelAPIs.md)
+1. [Vulkan](introduction/Vulkan.md)
+1. [VulkanSceneGraph](introduction/VulkanSceneGraph.md)
+1. [Building the VulkanScenegraph projects and vsgTutorial exercises](introduction/BuildingVulkanSceneGraph.md)
 
 Fundations:
 4. Core classes - smart pointers, Objects and Allocators
