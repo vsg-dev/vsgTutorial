@@ -31,6 +31,33 @@ Khnoros adopts Mantle as the basis for a new cross-vendor, cross platform succes
 
 In Feb. 2018 MoltenVK library is released enabling Vulkan to run on top of Metal on macOS and iOS systems breaking the vendor lock-in and enabling Vulkan to work on all major hardware and software platforms.
 
+## Vulkan - next generation graphics and compute API that provides high-efficiency
+
+Useful websites:
+
+* [vulkan.org](https://www.vulkan.org/) - official website
+    * Learning:
+        * [Key Resources](https://www.vulkan.org/learn#key-resources)
+        * [Tuotorials](https://www.vulkan.org/learn#vulkan-tutorials)
+        * [Videos](https://www.vulkan.org/learn#videos)
+        * [Blogs](https://www.vulkan.org/blog)
+    * Tools:
+        * [Drivers]([https://www.vulkan.org/tools#vulkan-gpu-resources)
+        * [SDK](https://www.vulkan.org/tools#download-these-essential-development-tools)
+        * [Profilers and debuggers](https://www.vulkan.org/tools#profilers-and-debuggers)
+        * [Frameworks](https://www.vulkan.org/tools#frameworks-and-helper-libraries) - includes VulkanSceneGraph :-)
+        * [Profiles](https://www.vulkan.org/tools#vulkan-profiles)
+    * [Events](https://www.vulkan.org/events)
+    * [News](https://www.vulkan.org/news)
+
+* [VulkanSDK](https://vulkan.lunarg.com/sdk/home) LUNARG's website containing the VulkanSDK -
+provides single package with headers and libs for Windows, Linux and macOS.
+
+* [AndroidNDK](https://developer.android.com/ndk/guides/graphics/index.html) - Googles Android NDK
+
+* [Vulkan on Wikipedia](https://en.wikipedia.org/wiki/Vulkan) mentions the platforms supported by Vulkan:
+ "Vulkan runs natively on Android, Linux, BSD Unix, QNX, Haiku, Nintendo Switch, Raspberry Pi, Stadia, Fuchsia, Tizen, and Windows 7, 8, 10, and 11. MoltenVK provides freely-licensed third-party support for macOS, iOS and tvOS by wrapping over Apple's Metal API."
+
 ---
 
 ## High level APIs for graphics and compute.
