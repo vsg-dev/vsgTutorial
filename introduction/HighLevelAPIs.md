@@ -4,7 +4,7 @@ title: High Level APIs
 permalink: /introduction/HighLevelAPIs
 ---
 
-Developers wishing to add graphics capabilities to their applications have to either deal directly with the low APIs to drive the graphics and compute hardware, or choose from a collection of higher level APIs that are more focused on the needs of application developers than the underlying low level APIs. A best high level APIs will not only enable developer to be more productive but also provide better out of the box performance and visual quality, with the high level API packaging up the expertise and time put in by specialist in high performance graphics and compute.
+Developers wishing to add graphics capabilities to their applications have to either deal directly with the low APIs to drive the graphics and compute hardware, or choose from a collection of higher level APIs that are more focused on the needs of application developers than the underlying low level APIs. A good high level APIs will not only enable developer to be more productive but also provide better out of the box performance and visual quality, with the high level API packaging up the expertise and time put in by specialist in high performance graphics and compute.
 
 High level APIs may choose to remain quite minimal in feature set and leave more functionality for the application developer to implement, while others bring in many different areas of functionality. They may also be written to be general purposes through to domain specific such as certain genre's of games.
 
@@ -19,4 +19,4 @@ One of the first widely used high level APIs for real-time 3D graphics was IRIS 
 ---
 
 
-Prev: [Vulkan](LowLeveAPIs.md) | Next: [Vulkan](Vulkan.md)
+Prev: [Low Level APIs](LowLevelAPIs.md) | Next: [Vulkan](Vulkan.md)
