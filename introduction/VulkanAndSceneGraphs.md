@@ -8,10 +8,10 @@ permalink: /introduction/VulkanAndSceneGraphs
 
 Low level graphics and compute APIs provide an interface with hardware drivers that manage data transfers and processing on highly parallised graphics and compute hardware. Low level APIs may be tied to specific operatings systems and/or specific sets of hardware, through to being capable of running on multiple operation systems and across a wide range of hardware.  OpenGL and Vulkan are examples of the later that are OS agnostic and provide extensible hardware abstraction.
 
-Low level APIs focus in interfacing with hardware efficiently, rather than making it convenient to develop graphics and compute applications. Older low level APIs like OpenGL provide higher level of abstraction than modern low level APIs like Vulkan and Direct2D 12, which are designed to enable greater low level control over data, processing and synchronization with the hardware.  These modern APIs can be seen as more focused on hwardware performance and capabilities than on supporting the needs of application developers, so while lifting the ceiling on raw performance and quality they require greater knowledge and skill from application developers in order to use them - just rendering a textured triangle can take 1,500 lines of code!
+Low level APIs focus in interfacing with hardware efficiently, rather than making it convenient to develop graphics and compute applications. Older low level APIs like OpenGL provide higher level of abstraction than modern low level APIs like Vulkan and Direct2D 12, which are designed to enable greater low level control over data, processing and synchronization with the hardware.  These modern APIs can be seen as more focused on hardware performance and capabilities than on supporting the needs of application developers, so while lifting the ceiling on raw performance and quality they require greater knowledge and skill from application developers in order to use them - just rendering a textured triangle can take 1,500 lines of code!
 
 
-## A Brif History of low level APIs
+## A Brief History of low level APIs
 
 In the 1980's SGI created it's IRIS GL (https://en.wikipedia.org/wiki/IRIS_GL) anC API for 2D and 3D rendering on SGI hardware.
 
@@ -35,9 +35,15 @@ In Feb. 2018 MoltenVK library is released enabling Vulkan to run on top of Metal
 
 ## High level APIs for graphics and compute.
 
-Developers wishing to add graphics capabilities to their applications have to either deal directly with the low APIs to drive the graphics and compute hardware, or choose from a collection of higher level APIs that are more focused on the needs of application developers than the underlying low level APIs.  A best high level APIs will not only enable developer to be more productive but also provide better out of the box performance and visual quality, with the high level API packaging up the expertise and time put in by specialist in high performance graphics and compute.
+Developers wishing to add graphics capabilities to their applications have to either deal directly with the low APIs to drive the graphics and compute hardware, or choose from a collection of higher level APIs that are more focused on the needs of application developers than the underlying low level APIs. A best high level APIs will not only enable developer to be more productive but also provide better out of the box performance and visual quality, with the high level API packaging up the expertise and time put in by specialist in high performance graphics and compute.
 
-## Brief history of high level APIs
+High level APIs may choose to remain quite minimal in feature set and leave more functionality for the application developer to implement, while others bring in many different areas of functionality. They may also be written to be general purposes through to domain specific such as certain genre's of games.
+
+Some high level APIs choose to build in low level API abstraction layers so they can support multiple APIs such as Vulkan, OpenGL, multiple versions of Direct3D, Metal etc. However, such extra abstraction layers adds cpmplexity and moves the application developer further away from what they are attempting to run on the hardware. This approach also adds more code for the high level API maintainer to write, test, debug and support, and far greater range of perumtatins of hardware and APIs to test and support.
+
+An alterantive approach of other high level APIs is to simply encapsulate the low level APIs rather than abstract from them, this keeps the application developer closer to a 1:1 relationship with the computation they managing on the hardware. Taking this path could limit pprtabilitiy to particular OSs, or hardware, but thankfully with OpenGL and Vulkan they are designed to be both OS nmagnostic and capable of handling a wide range of hardware so the chose to encapsualte OpenGL or Vulkan need not limit portablity over the low level API abstraction approach.
+
+## A Brief history of high level APIs
 
 One of the first widely used high level APIs for real-time 3D graphics was IRIS Inventor that was started at SGI in the late 1980's.  Created to make development of 3D graphics applications easier as the lowl level nature of IRIS GL was a barrier to entry.  Successsed by Open Inventor which adopts OpenGL as it's base and became widely adopted in the scientific and engineering sectors where ease of use was more critical than maximzing performance.  Inventor strength lay in it's Object Orientatioed Design and use of the Scene Graph as as a way of composing a scene.
 
