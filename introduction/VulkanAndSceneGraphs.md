@@ -35,7 +35,10 @@ In Feb. 2018 MoltenVK library is released enabling Vulkan to run on top of Metal
 
 Useful websites:
 
-* [vulkan.org](https://www.vulkan.org/) - official website
+* [Vulkan on Wikipedia](https://en.wikipedia.org/wiki/Vulkan) mentions the platforms supported by Vulkan:  
+ "Vulkan runs natively on Android, Linux, BSD Unix, QNX, Haiku, Nintendo Switch, Raspberry Pi, Stadia, Fuchsia, Tizen, and Windows 7, 8, 10, and 11. MoltenVK provides freely-licensed third-party support for macOS, iOS and tvOS by wrapping over Apple's Metal API."
+
+ * [vulkan.org](https://www.vulkan.org/) - official website
     * Learning:
         * [Key Resources](https://www.vulkan.org/learn#key-resources)
         * [Tutorials](https://www.vulkan.org/learn#vulkan-tutorials)
@@ -55,8 +58,6 @@ provides single package with headers and libs for Windows, Linux and macOS.
 
 * [AndroidNDK](https://developer.android.com/ndk/guides/graphics/index.html) - Googles Android NDK
 
-* [Vulkan on Wikipedia](https://en.wikipedia.org/wiki/Vulkan) mentions the platforms supported by Vulkan:  
- "Vulkan runs natively on Android, Linux, BSD Unix, QNX, Haiku, Nintendo Switch, Raspberry Pi, Stadia, Fuchsia, Tizen, and Windows 7, 8, 10, and 11. MoltenVK provides freely-licensed third-party support for macOS, iOS and tvOS by wrapping over Apple's Metal API."
 
 ---
 
@@ -72,7 +73,7 @@ An alterantive approach used by some high level APIs is to simply encapsulate th
 
 ## A Brief history of high level APIs
 
-One of the first widely used high level APIs for real-time 3D graphics was IRIS Inventor that was started at SGI in the late 1980's.  Created to make development of 3D graphics applications easier as the lowl level nature of IRIS GL was a barrier to entry.  Successsed by Open Inventor which adopts OpenGL as it's base and became widely adopted in the scientific and engineering sectors where ease of use was more critical than maximzing performance.  Inventor strength lay in it's Object Orientatioed Design and use of the Scene Graph as as a way of composing a scene.
+One of the first widely used high level APIs for real-time 3D graphics was IRIS Inventor that was started at SGI in the late 1980's and follows a scene graph approach for respresent a 3d scene.  Created to make development of 3D graphics applications easier as the lowl level nature of IRIS GL was a barrier to entry.  Successsed by Open Inventor which adopts OpenGL as it's base and became widely adopted in the scientific and engineering sectors where ease of use was more critical than maximzing performance.  Inventor's strength lay in it's Object Orientatioed Design and use of the Scene Graph as as a way of composing a scene, it's weakness was in the way it's design limits performance and scalaibility.
 
 ---
 
