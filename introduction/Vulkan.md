@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Vulkan - next gen. graphics and compute API
+title: Vulkan - graphics and compute API
 permalink: /introduction/Vulkan
 ---
 
-The standards body [Khronos](https://www.khronos.org/) releases, the successor to OpenGL, Vulkan-1.0 in February 2016.
+The standards body [Khronos](https://www.khronos.org/) releases, the successor to OpenGL, Vulkan-1.0 in February 2016. Ushuring in next gneration of Open, Cross Platform API for graphics and compute.
 
 ### Multi-threaded for modern CPUs and GPUs:
 
@@ -16,6 +16,7 @@ Designed from the ground up for multi-threading, with localization of state with
     
 ### Supports latest hardware features
 
+includes:
 * Ray Tracing
 * Mesh Shaders
 
