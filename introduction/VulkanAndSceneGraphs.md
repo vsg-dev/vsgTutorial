@@ -52,6 +52,8 @@ Useful websites:
         * [Profiles](https://www.vulkan.org/tools#vulkan-profiles)
     * [Events](https://www.vulkan.org/events)
     * [News](https://www.vulkan.org/news)
+    * [Vulkan-SC](https://www.khronos.org/vulkansc/)  
+Vulkan SC is a streamlined, deterministic, robust API based on Vulkan 1.2 that enables state-of-the-art GPU-accelerated graphics and computation to be deployed in safety-critical systems that are certified to meet industry functional safety standards.
 
 * [VulkanSDK](https://vulkan.lunarg.com/sdk/home) LUNARG's website containing the VulkanSDK -
 provides single package with headers and libs for Windows, Linux and macOS.
