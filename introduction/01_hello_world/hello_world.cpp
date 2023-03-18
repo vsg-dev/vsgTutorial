@@ -9,7 +9,7 @@ int main(int, char**)
     auto options = vsg::Options::create();
     options->add(vsgXchange::all::create());
 
-    // create the scene graph using OpenStreetMap convinience function
+    // create the scene graph using OpenStreetMap convenience function
     auto scene = vsg::TileDatabase::create();
     scene->settings = vsg::createOpenStreetMapSettings(options);
     scene->readDatabase(options);
