@@ -55,4 +55,4 @@ provides single package with headers and libs for Windows, Linux and macOS.
     * [Vulkan-SC](https://www.khronos.org/vulkansc/) Vulkan for safety-critical systems
 
 
- | Next: [Introduction to the VulkanSceneGraph project](VulkanSceneGraph.md)
+ Next: [High Level APIs](HighLevelAPIs.md) | Next: [Introduction to the VulkanSceneGraph project](VulkanSceneGraph.md)
