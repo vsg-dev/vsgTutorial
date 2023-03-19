@@ -27,6 +27,12 @@ An alternative approach used by some high level APIs is to simply encapsulate th
 
 One of the first widely used high level APIs for real-time 3D graphics was IRIS Inventor that was started at SGI in the late 1980's and follows a scene graph approach for respresent a 3d scene.  Created to make development of 3D graphics applications easier as the lowl level nature of IRIS GL was a barrier to entry.  Successsed by Open Inventor which adopts OpenGL as it's base and became widely adopted in the scientific and engineering sectors where ease of use was more critical than maximzing performance.  Inventor's strength lay it's embodiment of the scene grah concept in such a flexibility and extensibility way. It's weakness was in the way it's design limited performance and scalaibility.
 
+[Performer](https://en.wikipedia.org/wiki/OpenGL_Performer) created in 1991 by developers from the Inventor development group to focus on performance rather than usability. Performer was designed to work muli-threaded working on multiple CPU and mulitple GPU's in order to scale to utilize SGI's high end hardware such as the Onyx line of graphics "super" computers. These have far less perfromance and capabilities than modern phones, but during the mid 90's they were worlds most powerful graphics systems.
+
+[Cosmo3D](https://en.wikipedia.org/wiki/OpenGL%2B%2B) - mid 1990's yet another SGI scene graph!
+
+[Farenheight](https://en.wikipedia.org/wiki/Fahrenheit_(graphics_API) - late 1990's. SGI and Microsoft colloboration to create a low level API successpr to OpenGL, and high level successor to Inventor/Performer. High level used a Cosmo3D as starting place.  Project collapsed and Microsoft took IP that enabled more advancd features to make it into Direct3D. Microsoft's plan all along?
+
 ---
 
 

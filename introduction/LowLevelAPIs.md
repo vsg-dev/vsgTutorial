@@ -12,7 +12,7 @@ Low level APIs focus in interfacing with hardware efficiently, rather than makin
 
 These modern APIs can be seen as more focused on hardware performance and capabilities than on supporting the needs of application developers, so while lifting the ceiling on raw performance and quality they require significantly greater expertise from application developers in order to use them.
 
-### Incremental vs Monolythic Feature releases
+### Incremental vs Monolythic
 
 OpenGL and Vulkan are written to evolving incrementally and in a fine grained way, with vendor specific extensions being exposed before these features worked on my groups of vendors and before these features eventually are merged into the core. This contrasts with the Monolythic approach taken by Direct3D with major versions changing the API and features exposed, to use the latest features you have no choice but to update to the new API version.  
 
