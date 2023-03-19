@@ -4,7 +4,7 @@ title: Scene Graph
 permalink: /scenegraph/
 ---
 
-**NOT YET WRITTEN.**
+**Sorry, not yet written.**
 
 7. Nodes - internal nodes of the scene graph
 8. Geometry - meshes

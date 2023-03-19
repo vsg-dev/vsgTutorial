@@ -4,7 +4,7 @@ title: Application
 permalink: /application/
 ---
 
-**NOT YET WRITTEN.**
+**Sorry, not yet written.**
 
 10. Viewer - creating application viewer
 11. Utilities - operating on the scene graph

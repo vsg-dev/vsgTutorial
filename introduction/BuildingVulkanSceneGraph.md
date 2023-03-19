@@ -4,6 +4,6 @@ title: Building VulkanSceneGraph Projects and Tutorial Exercises
 permalink: /introduction/BuildingVulkanSceneGraph
 ---
 
-**NOT YET WRITTEN.**
+**Sorry, not yet written.**
 
 Prev: [Introduction to VulkanSceneGraph Project](VulkanSceneGraph.md) | Next : [Foundations](../foundations.md)
