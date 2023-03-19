@@ -4,25 +4,41 @@ title: Vulkan - graphics and compute API
 permalink: /introduction/Vulkan
 ---
 
-The standards body [Khronos](https://www.khronos.org/) releases, the successor to OpenGL, Vulkan-1.0 in February 2016. Ushuring in next gneration of Open, Cross Platform API for graphics and compute.
+The standards body [Khronos](https://www.khronos.org/) releases, the successor to OpenGL, Vulkan-1.0 in February 2016, ushering in next generation of Open, Cross Platform API for graphics and compute.
 
-### Multi-threaded for modern CPUs and GPUs:
+### Pros:
+* Very low CPU overhead enables lower poew consumption and higher performance.
 
+* Multi-threaded for modern CPUs and GPUs:  
 Designed from the ground up for multi-threading, with localization of state within command buffers that applications thread create to explict syncronization primitives for managing CPU and GPU work.
 
-### Cross platform: [source Wikipedia](https://en.wikipedia.org/wiki/Vulkan)
-
+* Cross platform: [source Wikipedia](https://en.wikipedia.org/wiki/Vulkan)  
 "Vulkan runs natively on Android, Linux, BSD Unix, QNX, Haiku, Nintendo Switch, Raspberry Pi, Stadia, Fuchsia, Tizen, and Windows 7, 8, 10, and 11. MoltenVK provides freely-licensed third-party support for macOS, iOS and tvOS by wrapping over Apple's Metal API."
     
-### Supports latest hardware features
+* Runtime extension system, enabling fine grainded support for latest hardware features, including: 
+    * Ray Tracing
+    * Mesh Shaders
 
-includes:
-* Ray Tracing
-* Mesh Shaders
+* Vulkan layers that can be enabled at runtime
+    * Validation layers
+    * API output layers
+    * Best practice guides
+
+### Cons:
+
+* Low level, responsibility for many tasks moves from drive into application scope.  
+Developers must explictly configure settings, allocate and manage memory, transferring of data to/from GPU, dispatching and syncronizing CPU and GPU operations.
+
+* Requires more knowledge and code to implement even simple features - 1,500 lines of code to just render a textured triangle!
 
 ### Useful links:
 
- * [vulkan.org](https://www.vulkan.org/) - official website
+* [VulkanSDK](https://vulkan.lunarg.com/sdk/home) LUNARG's website containing the VulkanSDK -
+provides single package with headers and libs for Windows, Linux and macOS.
+
+* [AndroidNDK](https://developer.android.com/ndk/guides/graphics/index.html) - Googles Android NDK
+
+* [vulkan.org](https://www.vulkan.org/) - official website
     * Learning:
         * [Key Resources](https://www.vulkan.org/learn#key-resources)
         * [Tutorials](https://www.vulkan.org/learn#vulkan-tutorials)
@@ -36,13 +52,7 @@ includes:
         * [Profiles](https://www.vulkan.org/tools#vulkan-profiles)
     * [Events](https://www.vulkan.org/events)
     * [News](https://www.vulkan.org/news)
-    * [Vulkan-SC](https://www.khronos.org/vulkansc/)  
-Vulkan SC is a streamlined, deterministic, robust API based on Vulkan 1.2 that enables state-of-the-art GPU-accelerated graphics and computation to be deployed in safety-critical systems that are certified to meet industry functional safety standards.
-
-* [VulkanSDK](https://vulkan.lunarg.com/sdk/home) LUNARG's website containing the VulkanSDK -
-provides single package with headers and libs for Windows, Linux and macOS.
-
-* [AndroidNDK](https://developer.android.com/ndk/guides/graphics/index.html) - Googles Android NDK
+    * [Vulkan-SC](https://www.khronos.org/vulkansc/) Vulkan for safety-critical systems
 
 
  | Next: [Introduction to the VulkanSceneGraph project](VulkanSceneGraph.md)
