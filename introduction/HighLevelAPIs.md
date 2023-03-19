@@ -6,9 +6,11 @@ permalink: /introduction/HighLevelAPIs
 
 Developers wishing to add graphics capabilities to their applications have to either deal directly with the low APIs to drive the graphics and compute hardware, or choose from a collection of higher level APIs that are more focused on the needs of application developers than the underlying low level APIs. A good high level APIs will not only enable developer to be more productive but also provide better out of the box performance and visual quality, with the high level API packaging up the expertise and time put in by specialists in high performance graphics and compute.
 
+### Scene Graphs
+
 A common concept utilized by high level graphics APIs is a Scene Graph. Scene Graphs are an example of Directed Acylic Graph (DAG), where a tree like hierarchy is used to rerepsent the scene.  Nodes in the graph made be internal group nodes, support culling like view frustum or level of detail culling, through to behavior like switches or sequences, or represent state or geometries that are passed GPU for rendering.
 
-### Breadth of Feature Set vs Generality
+### Features vs Generality
 
 High level APIs may choose to remain quite minimal in feature set and leave more functionality for the application developer to implement, while others build in many different areas of functionality. Broadly speaking the wider the range features provided by an API the more domain specific it becomes as each additional feature will choose a particular approach or 3rd party dependency that are likely to work well for some domains more than others. The more features bundled together the more feature choices are made for you and more likely they'll be inappropriate for your needs or provide bloat from features you'll never need. The advantage of the graeter feature integration is potentially providing a cohessive system of features that work well together.
 
