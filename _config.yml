@@ -13,14 +13,11 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: VulkanSceneGraph
-#email: robert@openscenegraph.com
+title: vsgTutorial
 description: >- # this means to ignore newlines until "baseurl:"
   Vulkan Made Easy
 baseurl: "vsgTutorial" # the subpath of your site, e.g. /blog
-url: "https://robertosfiled.github.io/vsgTutorial" # the base hostname & protocol for your site, e.g. http://example.com
-#baseurl: "/" # the subpath of your site, e.g. /blog
-#url: "https://vulkanscenegraph.org" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://vsg-dev.github.io/vsgTutorial" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: dev_vsg
 github_username:  vsg-dev
 
