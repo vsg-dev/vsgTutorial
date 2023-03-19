@@ -4,8 +4,6 @@ title: VulkanSceneGraph - next gen. scene graph
 permalink: /introduction/VulkanSceneGraph
 ---
 
-TODO: Write about VulkanSceneGraph
-
-
+**NOT YET WRITTEN.**
 
  Prev: [Vulkan](Vulkan.md)| Next: [BuildingVulkanSceneGraph](BuildingVulkanSceneGraph.md)
