@@ -4,6 +4,5 @@ title: Skills
 permalink: /skills/
 ---
 
-# Trouble shooting
-
-# Optimization
+13. Trouble Shooting - debugging VulkanSceneGraph applications
+14. Optimizaton - how to improve performance & low power consumption

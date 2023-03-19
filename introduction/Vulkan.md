@@ -10,7 +10,7 @@ The standards body [Khronos](https://www.khronos.org/) releases, the successor t
 * Very low CPU overhead enables lower poew consumption and higher performance.
 
 * Multi-threaded for modern CPUs and GPUs:  
-Designed from the ground up for multi-threading, with localization of state within command buffers that applications thread create to explict syncronization primitives for managing CPU and GPU work.
+Designed from the ground up for multi-threading, with localization of state within command buffers that applications thread create to explicit synchronization primitives for managing CPU and GPU work.
 
 * Cross platform: [source Wikipedia](https://en.wikipedia.org/wiki/Vulkan)  
 "Vulkan runs natively on Android, Linux, BSD Unix, QNX, Haiku, Nintendo Switch, Raspberry Pi, Stadia, Fuchsia, Tizen, and Windows 7, 8, 10, and 11. MoltenVK provides freely-licensed third-party support for macOS, iOS and tvOS by wrapping over Apple's Metal API."
@@ -27,7 +27,7 @@ Designed from the ground up for multi-threading, with localization of state with
 ### Cons:
 
 * Low level, responsibility for many tasks moves from drive into application scope.  
-Developers must explictly configure settings, allocate and manage memory, transferring of data to/from GPU, dispatching and syncronizing CPU and GPU operations.
+Developers must explicitly configure settings, allocate and manage memory, transferring of data to/from GPU, dispatching and synchronizing CPU and GPU operations.
 
 * Requires more knowledge and code to implement even simple features - 1,500 lines of code to just render a textured triangle!
 

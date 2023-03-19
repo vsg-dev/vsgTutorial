@@ -5,7 +5,7 @@
 layout: home
 ---
 
-**CURRENTLY IN DEVELOPEMENT : Early stage of development so expect missing sections and rough and ready state.**
+**CURRENTLY IN DEVELOPMENT : Early stage of development so expect missing sections and rough and ready state.**
 
 The goal of this tutorial is to teach developers how to use the VulkanSceneGraph effectively in their graphical and compute applications. The tutorial assumes developers have prior knowledge of using CMake and C++ to build and write applications.  Knowledge of scene graphs, real-time graphics and Vulkan is not assumed, though teaching real-time graphics and Vulkan at depth is beyond the scope of this tutorial, links to 3rd party resources for further learnning will be provided.
 
@@ -30,7 +30,7 @@ Scene Graph:
 
 Application:
 10. Viewer - creating application viewer
-11. Utilizties - operating on the scene graph
+11. Utilities - operating on the scene graph
 12. Threading - different ways of threading
 
 Developing Skills:
