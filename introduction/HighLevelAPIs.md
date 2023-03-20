@@ -23,7 +23,7 @@ Some high level APIs choose to build in low level API abstraction layers so they
 
 An alternative approach used by some high level APIs is to simply encapsulate the low level APIs rather than abstract from them, this keeps the application developer closer to a 1:1 relationship with the data and processing they managing on the hardware. Taking this path could limit pprtabilitiy to particular OSs, or hardware, but thankfully with OpenGL and Vulkan they are designed to be both OS nmagnostic and capable of handling a wide range of hardware so the chose to encapsualte OpenGL or Vulkan need not limit portablity over the low level API abstraction approach.
 
-## A Brief history of high level APIs
+## A Brief History of High Level APIs
 
 One of the first widely used high level APIs for real-time 3D graphics was IRIS [Inventor](https://en.wikipedia.org/wiki/Open_Inventor) that was started at SGI in the late 1980's and follows a scene graph approach for respresent a 3d scene.  Created to make development of 3D graphics applications easier as the lowl level nature of IRIS GL was a barrier to entry.  Successsed by Open Inventor which adopts OpenGL as it's base and became widely adopted in the scientific and engineering sectors where ease of use was more critical than maximzing performance.  Inventor's strength lay it's embodiment of the scene grah concept in such a flexibility and extensibility way. It's weakness was in the way it's design limited performance and scalaibility.
 
