@@ -10,7 +10,7 @@ The VulkanSceneGraph is Scene Graph library written specific for Vulkan. Like Vu
 
 Vulkan makes it possible to get the most performance out of modern hardware, but it low level nature makes it harder to learn and use than OpenGL, in order to make all that performance available to a wider development community it's essential that we make it easier to use. To serve as a constant reminder of the importance of achieving this, the ***Vulkan Made Easy*** tag line was adopted for the vsg-dev github account.
 
-To make this possible underlying principles that guided the VulkanSceneGraph development are desire to enable application developers to be as ***Productive*** as possible while delivering the best ***Performance*** possible.  These two are often competing principles, to deliever both at the same time requires good engineering - one must continually strive to write better class interfaces and implemnentations, to seek out simple yet flexible and efficient solutions.
+The underlying principles that guided the VulkanSceneGraph development are desire to enable application developers to be as ***Productive*** as possible while delivering the best ***Performance*** possible.  These two are often competing principles, to deliever both at the same time requires good engineering - one must continually strive to write better class interfaces and implemnentations, to seek out simple yet flexible and efficient solutions.
 
 ## Approach to Development
 
