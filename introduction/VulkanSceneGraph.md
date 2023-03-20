@@ -45,7 +45,7 @@ The [VulkanSceneGraph library](https://github.com/vsg-dev/VulkanSceneGraph/tree/
 
 * core - base classes, smart pointer, data continers, visitors
 * maths - GLSL style maths classes.
-* vk - appliction level Vulkan classes
+* vk - application level Vulkan classes
 * Still being written....
 
  Prev: [Vulkan](Vulkan.md)| Next: [BuildingVulkanSceneGraph](BuildingVulkanSceneGraph.md)
