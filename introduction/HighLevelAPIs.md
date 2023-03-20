@@ -55,7 +55,7 @@ The advent of Vulkan and the clear need for it given OpenGL's failings presented
 
 It was clear to OpenSceneGraph project lead Robert Osfield that a new sene graph built for Vulkan using modern C++ would be the best choice for exposing all the new capabilities that Vulkan brings and to keep the CPU overheads as low as possible so that performance could fully take advantage of Vulkan's low CPU overhead.  For instance if your existing scene graph has a CPU overhead of 10ms, and OpenGL adds another 5ms then if the best case improvement from going to Vulkan with a 1ms CPU overhead would be a 10.5ms frametime - a 43% improvement, even though Vulkan might be 10 X faster.  To get a 5 X improvement overall you also have to make the scene graph 10 X faster as well.
 
-In Spring 2018 Robert Osfield was approached by an company that used OpenSceneGraph for vis-sim that want to fund the initial development of a new Vulkan based scene graph. Work began in the [3rd week of May 2018](https://github.com/vsg-dev/VulkanSceneGraph/commit/5fb0bdb1b49741ac5f8911c21128511a46823825).
+In Spring 2018 Robert Osfield was approached by a company that used OpenSceneGraph for vis-sim that want to fund the initial development of a new Vulkan based scene graph. Work began in on the VulkanSceneGrapph in the [3rd week of May 2018](https://github.com/vsg-dev/VulkanSceneGraph/commit/5fb0bdb1b49741ac5f8911c21128511a46823825).  Four and half very intense years later [VulkanSceneGraph-1.0](https://github.com/vsg-dev/VulkanSceneGraph/releases/tag/VulkanSceneGraph-1.0.0) is relased on the 13th November 2022.
 
 ---
 
