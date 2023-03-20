@@ -29,6 +29,8 @@ Work follows a cycle starting at the centre and the moving around and outward fo
     * **Customer collaboration** over contract negotiation
     * **Responding to change** over following a plan 
     
+## Design and Development Reports
+    
 During the initial development phase the follow documents and reports were written which provide a insight into design and implementation decisions:
 
 * Design : [Design Principles & Philosophy](docs/Design/DesignPrinciplesAndPhilosophy.md)
