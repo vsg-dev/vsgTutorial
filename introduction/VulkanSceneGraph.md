@@ -6,7 +6,7 @@ permalink: /introduction/VulkanSceneGraph
 
 The VulkanSceneGraph is Scene Graph library written specific for Vulkan. Like Vulkan is the successor to OpenGL, one that has wholly different API and architecture but retains the fundamental goal of providing a low level, open, cross platform, hardware abstraction, the VulkanSceneGarph is successor of the OpenSceneGraph, it's also an entirely different API and architecture but retains the fundenmtal goal of providing an open, cross patform high performance API for application developers.
 
-## Guiding Principles: Produtivity and Performance
+## Guiding Principles: Productivity and Performance
 
 Vulkan makes it possible to get the most performance out of modern hardware, but it low level nature makes it harder to learn and use than OpenGL, in order to make all that performance available to a wider development community it's essential that we make it easier to use. To serve as a constant reminder of the importance of achieving this, the ***Vulkan Made Easy*** tag line was adopted for the vsg-dev github account.
 
