@@ -26,7 +26,7 @@ Designed from the ground up for multi-threading, with localization of state with
 
 ### Cons:
 
-* Low level, responsibility for many tasks moves from drive into application scope.  
+* Low level, responsibility for many tasks moves from driver into application scope.  
 Developers must explicitly configure settings, allocate and manage memory, transferring of data to/from GPU, dispatching and synchronizing CPU and GPU operations.
 
 * Requires more knowledge and code to implement even simple features - 1,500 lines of code to just render a textured triangle!
