@@ -37,4 +37,15 @@ During the initial development phase the follow documents and reports were writt
 * PrototypePhase : [Workplan](docs/PrototypePhase/Workplan.md)
 * PrototypePhase : [Report](docs/PrototypePhase/PrototypePhaseReport.md)
 
+## Collection of libraries rather a Monolythic SDK
+
+One of the flaws with the OoenSceneGraph project is that while it started as small scene graph library is step by step encompassed a wide range of components and features that are bundled together. While the OpenSceneGraph stops short of providing all the functionality of Game Engine it is bloated for the needs of many application develolopers.  Early in the VulknaSceneGraph project the decision was to create a core general purpose scene graph library and a collection of libraries each focused on specific features that users can easily compile and use in their applications if they need them.
+
+The [VulkanSceneGraph library](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg) provides the features that will be common to almost applications:
+
+* core - base classes, smart pointer, data continers, visitors
+* maths - GLSL style maths classes.
+* vk - appliction level Vulkan classes
+* Still being written....
+
  Prev: [Vulkan](Vulkan.md)| Next: [BuildingVulkanSceneGraph](BuildingVulkanSceneGraph.md)
