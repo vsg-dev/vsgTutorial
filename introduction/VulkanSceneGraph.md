@@ -23,7 +23,7 @@ The VulkanSceneGraph is an open source project and license and practice:
 * To bring in lessons from the wider C++ community the [C++CoreGuidlines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines) are used to guide class design and implementation.
 * Spiral Development Model:  
 Work follows a cycle starting at the centre and the moving around and outward following a spiral. On the innermost cycles of the spiral work is relatively simple and exploritory, but builds basic elements that later work can build upon, or on the next cycle round the sprial be revisted and refactored and made more capable if the original implementation is found insufficient. Steadily understanding of the problem domain is built and the software incrementally is built out in features and robustness.
-* Not formally an [Agile Software Development](https://en.wikipedia.org/wiki/Agile_software_development) project but draws upon manifesto:
+* Not formally an [Agile Software Development](https://en.wikipedia.org/wiki/Agile_software_development) project but draws upon it's manifesto:
     * **Individuals and interactions** over processes and tools
     * **Working software** over comprehensive documentation
     * **Customer collaboration** over contract negotiation
@@ -44,6 +44,16 @@ During the initial development phase the follow documents and reports were writt
 ## Collection of libraries rather a Monolythic SDK
 
 One of the flaws with the OoenSceneGraph project is that while it started as small scene graph library is step by step encompassed a wide range of components and features that are bundled together. While the OpenSceneGraph stops short of providing all the functionality of Game Engine it is bloated for the needs of many application develolopers.  Early in the VulknaSceneGraph project the decision was to create a core general purpose scene graph library and a collection of libraries each focused on specific features that users can easily compile and use in their applications if they need them.
+
+The [vsg-dev](https://github.com/vsg-dev) github account hosts the following projects which are officially supported as part the VulkanSceneGraph project:
+* [VulkanSceneGraph](https://github.com/vsg-dev/VulkanSceneGraph)  
+The VulkanSceneGraph library itself is capable of used on it's own for stand alone graphics applications, and for embedded platforms this may be the desired approach as it will minimize the code base that needs to be QA'd for sercurity and robustness, and minimzes the final exectuble size. 
+* [vsgXchange](https://github.com/vsg-dev/vsgXchange)  
+It is expected for most desktop applications users will also want to load a range of 3rd iamge and 3d model data, to support this usage case the  library adds support for a wide range of image and 3d model formats, using assimp, as well as support for reading data from http/https using libcurl, and reading/writing/processing of GIS imagery and DEMS through the optional GDAL integration.
+* [vsgExamples](https://github.com/vsg-dev/vsgExamples)  
+A collection of 59 examples (as of 20th March 2023) that have written to help test VulkanSceneGraph features as they are developed and as an educational tool for new users.
+
+# VulkanSceneGraph library features
 
 The [VulkanSceneGraph library](https://github.com/vsg-dev/VulkanSceneGraph/) provides the features that will be common to all applications - creating a viewer, windows, scene graph, reading/writing data, creating Vulkan objects and recording Vulkan commands, synchronizing with Vulkan processes and CPU threads, 3d vector maths and common utilities like computing bounds and intersection test and shader composition and cmpilation. The [vsg library headers](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg) are grouped in the following subdirectories:
 
