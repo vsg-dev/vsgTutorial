@@ -7,7 +7,7 @@ permalink: /introduction/Vulkan
 The standards body [Khronos](https://www.khronos.org/) releases, the successor to OpenGL, Vulkan-1.0 in February 2016, ushering in next generation of Open, Cross Platform API for graphics and compute.
 
 ### Pros:
-* Very low CPU overhead enables lower poew consumption and higher performance.
+* Very low CPU overhead enables low power consumption and higher performance.
 
 * Multi-threaded for modern CPUs and GPUs:  
 Designed from the ground up for multi-threading, with localization of state within command buffers that applications thread create to explicit synchronization primitives for managing CPU and GPU work.
