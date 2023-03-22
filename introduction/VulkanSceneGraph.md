@@ -57,12 +57,18 @@ A collection of 59 examples (as of 20th March 2023) that have written to help te
 
 Also hosted on vsg-dev are more specialist projects:
 
-* [osg2vsg](https://github.com/vsg-dev/osg2vsg) - osg2vsg library for converting data and integrating OpenGL/OSG and Vulkan/VSG applications.
+* [osg2vsg](https://github.com/vsg-dev/osg2vsg) - osg2vsg library for converting data and integrating OpenGL/OSG and Vulkan/VSG applications. vsgXchange will automatically add support for reading data using the the OpenSceneGraph's loader when osg2vsg has been built and installed before vsgXchange.
 * [vsgImGui](https://github.com/vsg-dev/vsgImGui) - ImGui and ImPlot integration with the VulkanSceneGraph
 * [vsgQt](https://github.com/vsg-dev/vsgQt) - Qt5/Qt6 integrtation with the VulkanSceneGraph
 * [vsgUnity](https://github.com/vsg-dev/vsgUnity) - plugin for the Unity Editor for expoting VulkanSceneGraph models
 * [MyFirstVsgApplication](https://github.com/vsg-dev/MyFirstVsgApplication) - simple stanndalone example illustrating the CMake and C++ required.
+* [vsgFramework](https://github.com/vsg-dev/vsgFramework) template project that uses CMake FetchContent to pull in all the main libraries associated with VulkanSceneGraph and dependencies and builds them together.
 
+Community projects:
+* [vsgSDL](https://github.com/ptrfun/vsgSDL) SDL integration with VulkanSceneGraph.
+* [vsgvr](https://github.com/geefr/vsgvr) OpenVR integration with VulkanSceneGraph.
+* [vsgCs](https://github.com/timoore/vsgCs) 3D Tiles and Cesium ion integration
+* [vsgEarth](https://github.com/timoore/vsgEarth) osgEarth integration
 
 # VulkanSceneGraph library features
 
