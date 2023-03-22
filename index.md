@@ -7,7 +7,7 @@ layout: home
 
 **CURRENTLY IN DEVELOPMENT : Early stage of development so expect missing sections and rough and ready state.**
 
-The goal of this tutorial is to teach developers how to use the VulkanSceneGraph effectively in their graphical and compute applications. The tutorial assumes developers have prior knowledge of using CMake and C++ to build and write applications.  Knowledge of scene graphs, real-time graphics and Vulkan is not assumed, though teaching real-time graphics and Vulkan at depth is beyond the scope of this tutorial, links to 3rd party resources for further learnning will be provided.
+The goal of this tutorial is to teach developers how to use the [VulkanSceneGraph](https://github.com/vsg-dev/VulkanSceneGraph) effectively in their graphical and compute applications. The tutorial assumes developers have prior knowledge of using CMake and C++ to build and write applications.  Knowledge of scene graphs, real-time graphics and Vulkan is not assumed, though teaching real-time graphics and Vulkan at depth is beyond the scope of this tutorial, links to 3rd party resources for further learnning will be provided.
 
 The tutorial is composed of series of presententations that are coupled with exercises so that developers can learn about each topic then test out what they have learned. The topics covered are:
 
