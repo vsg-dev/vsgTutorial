@@ -13,26 +13,26 @@ The tutorial is composed of series of presententations that are coupled with exe
 
 Introduction:
 1. [Low level APIs](introduction/LowLevelAPIs.md)
-1. [High Level APIs](introduction/HighLevelAPIs.md)
 1. [Vulkan](introduction/Vulkan.md)
+1. [High Level APIs](introduction/HighLevelAPIs.md)
 1. [VulkanSceneGraph](introduction/VulkanSceneGraph.md)
 1. [Building the VulkanScenegraph projects and vsgTutorial exercises](introduction/BuildingVulkanSceneGraph.md)
 
 Fundations:
-4. Core classes - smart pointers, Objects and Allocators
-5. Vector maths - GLSL style vectors, matrices
-6. IO - loading/saving images and nodes
+1. Core classes - smart pointers, Objects and Allocators
+1. Vector maths - GLSL style vectors, matrices
+1. IO - loading/saving images and nodes
 
 Scene Graph:
-7. Nodes - internal nodes of the scene graph
-8. Geometry - meshes
-9. State - shaders, textures, uniforms
+1. Nodes - internal nodes of the scene graph
+1. Geometry - meshes
+1. State - shaders, textures, uniforms
 
 Application:
-10. Viewer - creating application viewer
-11. Utilities - operating on the scene graph
-12. Threading - different ways of threading
+1. Viewer - creating application viewer
+1. Utilities - operating on the scene graph
+1. Threading - different ways of threading
 
 Developing Skills:
-13. Trouble Shooting - debugging VulkanSceneGraph applications
-14. Optimizaton - how to improve performance & low power consumption
+1. Trouble Shooting - debugging VulkanSceneGraph applications
+1. Optimizaton - how to improve performance & low power consumption

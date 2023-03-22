@@ -8,13 +8,13 @@ Low level graphics and compute APIs provide an interface with hardware drivers t
 
 ### Level of Hardware Abstraction vs Complexity
 
-Low level APIs focus in interfacing with hardware efficiently, rather than making it convenient to develop graphics and compute applications. Older low level APIs like OpenGL provide higher level of abstraction than modern low level APIs like Vulkan and Direct2D 12, which are designed to enable greater low level control over data, processing and synchronization with the hardware.  
+Low level APIs focus in interfacing with hardware efficiently, rather than making it convenient to develop graphics and compute applications. Older low level APIs like OpenGL provide higher level of abstraction than modern low level APIs like Vulkan and Direct2D 12, which are designed to enable greater low level control over data, processing and synchronization with the hardware.
 
 These modern APIs can be seen as more focused on hardware performance and capabilities than on supporting the needs of application developers, so while lifting the ceiling on raw performance and quality they require significantly greater expertise from application developers in order to use them.
 
 ### Incremental vs Monolythic
 
-OpenGL and Vulkan are written to evolving incrementally and in a fine grained way, with vendor specific extensions being exposed before these features worked on my groups of vendors and before these features eventually are merged into the core. This contrasts with the Monolythic approach taken by Direct3D with major versions changing the API and features exposed, to use the latest features you have no choice but to update to the new API version.  
+OpenGL and Vulkan are written to evolving incrementally and in a fine grained way, with vendor specific extensions being exposed before these features worked on my groups of vendors and before these features eventually are merged into the core. This contrasts with the Monolythic approach taken by Direct3D with major versions changing the API and features exposed, to use the latest features you have no choice but to update to the new API version.
 
 For applications that will be developed over many years the aooroach taken with OpenGL and Vulkan helps keep the applications relevant without requiring major rewrites as new features can be introduced one by one as software & hardware evolves.  The descrete jumps of Direct3D would requite major rewrites in order to take advantage of new features, not a major issue for application types like games that get written once and have a short shelf life, but would be hindrance for long lived applications.
 
@@ -38,5 +38,6 @@ Khnoros adopts Mantle as the basis for a new cross-vendor, cross platform succes
 
 In Feb. 2018 MoltenVK library is released enabling Vulkan to run on top of Metal on macOS and iOS systems breaking the vendor lock-in and enabling Vulkan to work on all major hardware and software platforms.
 
+---
 
 | Next :[High Level APIs](HighLevelAPIs.md)

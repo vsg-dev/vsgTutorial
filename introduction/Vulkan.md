@@ -9,13 +9,13 @@ The standards body [Khronos](https://www.khronos.org/) releases, the successor t
 ### Pros:
 * Very low CPU overhead enables low power consumption and higher performance.
 
-* Multi-threaded for modern CPUs and GPUs:  
+* Multi-threaded for modern CPUs and GPUs:
 Designed from the ground up for multi-threading, with localization of state within command buffers that applications thread create to explicit synchronization primitives for managing CPU and GPU work.
 
-* Cross platform: [source Wikipedia](https://en.wikipedia.org/wiki/Vulkan)  
+* Cross platform: [source Wikipedia](https://en.wikipedia.org/wiki/Vulkan)
 "Vulkan runs natively on Android, Linux, BSD Unix, QNX, Haiku, Nintendo Switch, Raspberry Pi, Stadia, Fuchsia, Tizen, and Windows 7, 8, 10, and 11. MoltenVK provides freely-licensed third-party support for macOS, iOS and tvOS by wrapping over Apple's Metal API."
-    
-* Runtime extension system, enabling fine grainded support for latest hardware features, including: 
+
+* Runtime extension system, enabling fine grainded support for latest hardware features, including:
     * Ray Tracing
     * Mesh Shaders
 
@@ -26,7 +26,7 @@ Designed from the ground up for multi-threading, with localization of state with
 
 ### Cons:
 
-* Low level, responsibility for many tasks moves from driver into application scope.  
+* Low level, responsibility for many tasks moves from driver into application scope.
 Developers must explicitly configure settings, allocate and manage memory, transferring of data to/from GPU, dispatching and synchronizing CPU and GPU operations.
 
 * Requires more knowledge and code to implement even simple features - 1,500 lines of code to just render a textured triangle!
@@ -54,5 +54,7 @@ provides single package with headers and libs for Windows, Linux and macOS.
     * [News](https://www.vulkan.org/news)
     * [Vulkan-SC](https://www.khronos.org/vulkansc/) Vulkan for safety-critical systems
 
+---
 
- Next: [High Level APIs](HighLevelAPIs.md) | Next: [Introduction to the VulkanSceneGraph project](VulkanSceneGraph.md)
+Prev: [Low Level APIs](LowLevelAPIs.md) | Next :[High Level APIs](HighLevelAPIs.md)
+

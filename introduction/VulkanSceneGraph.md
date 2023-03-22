@@ -10,7 +10,7 @@ The VulkanSceneGraph is Scene Graph library written specific for Vulkan. Like Vu
 
 Vulkan makes it possible to get the most performance out of modern hardware, but it low level nature makes it harder to learn and use than OpenGL, in order to make all that performance available to a wider development community it's essential that we make it easier to use. To serve as a constant reminder of the importance of achieving this, the ***Vulkan Made Easy*** tag line was adopted for the vsg-dev github account.
 
-The underlying principles that guided the VulkanSceneGraph development are desire to enable application developers to be as ***Productive*** as possible while delivering the best ***Performance*** possible.  These two are often competing principles, to deliever both at the same time requires good engineering - one must continually strive to write better class interfaces and implemnentations, to seek out simple yet flexible and efficient solutions. 
+The underlying principles that guided the VulkanSceneGraph development are desire to enable application developers to be as ***Productive*** as possible while delivering the best ***Performance*** possible.  These two are often competing principles, to deliever both at the same time requires good engineering - one must continually strive to write better class interfaces and implemnentations, to seek out simple yet flexible and efficient solutions.
 
 The process of refining the software to better meet the needs of application developers won't stop with the VulkanSceneGraph-1.0 release, as the software develops these guiding principles will remain and we'll keep striving to deliver on the matra Vulkan Made Easy.
 
@@ -21,16 +21,16 @@ The VulkanSceneGraph is an open source project and license and practice:
 * Fully embrace the capabilities of C++ 17, modern CMAke and Github for building software, managing software and communicating.
 * Take lessons from developing the OpenSceneGraph, elements that are strong are updated and brought into the new scene graph, while flaws are recognized and used as driver for finding better solutions.
 * To bring in lessons from the wider C++ community the [C++CoreGuidlines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines) are used to guide class design and implementation.
-* Spiral Development Model:  
+* Spiral Development Model:
 Work follows a cycle starting at the centre and the moving around and outward following a spiral. On the innermost cycles of the spiral work is relatively simple and exploritory, but builds basic elements that later work can build upon, or on the next cycle round the sprial be revisted and refactored and made more capable if the original implementation is found insufficient. Steadily understanding of the problem domain is built and the software incrementally is built out in features and robustness.
 * Not formally an [Agile Software Development](https://en.wikipedia.org/wiki/Agile_software_development) project but draws upon it's manifesto:
     * **Individuals and interactions** over processes and tools
     * **Working software** over comprehensive documentation
     * **Customer collaboration** over contract negotiation
-    * **Responding to change** over following a plan 
-    
+    * **Responding to change** over following a plan
+
 ## Design and Development Reports
-    
+
 During the initial development phase the follow documents and reports were written which provide a insight into design and implementation decisions:
 
 * Design : [Design Principles & Philosophy](docs/Design/DesignPrinciplesAndPhilosophy.md)
@@ -46,11 +46,11 @@ During the initial development phase the follow documents and reports were writt
 One of the flaws with the OoenSceneGraph project is that while it started as small scene graph library is step by step encompassed a wide range of components and features that are bundled together. While the OpenSceneGraph stops short of providing all the functionality of Game Engine it is bloated for the needs of many application develolopers.  Early in the VulknaSceneGraph project the decision was to create a core general purpose scene graph library and a collection of libraries each focused on specific features that users can easily compile and use in their applications if they need them.
 
 The [vsg-dev](https://github.com/vsg-dev) github account hosts the following projects which are officially supported as part the VulkanSceneGraph project:
-* [VulkanSceneGraph](https://github.com/vsg-dev/VulkanSceneGraph)  
-The VulkanSceneGraph library itself is capable of used on it's own for stand alone graphics applications, and for embedded platforms this may be the desired approach as it will minimize the code base that needs to be QA'd for sercurity and robustness, and minimzes the final exectuble size. 
-* [vsgXchange](https://github.com/vsg-dev/vsgXchange)  
+* [VulkanSceneGraph](https://github.com/vsg-dev/VulkanSceneGraph)
+The VulkanSceneGraph library itself is capable of used on it's own for stand alone graphics applications, and for embedded platforms this may be the desired approach as it will minimize the code base that needs to be QA'd for sercurity and robustness, and minimzes the final exectuble size.
+* [vsgXchange](https://github.com/vsg-dev/vsgXchange)
 It is expected for most desktop applications users will also want to load a range of 3rd iamge and 3d model data, to support this usage case the  library adds support for a wide range of image and 3d model formats, using assimp, as well as support for reading data from http/https using libcurl, and reading/writing/processing of GIS imagery and DEMS through the optional GDAL integration.
-* [vsgExamples](https://github.com/vsg-dev/vsgExamples)  
+* [vsgExamples](https://github.com/vsg-dev/vsgExamples)
 A collection of 59 examples (as of 20th March 2023) that have written to help test VulkanSceneGraph features as they are developed and as an educational tool for new users.
 
 # VulkanSceneGraph library features
@@ -72,5 +72,7 @@ The [VulkanSceneGraph library](https://github.com/vsg-dev/VulkanSceneGraph/) pro
 * [utils](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/utils) - collection of utilities such intersections through to shader composition and compilation.
 * [meshshaders](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/meshshaders) - Khronos Mesh Shader support
 * [raytracing](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/raytracing) - Khronos Ray Tracing support
+
+---
 
  Prev: [Vulkan](Vulkan.md)| Next: [BuildingVulkanSceneGraph](BuildingVulkanSceneGraph.md)
