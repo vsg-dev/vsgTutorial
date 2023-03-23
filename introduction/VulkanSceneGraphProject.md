@@ -8,13 +8,13 @@ The VulkanSceneGraph Project goal is to make the development of high performance
 
 The VulkanSceneGraph library is built upon the Scene Graph concept and is written specifically for Vulkan. Like Vulkan is the successor to OpenGL, one that has wholly different API and architecture but retains the fundamental goal of providing a low level, open, cross platform hardware abstraction, the VulkanSceneGarph is successor of the OpenSceneGraph, it's also an entirely different API and architecture but retains the fundenmtal goal of providing an open, cross patform high performance API for application developers.
 
-As open source middle-ware used by developers we aspire for the software itself is not just useful for the functionality it provides, but also as an example of good software, illustrating how to write modern C++ software and avoid the many pitfalls of writing advanced software.  It is a privilidge and a responsibility to write good code as it will be used by so many developers over the years.
-
 ## Guiding Principles: Productivity and Performance
 
 The underlying principles that guided the VulkanSceneGraph development are desire to enable application developers to be as ***Productive*** as possible while delivering the best ***Performance*** possible.  These two are often competing principles, to deliever both at the same time requires good engineering - one must continually strive to write better class interfaces and implemnentations, to seek out simple yet flexible and efficient solutions.
 
 The process of refining the software to better meet the needs of application developers won't stop with the VulkanSceneGraph-1.0 release, as the software develops these guiding principles will remain and we'll keep striving to deliver on the matra Vulkan Made Easy.
+
+As open source middle-ware used by developers we aspire for the software not just useful for the functionality it provides, but also as an example of good software, illustrating how to write modern C++ software and avoid the many pitfalls of writing advanced software.
 
 ## Approach to Development
 
@@ -25,7 +25,7 @@ The VulkanSceneGraph is an open source project and license and practice:
 * To bring in lessons from the wider C++ community the [C++CoreGuidlines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines) are used to guide class design and implementation.
 * Spiral Development Model:
 Work follows a cycle starting at the centre and the moving around and outward following a spiral. On the innermost cycles of the spiral work is relatively simple and exploritory, but builds basic elements that later work can build upon, or on the next cycle round the sprial be revisted and refactored and made more capable if the original implementation is found insufficient. Steadily understanding of the problem domain is built and the software incrementally is built out in features and robustness.
-* Not formally an [Agile Software Development](https://en.wikipedia.org/wiki/Agile_software_development) project but draws upon it's manifesto:
+* While not formally an [Agile Software Development](https://en.wikipedia.org/wiki/Agile_software_development) project but draws upon it's manifesto:
     * **Individuals and interactions** over processes and tools
     * **Working software** over comprehensive documentation
     * **Customer collaboration** over contract negotiation
