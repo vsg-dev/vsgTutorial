@@ -31,7 +31,7 @@ Application class directories:
 * [utils](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/utils) - collection of utilities such intersections through to shader composition and compilation.
 * [threading](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/threading) - threading classes and helper functions
 
-The sections of the vsgTutorial are grouped in this way so as you work through you'll be introduced to pFoundational](../foundations.md), [Scene Graph](../scenegraph.md) and [Application](../application.md) areas in turn.
+The sections of the vsgTutorial are grouped in this way so as you work through you'll be introduced to [Foundational](../foundations.md), [Scene Graph](../scenegraph.md) and [Application](../application.md) areas in turn.
 
 ---
 
