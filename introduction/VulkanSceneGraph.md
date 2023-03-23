@@ -45,7 +45,18 @@ During the initial development phase the follow documents and reports were writt
 
 One of the flaws with the OoenSceneGraph project is that while it started as small scene graph library step by step encompassed a wider range of components and features that are bundled together. While the OpenSceneGraph stops short of providing all the functionality of Game Engine it is bloated for the needs of many application develolopers.  Early in the VulkanSceneGraph project the decision was made to create a core general purpose scene graph library and a collection of libraries each focused on specific features that users can easily compile and use in their applications if they need them.
 
-While the VulkanSceneGraph is focused on the core features used by all graphics application developers, it should make a excellent base coompopnent for higher level Image Generation (IG) SDK or Game Engine SDKs.
+Features that all Vulkan applications developers will need, so are included in the VulkanSceneGraph library:
+* robustly create and cleanup data
+* serialization of scene graph objects to native ascii and binary file formats
+* extensible mechanism for reading/writing 3rd party data.
+* vector math classes and associated functions
+* robust manangement of the lifetime Vulkan objects including support for Vulkan extensions
+* scene graph internal nodes, state and geometry
+* creation and management of Vulkan capable windows, offscreen buffers and event handling
+* support for views, cameras and control of them
+* support for commoly used graphics pipelines
+
+While the VulkanSceneGraph is focused on the core features used by all graphics application developers, it should make a excellent base component for higher level Image Generation (IG) SDK or Game Engine SDKs.
 
 The [vsg-dev](https://github.com/vsg-dev) github account hosts the following projects which are officially supported as part the VulkanSceneGraph project, the three main projects that majority of developers will need to use are:
 * [VulkanSceneGraph](https://github.com/vsg-dev/VulkanSceneGraph)  
