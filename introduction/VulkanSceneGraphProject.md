@@ -69,6 +69,18 @@ Community projects:
 * [vsgCs](https://github.com/timoore/vsgCs) 3D Tiles and Cesium ion integration
 * [vsgEarth](https://github.com/timoore/vsgEarth) osgEarth integration
 
+## Design and Development Reports
+
+For more details on the design and development of the VulkanSceneGraph you can read the documents written during initial development phase:
+
+* Design : [Design Principles & Philosophy](docs/Design/DesignPrinciplesAndPhilosophy.md)
+* Design : [High Level Design Decisions](docs/Design/HighLevelDesignDecisions.md)
+* Exploration Phase : [3rd Party Resources](docs/ExplorationPhase/3rdPartyResources.md)
+* Exploration Phase : [Areas of Interest](docs/ExplorationPhase/AreasOfInterest.md)
+* Exploration Phase : [Report](docs/ExplorationPhase/VulkanSceneGraphExplorationPhaseReport.md)
+* PrototypePhase : [Workplan](docs/PrototypePhase/Workplan.md)
+* PrototypePhase : [Report](docs/PrototypePhase/PrototypePhaseReport.md)
+
 ---
 
  Prev: [Vulkan](Vulkan.md)| Next: [VulkanSceneGraph Library](VulkanSceneGraphLibrary.md)
