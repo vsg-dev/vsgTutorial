@@ -47,8 +47,7 @@ Features that all Vulkan applications developers will need, so are included in t
 While the VulkanSceneGraph is focused on the core features used by all graphics application developers, it should make a excellent base component for higher level Image Generation (IG) SDK or Game Engine SDKs.
 
 The [vsg-dev](https://github.com/vsg-dev) github account hosts the following projects which are officially supported as part the VulkanSceneGraph project, the three main projects that majority of developers will need to use are:
-* [VulkanSceneGraph](https://github.com/vsg-dev/VulkanSceneGraph)  
-The VulkanSceneGraph library itself is capable of used on it's own for stand alone graphics applications, and for embedded platforms this may be the desired approach as it will minimize the code base that needs to be QA'd for sercurity and robustness, and minimzes the final exectuble size.
+* [VulkanSceneGraph](https://github.com/vsg-dev/VulkanSceneGraph) - The VulkanSceneGraph library itself is capable of used on it's own for stand alone graphics applications, and for embedded platforms this may be the desired approach as it will minimize the code base that needs to be QA'd for sercurity and robustness, and minimzes the final exectuble size.
 * [vsgXchange](https://github.com/vsg-dev/vsgXchange)  
 It is expected for most desktop applications users will also want to load a range of 3rd iamge and 3d model data, to support this usage case the  library adds support for a wide range of image and 3d model formats, using assimp, as well as support for reading data from http/https using libcurl, and reading/writing/processing of GIS imagery and DEMS through the optional GDAL integration.
 * [vsgExamples](https://github.com/vsg-dev/vsgExamples)  
@@ -61,7 +60,7 @@ Also hosted on vsg-dev are more specialist projects:
 * [vsgQt](https://github.com/vsg-dev/vsgQt) - Qt5/Qt6 integrtation with the VulkanSceneGraph
 * [vsgUnity](https://github.com/vsg-dev/vsgUnity) - plugin for the Unity Editor for expoting VulkanSceneGraph models
 * [MyFirstVsgApplication](https://github.com/vsg-dev/MyFirstVsgApplication) - simple stanndalone example illustrating the CMake and C++ required.
-* [vsgFramework](https://github.com/vsg-dev/vsgFramework) template project that uses CMake FetchContent to pull in all the main libraries associated with VulkanSceneGraph and dependencies and builds them together.
+* [vsgFramework](https://github.com/vsg-dev/vsgFramework) - template project that uses CMake FetchContent to pull in all the main libraries associated with VulkanSceneGraph and dependencies and builds them together.
 
 Community projects:
 * [vsgSDL](https://github.com/ptrfun/vsgSDL) SDL integration with VulkanSceneGraph.
@@ -73,13 +72,18 @@ Community projects:
 
 For more details on the design and development of the VulkanSceneGraph you can read the documents written during initial development phase:
 
-* Design : [Design Principles & Philosophy](docs/Design/DesignPrinciplesAndPhilosophy.md)
-* Design : [High Level Design Decisions](docs/Design/HighLevelDesignDecisions.md)
-* Exploration Phase : [3rd Party Resources](docs/ExplorationPhase/3rdPartyResources.md)
-* Exploration Phase : [Areas of Interest](docs/ExplorationPhase/AreasOfInterest.md)
-* Exploration Phase : [Report](docs/ExplorationPhase/VulkanSceneGraphExplorationPhaseReport.md)
-* PrototypePhase : [Workplan](docs/PrototypePhase/Workplan.md)
-* PrototypePhase : [Report](docs/PrototypePhase/PrototypePhaseReport.md)
+Design:
+* [Design Principles & Philosophy](docs/Design/DesignPrinciplesAndPhilosophy.md)
+* [High Level Design Decisions](docs/Design/HighLevelDesignDecisions.md)
+
+Exploration Phase:
+* [3rd Party Resources](docs/ExplorationPhase/3rdPartyResources.md)
+* [Areas of Interest](docs/ExplorationPhase/AreasOfInterest.md)
+* [Report](docs/ExplorationPhase/VulkanSceneGraphExplorationPhaseReport.md)
+
+Prototype Phase:
+* [Workplan](docs/PrototypePhase/Workplan.md)
+* [Report](docs/PrototypePhase/PrototypePhaseReport.md)
 
 ---
 
