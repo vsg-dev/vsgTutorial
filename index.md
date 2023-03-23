@@ -15,7 +15,8 @@ Introduction:
 1. [Low level APIs](introduction/LowLevelAPIs.md)
 1. [Vulkan](introduction/Vulkan.md)
 1. [High Level APIs](introduction/HighLevelAPIs.md)
-1. [VulkanSceneGraph](introduction/VulkanSceneGraph.md)
+1. [VulkanSceneGraph Project](introduction/VulkanSceneGraphProject.md)
+1. [VulkanSceneGraph Library](introduction/VulkanSceneGraphLibrary.md)
 1. [Building the VulkanScenegraph projects and vsgTutorial exercises](introduction/BuildingVulkanSceneGraph.md)
 
 Fundations:
