@@ -11,9 +11,9 @@ All VulkanSceneGraph projects, including the vsgTutorial exercises, are written 
 
 --
 
-~~
+~~~
 {% include_relative 01_hello_world/CMakeLists.txt %}
-~~
+~~~
 
 ---
 
