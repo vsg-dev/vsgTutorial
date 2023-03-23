@@ -33,4 +33,4 @@ Application class directories:
 
 ---
 
- Prev: [VulkanSceneGraphProject](VulkanSceneGraphProject.md)| Next: [BuildingVulkanSceneGraph](BuildingVulkanSceneGraph.md)
+ Prev: [VulkanSceneGraph Project](VulkanSceneGraphProject.md)| Next: [Building VulkanSceneGraph projeects and exercises](BuildingVulkanSceneGraph.md)
