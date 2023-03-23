@@ -6,7 +6,9 @@ permalink: /introduction/VulkanSceneGraphProject
 
 The VulkanSceneGraph Project goal is to make the development of high performance graphics and compute application quick and easy.  Vulkan provides an excellent base for achieving high performance but is low level and complicated to use, simply wrapping a C API in C++ is not sufficient for application developer needs, a collection of high level features that make development easy is what is required. The ***Vulkan Made Easy*** tag line was adopted for the vsg-dev github account as a daily reminder of our the projects fundamental goal.
 
-The VulkanSceneGraph library is build upon the Scene Graph concept and is written specifically for Vulkan. Like Vulkan is the successor to OpenGL, one that has wholly different API and architecture but retains the fundamental goal of providing a low level, open, cross platform hardware abstraction, the VulkanSceneGarph is successor of the OpenSceneGraph, it's also an entirely different API and architecture but retains the fundenmtal goal of providing an open, cross patform high performance API for application developers.
+The VulkanSceneGraph library is built upon the Scene Graph concept and is written specifically for Vulkan. Like Vulkan is the successor to OpenGL, one that has wholly different API and architecture but retains the fundamental goal of providing a low level, open, cross platform hardware abstraction, the VulkanSceneGarph is successor of the OpenSceneGraph, it's also an entirely different API and architecture but retains the fundenmtal goal of providing an open, cross patform high performance API for application developers.
+
+As open source middle-ware used by developers we aspire for the software itself is not just useful for the functionality it provides, but also as an example of good software, illustrating how to write modern C++ software and avoid the many pitfalls of writing advanced software.  It is a privilidge and a responsibility to write good code as it will be used by so many developers over the years.
 
 ## Guiding Principles: Productivity and Performance
 
@@ -31,7 +33,7 @@ Work follows a cycle starting at the centre and the moving around and outward fo
 
 ## Collection of libraries rather than a Monolythic SDK
 
-One of the flaws with the OoenSceneGraph project is that while it started as small scene graph library step by step encompassed a wider range of components and features that are bundled together. While the OpenSceneGraph stops short of providing all the functionality of Game Engine it is bloated for the needs of many application develolopers.  Early in the VulkanSceneGraph project the decision was made to create a core general purpose scene graph library and a collection of libraries each focused on specific features that users can easily compile and use in their applications if they need them.
+One of the weakensses of the OoenSceneGraph project was, while it started as small scene graph library, it step by step encompassed a wider range of components and features that are bundled together. While the OpenSceneGraph stops short of providing all the functionality of Game Engine it is bloated for the needs of many application develolopers.  Early in the VulkanSceneGraph project the decision was made to create a core general purpose scene graph library and a collection of libraries each focused on specific features that users can easily compile and use in their applications if they need them.
 
 Features that all Vulkan applications developers will need, so are included in the VulkanSceneGraph library:
 * robustly create and cleanup data
