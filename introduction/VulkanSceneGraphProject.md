@@ -71,4 +71,4 @@ Community projects:
 
 ---
 
- Prev: [Vulkan](Vulkan.md)| Next: [VulkanSceneGraph](VulkanSceneGraphLibrary.md)
+ Prev: [Vulkan](Vulkan.md)| Next: [VulkanSceneGraph Library](VulkanSceneGraphLibrary.md)
