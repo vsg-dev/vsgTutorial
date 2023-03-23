@@ -1,7 +1,7 @@
 ---
 layout: page
 title: VulkanSceneGraph Library
-permalink: /introduction/VulkanSceneGraph
+permalink: /introduction/VulkanSceneGraphLibrary
 ---
 
 ## Design and Development Reports
