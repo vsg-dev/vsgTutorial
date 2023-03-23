@@ -1,6 +1,6 @@
 ---
 layout: page
-title: VulkanSceneGraph Project - Vulkan Made Easy
+title: VulkanSceneGraph - Vulkan Made Easy
 permalink: /introduction/VulkanSceneGraphProject
 ---
 
