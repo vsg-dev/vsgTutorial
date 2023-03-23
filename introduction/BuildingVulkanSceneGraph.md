@@ -6,11 +6,11 @@ permalink: /introduction/BuildingVulkanSceneGraph
 
 To conclude this Introduction section we'll look at building the VulkanSceneGraph projects and minimal stand alone **hello world** application.
 
-All VulkanSceneGraph projects, including the vsgTutorial exercises, are written in C++17 and using CMake as a cross platform build systen. To aid integration of the VulkanSceneGraph projects with other software CMake config files are installed along with headers and libraries.  CMake config files provide details of the libaries, header locations and any compile definitions that are required when building software that use VulkanSceneGraph libraries and helps avoid issues when working across different platforms and with differences in static and dynamic library builds.
+All VulkanSceneGraph projects, including the vsgTutorial exercises, are written in C++17 and using CMake as a cross platform build system. To aid integration of the VulkanSceneGraph projects with other software CMake config files are installed along with headers and libraries.  CMake config files provide details of the libraries, header locations and any compile definitions that are required when building software that use VulkanSceneGraph libraries and helps avoid issues when working across different platforms and with differences in static and dynamic library builds.
 
 First task to check out the main repositories and vsgTutorial for it's exercises, for brevity we'll use unix shell and install headers, libs and cmake files locally and set env paths up to find the install locations, this way there is no need to install to system directories.
 
-First we'll set up some env var, for easy of user you may wish to put this into user resorce file like .bashrc:
+First we'll set up some env var, for easy of user you may wish to put this into user resource file like .bashrc:
 
 ~~~ sh
 # env vars useful for locating source projects, installed libraries and binaries

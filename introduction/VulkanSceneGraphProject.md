@@ -40,7 +40,7 @@ Features that all Vulkan applications developers will need, so are included in t
 * serialization of scene graph objects to native ascii and binary file formats
 * extensible mechanism for reading/writing 3rd party data.
 * vector math classes and associated functions
-* robust manangement of the lifetime Vulkan objects including support for Vulkan extensions
+* robust management of the lifetime Vulkan objects including support for Vulkan extensions
 * scene graph internal nodes, state and geometry
 * creation and management of Vulkan capable windows, offscreen buffers and event handling
 * support for views, cameras and control of them
@@ -49,9 +49,9 @@ Features that all Vulkan applications developers will need, so are included in t
 While the VulkanSceneGraph is focused on the core features used by all graphics application developers, it should make a excellent base component for higher level Image Generation (IG) SDK or Game Engine SDKs.
 
 The [vsg-dev](https://github.com/vsg-dev) github account hosts the following projects which are officially supported as part the VulkanSceneGraph project, the three main projects that majority of developers will need to use are:
-* [VulkanSceneGraph](https://github.com/vsg-dev/VulkanSceneGraph) - The VulkanSceneGraph library itself is capable of used on it's own for stand alone graphics applications, and for embedded platforms this may be the desired approach as it will minimize the code base that needs to be QA'd for sercurity and robustness, and minimzes the final exectuble size.
+* [VulkanSceneGraph](https://github.com/vsg-dev/VulkanSceneGraph) - The VulkanSceneGraph library itself is capable of used on it's own for stand alone graphics applications, and for embedded platforms this may be the desired approach as it will minimize the code base that needs to be QA'd for sercurity and robustness, and minimizes the final exectuble size.
 * [vsgXchange](https://github.com/vsg-dev/vsgXchange)  
-It is expected for most desktop applications users will also want to load a range of 3rd iamge and 3d model data, to support this usage case the  library adds support for a wide range of image and 3d model formats, using assimp, as well as support for reading data from http/https using libcurl, and reading/writing/processing of GIS imagery and DEMS through the optional GDAL integration.
+It is expected for most desktop applications users will also want to load a range of 3rd image and 3d model data, to support this usage case the  library adds support for a wide range of image and 3d model formats, using assimp, as well as support for reading data from http/https using libcurl, and reading/writing/processing of GIS imagery and DEMS through the optional GDAL integration.
 * [vsgExamples](https://github.com/vsg-dev/vsgExamples)  
 A collection of 59 examples (as of 20th March 2023) that have written to help test VulkanSceneGraph features as they are developed and as an educational tool for new users.
 
