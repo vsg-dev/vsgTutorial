@@ -4,9 +4,11 @@ title: VulkanSceneGraph Library
 permalink: /introduction/VulkanSceneGraphLibrary
 ---
 
-The [VulkanSceneGraph library](https://github.com/vsg-dev/VulkanSceneGraph/) provides the features that will be common to all applications - creating a viewer, windows, scene graph, reading/writing data, creating Vulkan objects and recording Vulkan commands, synchronizing with Vulkan processes and CPU threads, 3d vector maths and common utilities like computing bounds and intersection test and shader composition and cmpilation. 
+The [VulkanSceneGraph library](https://github.com/vsg-dev/VulkanSceneGraph/) provides the features that will be common to all graphics & compute applications - creating a viewer, windows, scene graph, reading/writing data, creating Vulkan objects and recording Vulkan commands, synchronizing with Vulkan processes and CPU threads, 3d vector maths and common utilities like computing bounds and intersection test and shader composition and cmpilation. 
 
-All the VulkanSceneGraph follow the same structure - public headers can be found in include/ directories and the implementation can be found in the src/ directories. This pattern is used to make it clear to end users what part of they will interface with, and as clear demarcation to library developers & contributors that interfaces and implementations both have clear and distinct roles. When installing the software it'll only the files in the include directories and any built libraries + cmake config files that will be installed.
+## Feature organization
+
+All VulkanSceneGraph projects follow the same structure - public headers can be found in include/ directories and the implementation can be found in the src/ directories. This pattern is used to make it clear to end users what part of they will interface with, and as clear demarcation to library developers & contributors that interfaces and implementations both have clear and distinct roles. When installing the software it'll only the files in the include directories and any built libraries + cmake config files that will be installed.
 
 The [vsg library headers](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg) are grouped in the following [include/vsg](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/) subdirectories:
 
@@ -33,11 +35,11 @@ Application class directories:
 
 The sections of the vsgTutorial are grouped in this way so as you work through you'll be introduced to [Foundational](../foundations.md), [Scene Graph](../scenegraph.md) and [Application](../application.md) areas in turn.
 
-# Conventions
+## Naming conventions
 
 All VulkanSceneGraph projects follow the following naming convnetions:
 
-| Project | Library Name | Namesapce |
+| **Project** | **Library Name** | **Namesapce** |
 | VulkanSceneGraph | vsg | vsg:: |
 | vsgXchange | vsgXchange | vsgXchange:: |
 | vsgImGui | vsgImGui | vsgImGui:: |
@@ -45,7 +47,7 @@ All VulkanSceneGraph projects follow the following naming convnetions:
 
 All Vulkan related classes in the VulkanSceneGraph follow the naming conventions vkFeature -> vsg::features, for example:
 
-| Vulkan | VulkanSceneGraph |
+| **Vulkan** | **VulkanSceneGraph** |
 | vkInstance | vsg::Instance |
 | vkPhysicalDevice | vsg::PhysicalDevice | 
 | vkDevice | vsg::Device |
