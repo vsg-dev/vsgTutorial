@@ -88,8 +88,16 @@ An example how local implementations can achieve what we need with far less code
 
 The VulkanSceneGraph library uses Vulkan, C++17 and CMake as external dependencies. The Vulkan C headers are used rather then the Vulkan C++ header which is unncessary as the Vulkan scene graph provides it's own encapsulation of Vulkan objects in a way that is coherent with how they are used in the scene graph.
 
-For runtime shader compilation support the [glslang](https://github.com/KhronosGroup/glslang) library is built internally as a submodule, this is compiled in by default but can be toggled off by setting the CMake VSG_SUPPORTS_ShaderCompiler variable to 0 before building the soruce.
+For runtime shader compilation support the [glslang](https://github.com/KhronosGroup/glslang) library, orginally an optionally external dependency, but since VulkanSceneGraph-1.0.3 is now built internally as a submodule, this is compiled in by default but can be toggled off by setting the CMake VSG_SUPPORTS_ShaderCompiler variable to 0 before building the source. Compiling glslang within the VulkanSceneGraph library resolved problems with inconsistent 3rd party packaging of glslang, so now users can have seamlessly experience across platforms.
 
+The additional VulkanSceneGraph projects add their own dependencies:
+
+| Project | Required | Optional |
+| [VulkanSceneGraph](https://github.com/vsg-dev/VulkanSceneGraph) | C++17, CMake, Vulkan | glslang integrated as a submodule |
+| [vsgXchange](https://github.com/vsg-dev/vsgXchange) | VulkanSceneGraph | curl, assimp, gdal, freetype, OpenEXR, osg2vsg |
+| [vsgImGui](https://github.com/vsg-dev/vsgImGui) | VulkanScenegraph, ImGui integrated as a submodule | |
+| [vsgQt](https://github.com/vsg-dev/vsgQt) | VulkanSceneGraph, Qt5.10 or later, Qt6 | |
+| [vsgExamples](https://github.com/vsg-dev/vsgExamples) | VulkanSceneGraph | vsgXchange, vsgImGui |
 
 ---
 
