@@ -12,4 +12,5 @@ This first part introduce developers to world of Vulkan, Scene Graphs, and how t
 1. [VulkanSceneGraph Project](introduction/VulkanSceneGraphProject.md)
 1. [VulkanSceneGraph Ecosystem](introduction/VulkanSceneGraphEcosystem.md)
 1. [VulkanSceneGraph Library](introduction/VulkanSceneGraphLibrary.md)
+1. [Performance Principles](introduction/PerformancePrinciples.md)
 1. [Building the VulkanScenegraph projects and vsgTutorial exercises](introduction/BuildingVulkanSceneGraph.md)
