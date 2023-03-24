@@ -8,7 +8,7 @@ The VulkanSceneGraph Project goal is to make the development of high performance
 
 The VulkanSceneGraph library is built upon the Scene Graph concept and is written specifically for Vulkan. Like Vulkan is the successor to OpenGL, one that has wholly different API and architecture but retains the fundamental goal of providing a low level, open, cross platform hardware abstraction, the VulkanSceneGarph is successor of the OpenSceneGraph, it's also an entirely different API and architecture but retains the fundenmtal goal of providing an open, cross patform high performance API for application developers.
 
-## Guiding Principles: Productivity and Performance
+## Productivity and Performance
 
 The underlying principles that guided the VulkanSceneGraph development are desire to enable application developers to be as ***Productive*** as possible while delivering the best ***Performance*** possible.  These two are often competing principles, to deliever both at the same time requires good engineering - one must continually strive to write better class interfaces and implemnentations, to seek out simple yet flexible and efficient solutions.
 
@@ -31,7 +31,7 @@ Work follows a cycle starting at the centre and the moving around and outward fo
     * **Customer collaboration** over contract negotiation
     * **Responding to change** over following a plan
 
-## Choosing a small number of high value dependencies
+## Only high value dependencies
 
 The VulkanSceneGraph library dpendency only on C++17, CMake and Vulkan as external dependencies. The Vulkan C headers are used rather then the Vulkan C++ header which is unncessary as the Vulkan scene graph provides it's own encapsulation of Vulkan objects in a way that is coherent with how they are used in the scene graph.
 
