@@ -35,7 +35,8 @@ The sections of the vsgTutorial are grouped in this way so as you work through y
 
 # Conventions
 
-All VulkanSceneGraph projects follow the following naming convnetions :
+All VulkanSceneGraph projects follow the following naming convnetions:
+
 | Project | Library Name | Namesapce |
 | VulkanSceneGraph | vsg | vsg:: |
 | vsgXchange | vsgXchange | vsgXchange:: |
@@ -43,6 +44,7 @@ All VulkanSceneGraph projects follow the following naming convnetions :
 | vsgQt | vsgQt | vsgQt:: |
 
 All Vulkan related classes in the VulkanSceneGraph follow the naming conventions vkFeature -> vsg::features, for example:
+
 | Vulkan | VulkanSceneGraph |
 | vkInstance | vsg::Instance |
 | vkPhysicalDevice | vsg::PhysicalDevice | 
