@@ -62,7 +62,7 @@ Classes in the VulkanSceneGraph predominatly follow the declaration of scope in 
 
 For the same reasons that headers and source files are kept in distinct include and src directories, this convention is used to make it clear to end users and to implementers that public facing variables and methods are special, as users will set, get and call them their naming and types need to be more refined and maintained over time. While the protected and private members are implementation deatils that may be more subject to change.
 
-~~~ C++
+~~~ cpp
 
 class MyClass
 {
@@ -81,7 +81,7 @@ private:
 
 Where data members can vary independently those members are simply declared in the public scope and can be set directly, this mirrors Vulkan CreateInfo structs used to set up Vulkan objects, as well as keeping the usage easy to use and the code base clean and minimal.  This coherence with Vulkan also means it's easier to reuse Vulkan documentation.
 
-~~~ C++
+~~~ cpp
 class KeepItSimple
 {
 public:
@@ -92,7 +92,7 @@ public:
 
 For cases where data members have a dependency a protected or private member is used and access is managed through public methods:
 
-~~~ C++
+~~~ cpp
 class AnotherClass
 {
 public:
