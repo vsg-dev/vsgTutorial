@@ -30,5 +30,5 @@ The end result is scene graph traversals are around 10 times faster than the equ
 
 ---
 
-Prev: [VulkanSceneGraph Library](VulkanSceneGraphLibrary.md) | Next: [Building the VulkanScenegraph projects and vsgTutorial exercises](BuildingVulkanSceneGraph.md)
+Prev: [Guiding Principles](GuidingPrinciples.md) | Next: [Ecosystem](Ecosystem.md)
  

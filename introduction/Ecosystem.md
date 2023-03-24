@@ -1,12 +1,12 @@
 ---
 layout: page
 title: VulkanSceneGraph - Ecosystem
-permalink: /introduction/VulkanSceneGraphEcosystem
+permalink: /introduction/Ecosystem
 ---
 
-One of the weakensses of the OpenSceneGraph project was, while it started as small scene graph library, step by step it encompassed a wider range of features and depenedenices. While the OpenSceneGraph stops short of providing all the functionality of Game Engine it is bloated for the needs of many application develolopers.  Early in the VulkanSceneGraph project the decision was made to create a core general purpose scene graph library and a collection of companion libraries each focused on specific features that users can easily compile and use in their applications if they need them.
+One of the weakensses of the OpenSceneGraph project was, while it started as small scene graph library, step by step it encompassed a wider range of features and depenedenices. While the OpenSceneGraph stops short of providing all the functionality of Game Engine it is bloated for the needs of many application develolopers.  Early in the VulkanSceneGraph project the decision was made to create an ecosystem builton a general purpose scene graph library and a collection of companion libraries each focused on specific features that users can easily compile and use in their applications if they need them.
 
-## Features needed by all
+## Foundation for all VulkanSceneGraph appliaction
 
 Features that all applications developers using Vulkan will need, so provide by the VulkanSceneGraph library:
 * robustly create and cleanup data
@@ -60,4 +60,4 @@ The additional VulkanSceneGraph projects add their own dependencies:
 
 ---
 
- Prev: [VulkanScenegraph Projects](VulkanSceneGraphProject.md)| Next: [VulkanSceneGraph Library](VulkanSceneGraphLibrary.md)
+ Prev: [Performance Principles](PerformancePrinciples.md)| Next: [VulkanSceneGraph Library](VulkanSceneGraphLibrary.md)

@@ -1,7 +1,7 @@
 ---
 layout: page
-title: VulkanSceneGraph - Vulkan Made Easy
-permalink: /introduction/VulkanSceneGraphProject
+title: VulkanSceneGraph - Guiding Principles
+permalink: /introduction/GuidingPrinciples
 ---
 
 The VulkanSceneGraph Project goal is to make the development of high performance graphics and compute application quick and easy.  Vulkan provides an excellent base for achieving high performance but is low level and complicated to use, simply wrapping a C API in C++ is not sufficient for application developer needs, a collection of high level features that make development easy is what is required. The ***Vulkan Made Easy*** tag line was adopted for the vsg-dev github account as a daily reminder of our the projects fundamental goal.
@@ -31,9 +31,9 @@ Work follows a cycle starting at the centre and the moving around and outward fo
     * **Customer collaboration** over contract negotiation
     * **Responding to change** over following a plan
 
-## 3rd party dependencies have to justify their inclusion
+## Choosing a small number of high value dependencies
 
-The VulkanSceneGraph library uses Vulkan, C++17 and CMake as external dependencies. The Vulkan C headers are used rather then the Vulkan C++ header which is unncessary as the Vulkan scene graph provides it's own encapsulation of Vulkan objects in a way that is coherent with how they are used in the scene graph.
+The VulkanSceneGraph library dpendency only on C++17, CMake and Vulkan as external dependencies. The Vulkan C headers are used rather then the Vulkan C++ header which is unncessary as the Vulkan scene graph provides it's own encapsulation of Vulkan objects in a way that is coherent with how they are used in the scene graph.
 
 For runtime shader compilation support the [glslang](https://github.com/KhronosGroup/glslang) library, orginally an optionally external dependency, but since VulkanSceneGraph-1.0.3 is now built internally as a submodule, this is compiled in by default but can be toggled off by setting the CMake VSG_SUPPORTS_ShaderCompiler variable to 0 before building the source. Compiling glslang within the VulkanSceneGraph library resolved problems with inconsistent 3rd party packaging of glslang, so now users can have seamlessly experience across platforms.
 
@@ -51,4 +51,4 @@ An example how local implementations can achieve what we need with far less code
 
 ---
 
- Prev: [Vulkan](Vulkan.md)| Next: [VulkanSceneGraph Ecosystem](VulkanSceneGraphEcosystem.md)
+ Prev: [Vulkan](Vulkan.md)| Next: [Performance Principles](PerformancePrinciples.md)
