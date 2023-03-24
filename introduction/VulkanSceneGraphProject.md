@@ -70,7 +70,7 @@ Community projects:
 * [vsgCs](https://github.com/timoore/vsgCs) 3D Tiles and Cesium ion integration
 * [vsgEarth](https://github.com/timoore/vsgEarth) osgEarth integration
 
-## Local implementations where 3rd party dependencies don't cut it
+## When 3rd party dependencies don't cut it
 
 During the initial development of VulkanSceneGraph various 3rd party dependencies, like gm and glfw, were considered for features like maths and windowing, but in each of these cases it was decided to implement the required features within the project rather than add an external dependency.  The reasons for implementing the functionality within the project:
 
@@ -86,7 +86,7 @@ An example how local implementations can achieve what we need with far less code
 
 ## 3rd party dependencies that add value
 
-The VulkanSceneGraph library uses Vulkan, C++17 and CMake as external dependencies. The Vulkan C headers are used rather then the Vulkan C++ header as the later is unncessary as the Vulkan scene graph provides it's own encapsulation of Vulkan objects.
+The VulkanSceneGraph library uses Vulkan, C++17 and CMake as external dependencies. The Vulkan C headers are used rather then the Vulkan C++ header which is unncessary as the Vulkan scene graph provides it's own encapsulation of Vulkan objects in a way that is coherent with how they are used in the scene graph.
 
 For runtime shader compilation support the [glslang](https://github.com/KhronosGroup/glslang) library is built internally as a submodule, this is compiled in by default but can be toggled off by setting the CMake VSG_SUPPORTS_ShaderCompiler variable to 0 before building the soruce.
 
