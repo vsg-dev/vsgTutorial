@@ -59,4 +59,4 @@ In Spring 2018 Robert Osfield was approached by a company that used OpenSceneGra
 
 ---
 
-Prev: [Vulkan](Vulkan.md) | Next: [Introduction to the VulkanSceneGraph Project](VulkanSceneGraphProject.md)
+Prev: [Vulkan](Vulkan.md) | Next: [Guiding Principles](GuidingPrinciples.md)
