@@ -28,24 +28,7 @@ Together these design descisions ensure:
 
 The end result is scene graph traversals are around 10 times faster than the equivalent in the OpenSceneGraph. These are just a tester of the many performance related descisions in the VulkanSeneGraph, as you work through the vsgTutorial you'll be introduced to more tips and tricks that have been used, and ones that you can use in your own application development as well.
 
-## 3rd party dependencies have to justify their inclusion
-
-The VulkanSceneGraph library uses Vulkan, C++17 and CMake as external dependencies. The Vulkan C headers are used rather then the Vulkan C++ header which is unncessary as the Vulkan scene graph provides it's own encapsulation of Vulkan objects in a way that is coherent with how they are used in the scene graph.
-
-For runtime shader compilation support the [glslang](https://github.com/KhronosGroup/glslang) library, orginally an optionally external dependency, but since VulkanSceneGraph-1.0.3 is now built internally as a submodule, this is compiled in by default but can be toggled off by setting the CMake VSG_SUPPORTS_ShaderCompiler variable to 0 before building the source. Compiling glslang within the VulkanSceneGraph library resolved problems with inconsistent 3rd party packaging of glslang, so now users can have seamlessly experience across platforms.
-
-During the initial development of VulkanSceneGraph various other 3rd party dependencies, like gm and glfw, were considered for features like maths and windowing, but in each of these cases it was decided to implement the required features within the project rather than add an external dependency.  The reasons for implementing the functionality within the project:
-
-* Coherent class interfaces and naming
-* Coherent memory management
-* Provide classes focused just on the needs of the VulkanSceneGraph users
-* Avoid the glue code required to bring different libraries to work well together
-* Keep memory and CPU overhead to a minimum
-* Keep dependencies to a minimum to avoid ***Dependency Hell***
-* Keep licensing simple and permissive
-
-An example how local implementations can achieve what we need with far less code can be seen looking the glm maths library. It's a header only library with over 63,000 lines of code.  The VulkanSceneGraph has all GLSL style vector, quaternion and matrix functionality it needs in less than 3,000 lines of code. The VulkanSceneGraph code base has 57,000 lines of code for it's headers and source, and it has a scene graph, Vulkan integration, cross plarform windowing, viewer classes, serialization support and much more.
-
 ---
 
- Prev: [Vulkan](Vulkan.md)| Next: [VulkanSceneGraph Ecosystem](VulkanSceneGraphEcosystem.md)
+Prev: [VulkanSceneGraph Library](VulkanSceneGraphLibrary.md) | Next: [Building the VulkanScenegraph projects and vsgTutorial exercises](introduction/BuildingVulkanSceneGraph.md)
+ 
