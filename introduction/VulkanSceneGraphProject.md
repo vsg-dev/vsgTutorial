@@ -31,11 +31,15 @@ Work follows a cycle starting at the centre and the moving around and outward fo
     * **Customer collaboration** over contract negotiation
     * **Responding to change** over following a plan
 
+## Performance - from low power to high frame rates effiency is King.
+
+Efficiency of the design and implementation is critical 
+    
 ## Collection of libraries rather than a Monolythic SDK
 
 One of the weakensses of the OoenSceneGraph project was, while it started as small scene graph library, it step by step encompassed a wider range of components and features that are bundled together. While the OpenSceneGraph stops short of providing all the functionality of Game Engine it is bloated for the needs of many application develolopers.  Early in the VulkanSceneGraph project the decision was made to create a core general purpose scene graph library and a collection of libraries each focused on specific features that users can easily compile and use in their applications if they need them.
 
-Features that all Vulkan applications developers will need, so are included in the VulkanSceneGraph library:
+Features that all Vulkan applications developers will need, so provide by the VulkanSceneGraph library:
 * robustly create and cleanup data
 * serialization of scene graph objects to native ascii and binary file formats
 * extensible mechanism for reading/writing 3rd party data.
@@ -46,7 +50,7 @@ Features that all Vulkan applications developers will need, so are included in t
 * support for views, cameras and control of them
 * support for commoly used graphics pipelines - flat shaded, phong and physics based rendering
 
-While the VulkanSceneGraph is focused on the core features used by all graphics application developers, it should make a excellent base component for higher level Image Generation (IG) SDK or Game Engine SDKs.
+While the VulkanSceneGraph is focused on these general purpose features, it is intended that it be a foundation for other libraries that add additional features or as a base component for higher level SDK's like Image Generators (IGs) or Game Engines.
 
 The [vsg-dev](https://github.com/vsg-dev) github account hosts the following projects which are officially supported as part the VulkanSceneGraph project, the three main projects that majority of developers will need to use are:
 * [VulkanSceneGraph](https://github.com/vsg-dev/VulkanSceneGraph) - The VulkanSceneGraph library itself is capable of used on it's own for stand alone graphics applications, and for embedded platforms this may be the desired approach as it will minimize the code base that needs to be QA'd for sercurity and robustness, and minimizes the final exectuble size.
