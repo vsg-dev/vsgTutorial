@@ -4,7 +4,9 @@ title: VulkanSceneGraph - Ecosystem
 permalink: /introduction/VulkanSceneGraphEcosystem
 ---
 
-    
+We need a short intro
+
+
 ## Collection of libraries rather than a Monolythic SDK
 
 One of the weakensses of the OoenSceneGraph project was, while it started as small scene graph library, it step by step encompassed a wider range of components and features that are bundled together. While the OpenSceneGraph stops short of providing all the functionality of Game Engine it is bloated for the needs of many application develolopers.  Early in the VulkanSceneGraph project the decision was made to create a core general purpose scene graph library and a collection of libraries each focused on specific features that users can easily compile and use in their applications if they need them.
