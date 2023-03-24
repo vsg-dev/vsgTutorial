@@ -106,4 +106,4 @@ protected:
 };
 ~~~
 
- Prev: [VulkanSceneGraph Project](VulkanSceneGraphProject.md)| Next: [Building VulkanSceneGraph projects and exercises](BuildingVulkanSceneGraph.md)
+ Prev: [VulkanSceneGraph Ecosystem](VulkanSceneGraphEcosystem.md)| Next: [Building VulkanSceneGraph projects and exercises](BuildingVulkanSceneGraph.md)
