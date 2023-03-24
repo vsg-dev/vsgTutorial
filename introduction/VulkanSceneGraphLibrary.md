@@ -77,7 +77,6 @@ protected:
 private:
     float _forDevelopersOnly = 1;
 };
-
 ~~~
 
 Where data members can vary independently those members are simply declared in the public scope and can be set directly, this mirrors Vulkan CreateInfo structs used to set up Vulkan objects, as well as keeping the usage easy to use and the code base clean and minimal.  This coherence with Vulkan also means it's easier to reuse Vulkan documentation.
@@ -91,7 +90,7 @@ public:
 };
 ~~~
 
-For cases where data members do not vary independently a protected or private member is used and access is managed through public methods:
+For cases where data members have a dependency a protected or private member is used and access is managed through public methods:
 
 ~~~ C++
 class AnotherClass
@@ -100,13 +99,12 @@ public:
     void setValue(float v) { _value = v; ++_modifiedCount; }
     float getValue() const { return _value = v;}
 
-    int getModifiedCount() { return _modifiedCount; }
+    int getModifiedCount() const { return _modifiedCount; }
 
 protected:
     float _value = 0.0f;
     int _modifiedCount = 0;
 };
-
----
+~~~
 
  Prev: [VulkanSceneGraph Project](VulkanSceneGraphProject.md)| Next: [Building VulkanSceneGraph projeects and exercises](BuildingVulkanSceneGraph.md)
