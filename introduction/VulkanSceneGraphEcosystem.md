@@ -55,7 +55,7 @@ During the initial development of VulkanSceneGraph various 3rd party dependencie
 * Provide classes focused just on the needs of the VulkanSceneGraph users
 * Avoid the glue code required to bring different libraries to work well together
 * Keep memory and CPU overhead to a minimum
-* Keep dependencies to a minimum to avoid ***Dependency Hell**
+* Keep dependencies to a minimum to avoid ***Dependency Hell***
 * Keep licensing simple and permissive
 
 An example how local implementations can achieve what we need with far less code can be seen looking the glm maths library. It's a header only library with over 63,000 lines of code.  The VulkanSceneGraph has all GLSL style vector, quaternion and matrix functionality it needs in less than 3,000 lines of code. The whole code base has 57,000 lines of code for it's headers and source, and it has a scene graph, Vulkan integration, cross plarform windoing, viewer classes, serialization support and much more.
@@ -77,4 +77,4 @@ The additional VulkanSceneGraph projects add their own dependencies:
 
 ---
 
- Prev: [Vulkan](Vulkan.md)| Next: [VulkanSceneGraph Library](VulkanSceneGraphLibrary.md)
+ Prev: [VulkanScenegraph Projects](VulkanSceneGraphProject.md)| Next: [VulkanSceneGraph Library](VulkanSceneGraphLibrary.md)
