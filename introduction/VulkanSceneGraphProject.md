@@ -84,6 +84,13 @@ During the initial development of VulkanSceneGraph various 3rd party dependencie
 
 An example how local implementations can achieve what we need with far less code can be seen looking the glm maths library. It's a header only library with over 63,000 lines of code.  The VulkanSceneGraph has all GLSL style vector, quaternion and matrix functionality it needs in less than 3,000 lines of code. The whole code base has 57,000 lines of code for it's headers and source, and it has a scene graph, Vulkan integration, cross plarform windoing, viewer classes, serialization support and much more.
 
+## 3rd party dependencies that add value
+
+The VulkanSceneGraph library uses Vulkan, C++17 and CMake as external dependencies. The Vulkan C headers are used rather then the Vulkan C++ header as the later is unncessary as the Vulkan scene graph provides it's own encapsulation of Vulkan objects.
+
+For runtime shader compilation support the [glslang](https://github.com/KhronosGroup/glslang) library is built internally as a submodule, this is compiled in by default but can be toggled off by setting the CMake VSG_SUPPORTS_ShaderCompiler variable to 0 before building the soruce.
+
+
 ---
 
  Prev: [Vulkan](Vulkan.md)| Next: [VulkanSceneGraph Library](VulkanSceneGraphLibrary.md)
