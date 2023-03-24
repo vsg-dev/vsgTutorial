@@ -1,6 +1,6 @@
 ---
 layout: page
-title: VulkanSceneGraph - Guiding Principles
+title: Guiding Principles
 permalink: /introduction/GuidingPrinciples
 ---
 
