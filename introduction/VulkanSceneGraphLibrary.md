@@ -33,6 +33,26 @@ Application class directories:
 
 The sections of the vsgTutorial are grouped in this way so as you work through you'll be introduced to [Foundational](../foundations.md), [Scene Graph](../scenegraph.md) and [Application](../application.md) areas in turn.
 
+# Conventions
+
+All VulkanSceneGraph projects follow the following naming convnetions :
+| Project | Library Name | Namesapce |
+| VulkanSceneGraph | vsg | vsg:: |
+| vsgXchange | vsgXchange | vsgXchange:: |
+| vsgImGui | vsgImGui | vsgImGui:: |
+| vsgQt | vsgQt | vsgQt:: |
+
+All Vulkan related classes in the VulkanSceneGraph follow the naming conventions vkFeature -> vsg::features, for example:
+| Vulkan | VulkanSceneGraph |
+| vkInstance | vsg::Instance |
+| vkPhysicalDevice | vsg::PhysicalDevice | 
+| vkDevice | vsg::Device |
+| vkFramebuffer | vsg::Framebuffer |
+| vkSurface | vsg::Surface |
+
+
+
+
 ---
 
  Prev: [VulkanSceneGraph Project](VulkanSceneGraphProject.md)| Next: [Building VulkanSceneGraph projeects and exercises](BuildingVulkanSceneGraph.md)
