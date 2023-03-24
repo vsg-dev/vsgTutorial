@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Performanmce Principles
+title: Performance Principles
 permalink: /introduction/PerformancePrinciples
 ---
 
