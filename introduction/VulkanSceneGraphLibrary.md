@@ -56,9 +56,9 @@ All Vulkan related classes in the VulkanSceneGraph follow the naming conventions
 
 The class and variable naming conventions is predominatly CamelCase but as there are cases where we use snake_case. If a function/template or struct mirrors a Standard C++ feature then snake_case may be used.  For the GLSL inspired math support structs are used and have a leading lower case letter i.e. vsg::vec3 and vsg::mat4.
 
-## Public vs Protected/Private scope and naming convention:
+## Public/Protected/Private scope conventions
 
-Classes in the VulkanSceneGraph predominatly follow the declaration of scope in order of public interface through to internal implementation details. The naming of public members variables and methods follow camelCase while protected and private members variables and methods are prefixed with a _ so that their roles can be seen in the declaration and implementation.  
+Classes in the VulkanSceneGraph predominatly follow the declaration of scope in order of public interface through to internal implementation details. The naming of public members variables and methods follow camelCase while protected and private members variables and methods are prefixed with a _ so that their roles can be seen in the declaration and implementation.
 
 For the same reasons that headers and source files are kept in distinct include and src directories, this convention is used to make it clear to end users and to implementers that public facing variables and methods are special, as users will set, get and call them their naming and types need to be more refined and maintained over time. While the protected and private members are implementation deatils that may be more subject to change.
 
