@@ -30,5 +30,5 @@ The end result is scene graph traversals are around 10 times faster than the equ
 
 ---
 
-Prev: [Guiding Principles](GuidingPrinciples.md) | Next: [Ecosystem](Ecosystem.md)
+Prev: [Development Principles](DevelopmentPrinciples.md) | Next: [Ecosystem](Ecosystem.md)
  

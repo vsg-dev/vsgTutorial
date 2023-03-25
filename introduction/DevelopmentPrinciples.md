@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Guiding Principles
-permalink: /introduction/GuidingPrinciples
+title: Development Principles
+permalink: /introduction/DevelopmentPrinciples
 ---
 
 The VulkanSceneGraph Project goal is to make the development of high performance graphics and compute application quick and easy.  Vulkan provides an excellent base for achieving high performance but is low level and complicated to use, simply wrapping a C API in C++ is not sufficient for application developer needs, a collection of high level features that make development easy is what is required. The ***Vulkan Made Easy*** tag line was adopted for the vsg-dev github account as a daily reminder of our the projects fundamental goal.

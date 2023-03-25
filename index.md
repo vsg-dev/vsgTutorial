@@ -15,7 +15,7 @@ Introduction:
 1. [Low level APIs](introduction/LowLevelAPIs.md)
 1. [Vulkan](introduction/Vulkan.md)
 1. [High Level APIs](introduction/HighLevelAPIs.md)
-1. [Guiding Principles](introduction/GuidingPrinciples.md)
+1. [Development Principles](introduction/DevelopmentPrinciples.md)
 1. [Performance Principles](introduction/PerformancePrinciples.md)
 1. [VulkanSceneGraph Ecosystem](introduction/Ecosystem.md)
 1. [VulkanSceneGraph Library](introduction/VulkanSceneGraphLibrary.md)
