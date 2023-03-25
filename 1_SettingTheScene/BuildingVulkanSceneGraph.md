@@ -68,4 +68,4 @@ The use of CMake config files really simplifies the inclusion of VulkanSceneGrap
 
 
 
-Prev: [VulkanSceneGraph Library](VulkanSceneGraphLibrary.md) | Next : [Foundations](../foundations.md)
+Prev: [VulkanSceneGraph Library](VulkanSceneGraphLibrary.md) | Next : [Foundations](../2_Foundations/index.md))
