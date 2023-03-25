@@ -28,11 +28,11 @@ plugins:
   - jekyll-feed
 
 header_pages:
-  - SettingTheScene/index.md
-  - Foundations/index.md
-  - SceneGraph/index.md
-  - Application/index.md
-  - DevelopingSkills/index.md
+  - 1_SettingTheScene/index.md
+  - 2_Foundations/index.md
+  - 3_SceneGraph/index.md
+  - 4_Application/index.md
+  - 5_DevelopingSkills/index.md
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
