@@ -23,5 +23,5 @@ Nodes - internal nodes of the scene graph,  Geometry - meshes, State - shaders, 
 4. Application  
 Viewer - creating application viewer, Utilities - operating on the scene graph, Threading - different ways of threading.
 
-Chapter 5: Developing Skills  
+5. Developing Skills  
 Trouble Shooting - debugging VulkanSceneGraph applications, Optimizaton - how to improve performance & low power consumption.
