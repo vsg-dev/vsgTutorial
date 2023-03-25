@@ -30,7 +30,7 @@ plugins:
 header_pages:
   - SettingTheScene/index.md
   - Foundations/index.md
-  - Scenegraph/index.md
+  - SceneGraph/index.md
   - Application/index.md
   - DevelopingSkills/index.md
 
