@@ -45,9 +45,9 @@ Also hosted on vsg-dev are more specialist projects:
 
 ## 3rd party dependencies
 
-The VulkanSceneGraph library uses Vulkan, C++17 and CMake as external dependencies. The Vulkan C headers are used rather then the Vulkan C++ header which is unncessary as the Vulkan scene graph provides it's own encapsulation of Vulkan objects in a way that is coherent with how they are used in the scene graph.
+The VulkanSceneGraph library uses Vulkan, C++17 and CMake as external dependencies. The Vulkan C headers are used rather then the Vulkan C++ header which is unnecessary as the Vulkan scene graph provides it's own encapsulation of Vulkan objects in a way that is coherent with how they are used in the scene graph.
 
-For runtime shader compilation support the [glslang](https://github.com/KhronosGroup/glslang) library, orginally an optionally external dependency, but since VulkanSceneGraph-1.0.3 is now built internally as a submodule, this is compiled in by default but can be toggled off by setting the CMake VSG_SUPPORTS_ShaderCompiler variable to 0 before building the source. Compiling glslang within the VulkanSceneGraph library resolved problems with inconsistent 3rd party packaging of glslang, so now users can have seamlessly experience across platforms.
+For runtime shader compilation support the [glslang](https://github.com/KhronosGroup/glslang) library, originally an optionally external dependency, but since VulkanSceneGraph-1.0.3 is now built internally as a submodule, this is compiled in by default but can be toggled off by setting the CMake VSG_SUPPORTS_ShaderCompiler variable to 0 before building the source. Compiling glslang within the VulkanSceneGraph library resolved problems with inconsistent 3rd party packaging of glslang, so now users can have seamlessly experience across platforms.
 
 The additional VulkanSceneGraph projects add their own dependencies:
 

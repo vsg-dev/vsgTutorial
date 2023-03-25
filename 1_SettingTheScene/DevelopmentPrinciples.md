@@ -33,9 +33,9 @@ Work follows a cycle starting at the centre and the moving around and outward fo
 
 ## Only high value dependencies
 
-The VulkanSceneGraph library dpendency only on C++17, CMake and Vulkan as external dependencies. The Vulkan C headers are used rather then the Vulkan C++ header which is unncessary as the Vulkan scene graph provides it's own encapsulation of Vulkan objects in a way that is coherent with how they are used in the scene graph.
+The VulkanSceneGraph library dpendency only on C++17, CMake and Vulkan as external dependencies. The Vulkan C headers are used rather then the Vulkan C++ header which is unnecessary as the Vulkan scene graph provides it's own encapsulation of Vulkan objects in a way that is coherent with how they are used in the scene graph.
 
-For runtime shader compilation support the [glslang](https://github.com/KhronosGroup/glslang) library, orginally an optionally external dependency, but since VulkanSceneGraph-1.0.3 is now built internally as a submodule, this is compiled in by default but can be toggled off by setting the CMake VSG_SUPPORTS_ShaderCompiler variable to 0 before building the source. Compiling glslang within the VulkanSceneGraph library resolved problems with inconsistent 3rd party packaging of glslang, so now users can have seamlessly experience across platforms.
+For runtime shader compilation support the [glslang](https://github.com/KhronosGroup/glslang) library, originally an optionally external dependency, but since VulkanSceneGraph-1.0.3 is now built internally as a submodule, this is compiled in by default but can be toggled off by setting the CMake VSG_SUPPORTS_ShaderCompiler variable to 0 before building the source. Compiling glslang within the VulkanSceneGraph library resolved problems with inconsistent 3rd party packaging of glslang, so now users can have seamlessly experience across platforms.
 
 During the initial development of VulkanSceneGraph various other 3rd party dependencies, like gm and glfw, were considered for features like maths and windowing, but in each of these cases it was decided to implement the required features within the project rather than add an external dependency.  The reasons for implementing the functionality within the project:
 
