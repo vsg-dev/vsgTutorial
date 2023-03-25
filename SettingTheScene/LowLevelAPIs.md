@@ -40,4 +40,4 @@ In Feb. 2018 MoltenVK library is released enabling Vulkan to run on top of Metal
 
 ---
 
-Prev :[Introduction](../introduction.md) | Next :[Vulkan](Vulkan.md)
+Prev :[Introduction](index.md) | Next :[Vulkan](Vulkan.md)
