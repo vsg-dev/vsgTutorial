@@ -12,16 +12,16 @@ The goal of this tutorial is to teach developers how to use the [VulkanSceneGrap
 Each chapter of the tutorial is coupled with exercises so that developers can learn about each topic then test out what they have learned. The topics covered are:
 
 1. [Setting The Scene](SettingTheScene.md)  
-Introduction to low and high level APIs, the software design and performance preciples used in development of the VulkanSceneGraph, the ecosystem build up up around the project, high level features and conventions you'll get with the core VulkanSceneGraph library and wraps up with how to build the software and run the first exercise - a scene graph take on hello world.
+Introduction to low and high level APIs , the software design and performance preciples used in development of the VulkanSceneGraph, the ecosystem build up up around the project, high level features and conventions you'll get with the core VulkanSceneGraph library and wraps up with how to build the software and run the first exercise - a scene graph take on hello world.
 
 2. Fundations  
-This chaper covers the foundational base classes, memory management, maths and IO support that the rest of the scene graph functionality is built upon.
+This chapter covers the foundational base classes, memory management, maths and IO support that the rest of the scene graph functionality is built upon.
 
 3. Scene Graph  
-Nodes - internal nodes of the scene graph,  Geometry - meshes, State - shaders, textures, uniforms.
+This chapter introduces the scene graph classes - the internal nodes through the geometry and state leaves.
 
 4. Application  
-Viewer - creating application viewer, Utilities - operating on the scene graph, Threading - different ways of threading.
+This chapter focuses on application level classes - the viewer, windows, views, cameras, event handling, rendering loop, event handling and threading.
 
 5. Developing Skills  
-Trouble Shooting - debugging VulkanSceneGraph applications, Optimizaton - how to improve performance & low power consumption.
+Final chapter wraps up with guidance on trouble shooting and debugging VulkanSceneGraph applications, through to how to improve performance & low power consumption.
