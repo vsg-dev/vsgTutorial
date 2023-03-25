@@ -29,10 +29,10 @@ plugins:
 
 header_pages:
   - SettingTheScene/index.md
-  - foundations.md
-  - scenegraph.md
-  - application.md
-  - skills.md
+  - Foundations/index.md
+  - Scenegraph/index.md
+  - Application/index.md
+  - DevelopingSkills/index.md
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
