@@ -7,11 +7,11 @@ layout: home
 
 **CURRENTLY IN DEVELOPMENT : Early stage of development so expect missing sections and rough and ready state.**
 
-The goal of this tutorial is to teach developers how to use the [VulkanSceneGraph](https://github.com/vsg-dev/VulkanSceneGraph) effectively in their graphical and compute applications. The tutorial assumes developers have prior knowledge of using CMake and C++ to build and write applications.  Knowledge of scene graphs, real-time graphics and Vulkan is not assumed, though teaching real-time graphics and Vulkan at depth is beyond the scope of this tutorial, links to 3rd party resources for further learnning will be provided.
+The goal of this tutorial is to teach developers how to use the [VulkanSceneGraph](https://github.com/vsg-dev/VulkanSceneGraph) effectively in their graphics and compute applications. The tutorial assumes developers have prior knowledge of using CMake and C++ to build and write applications.  Knowledge of scene graphs, real-time graphics and Vulkan are not assumed, though teaching real-time graphics and Vulkan at depth is beyond the scope of this tutorial, links to 3rd party resources for further learnning will be provided.
 
-The tutorial is composed of series of presententations that are coupled with exercises so that developers can learn about each topic then test out what they have learned. The topics covered are:
+Each chapter of the tutorial is coupled with exercises so that developers can learn about each topic then test out what they have learned. The topics covered are:
 
-Setting The Scene:
+Chapter 1: [Setting The Scene](SettingTheScene.md)
 1. [Low level APIs](SettingTheScene/LowLevelAPIs.md)
 1. [Vulkan](SettingTheScene/Vulkan.md)
 1. [High Level APIs](SettingTheScene/HighLevelAPIs.md)
@@ -21,21 +21,21 @@ Setting The Scene:
 1. [VulkanSceneGraph Library](SettingTheScene/VulkanSceneGraphLibrary.md)
 1. [Building the VulkanScenegraph projects and vsgTutorial exercises](SettingTheScene/BuildingVulkanSceneGraph.md)
 
-Fundations:
+Chapter 2: Fundations
 1. Core classes - smart pointers, Objects and Allocators
 1. Vector maths - GLSL style vectors, matrices
 1. IO - loading/saving images and nodes
 
-Scene Graph:
+Chapter 3: Scene Graph
 1. Nodes - internal nodes of the scene graph
 1. Geometry - meshes
 1. State - shaders, textures, uniforms
 
-Application:
+Chapter 4: Application
 1. Viewer - creating application viewer
 1. Utilities - operating on the scene graph
 1. Threading - different ways of threading
 
-Developing Skills:
+Chapter 5: Developing Skills
 1. Trouble Shooting - debugging VulkanSceneGraph applications
 1. Optimizaton - how to improve performance & low power consumption
