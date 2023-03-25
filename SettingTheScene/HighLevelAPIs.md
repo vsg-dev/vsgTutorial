@@ -1,7 +1,7 @@
 ---
 layout: page
 title: High Level APIs
-permalink: /introduction/HighLevelAPIs
+permalink: /SettingTheScene/HighLevelAPIs
 ---
 
 Developers wishing to add graphics capabilities to their applications have to either deal directly with the low APIs to drive the graphics and compute hardware, or choose from a collection of higher level APIs that are more focused on the needs of application developers than the underlying low level APIs. A good high level APIs will not only enable developer to be more productive but also provide better out of the box performance and visual quality, with the high level API packaging up the expertise and time put in by specialists in high performance graphics and compute.

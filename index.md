@@ -11,15 +11,15 @@ The goal of this tutorial is to teach developers how to use the [VulkanSceneGrap
 
 The tutorial is composed of series of presententations that are coupled with exercises so that developers can learn about each topic then test out what they have learned. The topics covered are:
 
-Introduction:
-1. [Low level APIs](introduction/LowLevelAPIs.md)
-1. [Vulkan](introduction/Vulkan.md)
-1. [High Level APIs](introduction/HighLevelAPIs.md)
-1. [Development Principles](introduction/DevelopmentPrinciples.md)
-1. [Performance Principles](introduction/PerformancePrinciples.md)
-1. [VulkanSceneGraph Ecosystem](introduction/Ecosystem.md)
-1. [VulkanSceneGraph Library](introduction/VulkanSceneGraphLibrary.md)
-1. [Building the VulkanScenegraph projects and vsgTutorial exercises](introduction/BuildingVulkanSceneGraph.md)
+Setting The Scene:
+1. [Low level APIs](SettingTheScene/LowLevelAPIs.md)
+1. [Vulkan](SettingTheScene/Vulkan.md)
+1. [High Level APIs](SettingTheScene/HighLevelAPIs.md)
+1. [Development Principles](SettingTheScene/DevelopmentPrinciples.md)
+1. [Performance Principles](SettingTheScene/PerformancePrinciples.md)
+1. [VulkanSceneGraph Ecosystem](SettingTheScene/Ecosystem.md)
+1. [VulkanSceneGraph Library](SettingTheScene/VulkanSceneGraphLibrary.md)
+1. [Building the VulkanScenegraph projects and vsgTutorial exercises](SettingTheScene/BuildingVulkanSceneGraph.md)
 
 Fundations:
 1. Core classes - smart pointers, Objects and Allocators

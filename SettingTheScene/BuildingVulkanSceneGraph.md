@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Building VulkanSceneGraph software
-permalink: /introduction/BuildingVulkanSceneGraph
+permalink: /SettingTheScene/BuildingVulkanSceneGraph
 ---
 
 To conclude this Introduction section we'll look at building the VulkanSceneGraph projects and minimal stand alone **hello world** application.

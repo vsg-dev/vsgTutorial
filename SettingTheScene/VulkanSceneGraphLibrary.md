@@ -1,7 +1,7 @@
 ---
 layout: page
 title: VulkanSceneGraph Library
-permalink: /introduction/VulkanSceneGraphLibrary
+permalink: /SettingTheScene/VulkanSceneGraphLibrary
 ---
 
 The [VulkanSceneGraph library](https://github.com/vsg-dev/VulkanSceneGraph/) provides the features that will be common to all graphics & compute applications - creating a viewer, windows, scene graph, reading/writing data, creating Vulkan objects and recording Vulkan commands, synchronizing with Vulkan processes and CPU threads, 3d vector maths and common utilities like computing bounds and intersection test and shader composition and cmpilation. 

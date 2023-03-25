@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Performance Principles
-permalink: /introduction/PerformancePrinciples
+permalink: /SettingTheScene/PerformancePrinciples
 ---
 
 Efficiency of the design and implementation is critical to the projects success so took centre stage when evaluation different approaches to design and implementation, with the asperation of making each VulkanSceneGraph faetures 10 X faster than the equivilant feature in the OpenSceneGraph. Understanding what is happening in hardware to the data and how it is processed in each stage of the application is crucial to achieving this goal.

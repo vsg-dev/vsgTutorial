@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Low Level APIs
-permalink: /introduction/LowLevelAPIs
+permalink: /SettingTheScene/LowLevelAPIs
 ---
 
 Low level graphics and compute APIs provide an interface with hardware drivers that manage data transfers and processing on highly parallised graphics and compute hardware. Low level APIs may be tied to specific operatings systems and/or specific sets of hardware, through to being capable of running on multiple operation systems and across a wide range of hardware.  OpenGL and Vulkan are examples of the later that are OS agnostic and provide extensible hardware abstraction.

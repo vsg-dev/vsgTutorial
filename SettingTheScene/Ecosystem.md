@@ -1,7 +1,7 @@
 ---
 layout: page
 title: VulkanSceneGraph Ecosystem
-permalink: /introduction/Ecosystem
+permalink: /SettingTheScene/Ecosystem
 ---
 
 One of the weakensses of the OpenSceneGraph project was, while it started as small scene graph library, step by step it encompassed a wider range of features and depenedenices. While the OpenSceneGraph stops short of providing all the functionality of Game Engine it is bloated for the needs of many application develolopers.  Early in the VulkanSceneGraph project the decision was made to create an ecosystem builton a general purpose scene graph library and a collection of companion libraries each focused on specific features that users can easily compile and use in their applications if they need them.

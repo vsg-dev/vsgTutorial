@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Vulkan - graphics and compute API
-permalink: /introduction/Vulkan
+permalink: /SettingTheScene/Vulkan
 ---
 
 The standards body [Khronos](https://www.khronos.org/) releases, the successor to OpenGL, Vulkan-1.0 in February 2016, ushering in next generation of Open, Cross Platform API for graphics and compute.
