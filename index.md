@@ -11,31 +11,17 @@ The goal of this tutorial is to teach developers how to use the [VulkanSceneGrap
 
 Each chapter of the tutorial is coupled with exercises so that developers can learn about each topic then test out what they have learned. The topics covered are:
 
-Chapter 1: [Setting The Scene](SettingTheScene.md)
-1. [Low level APIs](SettingTheScene/LowLevelAPIs.md)
-1. [Vulkan](SettingTheScene/Vulkan.md)
-1. [High Level APIs](SettingTheScene/HighLevelAPIs.md)
-1. [Development Principles](SettingTheScene/DevelopmentPrinciples.md)
-1. [Performance Principles](SettingTheScene/PerformancePrinciples.md)
-1. [VulkanSceneGraph Ecosystem](SettingTheScene/Ecosystem.md)
-1. [VulkanSceneGraph Library](SettingTheScene/VulkanSceneGraphLibrary.md)
-1. [Building the VulkanScenegraph projects and vsgTutorial exercises](SettingTheScene/BuildingVulkanSceneGraph.md)
+1. [Setting The Scene](SettingTheScene.md)  
+Introduction to low and high level APIs, the software design and performance preciples used in development of the VulkanSceneGraph, the ecosystem build up up around the project, high level features and conventions you'll get with the core VulkanSceneGraph library and wraps up with how to build the software and run the first exercise - a scene graph take on hello world.
 
-Chapter 2: Fundations
-1. Core classes - smart pointers, Objects and Allocators
-1. Vector maths - GLSL style vectors, matrices
-1. IO - loading/saving images and nodes
+2. Fundations  
+This chaper covers the foundational base classes, memory management, maths and IO support that the rest of the scene graph functionality is built upon.
 
-Chapter 3: Scene Graph
-1. Nodes - internal nodes of the scene graph
-1. Geometry - meshes
-1. State - shaders, textures, uniforms
+3. Scene Graph  
+Nodes - internal nodes of the scene graph,  Geometry - meshes, State - shaders, textures, uniforms.
 
-Chapter 4: Application
-1. Viewer - creating application viewer
-1. Utilities - operating on the scene graph
-1. Threading - different ways of threading
+4. Application  
+Viewer - creating application viewer, Utilities - operating on the scene graph, Threading - different ways of threading.
 
-Chapter 5: Developing Skills
-1. Trouble Shooting - debugging VulkanSceneGraph applications
-1. Optimizaton - how to improve performance & low power consumption
+Chapter 5: Developing Skills  
+Trouble Shooting - debugging VulkanSceneGraph applications, Optimizaton - how to improve performance & low power consumption.
