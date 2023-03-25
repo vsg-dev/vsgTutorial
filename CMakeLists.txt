@@ -5,4 +5,4 @@ project(vsgTutorial)
 # build all examples into the bin directory
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
 
-add_subdirectory(01_introduction/exercises)
+add_subdirectory(SettingTheScene/01_hello_world)
