@@ -28,7 +28,7 @@ plugins:
   - jekyll-feed
 
 header_pages:
-  - SettingTheScene.md
+  - SettingTheScene/index.md
   - foundations.md
   - scenegraph.md
   - application.md
