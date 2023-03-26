@@ -36,7 +36,7 @@ Next install dependencies, under debian these are:
 # dependencies useful for building the VulkanSceneGraph
 sudo apt-get install git g++
 sudo apt-get install cmake cmake-curses-gui
-sudo apt-get install libvulkan-dev vulant-tools vulkan-validationlayers
+sudo apt-get install libvulkan-dev vulkan-tools vulkan-validationlayers
 
 # dependencies used by vsgXchange
 sudo apt-get install libassimp-dev libfreetype-dev libopenexr-dev
