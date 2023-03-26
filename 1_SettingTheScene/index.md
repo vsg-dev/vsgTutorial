@@ -15,6 +15,7 @@ This first part introduce developers to world of Vulkan, Scene Graphs, and how t
 1. [VulkanSceneGraph Library](VulkanSceneGraphLibrary.md)
 1. [Building the VulkanScenegraph projects and vsgTutorial exercises](BuildingVulkanSceneGraph.md)
 
+<!--
 With the final section of this chapter you will be able to run the hello world exercise:
 
 ![Hello World]({https://www.youtube.com/watch?v=O0ONM_FcFPo})
@@ -28,3 +29,5 @@ Another attempt
 ---
 
 <iframe width="420" height="315" src="https://www.youtube.com/watch?v=O0ONM_FcFPo" frameborder="0" allowfullscreen="allowfullscreen"> </iframe>
+
+-->
