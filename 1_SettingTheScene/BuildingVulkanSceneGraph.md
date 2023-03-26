@@ -18,18 +18,21 @@ First we'll set up some env var, for easy of use you may wish to put this into a
 # env vars useful for locating source projects, installed libraries and binaries
 export INSTALL_DIR = ~/Install
 export PROJECT_DIR = ~/Projects
-export VULKAN_SDK = ${INSTALL_DIR}/VulkanSDK
-export PATH = ${PATH}:${INSTALL_DIR}/bin:${VULKAN_SDK}/bin
+export PATH = ${PATH}:${INSTALL_DIR}/bin
 export LD_LIBRARY_PATH = ${D_LIBRARY_PATH}:${INSTALL_DIR}/lib
 
 # env vars that are useful for finding example data, and locating where to cache files downloading from http during database paging
 export VSG_FILE_PATH = ${PROJECT_DIR}/vsgExamples/data
 export VSG_FILE_CACHE = ${PROJECT_DIR}/vsgFileCache
+
+# only required if you use VulkanSDK rather than installing vulkan from distro repositories
+export VULKAN_SDK = ${INSTALL_DIR}/VulkanSDK
+export PATH = ${PATH}:${VULKAN_SDK}/bin
 ~~~
 
-Next install dependencies, under debian:
-~~~ sh
+Next install dependencies, under debian these are:
 
+~~~ sh
 # dependencies useful for building the VulkanSceneGraph
 sudo apt-get install git g++
 sudo apt-get install cmake cmake-curses-gui
@@ -56,6 +59,30 @@ git clone https://github.com/vsg-dev/VulkanSceneGraph.git
 git clone https://github.com/vsg-dev/vsgXchange.git
 git clone https://github.com/vsg-dev/vsgExamples.git
 git clone https://github.com/vsg-dev/vsgTutorial.git
+~~~
+
+To generate the make system, build and install:
+
+~~~ sh
+cd VulkanSceneGraph
+cmake . -DCMAKE_INSTALL_PREFIX=~/${INSTALL_DIR}
+make -j 16
+make install
+
+cd ../vsgXchange
+cmake . -DCMAKE_INSTALL_PREFIX=~/${INSTALL_DIR}
+make -j 16
+make install
+
+cd ../vsgExamples
+cmake . -DCMAKE_INSTALL_PREFIX=~/${INSTALL_DIR}
+make -j 16
+make install
+
+cd ../vsgTutorial
+cmake . -DCMAKE_INSTALL_PREFIX=~/${INSTALL_DIR}
+make -j 16
+make install
 ~~~
 
 The use of CMake config files really simplifies the inclusion of VulkanSceneGraph project, the hello world [CMakeLists.txt](01_hello_world/CMakeLists.txt) is less than 10 lines!
