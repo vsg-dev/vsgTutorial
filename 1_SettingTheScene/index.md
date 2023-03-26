@@ -17,7 +17,13 @@ This first part introduce developers to world of Vulkan, Scene Graphs, and how t
 
 With the final section of this chapter you will be able to run the hello world exercise:
 
-![Hello World][{https://www.youtube.com/watch?v=O0ONM_FcFPo}]
+![Hello World]({https://www.youtube.com/watch?v=O0ONM_FcFPo})
+
+---
+
+Another attempt
+
+![Hello World2](https://www.youtube.com/watch?v=O0ONM_FcFPo)
 
 ---
 
