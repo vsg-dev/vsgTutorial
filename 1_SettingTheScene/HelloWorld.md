@@ -30,14 +30,12 @@ To run the application:
 ./helloworld
 ~~~
 
-The hellow world exercise is just single main function that has three sections to it, first we create the scene graph, second create and setup the viewer to render the scene graph and the final section executes the frame loop which does the handling of GUI events and rendering.
-<!--
-Load the scene graph:
-~~~ cpp
-{% include includelines filename='../1_SettingTheScene/01_hello_world/hello_world.cpp' start=1 count=25 %}
-~~~
--->
-Full code:
+The hellow world exercise is just single main function that has three sections to it:
+
+1. create the scene graph
+1. create and setup the viewer to render the scene graph
+1. executes the frame loop which does the handling of GUI events and rendering.
+
 ~~~ cpp
 {% include_relative 01_hello_world/hello_world.cpp %}
 ~~~
