@@ -20,7 +20,7 @@ This chaper introduces developers to world of Vulkan, Scene Graphs, and how the 
 
 With completion of this chapter you will be able run the hellow world application:
 
-![Hello World](../images/hello_world.png)
+![](../images/hello_world.png)
 
 ---
 
