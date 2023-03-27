@@ -18,7 +18,7 @@ This chaper introduces developers to world of Vulkan, Scene Graphs, and how the 
 1. [Building the VulkanScenegraph projects](BuildingVulkanSceneGraph.md)
 1. [Hello World](HelloWorld.md)
 
-With completion of this chapter you will be able run the hellow world application:
+With completion of this chapter you will be able run the Hello World application:
 
 ![](../images/hello_world.png)
 
