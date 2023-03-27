@@ -87,9 +87,9 @@ To test out examples:
 ~~~ sh
 vsgdraw
 vsgviewer models/lz.vsgt
-vsgdynamictexture
+vsgdynamictextures
 ~~~
 
 ---
 
-Prev: [VulkanSceneGraph Library](VulkanSceneGraphLibrary.md) | Next : [Hello World](H.md))
+Prev: [VulkanSceneGraph Library](VulkanSceneGraphLibrary.md) | Next : [Hello World](HelloWorld.md)
