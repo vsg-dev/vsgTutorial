@@ -18,6 +18,11 @@ This first part introduce developers to world of Vulkan, Scene Graphs, and how t
 1. [Building the VulkanScenegraph projects](BuildingVulkanSceneGraph.md)
 1. [Hello World](HelloWorld.md)
 
+
+With the final section of this chapter you will be able to run the hello world exercise:
+
+![Hello World](../images/hello_world.png)
+
 <!--
 With the final section of this chapter you will be able to run the hello world exercise:
 
