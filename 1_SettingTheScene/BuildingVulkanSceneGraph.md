@@ -36,13 +36,15 @@ Next install dependencies, under debian these are:
 # dependencies useful for building the VulkanSceneGraph
 sudo apt-get install git g++
 sudo apt-get install cmake cmake-curses-gui
+
+# install Vulkan and the validation layers, alternatively you can download and install the VulkanSDK, see below.
 sudo apt-get install libvulkan-dev vulkan-tools vulkan-validationlayers
 
 # dependencies used by vsgXchange
 sudo apt-get install libassimp-dev libfreetype-dev libopenexr-dev
 ~~~
 
-For Vulkan you can alternatively download the VulkanSDK download the VulkanSDK from [LunarG](https://vulkan.lunarg.com/sdk/home)
+If you want to use the VulanSDK instead of disto vulkan package you download it from [LunarG](https://vulkan.lunarg.com/sdk/home):
 
 ~~~ sh
 wget https://sdk.lunarg.com/sdk/download/1.3.239.0/linux/vulkansdk-linux-x86_64-1.3.239.0.tar.gz
@@ -92,7 +94,5 @@ The use of CMake config files really simplifies the inclusion of VulkanSceneGrap
 ~~~
 
 ---
-
-
 
 Prev: [VulkanSceneGraph Library](VulkanSceneGraphLibrary.md) | Next : [Foundations](../2_Foundations/index.md))
