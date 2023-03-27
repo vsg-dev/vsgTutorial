@@ -1,8 +1,6 @@
 #include <vsg/all.h>
 #include <vsgXchange/all.h>
 
-#include <iostream>
-
 int main(int, char**)
 {
     // create options object that is used to guide IO operations
