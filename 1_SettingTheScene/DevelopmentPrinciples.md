@@ -51,4 +51,4 @@ An example how local implementations can achieve what we need with far less code
 
 ---
 
- Prev: [High Level APIs](HighLevelAPIs.md)| Next: [Performance Principles](PerformancePrinciples.md)
+Prev: [High Level APIs](HighLevelAPIs.md)| Next: [Performance Principles](PerformancePrinciples.md)
