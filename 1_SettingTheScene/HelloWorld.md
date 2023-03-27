@@ -42,4 +42,4 @@ To run the application:
 
 ---
 
-Prev: [Building VulkanSceneGraph Software](BuildingVulkanSceneGraph.md) | Next : [Foundations](../2_Foundations/index.md)
+Prev: [Building VulkanSceneGraph Software](BuildingVulkanSceneGraph.md) | Next : [Next Chapter : Foundations](../2_Foundations/index.md)
