@@ -3,7 +3,9 @@
 
 int main(int, char**)
 {
+//
 // Section 1: Create the scene graph    
+//
     // create options object that is used to guide IO operations
     auto options = vsg::Options::create();
     options->add(vsgXchange::all::create());
@@ -13,7 +15,9 @@ int main(int, char**)
     scene->settings = vsg::createOpenStreetMapSettings(options);
     scene->readDatabase(options);
 
+//
 // Section 2 : Create and setup the Viewer, Window and compile Vulkan objects
+//
     // create the viewer and assign window(s) to it
     auto viewer = vsg::Viewer::create();
 
@@ -43,7 +47,9 @@ int main(int, char**)
     // compile all the the Vulkan objects and transfer data required to render the scene
     viewer->compile();
 
+//
 // Section 3 : execute the frame loop
+//
     while (viewer->advanceToNextFrame())
     {
         // pass any events into EventHandlers assigned to the Viewer
