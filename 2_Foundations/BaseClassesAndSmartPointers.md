@@ -13,7 +13,7 @@ Topics to cover:
 
 --- 
 
-To provide robust and high performance memory manangment the VulkanSceneGraph uses interusive renference counting and block memory allocation. While these features are built using C++17 features they differs from C++ built-in std::shared_ptr<> and new/delete, the motivation for providing local implementation of these features is purely to scalability and performnance by minimizing memory overhead and improving cache coherency.
+To provide robust and high performance memory manangment the VulkanSceneGraph uses intrusive renference counting and block memory allocation. While these features are built using C++17 features they differs from C++ built-in std::shared_ptr<> and new/delete, the motivation for providing local implementation of these features is purely for scalability and performnance by reducing memory overhead and improving cache coherency.
 
 ---
 
