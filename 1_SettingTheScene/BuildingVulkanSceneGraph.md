@@ -80,11 +80,6 @@ cd ../vsgExamples
 cmake . -DCMAKE_INSTALL_PREFIX=~/${INSTALL_DIR}
 make -j 16
 make install
-
-cd ../vsgTutorial
-cmake . -DCMAKE_INSTALL_PREFIX=~/${INSTALL_DIR}
-make -j 16
-make install
 ~~~
 
 The use of CMake config files really simplifies the inclusion of VulkanSceneGraph project, the hello world [CMakeLists.txt](01_hello_world/CMakeLists.txt) is less than 10 lines!
