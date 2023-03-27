@@ -24,12 +24,6 @@ cmake .
 make 
 ~~~
 
-To run the application:
-
-~~~ sh
-./helloworld
-~~~
-
 The hellow world exercise is just single main function that has three sections to it:
 
 1. create the scene graph
@@ -38,6 +32,12 @@ The hellow world exercise is just single main function that has three sections t
 
 ~~~ cpp
 {% include_relative 01_hello_world/hello_world.cpp %}
+~~~
+
+To run the application:
+
+~~~ sh
+./helloworld
 ~~~
 
 ---
