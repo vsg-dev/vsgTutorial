@@ -82,12 +82,6 @@ make -j 16
 make install
 ~~~
 
-The use of CMake config files really simplifies the inclusion of VulkanSceneGraph project, the hello world [CMakeLists.txt](01_hello_world/CMakeLists.txt) is less than 10 lines!
-
-~~~ cmake
-{% include_relative 01_hello_world/CMakeLists.txt %}
-~~~
-
 ---
 
-Prev: [VulkanSceneGraph Library](VulkanSceneGraphLibrary.md) | Next : [Hello World](HelloWorld.md))
+Prev: [VulkanSceneGraph Library](VulkanSceneGraphLibrary.md) | Next : [Hello World](H.md))
