@@ -14,7 +14,7 @@ This first part introduce developers to world of Vulkan, Scene Graphs, and how t
 1. [VulkanSceneGraph Ecosystem](Ecosystem.md)
 1. [VulkanSceneGraph Library](VulkanSceneGraphLibrary.md)
 1. [Building the VulkanScenegraph projects](BuildingVulkanSceneGraph.md)
-1. [Hello world](HelloWorld.md)
+1. [Hello World](HelloWorld.md)
 
 <!--
 With the final section of this chapter you will be able to run the hello world exercise:
