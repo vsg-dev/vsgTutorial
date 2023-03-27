@@ -4,6 +4,13 @@ title: Hello World
 permalink: /SettingTheScene/HelloWorld
 ---
 
+To download the tutorial exercises clone the vsgTutorial repository, this contains both the book contents and the exercises:
+~~~ sh
+cd ${PROJECT_DIR}
+git clone https://github.com/vsg-dev/vsgTutorial.git
+~~~
+
+
 To build the hello world exercise:
 
 ~~~ sh
