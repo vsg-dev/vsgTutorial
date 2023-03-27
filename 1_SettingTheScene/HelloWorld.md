@@ -34,7 +34,7 @@ The hellow world exercise is just single main function that has three sections t
 
 Load the scene graph:
 ~~~ cpp
-{% include includelines filename='1_SettingTheScene/01_hello_world/hello_world.cpp' start=1 count=25 %}
+{% include includelines filename='../1_SettingTheScene/01_hello_world/hello_world.cpp' start=1 count=25 %}
 ~~~
 
 Full code:
