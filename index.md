@@ -14,7 +14,7 @@ Each chapter of the tutorial is coupled with exercises so that developers can le
 1. [Setting The Scene](1_SettingTheScene/index.md) **First Draft**  
 We introduce you to world of scene graphs with a brief tour of low and high level APIs from IrisGL & Inventor to Vulkan & VulkanSceneGraph. The chapter then turns to the software design and performance principles used development of the VulkanSceneGraph, the ecosystem building up around the project, high level features and conventions you'll get with the core VulkanSceneGraph library and wraps up with how to build the software and run the first exercise - a scene graph take on hello world.
 
-2. [Fundations](2_Foundations/index.md) **To be written**  
+2. [Fundations](2_Foundations/index.md) **Currently being written.**  
 This chapter covers the foundational base classes, memory management, maths and IO support that the rest of the scene graph functionality is built upon.
 
 3. [Scene Graph](3_SceneGraph/index.md) **To be written**  
