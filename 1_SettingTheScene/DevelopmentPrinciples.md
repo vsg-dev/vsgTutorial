@@ -4,9 +4,9 @@ title: Development Principles
 permalink: /SettingTheScene/DevelopmentPrinciples
 ---
 
-The VulkanSceneGraph Project goal is to make the development of high performance graphics and compute application quick and easy.  Vulkan provides an excellent base for achieving high performance but is low level and complicated to use, simply wrapping a C API in C++ is not sufficient for application developer needs, a collection of high level features that make development easy is what is required. The ***Vulkan Made Easy*** tag line was adopted for the vsg-dev github account as a daily reminder of our the projects fundamental goal.
+The VulkanSceneGraph Project goal is to make the development of high performance graphics and compute application quick and easy.  Vulkan provides an excellent base for achieving high performance but is low-level and complicated to use, simply wrapping a C API in C++ is not sufficient for application developer needs, a collection of high-level features that make development easy is what is required. The ***Vulkan Made Easy*** tag line was adopted for the vsg-dev github account as a daily reminder of our the projects fundamental goal.
 
-The VulkanSceneGraph library is built upon the Scene Graph concept and is written specifically for Vulkan. Like Vulkan is the successor to OpenGL, one that has wholly different API and architecture but retains the fundamental goal of providing a low level, open, cross platform hardware abstraction, the VulkanSceneGarph is successor of the OpenSceneGraph, it's also an entirely different API and architecture but retains the fundenmtal goal of providing an open, cross patform high performance API for application developers.
+The VulkanSceneGraph library is built upon the Scene Graph concept and is written specifically for Vulkan. Like Vulkan is the successor to OpenGL, one that has wholly different API and architecture but retains the fundamental goal of providing a low-level, open, cross platform hardware abstraction, the VulkanSceneGarph is successor of the OpenSceneGraph, it's also an entirely different API and architecture but retains the fundenmtal goal of providing an open, cross patform high performance API for application developers.
 
 ## Productivity and Performance
 
@@ -51,4 +51,4 @@ An example how local implementations can achieve what we need with far less code
 
 ---
 
-Prev: [High Level APIs](HighLevelAPIs.md)| Next: [Performance Principles](PerformancePrinciples.md)
+Prev: [High-level APIs](HighLevelAPIs.md)| Next: [Performance Principles](PerformancePrinciples.md)
