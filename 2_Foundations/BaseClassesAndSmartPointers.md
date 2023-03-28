@@ -3,7 +3,7 @@ layout: page
 title: Foundations
 permalink: /foundations/BaseCalssesAndSmartPointers
 ---
-
+<!--
 Topics to cover:
 
 1. non intrusive vs intrusive reference counting
@@ -12,6 +12,7 @@ Topics to cover:
 1. vsg::Allocator
 
 --- 
+-->
 
 To provide robust, thread-safe, high performance memory manangment the VulkanSceneGraph uses intrusive reference counting and block memory allocation. The three main classes that provide this functionality are vsg::Object base class, the vsg::ref_ptr<> smart pointer and vsg::Allocator singleton. The vsg::Auxilary class and vsg::observer_ptr<> smart pointer provide additional meta data and weak pointer functionality.
 
