@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Foundations
-permalink: /foundations/BaseCalssesAndSmartPointers
+title: Base Classes and Smart Pointers
+permalink: /foundations/BaseClassesAndSmartPointers
 ---
 <!--
 Topics to cover:
