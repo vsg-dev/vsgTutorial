@@ -6,7 +6,7 @@ permalink: /foundations/
 
 **Currently being written.**
 
-This second part of the tutorial introduce developers to foundtainal classes and features that the scene graphs is built on. The topic is broken down into the following sections:
+This second part of the tutorial introduce developers to foundational classes and features that the rest of the VulkanSceneGraph classes are built upon. The topic is broken down into the following sections:
 
 1. [Base classes and smart pointers](BaseClassesAndSmartPointers.md) - foundation on efficient and robust memory management
 1. [Maths](Maths.md) - GLSL style maths classes and functions
