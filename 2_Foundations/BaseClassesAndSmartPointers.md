@@ -16,7 +16,7 @@ Topics to cover:
 
 To provide robust, thread-safe, high performance memory manangment the VulkanSceneGraph uses intrusive reference counting and block memory allocation. The three main classes that provide this functionality are vsg::Object base class, the vsg::ref_ptr<> smart pointer and vsg::Allocator singleton. The vsg::Auxilary class and vsg::observer_ptr<> smart pointer provide additional meta data and weak pointer functionality.
 
-## Intrusive vs non-instrucive reference counting
+## Intrusive vs non-instrusive reference counting
 
 Reference counting is widely used in application to facilitate robust sharing of objects allocated on the heap.  The two main approaches used in C++ applications are itrusive and on intrusive reference counting, each have strengths and weaknesses.
 
