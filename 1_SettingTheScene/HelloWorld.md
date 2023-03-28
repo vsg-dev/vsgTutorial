@@ -24,7 +24,7 @@ cmake .
 make 
 ~~~
 
-The hellow world exercise is just single main function that has three sections to it:
+The hello world exercise is just single main function that has three sections to it:
 
 1. create the scene graph
 1. create and setup the viewer to render the scene graph
