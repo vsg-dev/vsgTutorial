@@ -4,13 +4,13 @@ title: Development Principles
 permalink: /SettingTheScene/DevelopmentPrinciples
 ---
 
-The VulkanSceneGraph Project goal is to make the development of high performance graphics and compute application quick and easy.  Vulkan provides an excellent base for achieving high performance but is low-level and complicated to use, simply wrapping a C API in C++ is not sufficient for application developer needs, a collection of high-level features that make development easy is what is required. The ***Vulkan Made Easy*** tag line was adopted for the vsg-dev github account as a daily reminder of our the projects fundamental goal.
+The VulkanSceneGraph Project goal is to make the development of high performance graphics and compute application quick and easy.  Vulkan provides an excellent base for achieving high performance but is low-level and complicated to use. Simply wrapping a C API in C++ is not sufficient for application developers needs, a collection of high-level features that make development easy is what is required. The ***Vulkan Made Easy*** tag line was adopted for the vsg-dev github account as a daily reminder of our the projects fundamental goal.
 
-The VulkanSceneGraph library is built upon the Scene Graph concept and is written specifically for Vulkan. Like Vulkan is the successor to OpenGL, one that has wholly different API and architecture but retains the fundamental goal of providing a low-level, open, cross platform hardware abstraction, the VulkanSceneGarph is successor of the OpenSceneGraph, it's also an entirely different API and architecture but retains the fundenmtal goal of providing an open, cross patform high performance API for application developers.
+The VulkanSceneGraph library is built upon the Scene Graph concept and is written specifically for Vulkan. Like Vulkan is the successor to OpenGL, one that has wholly different API and architecture but retains the fundamental goal of providing a low-level, open, cross platform hardware abstraction, the VulkanSceneGarph is successor of the OpenSceneGraph, it's also an entirely different API and architecture but retains the fundamental goal of providing an open, cross patform high performance API for application developers.
 
 ## Productivity and Performance
 
-The underlying principles that guided the VulkanSceneGraph development are desire to enable application developers to be as ***Productive*** as possible while delivering the best ***Performance*** possible.  These two are often competing principles, to deliever both at the same time requires good engineering - one must continually strive to write better class interfaces and implemnentations, to seek out simple yet flexible and efficient solutions.
+The underlying principles that guided the VulkanSceneGraph development are desire to enable application developers to be as ***Productive*** as possible while delivering the best ***Performance*** possible.  These two are often competing principles, to deliver both at the same time requires good engineering - one must continually strive to write better class interfaces and implementations, to seek out simple yet flexible and efficient solutions.
 
 The process of refining the software to better meet the needs of application developers won't stop with the VulkanSceneGraph-1.0 release, as the software develops these guiding principles will remain and we'll keep striving to deliver on the matra Vulkan Made Easy.
 
@@ -47,7 +47,7 @@ During the initial development of VulkanSceneGraph various other 3rd party depen
 * Keep dependencies to a minimum to avoid ***Dependency Hell***
 * Keep licensing simple and permissive
 
-An example how local implementations can achieve what we need with far less code can be seen looking the glm maths library. It's a header only library with over 63,000 lines of code.  The VulkanSceneGraph has all GLSL style vector, quaternion and matrix functionality it needs in less than 3,000 lines of code. The VulkanSceneGraph code base has 57,000 lines of code for it's headers and source, and it has a scene graph, Vulkan integration, cross plarform windowing, viewer classes, serialization support and much more.
+An example how local implementations can achieve what we need with far less code can be seen looking at the glm maths library. Its a header only library with over 63,000 lines of code.  The VulkanSceneGraph has all GLSL style vector, quaternion and matrix functionality it needs in less than 3,000 lines of code. The VulkanSceneGraph code base has 57,000 lines of code for its headers and source, and it has a scene graph, Vulkan integration, cross plarform windowing, viewer classes, serialization support and much more.
 
 ---
 
