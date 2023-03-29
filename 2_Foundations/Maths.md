@@ -8,4 +8,4 @@ permalink: /foundations/Maths
 
 ---
 
-Prev: [Base classes and smart pointers](BaseClassesAndSmartPointers.md)| Next: [Visitors](Visitors.md)
+Prev: [Block memory management with vsg::Allocator](Allocator.md)| Next: [Visitors](Visitors.md)

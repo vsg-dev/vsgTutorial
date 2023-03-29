@@ -4,7 +4,7 @@ title: Base classes and smart pointers
 permalink: /foundations/BaseClassesAndSmartPointers
 ---
 
-To provide robust, thread-safe, high performance memory manangment the VulkanSceneGraph uses intrusive reference counting and block memory allocation. The three main classes that provide this functionality are vsg::Object base class, the vsg::ref_ptr<> smart pointer and vsg::Allocator singleton. The vsg::Auxilary class and vsg::observer_ptr<> smart pointer provide additional meta data and weak pointer functionality.
+To provide robust, thread-safe, high performance memory manangment the VulkanSceneGraph uses intrusive reference counting and block memory allocation. The three main classes that provide this functionality are vsg::Object base class, the vsg::ref_ptr<> smart pointer and vsg::Allocator singleton. The vsg::Auxilary class and vsg::observer_ptr<> smart pointer provide additional meta data and weak pointer functionality.  In this section we'll covert the vsg::Object base class and the vsg::ref_ptr<> smart pointer and cover the vsg::Auxiliary, observer_ptr<> and vsg::Allocator in the follow two sections.
 
 ## Intrusive vs non-instrusive reference counting
 
@@ -16,15 +16,12 @@ With intrusive reference counting the count is placed into the object, in the ca
 
 For the case of a scene graph we have a data structure where the internal nodes of the graph are primarily pointers to data objecs or other nodes in the scene graph, if you double the size of the pointer you close to double the size of internal nodes in the graph.  Increasing the size of the nodes means you require more memory and crucially can fit less nodes into cache which means more cache misses and lower CPU utilization.  Benchmarking done comparing the traversal speeds of scene graph uses std::shared_ptr<> vs one with vsg::ref_ptr<> show that the intrusive reference counted scene graph is 15% faster.
 
-## Block allocation vsg::Allocator
+## Using vsg::Object and ref_ptr<>
 
-TODO
 
-## Meta data, vsg::Auxiliary and vsg::observer_ptr<>
 
-TODO
 
 ---
 
-Prev: [Foundations](index.md)| Next: [Maths](Maths.md)
+Prev: [Foundations](index.md)| Next: [Meta data, vsg::Auxiliary and vsg::observer_ptr<>](Auxiliary_and_observer_ptr.md)
 
