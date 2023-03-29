@@ -8,5 +8,5 @@ TODO
 
 ---
 
-Prev: [Base classes and smart pointers](Object_base_class_and_ref_ptr.md)| Next: [Maths](Allocator.md)
+Prev: [Base classes and smart pointers](Object_base_class_and_ref_ptr.md)| Next: [vsg::Allocator](Allocator.md)
 
