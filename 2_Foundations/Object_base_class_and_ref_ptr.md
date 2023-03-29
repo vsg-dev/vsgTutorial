@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Base classes and smart pointers
+title: vsg::Object base class & vsg::ref_ptr<>
 permalink: /foundations/BaseClassesAndSmartPointers
 ---
 
