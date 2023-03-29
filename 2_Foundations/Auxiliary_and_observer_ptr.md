@@ -4,7 +4,7 @@ title: Meta data, vsg::Auxiliary and vsg::observer_ptr<>
 permalink: /foundations/Auxiliary
 ---
 
-TODO
+**Sorry, not yet written.**
 
 ---
 
