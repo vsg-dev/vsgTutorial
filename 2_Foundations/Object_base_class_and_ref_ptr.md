@@ -99,7 +99,7 @@ Addressing memory leaks:
 
 // 3. Using ref_ptr<>
 {
-    auto ptr = MyClass:create(); // allocate MyClass on heap, assign to ref_ptr<MyClass> which increments it's referenceCount.
+    auto ptr = MyClass::create(); // allocate MyClass on heap, assign to ref_ptr<MyClass> which increments it's referenceCount.
 
     //
     // do the processing we want
@@ -150,7 +150,7 @@ other_ptr->unref(); // decrement refenreceCount to 0 and delete MyClass
 // 6. Using ref_ptr<>
 vsg::ref_ptr<MyClass> other_ptr;
 {
-    auto ptr = MyClass:create(); // allocate MyClass on heap, assign to ref_ptr<MyClass> which increments it's referenceCount to 1.
+    auto ptr = MyClass::create(); // allocate MyClass on heap, assign to ref_ptr<MyClass> which increments it's referenceCount to 1.
 
     //
     // do the processing we want
@@ -212,7 +212,12 @@ std::shared_ptr<MyClass> std_ptr(vsg_ptr.ptr());
 delete vsg_ptr.get();
 ~~~
 
+***TODO: Need to write about objects created on stack***
+
 The VulkanSceneGraph uses this pattern throughout codebase so when you see the destructor declared in protected or private section of the class you know that that instances of that class are meant to be only declared on the heap and meant to be used with vsg::ref_ptr<>. The T::create() support provided by vsg::Inherit<> achieves both these requirements.
+
+
+
 
 Prev: [Foundations](index.md)| Next: [vsg::Auxiliary & vsg::observer_ptr<>](Auxiliary_and_observer_ptr.md)
 

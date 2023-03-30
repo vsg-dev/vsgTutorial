@@ -9,8 +9,8 @@ All is not perfect in the realm of reference counted smart pointers like std::sh
 ~~~ cpp
 struct Animal : public vsg::Inherit<vsg::Object, Animal>
 {
-    vsg::ref_ptr<Node> parent;
-    std::list<vsg::ref_ptr<Node>> children;
+    vsg::ref_ptr<Animal> parent;
+    std::list<vsg::ref_ptr<Animal>> children;
 };
 
 {
@@ -76,7 +76,7 @@ The vsg::observer_ptr<> is also useful for cases where applications want to keep
 
 ~~~ cpp
 
-// Some code....
+
 
 ~~~
 
