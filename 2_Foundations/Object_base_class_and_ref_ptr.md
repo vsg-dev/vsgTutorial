@@ -228,7 +228,6 @@ public:
     double value = 1.0;
 };
 
-
 vsg::ref_ptr<MyClass> ptr;
 {
     MyClass object("carrie"); // object created on the stack in local scope
@@ -252,7 +251,6 @@ public:
 protected:
     virtual ~MyClass() {}
 };
-
 
 {
     // will no longer compile
