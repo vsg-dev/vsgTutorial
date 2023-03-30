@@ -1,6 +1,6 @@
 ---
 layout: page
-title: vsg::Auxiliary and vsg::observer_ptr<>
+title: vsg::observer_ptr<> & vsg::Auxiliary class
 permalink: /foundations/Auxiliary
 ---
 
@@ -84,5 +84,5 @@ The vsg::observer_ptr<> is also useful for cases where applications want to keep
 
 
 
-Prev: [vsg::Object base class & vsg::ref_ptr<>](Object_base_class_and_ref_ptr.md)| Next: [vsg::Allocator](Allocator.md)
+Prev: [vsg::ref_ptr<> & vsg::Object base class](Object_base_class_and_ref_ptr.md)| Next: [vsg::Allocator](Allocator.md)
 
