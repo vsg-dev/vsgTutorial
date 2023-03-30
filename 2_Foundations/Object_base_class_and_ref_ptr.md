@@ -200,7 +200,7 @@ public:
     std::string name;
     double value = 1.0;
 protected:
-    ~MyClass() {} // hide the destructor from shared_ptr<> and explicit deletion.
+    virtual ~MyClass() {} // hide the destructor from shared_ptr<> and explicit deletion.
 };
 
 auto vsg_ptr = MyClass::create("carrie");
@@ -212,12 +212,55 @@ std::shared_ptr<MyClass> std_ptr(vsg_ptr.ptr());
 delete vsg_ptr.get();
 ~~~
 
-***TODO: Need to write about objects created on stack***
-
 The VulkanSceneGraph uses this pattern throughout codebase so when you see the destructor declared in protected or private section of the class you know that that instances of that class are meant to be only declared on the heap and meant to be used with vsg::ref_ptr<>. The T::create() support provided by vsg::Inherit<> achieves both these requirements.
 
+## Don't mix stack allocation and reference counting
+
+Another potential issue when using smart pointers and refenrece counting is when objects are allocated on the stack rather than on the heap. Stack allocation happens automatically for variables within a scope and all the allocated objects are automatically destructed at the end of the scope. The examples that leverage std::shared_ptr<> and vsg::ref_ptr<> smart pointers leverage this behavior to use the destruction of the smart pointers to unreferince the objects they have shared ownership of. The problem occurs if user allocate objects on the stack and then attempt to reference count them as well.  The following example illustrates this:
+
+~~~ cpp
+
+class MyClass : public vsg::Inherit<vsg::Object, MyClass>
+{
+public:
+    MyClass(const std::string& in_name) : name(in_name);
+    std::string name;
+    double value = 1.0;
+};
 
 
+vsg::ref_ptr<MyClass> ptr;
+{
+    MyClass object("carrie"); // object created on the stack in local scope
 
-Prev: [Foundations](index.md)| Next: [vsg::Auxiliary & vsg::observer_ptr<>](Auxiliary_and_observer_ptr.md)
+    // assign okect to the ref_ptr<> that increments it's ref count to 1.
+    ptr = &object;
+} // object is destructed automatically because it was allocated on stack, it doesn't matter what the ref count is.
+
+ptr->value += 10.0; // seg fault as object was deleted on exiting it's scope
+~~~
+
+This same issue occurs for std::shared_ptr<>, you simply can't prevent the destruction of objects on the stack. If you want to management your objects using smart pointer you must only use them with objects allocated on the heap.  Thankfully the same technique of declaring the destructor protected/private prevent compilation of the code works for prevent stack construction as it does for prevent use with shared_ptr<> and explicitly deleting an object.
+
+~~~ cpp
+class MyClass : public vsg::Inherit<vsg::Object, MyClass>
+{
+public:
+    MyClass(const std::string& in_name) : name(in_name);
+    std::string name;
+    double value = 1.0;
+protected:
+    virtual ~MyClass() {}
+};
+
+
+{
+    // will no longer compile
+    MyClass object("carrie");
+}
+~~~
+
+Most class in the VulkanSceneGraph are declared with a protected destructor to prevent this problem usage, but there a couple of classes like subclasses from vsg::Visitor that for convenience and efficiency may be fine to allocate on the stack and let the automatic destruction clean up the objects without needing to allocate on the heap and use smart pointers. For these special cases developers may decide to not declare a protected destructor, but they should be wary of this potential pitfalls in doing this. Later in this chapter we will discuss vsitors classes in detail and touch upon the time when stack vs heap allocation will be preferable.
+
+Prev: [Foundations](index.md)| Next: [vsg::observer_ptr<> & vsg::Auxiliary class](Auxiliary_and_observer_ptr.md)
 
