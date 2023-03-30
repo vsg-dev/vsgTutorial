@@ -16,7 +16,7 @@ With intrusive reference counting the count is placed into the object, in the ca
 
 For the case of a scene graph we have a data structure where the internal nodes of the graph are primarily pointers to data objects or other nodes in the scene graph, if you double the size of the pointer you close to double the size of internal nodes in the graph.  Increasing the size of the nodes means you require more memory and crucially can fit less nodes into cache which means more cache misses and lower CPU utilization.  Benchmarking done comparing the traversal speeds of scene graph uses std::shared_ptr<> vs one with vsg::ref_ptr<> show that the intrusive reference counted scene graph is 15% faster.
 
-## Using vsg::Object and ref_ptr<>
+## Creating objects and smart pointers
 
 The standard C++ shared_ptr<> declaration is in the form:
 
@@ -48,9 +48,9 @@ struct MyClass : public vsg::Object
 vsg::ref_ptr<MyClass> ptr(new MyClass("ginger"));
 ~~~
 
-The VulkanSceneGraph has another feature that makes it even cleaner to allocate objects robustly and add RTTI features - the vsg::Inherit<> template class. vsg::Inherit is an example the [Curiously Reaccuring Template Pattern (CRTP)](https://en.cppreference.com/w/cpp/language/crtp), while a somewhat non-intuitive idiom it neatly solves a problem of how to implement class specific extensions to a base class in consistent and robust way.
+The VulkanSceneGraph has another feature that makes it even cleaner to allocate objects robustly and add RTTI features - the vsg::Inherit<> template class. vsg::Inherit is an example the [Curiously Recurring Template Pattern (CRTP)](https://en.wikipedia.org/wiki/Curiously_recurring_template_pattern), while a somewhat non-intuitive idiom it neatly solves a problem of how to implement class specific extensions to a base class in consistent and robust way.
 
-We'll cover more of these features of vsg::Object and vsg::Inherit later in the tutorial, for now we'll just focus on the benefits for conviniently allocator objects.  With the following revised code we leverage the create() method provided by vsg::Inerhit<> that allocates the memory and calls the constructor of the object using the parameters you pass to create(..) and returns a vsg::ref_ptr<> of the appropriate type. Usage is simply:
+We'll cover more of these features of vsg::Object and vsg::Inherit later in the tutorial, for now we'll just focus on the benefits for conveniently allocating objects.  With the following revised code we leverage the create() method provided by vsg::Inerhit<> that allocates the memory and calls the constructor of the object using the parameters you pass to create(..) and returns a vsg::ref_ptr<> of the appropriate type. Usage is simply:
 
 ~~~ cpp
 struct MyClass : public vsg::Inherit<vsg::Object, MyClass>
@@ -65,10 +65,109 @@ struct MyClass : public vsg::Inherit<vsg::Object, MyClass>
 auto ptr = MyClass::create("ginger");
 ~~~
 
+While the declaration of the MyClass is little more complicated the benefit is cleaner and more expressive object creation syntax, that requires less code to type than either of the ref_ptr<T>(new T()) and std::make_shared<T>() usage. The use of the T::create(..) method is used throughout the VulkanSceneGraph codebase - it doesn't just make it more convenient for end users, it makes life easier for the developers of software as well.
 
+## The strengths of smart pointers
 
+The main reason for smart pointers is to make it easier to develop robust applications, and in the case of the vsg::ref_ptr<>/vsg:::Object combination there is no memory or performance overhead over using C pointers except for specific usage cases. Follows are a few examples of how smart_pointers leads to cleaner and more robust code.
 
----
+Addressing memory leaks:
+
+~~~ cpp
+// 1. Using C pointers
+{
+    MyClass* c_ptr = new MyClass;
+
+    //
+    // do the processing we want
+    //
+
+    delete c_ptr; // need to explicitly delete object
+}
+
+// 2. Using C pointers and explicit ref/unref calls
+{
+    MyClass* c_ptr = new MyClass;
+    c_ptr->ref(); // increment referenceCount to 1
+
+    //
+    // do the processing we want
+    //
+
+    c_ptr->unref(); // decrement refenreceCount to 0 and delete MyClass
+}
+
+// 3. Using ref_ptr<>
+{
+    auto ptr = MyClass:create(); // allocate MyClass on heap, assign to ref_ptr<MyClass> which increments it's referenceCount.
+
+    //
+    // do the processing we want
+    //
+
+} // when ptr destructs it automatically decrements it's referenceCount which hits 0 and leads to the object being deleted.
+~~~
+
+With case 1 & 2 are fine as long as the code block is never exits prematurely, what happens if there is a an early return or an exception thrown in the processing section? It will leak the object allocated on the heap.  With case 3 using ref_ptr<> early return from the block will always invoke the ptr destructor and always clean up the memory associated with it - the code isn't just simpler it's far more robust as well.
+
+Referencing counting also helps when passing back objects out from the scope of a code block:
+
+~~~ cpp
+// 4. Using C pointers can lead to dangling pointers
+MyClass* other_ptr = nullptr;
+{
+    MyClass* c_ptr = new MyClass;
+
+    //
+    // do the processing we want
+    //
+
+    // take a copy of the pointer
+    other_ptr = c_ptr;
+
+    delete c_ptr; // explicitly delete object cleans up memory but causes a dangling pointer
+}
+other_ptr->value = 10.0; // seg fault as the object has already been deleted
+
+// 5. Using C pointers using explicit ref/unref calls
+MyClass* other_ptr = nullptr;
+{
+    MyClass* c_ptr = new MyClass;
+    c_ptr->ref(); // increment referenceCount to 1
+
+    //
+    // do the processing we want
+    //
+
+    other_ptr = c_ptr;
+    other_ptr->ref(); // increment referenceCount to 2
+
+    c_ptr->unref(); // decrement refenreceCount to 1 so no deletion!
+}
+other_ptr->value = 10.0; // assignment safe as object is still on the heap
+other_ptr->unref(); // decrement refenreceCount to 0 and delete MyClass
+
+// 6. Using ref_ptr<>
+vsg::ref_ptr<MyClass> other_ptr;
+{
+    auto ptr = MyClass:create(); // allocate MyClass on heap, assign to ref_ptr<MyClass> which increments it's referenceCount to 1.
+
+    //
+    // do the processing we want
+    //
+
+    other_ptr = ptr; // smart pointer assignment automatically increasments reference count to 2
+
+} // when ptr destructs it automatically decrements it's referenceCount which hits 1, no deletion!
+other_ptr->value = 10.0; // assignment safe as object is still on the heap
+~~~
+
+In case 4 it is possible to fix the seg fault by moving the delete to after the last time that other_ptr is used, however if the processing section returns eary or throws an exception the memory will be lost. case 5 will work correctly as long as the processing section doesn't return early or throws an exception in which case it will leak the allocation object. Again case 6 is both cleaner and handles the early return case correctly, cleaning up any objects that have been allocated and no longer have an external reference.
+
+These examples illustrate why smart pointers are so useful and why you'll find them used throughout the VulkanSceneGraph codebase and applications that use it:
+1. Less code to write
+2. More expressive code
+3. More robust code
 
 Prev: [Foundations](index.md)| Next: [Meta data, vsg::Auxiliary and vsg::observer_ptr<>](Auxiliary_and_observer_ptr.md)
 
