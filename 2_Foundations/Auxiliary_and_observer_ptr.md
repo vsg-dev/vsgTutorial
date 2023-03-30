@@ -4,7 +4,7 @@ title: vsg::observer_ptr<> & vsg::Auxiliary class
 permalink: /foundations/Auxiliary
 ---
 
-All is not perfect in the realm of reference counted smart pointers like std::shared_ptr<> and vsg::ref_ptr<>, their biggest weakness is cases where data structures has circular references. A classic example of circular references is a parent owning a child, while the child's smart pointer back to parent means the parent. When this happens the reference count for both the parent and child will remain non zero even if all other external references to them are removed - leading to a chain of objects that never gets deleted.
+All is not perfect in the realm of reference counted smart pointers like std::shared_ptr<> and vsg::ref_ptr<>, their biggest weakness is cases where data structures have circular references. A classic example of circular references is a parent owning a child, while the child's smart pointer back to parent means the parent. When this happens the reference count for both the parent and child will remain non zero even if all other external references to them are removed - leading to a chain of objects that never gets deleted.
 
 ~~~ cpp
 struct Animal : public vsg::Inherit<vsg::Object, Animal>
