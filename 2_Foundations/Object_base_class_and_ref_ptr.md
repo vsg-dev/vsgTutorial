@@ -29,10 +29,28 @@ struct MyClass
     double value = 0.0;
 };
 
-auto ptr = std::make_shared<MyClass>("fred"); // assigns a std::shared_ptr<MyClass> to a new MyClass object allocated on the heap
+// allocate a MyClass object on the heap and assigns to std::shared_ptr<MyClass>
+auto ptr = std::make_shared<MyClass>("fred");
 ~~~
 
-While the equvilant with the VulkanSceneGraph levegers the classes create() method that allocates the memory and calls the constructor of the object using the parameters you pass to create(..) and returns a vsg::ref_ptr<> of the appropriate type. Usage is simply:
+While the equvilant with the VulkanSceneGraph requires MyClass to be subclass from vsg::Object to add the itrusive reference counting:
+
+~~~ cpp
+struct MyClass : public vsg::Object
+{
+    MyClass(const std::string& in_name) : name(in_name) {}
+
+    std::string name;
+    double value = 0.0;
+};
+
+// allocate a MyClass object on the heap and assigns to vsg::ref_ptr<MyClass>
+vsg::ref_ptr<MyClass> ptr(new MyClass("ginger"));
+~~~
+
+The VulkanSceneGraph has another feature that makes it even cleaner to allocate objects robustly and add RTTI features - the vsg::Inherit<> template class. vsg::Inherit is an example the [Curiously Reaccuring Template Pattern (CRTP)](https://en.cppreference.com/w/cpp/language/crtp), while a somewhat non-intuitive idiom it neatly solves a problem of how to implement class specific extensions to a base class in consistent and robust way.
+
+We'll cover more of these features of vsg::Object and vsg::Inherit later in the tutorial, for now we'll just focus on the benefits for conviniently allocator objects.  With the following revised code we leverage the create() method provided by vsg::Inerhit<> that allocates the memory and calls the constructor of the object using the parameters you pass to create(..) and returns a vsg::ref_ptr<> of the appropriate type. Usage is simply:
 
 ~~~ cpp
 struct MyClass : public vsg::Inherit<vsg::Object, MyClass>
@@ -43,10 +61,10 @@ struct MyClass : public vsg::Inherit<vsg::Object, MyClass>
     double value = 0.0;
 };
 
-auto ptr = MyClass::create("ginger"); // assigns a vsg::ref_ptr<MyClass> to a new MyClass object allocated on the the heap (by vsg::Allocator)
+// allocate a MyClass object on the heap, using vsg::Allocator, and assigns to vsg::ref_ptr<MyClass>
+auto ptr = MyClass::create("ginger");
 ~~~
 
-The inheritance from vsg::Inherit<vsg::Object, MyClass> is done instead of inheriting from vsg::Object in order for the vsg::Inherit template class to implement various members like the create() method and RTTI support. vsg::Inherit is an example the [Curiously Reaccuring Template Pattern (CRTP)](https://en.cppreference.com/w/cpp/language/crtp), while a preculiar pattern it neatly solves a problem of how to implement class specific extensions to a base class in consistent and robust way.
 
 
 
