@@ -169,7 +169,7 @@ These examples illustrate why smart pointers are so useful and why you'll find t
 2. More expressive code
 3. More robust code
 
-## delete, std::shared_ptr<> and std::ref_ptr<> are like oil and water
+## Don't mix delete, std::shared_ptr<> & std::ref_ptr<>
 
 The code examples above implement MyClass by subclassing from vsg::Inherit<> makes it possible to seamlessly use MyClass::create() and ref_ptr<>, but it possible also to write and compile code that still uses std::shared_ptr<> we strongly recommend against doing so as you create a situation where there two independent reference counting mechanisms attempt to manage a single object.
 
