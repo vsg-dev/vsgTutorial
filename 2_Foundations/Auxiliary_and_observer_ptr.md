@@ -50,7 +50,7 @@ A common wayto do this would be by adding a Animal::addChild(Animial*) and Anima
 
 ## Weak pointers to the rescue
 
-To address the problem of circular refenences and make easier it keep pointers to objects without retaining ownership, there is catogory of smart pointers - weak pointers. Weak pointors hold a poiniter to an object without increment the objects reference count, and when the object gets deleteted all the weak pointers that reference have their pointer invalidated automatically, these weak pointers are paired with strong pointers. The std::shared_ptr<> strong pointer is paired with the std::weak_ptr<> weak pointer. For the VulkanSceneGraph the vsg::ref_ptr<> strong pointer is paird with the vsg::observer_ptr<>.
+To address the problem of circular refenences and make easier it keep pointers to objects without retaining ownership, there is catogory of smart pointers - weak pointers. Weak pointers hold a pointer to an object without incrementing the objects reference count, and when the object gets deleteted all the weak pointers that reference it have their pointer invalidated automatically, these weak pointers are paired with strong pointers. The std::shared_ptr<> strong pointer is paired with the std::weak_ptr<> weak pointer. For the VulkanSceneGraph the vsg::ref_ptr<> strong pointer is paired with the vsg::observer_ptr<>.
 
 We can now rewirite the Animal example using the vsg::observer_ptr<>:
 
@@ -67,9 +67,9 @@ struct Animal : public vsg::Inherit<vsg::Object, Animal>
     child->parent = parent; // parent object ref count doesn't change as we are just assigning to a vsg::obsever_ptr<>
     parent->children.push_back(child) // child object now ha a ref count 2
 }
-// parent is descrtructed decreatment the parent object to 0 and the objects destructor is called.
-// the destructor deletes the children list and destrements the child's reference count to 1.
-// the child is destructed and decrements it's reference count to 0, deleting the child.
+// parent pointer is destructed and decreaments the parent object's ref count to 0 and the parent object destructor is called.
+// The destructor deletes the children list which decrements the child's reference count to 1.
+// The child pointer is destructed and decrements it's reference count to 0, deleting the child.
 ~~~
 
 The vsg::observer_ptr<> is also useful for cases where applications want to keep a pointer to a resource that has a lifetime that is independently managed, but you occasional want to access it if it's still in memory.
