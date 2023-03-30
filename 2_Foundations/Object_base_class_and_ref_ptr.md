@@ -48,7 +48,7 @@ struct MyClass : public vsg::Object
 vsg::ref_ptr<MyClass> ptr(new MyClass("ginger"));
 ~~~
 
-The VulkanSceneGraph has another feature that makes it even cleaner to allocate objects robustly and add RTTI features - the vsg::Inherit<> template class. vsg::Inherit is an example the [Curiously Recurring Template Pattern (CRTP)](https://en.wikipedia.org/wiki/Curiously_recurring_template_pattern), while a somewhat non-intuitive idiom it neatly solves a problem of how to implement class specific extensions to a base class in consistent and robust way.
+The VulkanSceneGraph has another feature that makes it even cleaner to allocate objects robustly and add RTTI features - the vsg::Inherit<> template class. vsg::Inherit is an example the [Curiously Recurring Template Pattern](https://en.wikipedia.org/wiki/Curiously_recurring_template_pattern), while a somewhat non-intuitive idiom it neatly solves a problem of how to implement class specific extensions to a base class in consistent and robust way.
 
 We'll cover more of these features of vsg::Object and vsg::Inherit later in the tutorial, for now we'll just focus on the benefits for conveniently allocating objects.  With the following revised code we leverage the create() method provided by vsg::Inerhit<> that allocates the memory and calls the constructor of the object using the parameters you pass to create(..) and returns a vsg::ref_ptr<> of the appropriate type. Usage is simply:
 
@@ -169,5 +169,50 @@ These examples illustrate why smart pointers are so useful and why you'll find t
 2. More expressive code
 3. More robust code
 
-Prev: [Foundations](index.md)| Next: [Meta data, vsg::Auxiliary and vsg::observer_ptr<>](Auxiliary_and_observer_ptr.md)
+## delete, std::shared_ptr<> and std::ref_ptr<> are like oil and water
+
+The code examples above implement MyClass by subclassing from vsg::Inherit<> makes it possible to seamlessly use MyClass::create() and ref_ptr<>, but it possible also to write and compile code that still uses std::shared_ptr<> we strongly recommend against doing so as you create a situation where there two independent reference counting mechanisms attempt to manage a single object.
+
+~~~ cpp
+struct MyClass : public vsg::Inherit<vsg::Object, MyClass>
+{
+    MyClass(const std::string& in_name) : name(in_name);
+    std::string name;
+    double value = 1.0;
+};
+
+auto vsg_ptr = MyClass::create("carrie");
+
+// will compile but create dangling pointers once either vsg_ptr and std_ptr go out of scope
+std::shared_ptr<MyClass> std_ptr(vsg_ptr.ptr());
+
+// we could even just delete the object directly and mess up both vsg_ptr std_ptr.
+delete vsg_ptr.get();
+~~~
+
+The way to prevent this misuse use a protected or private destructor when the object is always meant to be allocated on the heap.
+
+~~~ cpp
+class MyClass : public vsg::Inherit<vsg::Object, MyClass>
+{
+public:
+    MyClass(const std::string& in_name) : name(in_name);
+    std::string name;
+    double value = 1.0;
+protected:
+    ~MyClass() {} // hide the destructor from shared_ptr<> and explicit deletion.
+};
+
+auto vsg_ptr = MyClass::create("carrie");
+
+// will no longer compile
+std::shared_ptr<MyClass> std_ptr(vsg_ptr.ptr());
+
+// will no longer compile
+delete vsg_ptr.get();
+~~~
+
+The VulkanSceneGraph uses this pattern throughout codebase so when you see the destructor declared in protected or private section of the class you know that that instances of that class are meant to be only declared on the heap and meant to be used with vsg::ref_ptr<>. The T::create() support provided by vsg::Inherit<> achieves both these requirements.
+
+Prev: [Foundations](index.md)| Next: [vsg::Auxiliary & vsg::observer_ptr<>](Auxiliary_and_observer_ptr.md)
 
