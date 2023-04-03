@@ -72,17 +72,30 @@ struct Animal : public vsg::Inherit<vsg::Object, Animal>
 // The child pointer is destructed and decrements it's reference count to 0, deleting the child.
 ~~~
 
-The vsg::observer_ptr<> is also useful for cases where applications want to keep a pointer to a resource that has a lifetime that is independently managed, but you occasional want to access it if it's still in memory.
+The vsg::observer_ptr<> is also useful for cases where applications want to keep a pointer to a resource that has a lifetime that is independently managed, but you occasional want to access it if it's still in memory, to illustrate this usage
 
 ~~~ cpp
-
-
-
+{% include_relative 2_observer_ptr/observer_ptr.cpp %}
 ~~~
 
+When we compile and run the [observer_ptr](2_observer_ptr/) exercise we should see:
 
-
-
+~~~
+Main thread : scene = ref_ptr<vsg::Object>(vsg::Object 0x7f8d8c585010) referenceCount = 1
+   Background thread : has started.
+   Background thread : has ref_scene = ref_ptr<vsg::Object>(vsg::Object 0x7f8d8c585010), referenceCount = 2
+Main thread : scene = ref_ptr<vsg::Object>(vsg::Object 0x7f8d8c585010) referenceCount = 1
+Main thread : scene = ref_ptr<vsg::Object>(vsg::Object 0x7f8d8c585010) referenceCount = 1
+Main thread : scene = ref_ptr<vsg::Object>(vsg::Object 0x7f8d8c585010) referenceCount = 1
+...
+...
+Main thread : scene = ref_ptr<vsg::Object>(vsg::Object 0x7f8d8c585010) referenceCount = 1
+Main thread : scene = ref_ptr<vsg::Object>(vsg::Object 0x7f8d8c585010) referenceCount = 1
+   Background thread : has ref_scene = ref_ptr<vsg::Object>(vsg::Object 0x7f8d8c585010), referenceCount = 2
+Main thread : removed reference to scene object ref_ptr<vsg::Object>(nullptr)
+    Background thread : no longer has scene object to work on, so returning.
+Main thread : background thread has been joined
+~~~
 
 Prev: [vsg::ref_ptr<> & vsg::Object base class](Object_base_class_and_ref_ptr.md)| Next: [vsg::Allocator](Allocator.md)
 
