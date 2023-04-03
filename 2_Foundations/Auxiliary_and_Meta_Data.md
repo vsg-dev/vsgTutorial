@@ -6,5 +6,5 @@ permalink: /foundations/Auxiliary
 
 **Sorry, not yet written.**
 
-Prev: [vsg::ref_ptr<> & vsg::Object base class](Object_base_class_and_ref_ptr.md)| Next: [vsg::Allocator](Allocator.md)
+Prev: Next: [vsg::observer_ptr<>](observer_ptr.md)| Next: [vsg::Allocator](Allocator.md)
 
