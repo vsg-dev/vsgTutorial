@@ -6,3 +6,4 @@ project(vsgTutorial)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
 
 add_subdirectory(SettingTheScene/01_hello_world)
+add_subdirectory(SettingTheScene/2_observer_ptr)

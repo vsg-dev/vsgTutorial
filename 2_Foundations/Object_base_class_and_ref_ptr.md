@@ -260,5 +260,5 @@ protected:
 
 Most classes in the VulkanSceneGraph are declared with a protected destructor to prevent this problem usage, but there a couple of classes like subclasses from vsg::Visitor that for convenience and efficiency may be fine to allocate on the stack and let the automatic destruction clean up the objects without needing to allocate on the heap and use smart pointers. For these special cases developers may decide to not declare a protected destructor, but they should be wary of this potential pitfalls in doing this. Later in this chapter we will discuss vsitors classes in detail and touch upon the time when stack vs heap allocation will be preferable.
 
-Prev: [Foundations](index.md)| Next: [vsg::observer_ptr<> & vsg::Auxiliary class](Auxiliary_and_observer_ptr.md)
+Prev: [Foundations](index.md)| Next: [vsg::observer_ptr<>](observer_ptr.md)
 
