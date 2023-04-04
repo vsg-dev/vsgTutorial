@@ -118,7 +118,7 @@ matrix[3][2] = 300.0;
 
 ## Geometric primtives
 
-The [vsg::plane](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/plane.h), [sphere](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/box.h) types do not have a direct GLSL equivlant but are very useful for geometric primitives that are used in graphics application. The conventions used follow the same patterns as used in the vector, quaternion and matrix types.
+The [vsg::plane](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/plane.h), [sphere](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/sphere.h) and [box](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/box.h) types do not have a direct GLSL equivlant but are very useful for geometric primitives that are used in graphics application. The conventions used follow the same patterns as used in the vector, quaternion and matrix types.
 
 ~~~ cpp
 
