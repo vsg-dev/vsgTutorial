@@ -74,7 +74,7 @@ struct Animal : public vsg::Inherit<vsg::Object, Animal>
 
 ## Using vsg::observer_ptr<> & vsg::ref_ptr<> together for resource management
 
-The vsg::observer_ptr<> is also useful for cases where applications want to keep a pointer to a resource that has a lifetime that is independently managed, but you occasional want to access it if it's still in memory. The following observer_ptr example program uses a background thread that periodically checks a share resourced, only taking a refernce to it when required to prevent it being deleted whilst being used, and exiting the thread when that resource was be deleted by the main thread.
+The vsg::observer_ptr<> is also useful for cases where applications want to keep a pointer to a resource that has a lifetime that is independently managed, but you occasional want to access it if it's still in memory. The following observer_ptr example program uses a background thread that periodically checks a share resourced, only taking a reference to it when required to prevent it being deleted whilst being used, and exiting the thread when that resource was be deleted by the main thread.
 
 ~~~ cpp
 {% include_relative 2_observer_ptr/observer_ptr.cpp %}
