@@ -98,7 +98,7 @@ The [vsgdyamicvertex](https://github.com/vsg-dev/vsgExamples/tree/master/example
 
 ## vsg::Value
 
-When you need a single value, either for just sharing for CPU only needs, or for mapping to GPU memory such as a single per instance vertex attribute or uniform value you can use the [vsg::Value](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Value.h) template class. The Value.h header also provides a set of pre-defined types that wrap the most common basic types you'd use with the scene graph, from vsg::boolValue to vsg::dboxValue. For the full list of types defined look at the bottom of the [Value.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Value.h#L169) header.
+When you need a single value, either for just sharing CPU only needs, or for mapping to GPU memory such as a single per instance vertex attribute or uniform value you can use the [vsg::Value](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Value.h) template class. The Value.h header also provides a set of pre-defined types that wrap the most common basic types you'd use with the scene graph, from vsg::boolValue to vsg::dboxValue. For the list of types defined look at the bottom of the [Value.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Value.h#L169) header and addtional material related versions are provided by the [material.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/state/material.h) header.
 
 ~~~ cpp
 // create a vec3Value object using user specified initializer on the heap
@@ -108,6 +108,11 @@ auto translation = vsg::vec3Value::create(vsg::vec3(100.0f, 200.0f, 300.0f));
 // create a default constructed vsg::mat4Value on heap and then assign a value to it
 auto transform = vsg::mat4Value::create();
 transform->value() = vsg::translation(vsg::vec3(100.0f, 200.0f, 300.0f));
+
+// create a PBR meterial and set the diffuseFactor
+auto material = PbrMaterialValue::create();
+material->value().diffuseFactor = vsg::vec4(1.0f, 0.0f, 0.0f, 1.0f);
+
 ~~~
 
 ## vsg::Array
