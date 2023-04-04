@@ -48,7 +48,8 @@ struct VSG_DECLSPEC Properties
 };
 ~~~
 
-The vsg::Data defines a set of pure virtual methods that all concrete sublcasses from vsg::Data must provide:
+The vsg::Data defines a set of pure virtual methods that all concrete sublcasses from vsg::Data must provide, these methods provide scene graph and applications that abilitie to query the size of values in the data container, ppinter to the data and dimnensions of the data. The methods are:
+
 ~~~ cpp
         virtual std::size_t valueSize() const = 0;
         virtual std::size_t valueCount() const = 0;
@@ -93,7 +94,7 @@ The help support synchronizing dynamic changes to the values in the vsg::Data co
         bool differentModifiedCount(const ModifiedCount& mc) const { return _modifiedCount != mc; }
 ~~~
 
-The [vsgdyamicvertex](https://github.com/vsg-dev/vsgExamples/tree/master/examples/state/vsgdynamicvertex) and [vsgdyamictexture](https://github.com/vsg-dev/vsgExamples/tree/master/examples/state/vsgdynamictexture) in the vsgExamples repository also provide illustation of dyanamic data. These are more advanced topics so for now there is no need to look up the topic in detail at this point, later in the vsgTutorial will go into detail of how to set up data for dynmic use.
+The [vsgdyamicvertex](https://github.com/vsg-dev/vsgExamples/tree/master/examples/state/vsgdynamicvertex) and [vsgdyamictexture](https://github.com/vsg-dev/vsgExamples/tree/master/examples/state/vsgdynamictexture) in the [vsgExamples repository](https://github.com/vsg-dev/vsgExamples) also provide illustation of dyanamic data. These are more advanced topics so for now there is no need to look up the topic in detail at this point, later in the vsgTutorial will go into detail of how to set up data for dynmic use.
 
 ## vsg::Value
 
