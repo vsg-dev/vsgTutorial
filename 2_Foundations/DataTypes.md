@@ -98,6 +98,18 @@ The [vsgdyamicvertex](https://github.com/vsg-dev/vsgExamples/tree/master/example
 
 ## vsg::Value
 
+When you need a single value, either for just sharing for CPU only needs, or for mapping to GPU memory such as a single per instance vertex attribute or uniform value you can use the [vsg::Value](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Value.h) template class. The Value.h header also provides a set of pre-defined types that wrap the most common basic types you'd use with the scene graph, from vsg::boolValue to vsg::dboxValue.
+
+~~~ cpp
+// create a vec3Value object using user specified initializer on the heap
+// note create() passes back a ref_ptr<vec3Value> so C++ compiler will set the auto translation variable type to this
+auto translation = vsg::vec3Value::create(vsg::vec3(100.0f, 200.0f, 300.0f));
+
+// create a default constructed vsg::mat4Value on heap and then assign a value to it
+auto transform = vsg::mat4Value::create();
+transform->value() = vsg::translation(vsg::vec3(100.0f, 200.0f, 300.0f));
+~~~
+
 ## vsg::Array
 
 ## vsg::Array2D
