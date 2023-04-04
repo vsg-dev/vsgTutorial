@@ -1,6 +1,6 @@
 ---
 layout: page
-title: vsg::observer_ptr<>
+title: vsg::observer_ptr<> weak pointer
 permalink: /foundations/observer_ptr
 ---
 
