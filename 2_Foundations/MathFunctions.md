@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Maths
-permalink: /foundations/Maths
+title: Maths Functions
+permalink: /foundations/MathsFunctions
 ---
 
 **Sorry, not yet written.**
