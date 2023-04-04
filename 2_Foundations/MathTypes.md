@@ -70,11 +70,31 @@ packed_color = vsg::ubvec4(255, 255, 255, 255); // assign an all white color
 
 // you can use .x, .r & [0] etc. access interchangeably
 std::cout<<"color : red = "<<color[0]<<", green = "<<color.g<<", blue = "<<color.z<<", alpha = "<<color.a<<std::endl;
+std::cout<<"number of components : color.size() = "<<color.size()<<std::emdl; // will be 4 for vec4 types
 ~~~
 
 ## Quaternion
 
-The vsg::quat types provide GLSL style access, with {x,y,z,w} and [] accessors which all map to the same underlying numerical values.
+The vsg::quat type is a rotation, defined in [quaternion](https://en.wikipedia.org/wiki/Quaternion) form, that provides {x,y,z,w} and [] accessors which all map to the same underlying numerical values:
+
+~~~ cpp
+// double precision quaternion useful for defining rotaions, useful for GIS etc. applications
+// use the angle, axis constructor to create a 90 degree rotation about the z axis.
+vsg::dquat rotation(vsg::radians(90.0), vsg::dvec3(0.0, 0.0, 1.0));
+
+std::cout<<"rotation = "<<rotation.x<<", "<<rotation.y<<", "<<rotation.z<<", "<<rotation.w<<std::endl;
+
+// default constrcuted single precision quaternion represents non rotation
+vsg::quat rot;
+
+// set as a rotation between two vectors
+rot.set(vsg::vec3(1.0f, 0.0f, 0.0f),  vsg::vec3(0.0f, 1.0f, 0.0f));
+
+// the quat::size() method returns 4
+std::cout<<"rot = ";
+for(size_t i=0; i<rot.size(); ++i) std::cout<<" "<<rot[i]<<std::endl;
+
+~~~
 
 ## Matrices
 
