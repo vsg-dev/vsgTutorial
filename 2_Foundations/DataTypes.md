@@ -1,7 +1,7 @@
 ---
 layout: page
-title: vsg::Auxiliary and Meta Data
-permalink: /foundations/Auxiliary
+title: Data Types
+permalink: /foundations/DataTypes
 ---
 
 **Sorry, not yet written.**
