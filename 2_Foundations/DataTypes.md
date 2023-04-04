@@ -71,6 +71,30 @@ The vsg::Data defines a set of pure virtual methods that all concrete sublcasses
         virtual std::uint32_t depth() const = 0;
 ~~~
 
+The help support synchronizing dynamic changes to the values in the vsg::Data containers with the associated GPU memory a modified count mechanism is provided by the Data::dirty() and associaed *ModifiedCount(..) methods:
+
+~~~ cpp
+        /// increment the ModifiedCount to signify the data has been modified
+        void dirty() { ++_modifiedCount; }
+
+        /// get the Data's ModifiedCount and return true if this changes the specified ModifiedCount
+        bool getModifiedCount(ModifiedCount& mc) const
+        {
+            if (_modifiedCount != mc)
+            {
+                mc = _modifiedCount;
+                return true;
+            }
+            else
+                return false;
+        }
+
+        /// return true if Data's ModifiedCount is different than the specified ModifiedCount
+        bool differentModifiedCount(const ModifiedCount& mc) const { return _modifiedCount != mc; }
+~~~
+
+Later in the book will provide an example of how to set up data for dynmic use.
+
 ## vsg::Value
 
 ## vsg::Array
