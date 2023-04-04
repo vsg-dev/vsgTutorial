@@ -8,7 +8,17 @@ The VulkanSceneGraph provides GLSL style vector, quaternion and matrix types whi
 
 ## Data types
 
-All the math types can be found in the [include/vsg/maths](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/) directory. All the types are declared as template<> structs with definitions provided for the specific types supporting bool, 8, 16 and 32 bit int and unsigned ints, float and double versions of each type.
+All the math types can be found in the [include/vsg/maths](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/) directory. All the types are declared as template<> structs with definitions provided for the specific types supporting bool, 8, 16 and 32 bit int and unsigned ints, float and double versions of each type. The prefix of the type describes the type, the prefix to type mapping are:
+
+| Prefix | Description | Type |
+| no prefix | 32 bit floating point | float |
+| d | 64 bit floating point | double |
+| b | signed byte | std::int8_t |
+| ub | unsigned byte | std::uint8_t |
+| s | signed short | std::int16_t |
+| us | unsigned short | std::uint16_t |
+| i | signed int | std::int32_t |
+| ui | unsigned int | std::uint32_t |
 
 All the maths types are simple structs, only containing the data fields required for the type and are not subclassed from vsg::Object like other scene graph objects as their focus in representing low level data and supporting maths operations. All math types can all be used as part of data objects which will cover in the next page - [Data Types](DataTypes.md).The available types are and the headers that define them are follow.
 
@@ -29,17 +39,7 @@ Geometric primitive types:
 
 ## Vectors
 
-The vsg::vec* types provide GLSL style access, with {x,y,z,w} & {r,g,b,a} and [] accessors which all map to the same underlying numerical values. The prefix of the type describes the type, and numerical postix describes number of values.  The prefix to type mapping are:
-
-| Prefix | Description | Type |
-| no prefix | 32 bit floating point | float |
-| d | 64 bit floating point | double |
-| b | signed byte | std::int8_t |
-| ub | unsigned byte | std::uint8_t |
-| s | signed short | std::int16_t |
-| us | unsigned short | std::uint16_t |
-| i | signed int | std::int32_t |
-| ui | unsigned int | std::uint32_t |
+The vsg::vec* types provide GLSL style access, with {x,y,z,w} & {r,g,b,a} and [] accessors which all map to the same underlying numerical values.
 
 ## Quaternion
 
