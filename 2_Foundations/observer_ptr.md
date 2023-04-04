@@ -99,5 +99,5 @@ Main thread : removed reference to scene object ref_ptr<vsg::Object>(nullptr)
 Main thread : background thread has been joined
 ~~~
 
-Prev: [vsg::ref_ptr<> & vsg::Object base class](Object_base_class_and_ref_ptr.md)| Next: [vsg::Auxiliary and Meta Data](Auxiliary_and_Meta_Data.md)
+Prev: [vsg::ref_ptr<> & vsg::Object base class](Object_base_class_and_ref_ptr.md)| Next: [Math Types](MathTypes.md)
 
