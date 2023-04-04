@@ -12,7 +12,7 @@ All the math types can be found in the [include/vsg/maths](https://github.com/vs
 
 All the maths types are simple structs, only containing the data fields required for the type and are not subclassed from vsg::Object like other scene graph objects as their focus in representing low level data and supporting maths operations. All math types can all be used as part of data objects which will cover in the next page - [Data Types](DataTypes.md).The available types are and the headers that define them are follow.
 
-Vector and quaternion types:
+Vector, quaternion & plane types:
 * vsg::vec2 [include/vsg/maths/vec2.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec2.h)
 * vsg::vec3 [include/vsg/maths/vec3.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec3.h)
 * vsg::vec4 [include/vsg/maths/vec4.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec4.h)
@@ -22,17 +22,24 @@ Matrix types:
 * vsg::mat3 [include/vsg/maths/mat3.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/mat3.h)
 * vsg::mat4 [include/vsg/maths/mat4.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/mat4.h)
 
-Bounding volume primitive types:
-* vsg::sphere [include/vsg/maths/sphere.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/spahre.h)
+Geometric primitive types:
+* vsg::plane [include/vsg/maths/plane.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/plane.h)
+* vsg::sphere [include/vsg/maths/sphere.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/sphere.h)
 * vsg::box [include/vsg/maths/sphere.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/box.h)
 
 ## Vectors
 
 The vsg::vec* types provide GLSL style access, with {x,y,z,w} & {r,g,b,a} and [] accessors which all map to the same underlying numerical values. The prefix of the type describes the type, and numerical postix describes number of values.  The prefix to type mapping are:
 
-| prefix | description | type |
+| Prefix | Description | Type |
+| no prefix | 32 bit floating point | float |
+| d | 64 bit floating point | double |
 | b | signed byte | std::int8_t |
 | ub | unsigned byte | std::uint8_t |
+| s | signed short | std::int16_t |
+| us | unsigned short | std::uint16_t |
+| i | signed int | std::int32_t |
+| ui | unsigned int | std::uint32_t |
 
 ## Quaternion
 
@@ -41,7 +48,7 @@ The vsg::quat types provide GLSL style access, with {x,y,z,w} and [] accessors w
 ## Matrices
 
 
-## Bounding Volumes
+## Geometric primtives
 
 
 ---

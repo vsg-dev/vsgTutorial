@@ -4,7 +4,11 @@ title: Maths Functions
 permalink: /foundations/MathsFunctions
 ---
 
-**Sorry, not yet written.**
+clamp.h
+color.h
+common.h
+sample.h
+transform.h
 
 ---
 
