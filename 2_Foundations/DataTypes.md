@@ -18,5 +18,5 @@ vsg::Array3D
 
 
 
-Prev: Next: [Math Types](MathTypes.md)| Next: [MetaData](MetaData.md)
+Prev: Next: [Math Types](MathTypes.md)| Next: [Meta Data](MetaData.md)
 
