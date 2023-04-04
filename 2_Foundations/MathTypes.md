@@ -44,7 +44,6 @@ The prefix of the type describes the numerical type, the mappings are:
 The vsg::vec* types provide GLSL style access, with {x,y,z,w} & {r,g,b,a} and [] accessors which all map to the same underlying numerical values. All the vector types also support set(..) methods and assignment. The vector types have a range uses and the accessors used support these:
 
 ~~~ cpp
-
 // vertices and normals
 vsg::dvec3 position{1.0, 2.0, 3.0); // double vec3
 postion.x = 1.0; // equivilant to position[0] = 1.0
@@ -60,6 +59,9 @@ color[3] = 1.0; // set the b channel to 1.0
 
 vsg::ubvec4 packed_color(0, 255, 0, 127)l // unsigned byte semi-transparent green
 packed_color = vsg::ubvec4(255, 255, 255, 255); // assign an all white color
+
+// you can use .x, .r & [0] etc. access interchangeably
+std::cout<<"color : red = "<<color[0]<<", green = "<<color.g<<", blue = "<<color.z<<", alpha = "<<color.a<<std::endl;
 ~~~
 
 ## Quaternion
