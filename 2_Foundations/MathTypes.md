@@ -12,7 +12,7 @@ Simple structs are used, only containing the data fields required for the type a
 
 ## Available types and the associated headers
 
-Vector, quaternion:
+Vector & quaternion:
 * vsg::vec2 [include/vsg/maths/vec2.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec2.h)
 * vsg::vec3 [include/vsg/maths/vec3.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec3.h)
 * vsg::vec4 [include/vsg/maths/vec4.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec4.h)
@@ -118,6 +118,40 @@ matrix[3][2] = 300.0;
 
 ## Geometric primtives
 
+The [vsg::plane](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/plane.h), [sphere](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/box.h) types do not have a direct GLSL equivlant but are very useful for geometric primitives that are used in graphics application. The conventions used follow the same patterns as used in the vector, quaternion and matrix types.
+
+~~~ cpp
+
+// define a single precision horziontal plane at height of 1 unit
+vsg::plane pl(0.0f, 0.0, 1.0f, -1.0f);
+
+// create unit cube polytope from planes
+std::vector<vsg::dplane> poltope = {
+    {1.0, 0.0, 0.0, 1.0}, // left plane at x=-1, pointing right
+    {-1.0, 0.0, 0.0, 1.0}, // left plane at x=1, pointing left
+    {0.0, 1.0, 0.0, 1.0}, // front plane at y=-1, pointing forward
+    {0.0, -1.0, 0.0, 1.0}, // back plane at y=1, pointing backward
+    {0.0, 0.0, 1.0, 1.0}, // bottom plane at z=-1, pointing upwards
+    {0.0, 0.0, -1.0, 1.0} // top plane at z=1, pointing downwards
+};
+
+// double precision sphere at {10, 20, 30) with radius 40 units
+vsg::dsphere bounding_sphere(10.0, 20.0, 30.0, 40.0);
+
+// default constructed single precision box representing an undefined box
+// bounding_box.min is set to maximum float values.
+// bounding_box.max is set to minimum float values.
+// when min.x value > max.x then box is treated as undefined/invalid/empty.
+vsg::box bounding_box;
+
+// use the vsg::box::add(..) method to compute the bounding box that enclosies points
+bounding_box.add(vsg::vec3(0.0f, 0.0f, 0.0f));
+bounding_box.add(vsg::vec3(10.0f, 0.0f, 0.0f));
+bounding_box.add(vsg::vec3(0.0f, 5.0f, 0.0f));
+bounding_box.add(vsg::vec3(0.0f, 6.0f, 3.0f));
+
+std::cout<<"bounding_box min = ("<<bounding_box.min<<"), max = ("<<bounding_box.max<<")"<<std::endl;
+~~~
 
 ---
 
