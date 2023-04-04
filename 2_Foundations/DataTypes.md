@@ -93,7 +93,7 @@ The help support synchronizing dynamic changes to the values in the vsg::Data co
         bool differentModifiedCount(const ModifiedCount& mc) const { return _modifiedCount != mc; }
 ~~~
 
-Later in the book will provide an example of how to set up data for dynmic use.
+The [vsgdyamicvertex](https://github.com/vsg-dev/vsgExamples/tree/master/examples/state/vsgdynamicvertex) and [vsgdyamictexture](https://github.com/vsg-dev/vsgExamples/tree/master/examples/state/vsgdynamictexture) in the vsgExamples repository also provide illustation of dyanamic data. These are more advanced topics so for now there is no need to look up the topic in detail at this point, later in the vsgTutorial will go into detail of how to set up data for dynmic use.
 
 ## vsg::Value
 
