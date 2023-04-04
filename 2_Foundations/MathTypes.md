@@ -98,6 +98,23 @@ for(size_t i=0; i<rot.size(); ++i) std::cout<<" "<<rot[i]<<std::endl;
 
 ## Matrices
 
+The [vsg::mat3](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/mat3.h), [mat4](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/mat4.h) types provide GLSL style access, with [element] & [column][row] accessors which all map to the same underlying numerical values. The vector types have a range uses and the accessors used support these:
+
+~~~ cpp
+// single precision 3x3 matrix useful for rotation
+vsg::mat3 rotation_matrix(1.0f, 0.0f, 0.0f,
+                          0.0f, 1.0f, 0.0f,
+                          0.0f, 0.0f, 1.0f);
+
+// double precision 4x4 matrix useful for homogenous transformations
+// default construced provides an identity matrix.
+vsg::dmat4 matrix;
+
+// set the translation of 100, 200, 300 units.
+matrix[3][0] = 100.0;
+matrix[3][1] = 200.0;
+matrix[3][2] = 300.0;
+~~~
 
 ## Geometric primtives
 
