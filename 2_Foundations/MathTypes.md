@@ -8,7 +8,9 @@ The VulkanSceneGraph provides GLSL style vector, quaternion and matrix types whi
 
 ## Data types
 
-All the math types can be found in the [include/vsg/maths](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/) directory. All the types are declared as template<> structs with definitions provided for the specific types supporting bool, 8, 16 and 32 bit int and unsigned ints, float and double versions of each type. All the maths types are simple structs, only containing the data fields required for the type and are not subclassed from vsg::Object like other scene graph objects as their focus in representing low level data and supporting maths operations. The available types are and the headers that define them are follow.
+All the math types can be found in the [include/vsg/maths](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/) directory. All the types are declared as template<> structs with definitions provided for the specific types supporting bool, 8, 16 and 32 bit int and unsigned ints, float and double versions of each type.
+
+All the maths types are simple structs, only containing the data fields required for the type and are not subclassed from vsg::Object like other scene graph objects as their focus in representing low level data and supporting maths operations. All math types can all be used as part of data objects which will cover in the next page - [Data Types](DataTypes.md).The available types are and the headers that define them are follow.
 
 Vector and quaternion types:
 * vsg::vec2 [include/vsg/maths/vec2.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec2.h)
@@ -24,11 +26,17 @@ Bounding volume primitive types:
 * vsg::sphere [include/vsg/maths/sphere.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/spahre.h)
 * vsg::box [include/vsg/maths/sphere.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/box.h)
 
-## Vector
+## Vectors
 
+The vsg::vec* types provide GLSL style access, with {x,y,z,w} & {r,g,b,a} and [] accessors which all map to the same underlying numerical values. The prefix of the type describes the type, and numerical postix describes number of values.  The prefix to type mapping are:
+
+| prefix | description | type |
+| b | signed byte | std::int8_t |
+| ub | unsigned byte | std::uint8_t |
 
 ## Quaternion
 
+The vsg::quat types provide GLSL style access, with {x,y,z,w} and [] accessors which all map to the same underlying numerical values.
 
 ## Matrices
 
@@ -38,4 +46,4 @@ Bounding volume primitive types:
 
 ---
 
-Prev: [Block memory management with vsg::Allocator](Allocator.md)| Next: [Visitors](Visitors.md)
+Prev: [vsg::observer_ptr](observer_ptr.md)| Next: [Data Tpes](DataTypes.md)

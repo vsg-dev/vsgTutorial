@@ -64,5 +64,5 @@ It's important to use the same types when getting values, if the type used in ge
 
 
 
-Prev: Next: [vsg::observer_ptr<>](observer_ptr.md)| Next: [vsg::Allocator](Allocator.md)
+Prev: Next: [Data Types](DataTypes.md)| Next: [vsg::Allocator](Allocator.md)
 

@@ -18,5 +18,5 @@ vsg::Array3D
 
 
 
-Prev: Next: [vsg::observer_ptr<>](observer_ptr.md)| Next: [vsg::Allocator](Allocator.md)
+Prev: Next: [Math Types](MathTypes.md)| Next: [MetaData](MetaData.md)
 
