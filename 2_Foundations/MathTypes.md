@@ -12,7 +12,7 @@ Simple structs are used, only containing the data fields required for the type a
 
 ## Available types and the associated headers
 
-Vector, quaternion & plane types:
+Vector, quaternion:
 * vsg::vec2 [include/vsg/maths/vec2.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec2.h)
 * vsg::vec3 [include/vsg/maths/vec3.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec3.h)
 * vsg::vec4 [include/vsg/maths/vec4.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec4.h)
@@ -43,7 +43,7 @@ The prefix of the type describes the numerical type, the mappings are:
 
 ## Vectors
 
-The vsg::vec* types provide GLSL style access, with {x,y,z,w} & {r,g,b,a} and [] accessors which all map to the same underlying numerical values. All the vector types also support set(..) methods and assignment. The vector types have a range uses and the accessors used support these:
+The [vsg::vec2](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec2.h), [vec3](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec3.h), [vec4](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec4.h) types provide GLSL style access, with {x,y,z,w} & {r,g,b,a} and [] accessors which all map to the same underlying numerical values. All the vector types also support set(..) methods and assignment. The vector types have a range uses and the accessors used support these:
 
 ~~~ cpp
 // double precision position, good for GIS on CPU
@@ -75,7 +75,7 @@ std::cout<<"number of components : color.size() = "<<color.size()<<std::emdl; //
 
 ## Quaternion
 
-The vsg::quat type is a rotation, defined in [quaternion](https://en.wikipedia.org/wiki/Quaternion) form, that provides {x,y,z,w} and [] accessors which all map to the same underlying numerical values:
+The [vsg::quat](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/quat.h) type is a rotation, defined in [quaternion](https://en.wikipedia.org/wiki/Quaternion) form, that provides {x,y,z,w} and [] accessors which all map to the same underlying numerical values:
 
 ~~~ cpp
 // double precision quaternion useful for defining rotaions, useful for GIS etc. applications
