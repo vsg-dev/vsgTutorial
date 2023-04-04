@@ -4,11 +4,13 @@ title: Maths Types
 permalink: /foundations/MathsTypes
 ---
 
-The VulkanSceneGraph provides GLSL style vector, quaternion and matrix types which are used both to represent data that can be used to store data on the CPU and can be directly mapped to GPU memory for use by shaders, and provides range of standard vector math functions.  We'll discuss the [math functions](MathFunctions.md) later in this chapter, this page will discuss the data types.
+The VulkanSceneGraph provides GLSL style vector, quaternion and matrix types which are used both to represent data that can be used to store data on the CPU and can be directly mapped to GPU memory for use by shaders, and provides range of standard vector math functions.  We'll discuss the [Math Functions](MathFunctions.md) later in this chapter, this page will discuss the data types.
 
 The math data types are found in the [include/vsg/maths](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/) directory. All the types are declared as template<> structs with definitions provided for the specific types supporting bool, 8, 16 and 32 bit int and unsigned ints, float and double versions of each type.
 
-Simple structs are used, only containing the data fields required for the type and are not subclassed from vsg::Object like other scene graph objects as their focus in representing low level data and supporting maths operations. All math types can all be used as part of data objects which will cover in the next page - [Data Types](DataTypes.md).The available types are and the headers that define them are follow.
+Simple structs are used, only containing the data fields required for the type and are not subclassed from vsg::Object like other scene graph objects as their focus in representing low level data and supporting maths operations. All math types can all be used as part of data objects which will cover in the next page - [Data Types](DataTypes.md).
+
+## Available types and the associated headers
 
 Vector, quaternion & plane types:
 * vsg::vec2 [include/vsg/maths/vec2.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec2.h)
@@ -24,6 +26,8 @@ Geometric primitive types:
 * vsg::plane [include/vsg/maths/plane.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/plane.h)
 * vsg::sphere [include/vsg/maths/sphere.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/sphere.h)
 * vsg::box [include/vsg/maths/sphere.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/box.h)
+
+## Prefix naming convention
 
 The prefix of the type describes the numerical type, the mappings are:
 
@@ -42,11 +46,17 @@ The prefix of the type describes the numerical type, the mappings are:
 The vsg::vec* types provide GLSL style access, with {x,y,z,w} & {r,g,b,a} and [] accessors which all map to the same underlying numerical values. All the vector types also support set(..) methods and assignment. The vector types have a range uses and the accessors used support these:
 
 ~~~ cpp
-// vertices and normals
-vsg::dvec3 position{1.0, 2.0, 3.0); // double vec3
+// double precision position, good for GIS on CPU
+vsg::dvec3 position{1.0, 2.0, 3.0);
 position.x = 1.0; // equivalent to position[0] = 1.0
-position[1] = 2.0; // equivalent to position.y = 2.0
+position.y = 2.0; // equivalent to position[1] = 2.0
 
+// float vertex, good for GPU work
+vsg::vec3 vertex{1.0f, 2.0f, 3.0f);
+vertex.x = 1.0f; // equivalent to position[0] = 1.0f
+vertex[1] = 2.0f; // equivalent to position.y = 2.0f
+
+// float normals
 vsg::vec3 normal(0.0f, 0.0f, 1.0f); // floating point vec3
 normal.set(0.0f, 1.0f, 0.0f);
 
