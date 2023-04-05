@@ -94,7 +94,6 @@ transform->value() = vsg::translation(vsg::vec3(100.0f, 200.0f, 300.0f));
 // create a PBR material and set the diffuseFactor
 auto material = PbrMaterialValue::create();
 material->value().diffuseFactor = vsg::vec4(1.0f, 0.0f, 0.0f, 1.0f);
-
 ~~~
 
 ## vsg::Array
@@ -125,10 +124,42 @@ auto colors = vsg::vec3::create({
 
 ## vsg::Array2D
 
-For an fixed size array of values you use the [vsg::Array](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array.h) template class. Like Value.h, Array.h provides definitions of the most command array types, the full list is found at the bottom of [vsg::Array](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array.h#L360)
+For an fixed size 2D array of values you use the [vsg::Array2D](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array2D.h) template class. The full list of pre defined array3D types, the full list is found at the bottom of [vsg::Array2D](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array2D.h#L350).
+
+Example:
+~~~ cpp
+auto image = vsg::vec4Array2D::create({
+        {1.0f, 0.0f, 0.0f, 1.0f},
+        {0.0f, 1.0f, 0.0f, 1.0f},
+        {0.0f, 0.0f, 1.0f, 1.0f},
+        {1.0f, 1.0f, 1.0f, 1.0f},
+        {1.0f, 0.0f, 0.0f, 1.0f},
+        {0.0f, 1.0f, 0.0f, 1.0f},
+        {0.0f, 0.0f, 1.0f, 1.0f},
+        {1.0f, 1.0f, 1.0f, 1.0f},
+    });
+
+// we must set the format for texture image so that Vulkan knows how to store it
+image->properites.format = VK_FORMAT_R32G32B32A32_SFLOAT;
+~~~
 
 ## vsg::Array3D
 
+For an fixed size 3D array of values you use the [vsg::Array3D](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array.h) template class. The full list of pre defined array3D types, the full list is found at the bottom of [vsg::Array3D](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array3D.h#L369).
+
+Examples:
+~~~ cpp
+// create a float 2x2x2 volume with VK_FORMAT_R32_SFLOAT format
+auto volume = vsg::floatArray3D::create(2, 2, 2, VK_FORMAT_R32_SFLOAT);
+volume->set(0, 0, 0, 0.0f);
+volume->set(1, 0, 0, 0.1f);
+volume->set(0, 1, 0, 0.2f);
+volume->set(1, 1, 0, 0.3f);
+volume->set(0, 0, 1, 0.4f);
+volume->set(1, 0, 1, 0.5f);
+volume->set(0, 1, 1, 0.6f);
+volume->set(1, 1, 1, 0.7f);
+~~~
 
 ## Dynamic data
 
