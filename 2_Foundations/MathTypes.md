@@ -78,13 +78,13 @@ std::cout<<"number of components : color.size() = "<<color.size()<<std::emdl; //
 The [vsg::quat](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/quat.h) type is a rotation, defined in [quaternion](https://en.wikipedia.org/wiki/Quaternion) form, that provides {x,y,z,w} and [] accessors which all map to the same underlying numerical values:
 
 ~~~ cpp
-// double precision quaternion useful for defining rotaions, useful for GIS etc. applications
+// double precision quaternion useful for defining rotations, useful for GIS etc. applications
 // use the angle, axis constructor to create a 90 degree rotation about the z axis.
 vsg::dquat rotation(vsg::radians(90.0), vsg::dvec3(0.0, 0.0, 1.0));
 
 std::cout<<"rotation = "<<rotation.x<<", "<<rotation.y<<", "<<rotation.z<<", "<<rotation.w<<std::endl;
 
-// default constrcuted single precision quaternion represents non rotation
+// default constructed single precision quaternion represents non rotation
 vsg::quat rot;
 
 // set as a rotation between two vectors
@@ -106,8 +106,8 @@ vsg::mat3 rotation_matrix(1.0f, 0.0f, 0.0f,
                           0.0f, 1.0f, 0.0f,
                           0.0f, 0.0f, 1.0f);
 
-// double precision 4x4 matrix useful for homogenous transformations
-// default construced provides an identity matrix.
+// double precision 4x4 matrix useful for homogeneous transformations
+// default constructed provides an identity matrix.
 vsg::dmat4 matrix;
 
 // set the translation of 100, 200, 300 units.
@@ -122,7 +122,7 @@ The [vsg::plane](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include
 
 ~~~ cpp
 
-// define a single precision horziontal plane at height of 1 unit
+// define a single precision horizontal plane at height of 1 unit
 vsg::plane pl(0.0f, 0.0, 1.0f, -1.0f);
 
 // create unit cube polytope from planes

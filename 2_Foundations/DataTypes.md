@@ -19,7 +19,7 @@ Containers that have their sized fixed at allocation time, rather than dynamical
 
 The [vsg::Data](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Data.h) is a pure vertiual base class that subclasses from vsg::Object to gain it's support for intrusive referfence counting, Meta Data and Run-Time Type Information (RTTI) support. Will go into the details of [Meta Data](MetaData.md) and [RTTI](Visitor.md) support later in this chapter.
 
-The vsg::Data::Propeties struct provides the definition of data properites that the individual data values, these properties are used to set the associated Vulkan data on the GPU as well as help specify how the data is allocated and used.  Follows in the definition of Data::Properties take directly from the include/vsg/core/Data.h header:
+The vsg::Data::Properties struct provides the definition of data properites that the individual data values, these properties are used to set the associated Vulkan data on the GPU as well as help specify how the data is allocated and used.  Follows in the definition of Data::Properties take directly from the include/vsg/core/Data.h header:
 
 ~~~ cpp
 /* Properties used for specifying the format of the data, use of mipmaps, block compressed data and origin.
@@ -48,7 +48,7 @@ struct VSG_DECLSPEC Properties
 };
 ~~~
 
-The vsg::Data defines a set of pure virtual methods that all concrete sublcasses from vsg::Data must provide, these methods provide scene graph and applications that abilitie to query the size of values in the data container, ppinter to the data and dimnensions of the data. The methods are:
+The vsg::Data defines a set of pure virtual methods that all concrete subclasses from vsg::Data must provide, these methods provide scene graph and applications that abilitie to query the size of values in the data container, ppinter to the data and dimnensions of the data. The methods are:
 
 ~~~ cpp
         virtual std::size_t valueSize() const = 0;
@@ -94,13 +94,13 @@ The help support synchronizing dynamic changes to the values in the vsg::Data co
         bool differentModifiedCount(const ModifiedCount& mc) const { return _modifiedCount != mc; }
 ~~~
 
-The [vsgdyamicvertex](https://github.com/vsg-dev/vsgExamples/tree/master/examples/state/vsgdynamicvertex) and [vsgdyamictexture](https://github.com/vsg-dev/vsgExamples/tree/master/examples/state/vsgdynamictexture) in the [vsgExamples repository](https://github.com/vsg-dev/vsgExamples) also provide illustation of dyanamic data. These are more advanced topics so for now there is no need to look up the topic in detail at this point, later in the vsgTutorial will go into detail of how to set up data for dynmic use.
+The [vsgdyamicvertex](https://github.com/vsg-dev/vsgExamples/tree/master/examples/state/vsgdynamicvertex) and [vsgdyamictexture](https://github.com/vsg-dev/vsgExamples/tree/master/examples/state/vsgdynamictexture) in the [vsgExamples repository](https://github.com/vsg-dev/vsgExamples) also provide illustation of dyanamic data. These are more advanced topics so for now there is no need to look up the topic in detail at this point, later in the vsgTutorial will go into detail of how to set up data for dynamic use.
 
 ## vsg::Value
 
 When you need a single value, either for just sharing CPU only needs, or for mapping to GPU memory such as a single per instance vertex attribute or uniform value you can use the [vsg::Value](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Value.h) template class. The Value.h header also provides a set of pre-defined types that wrap the most common basic types you'd use with the scene graph, from vsg::boolValue to vsg::dboxValue.
 
-For the list of types defined look at the bottom of the [Value.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Value.h#L169) header and addtional material related versions are provided by the [material.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/state/material.h) header.
+For the list of types defined look at the bottom of the [Value.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Value.h#L169) header and additional material related versions are provided by the [material.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/state/material.h) header.
 
 ~~~ cpp
 // create a vec3Value object using user specified initializer on the heap
@@ -111,7 +111,7 @@ auto translation = vsg::vec3Value::create(vsg::vec3(100.0f, 200.0f, 300.0f));
 auto transform = vsg::mat4Value::create();
 transform->value() = vsg::translation(vsg::vec3(100.0f, 200.0f, 300.0f));
 
-// create a PBR meterial and set the diffuseFactor
+// create a PBR material and set the diffuseFactor
 auto material = PbrMaterialValue::create();
 material->value().diffuseFactor = vsg::vec4(1.0f, 0.0f, 0.0f, 1.0f);
 
