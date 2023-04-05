@@ -19,6 +19,32 @@ Containers that have their sized fixed at allocation time, rather than dynamical
 
 The [vsg::Data](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Data.h) is a pure vertiual base class that subclasses from vsg::Object to gain it's support for intrusive referfence counting, Meta Data and Run-Time Type Information (RTTI) support. Will go into the details of [Meta Data](MetaData.md) and [RTTI](Visitor.md) support later in this chapter.
 
+The vsg::Data defines a set of pure virtual methods that all concrete subclasses from vsg::Data must provide, these methods provide scene graph and applications that ability to query the size of values in the data container, ppinter to the data and dimnensions of the data. The methods are:
+
+~~~ cpp
+        virtual std::size_t valueSize() const = 0;
+        virtual std::size_t valueCount() const = 0;
+
+        virtual bool dataAvailable() const = 0;
+        virtual std::size_t dataSize() const = 0;
+
+        virtual void* dataPointer() = 0;
+        virtual const void* dataPointer() const = 0;
+
+        virtual void* dataPointer(size_t index) = 0;
+        virtual const void* dataPointer(size_t index) const = 0;
+
+        virtual void* dataRelease() = 0;
+
+        virtual std::uint32_t dimensions() const = 0;
+
+        virtual std::uint32_t width() const = 0;
+        virtual std::uint32_t height() const = 0;
+        virtual std::uint32_t depth() const = 0;
+~~~
+
+### Data::Properites
+
 The vsg::Data::Properties struct provides the definition of data properites that the individual data values, these properties are used to set the associated Vulkan data on the GPU as well as help specify how the data is allocated and used. Follows in the definition of Data::Properties take directly from the include/vsg/core/Data.h header:
 
 ~~~ cpp
@@ -48,33 +74,23 @@ struct VSG_DECLSPEC Properties
 };
 ~~~
 
-The vsg::Data subclasses provide defaults for Data::Properites members, but in the case of the Properties.format you will need to set this to an appropriate value as this can't be determined by data type alone. When using Data objects on the CPU or when using them for vertex array and unform values the format value is not referenced so you can leave it blank, it's only when using Data objects as texture will the format be checked. However when loading data image files these will set the format for you so it's only in the case of user created image data that you'll need to set the format.  The range of values for the format member can be found in the Vulkan documentation on [VkFormat](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkFormat.html).
+The vsg::Data subclasses provide defaults for Data::Properites members, but in the case of the Properties.format you will need to set this to an appropriate value as this can't be determined by data type alone. When using Data objects on the CPU or when using them for vertex array and unform values the format value is not referenced so you can leave it blank, it's only when using Data objects as texture will the format be checked. However when loading data image files these will set the format for you so it's only in the case of user created image data that you'll need to set the format.  The range of values for the format member can be found in the Vulkan documentation on [VkFormat](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkFormat.html).  In the vsg::Array2D section below we'll provide an example of setting format.
 
-The vsg::Data defines a set of pure virtual methods that all concrete subclasses from vsg::Data must provide, these methods provide scene graph and applications that ability to query the size of values in the data container, ppinter to the data and dimnensions of the data. The methods are:
+### Dynamic data
+
+The help support synchronizing dynamic changes to the values in the vsg::Data containers with the associated GPU memory the vsg::Data provides the Data::Properities.dataVariance setting that is used to specify the the Data is to be dynamically updated, and a modified count that is used to track updates to the data. The rennge of options for dataVariance are:
 
 ~~~ cpp
-        virtual std::size_t valueSize() const = 0;
-        virtual std::size_t valueCount() const = 0;
-
-        virtual bool dataAvailable() const = 0;
-        virtual std::size_t dataSize() const = 0;
-
-        virtual void* dataPointer() = 0;
-        virtual const void* dataPointer() const = 0;
-
-        virtual void* dataPointer(size_t index) = 0;
-        virtual const void* dataPointer(size_t index) const = 0;
-
-        virtual void* dataRelease() = 0;
-
-        virtual std::uint32_t dimensions() const = 0;
-
-        virtual std::uint32_t width() const = 0;
-        virtual std::uint32_t height() const = 0;
-        virtual std::uint32_t depth() const = 0;
+enum DataVariance : uint8_t
+{
+    STATIC_DATA = 0,                       /** treat data as if doesn't not change .*/
+    STATIC_DATA_UNREF_AFTER_TRANSFER = 1,  /** unref this vsg::Data after the data has been transferred to the GPU memory .*/
+    DYNAMIC_DATA = 2,                      /** data is updated prior to the record traversal and will need transferring to GPU memory.*/
+    DYNAMIC_DATA_TRANSFER_AFTER_RECORD = 3 /** data is updated during the record traversal and will need transferring to GPU memory.*/
+};
 ~~~
 
-The help support synchronizing dynamic changes to the values in the vsg::Data containers with the associated GPU memory a modified count mechanism is provided by the Data::dirty() and associaed *ModifiedCount(..) methods:
+The public methods for updating and checking the modified count are:
 
 ~~~ cpp
         /// increment the ModifiedCount to signify the data has been modified
@@ -95,6 +111,24 @@ The help support synchronizing dynamic changes to the values in the vsg::Data co
         /// return true if Data's ModifiedCount is different than the specified ModifiedCount
         bool differentModifiedCount(const ModifiedCount& mc) const { return _modifiedCount != mc; }
 ~~~
+
+Typical usage:
+
+~~~ cpp
+
+// create data value on heap and set the property to dynamic
+auto color = vsg::vec4Value::create();
+color->properites.dataVariance = vsg::DYNAMIC_DATA;
+
+// create viewer and compile scene graph to Vulkan, the compile traversal will collate all dynamic data into a vsg::TransferTask so they can be checked each frame.
+
+// later in code, such as main loop
+color->set(vsg::vec4(1.0f, 0.0f, 0.0f, 1.0f));
+color->dirty();
+
+// viewer recordAndSubmt() will vsg::TransferTask to copy across any modified data.
+~~~
+
 
 The [vsgdyamicvertex](https://github.com/vsg-dev/vsgExamples/tree/master/examples/state/vsgdynamicvertex) and [vsgdyamictexture](https://github.com/vsg-dev/vsgExamples/tree/master/examples/state/vsgdynamictexture) in the [vsgExamples repository](https://github.com/vsg-dev/vsgExamples) also provide illustation of dyanamic data. These are more advanced topics so for now there is no need to look up the topic in detail at this point, later in the vsgTutorial will go into detail of how to set up data for dynamic use.
 
