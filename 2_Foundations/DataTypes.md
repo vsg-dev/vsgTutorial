@@ -161,6 +161,18 @@ volume->set(0, 1, 1, 0.6f);
 volume->set(1, 1, 1, 0.7f);
 ~~~
 
+## Iterators
+
+~~~ cpp
+auto colors = vsg::vec4Array2D(4, 4, VK_FORMAT_R32G32B32A32_SFLOAT);
+
+for(auto& color : colors)
+{
+    color.set(1.0f, 1.0f, 1.0f, 1.0f)
+}
+
+~~~
+
 ## Dynamic data
 
 To support synchronizing dynamic data changes with the associated GPU memory the vsg::Data class provides the Data::Properities.dataVariance setting for specifiying how the data will vary during its lifetime, and a modified count that is used to track updates to the data. The options for dataVariance are:
