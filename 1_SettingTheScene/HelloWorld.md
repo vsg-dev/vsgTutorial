@@ -10,13 +10,13 @@ cd ${PROJECT_DIR}
 git clone https://github.com/vsg-dev/vsgTutorial.git
 ~~~
 
-To build the hello world exercise we change in the exercise directory, we use the follow cmake script to build a stand alone application:
+To build the hello world exercise change into the exercise directory, and use the following cmake script to build a stand alone application:
 
 ~~~ cmake
 {% include_relative 01_hello_world/CMakeLists.txt %}
 ~~~
 
-To build the application we change into source diretory, run cmake then make:
+To build the application change into source diretory, run cmake then make:
 
 ~~~ sh
 cd vsgTutorial/1_SettingTheScene/01_hello_world
@@ -24,7 +24,7 @@ cmake .
 make 
 ~~~
 
-The hello world exercise is just single main function that has three sections to it:
+The hello world exercise is just a single main() function that has three sections to it:
 
 1. create the scene graph
 1. create and setup the viewer to render the scene graph
