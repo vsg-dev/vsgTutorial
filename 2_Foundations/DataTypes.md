@@ -76,9 +76,37 @@ struct VSG_DECLSPEC Properties
 
 The vsg::Data subclasses provide defaults for Data::Properites members, but in the case of the Properties.format you will need to set this to an appropriate value as this can't be determined by data type alone. When using Data objects on the CPU or when using them for vertex array and unform values the format value is not referenced so you can leave it blank, it's only when using Data objects as texture will the format be checked. However when loading data image files these will set the format for you so it's only in the case of user created image data that you'll need to set the format.  The range of values for the format member can be found in the Vulkan documentation on [VkFormat](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkFormat.html).  In the vsg::Array2D section below we'll provide an example of setting format.
 
+## vsg::Value
+
+When you need a single value, either for just sharing CPU only needs, or for mapping to GPU memory such as a single per instance vertex attribute or uniform value you can use the [vsg::Value](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Value.h) template class. The Value.h header also provides a set of pre-defined types that wrap the most common basic types you'd use with the scene graph, from vsg::boolValue to vsg::dboxValue.
+
+For the list of types defined look at the bottom of the [Value.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Value.h#L169) header and additional material related versions are provided by the [material.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/state/material.h) header.
+
+~~~ cpp
+// create a vec3Value object using user specified initializer on the heap
+// note create() passes back a ref_ptr<vec3Value> so C++ compiler will set the auto translation variable type to this
+auto translation = vsg::vec3Value::create(vsg::vec3(100.0f, 200.0f, 300.0f));
+
+// create a default constructed vsg::mat4Value on heap and then assign a value to it
+auto transform = vsg::mat4Value::create();
+transform->value() = vsg::translation(vsg::vec3(100.0f, 200.0f, 300.0f));
+
+// create a PBR material and set the diffuseFactor
+auto material = PbrMaterialValue::create();
+material->value().diffuseFactor = vsg::vec4(1.0f, 0.0f, 0.0f, 1.0f);
+
+~~~
+
+## vsg::Array
+
+## vsg::Array2D
+
+## vsg::Array3D
+
+
 ### Dynamic data
 
-The help support synchronizing dynamic changes to the values in the vsg::Data containers with the associated GPU memory the vsg::Data provides the Data::Properities.dataVariance setting that is used to specify the the Data is to be dynamically updated, and a modified count that is used to track updates to the data. The rennge of options for dataVariance are:
+To support synchronizing dynamic data changes with the associated GPU memory the vsg::Data provides the Data::Properities.dataVariance setting that is used to specify the the Data is to be dynamically updated, and a modified count that is used to track updates to the data. The options for dataVariance are:
 
 ~~~ cpp
 enum DataVariance : uint8_t
@@ -131,34 +159,6 @@ color->dirty();
 
 
 The [vsgdyamicvertex](https://github.com/vsg-dev/vsgExamples/tree/master/examples/state/vsgdynamicvertex) and [vsgdyamictexture](https://github.com/vsg-dev/vsgExamples/tree/master/examples/state/vsgdynamictexture) in the [vsgExamples repository](https://github.com/vsg-dev/vsgExamples) also provide illustation of dyanamic data. These are more advanced topics so for now there is no need to look up the topic in detail at this point, later in the vsgTutorial will go into detail of how to set up data for dynamic use.
-
-## vsg::Value
-
-When you need a single value, either for just sharing CPU only needs, or for mapping to GPU memory such as a single per instance vertex attribute or uniform value you can use the [vsg::Value](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Value.h) template class. The Value.h header also provides a set of pre-defined types that wrap the most common basic types you'd use with the scene graph, from vsg::boolValue to vsg::dboxValue.
-
-For the list of types defined look at the bottom of the [Value.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Value.h#L169) header and additional material related versions are provided by the [material.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/state/material.h) header.
-
-~~~ cpp
-// create a vec3Value object using user specified initializer on the heap
-// note create() passes back a ref_ptr<vec3Value> so C++ compiler will set the auto translation variable type to this
-auto translation = vsg::vec3Value::create(vsg::vec3(100.0f, 200.0f, 300.0f));
-
-// create a default constructed vsg::mat4Value on heap and then assign a value to it
-auto transform = vsg::mat4Value::create();
-transform->value() = vsg::translation(vsg::vec3(100.0f, 200.0f, 300.0f));
-
-// create a PBR material and set the diffuseFactor
-auto material = PbrMaterialValue::create();
-material->value().diffuseFactor = vsg::vec4(1.0f, 0.0f, 0.0f, 1.0f);
-
-~~~
-
-## vsg::Array
-
-## vsg::Array2D
-
-## vsg::Array3D
-
 
 
 Prev: Next: [Math Types](MathTypes.md)| Next: [Meta Data](MetaData.md)
