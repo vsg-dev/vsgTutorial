@@ -106,7 +106,7 @@ These setValue(key, value)/getValue(key) methods build upon the setObject(key, v
     }
 ~~~
 
-As the Object::setValue(key, value), getValue(key, value) functionality is built upon vsg::Value you can also get the value object:
+As the Object::setValue(key, value), getValue(key, value) functionality is built upon vsg::Value so you can also get the value object:
 
 ~~~ cpp
     // you can get the underlying object using the same key:
