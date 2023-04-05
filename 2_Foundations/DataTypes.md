@@ -19,7 +19,7 @@ Containers that have their sized fixed at allocation time, rather than dynamical
 
 The [vsg::Data](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Data.h) is a pure vertiual base class that subclasses from vsg::Object to gain it's support for intrusive referfence counting, Meta Data and Run-Time Type Information (RTTI) support. Will go into the details of [Meta Data](MetaData.md) and [RTTI](Visitor.md) support later in this chapter.
 
-The vsg::Data::Properties struct provides the definition of data properites that the individual data values, these properties are used to set the associated Vulkan data on the GPU as well as help specify how the data is allocated and used.  Follows in the definition of Data::Properties take directly from the include/vsg/core/Data.h header:
+The vsg::Data::Properties struct provides the definition of data properites that the individual data values, these properties are used to set the associated Vulkan data on the GPU as well as help specify how the data is allocated and used. Follows in the definition of Data::Properties take directly from the include/vsg/core/Data.h header:
 
 ~~~ cpp
 /* Properties used for specifying the format of the data, use of mipmaps, block compressed data and origin.
@@ -48,7 +48,9 @@ struct VSG_DECLSPEC Properties
 };
 ~~~
 
-The vsg::Data defines a set of pure virtual methods that all concrete subclasses from vsg::Data must provide, these methods provide scene graph and applications that abilitie to query the size of values in the data container, ppinter to the data and dimnensions of the data. The methods are:
+The vsg::Data subclasses will provide defaults for Data::Properites members, but in the case of the Properties.format you will need to set this to an approrpiate value as this can't be determined by data type alone. When using Data objects on the CPU or when using them for vetex array and unform values the format value is not referenced so you can leave it blank, it's only when using Data objects as texture will the format be checked. Howeverm when loading data image files these will set the format for you so it's only in the case of user created image data that you'll need to set the format.  The range of values for the format member can be found in the Vulkan documentation on [VkFormat](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkFormat.html).
+
+The vsg::Data defines a set of pure virtual methods that all concrete subclasses from vsg::Data must provide, these methods provide scene graph and applications that ability to query the size of values in the data container, ppinter to the data and dimnensions of the data. The methods are:
 
 ~~~ cpp
         virtual std::size_t valueSize() const = 0;
