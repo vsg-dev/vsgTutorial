@@ -104,9 +104,9 @@ material->value().diffuseFactor = vsg::vec4(1.0f, 0.0f, 0.0f, 1.0f);
 ## vsg::Array3D
 
 
-### Dynamic data
+## Dynamic data
 
-To support synchronizing dynamic data changes with the associated GPU memory the vsg::Data provides the Data::Properities.dataVariance setting that is used to specify the the Data is to be dynamically updated, and a modified count that is used to track updates to the data. The options for dataVariance are:
+To support synchronizing dynamic data changes with the associated GPU memory the vsg::Data class provides the Data::Properities.dataVariance setting for specifiying how the data will vary during its lifetime, and a modified count that is used to track updates to the data. The options for dataVariance are:
 
 ~~~ cpp
 enum DataVariance : uint8_t
@@ -157,9 +157,7 @@ color->dirty();
 // viewer recordAndSubmt() will vsg::TransferTask to copy across any modified data.
 ~~~
 
-
-The [vsgdyamicvertex](https://github.com/vsg-dev/vsgExamples/tree/master/examples/state/vsgdynamicvertex) and [vsgdyamictexture](https://github.com/vsg-dev/vsgExamples/tree/master/examples/state/vsgdynamictexture) in the [vsgExamples repository](https://github.com/vsg-dev/vsgExamples) also provide illustation of dyanamic data. These are more advanced topics so for now there is no need to look up the topic in detail at this point, later in the vsgTutorial will go into detail of how to set up data for dynamic use.
-
+The [vsgdyamicvertex](https://github.com/vsg-dev/vsgExamples/tree/master/examples/state/vsgdynamicvertex) and [vsgdyamictexture](https://github.com/vsg-dev/vsgExamples/tree/master/examples/state/vsgdynamictexture) in the [vsgExamples repository](https://github.com/vsg-dev/vsgExamples) provide illustation of dyanamic upsdate of vertex arrays and texture respectively.
 
 Prev: Next: [Math Types](MathTypes.md)| Next: [Meta Data](MetaData.md)
 
