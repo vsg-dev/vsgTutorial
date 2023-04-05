@@ -11,7 +11,7 @@ CPU bottlenecks with scene graph application predominantly occur during traversa
 * traversing large scene graph pushes the limits of memory bandwidth and CPU cache coherency, this was true in the 90's and is even more critical in 2020's
 * CPU features like pre-fetch, branch prediction and instruction parallelization are sensitive to how data is arranged and how control flows are structured
 
-Different CPUs have different strengths and weakness, some cope well with diffuse memory access and large numbers of branches, others struggle with challenging code and data. Taking care of how data is stored and processed to avoid stressing the CPU and memory architecture can substantially improve CPU utilization and throughput. A series of design decisions were made for the VulkanSceneGraph to help make this happen:
+Different CPUs have different strengths and weakness, some cope well with diffuse memory access and large numbers of branches, others struggle with such challenging code and data. Taking care of how data is stored and processed to avoid stressing the CPU and memory architecture can substantially improve CPU utilization and throughput. A series of design decisions were made for the VulkanSceneGraph to help make this happen:
 
 * From the vsg::Object base class through to scene graphs nodes are kept as small as possible. Data members like names, description, masks and callbacks are avoided in most commonly used classes.
 * A flexible meta data scheme is provided by a vsg::Auxiliary class that can be used on all objects when required, but in most cases will simply be the overhead of a null pointer.  This allows developers the flexibility to add names, descriptions etc when needed, without all objects paying the memory penalty.

@@ -4,13 +4,13 @@ title: Vulkan - graphics and compute API
 permalink: /SettingTheScene/Vulkan
 ---
 
-The standards body [Khronos](https://www.khronos.org/) releases, the successor to OpenGL, Vulkan-1.0 in February 2016, ushering in next generation of Open, Cross Platform API for graphics and compute.
+The standards body [Khronos](https://www.khronos.org/) released the successor to OpenGL, Vulkan-1.0 in February 2016, ushering in next generation of Open, Cross Platform API for graphics and compute.
 
 ### Pros:
 * Very low CPU overhead enables low power consumption and higher performance.
 
 * Multi-threaded for modern CPUs and GPUs:
-Designed from the ground up for multi-threading, with localisation of state within command buffers that applications thread create to explicit synchronisation primitives for managing CPU and GPU work.
+Designed from the ground up for multi-threading, with state localized within command buffers and explicit synchronisation primitives.
 
 * Cross platform: [source Wikipedia](https://en.wikipedia.org/wiki/Vulkan)
 "Vulkan runs natively on Android, Linux, BSD Unix, QNX, Haiku, Nintendo Switch, Raspberry Pi, Stadia, Fuchsia, Tizen, and Windows 7, 8, 10, and 11. MoltenVK provides freely-licensed third-party support for macOS, iOS and tvOS by wrapping over Apple's Metal API."
