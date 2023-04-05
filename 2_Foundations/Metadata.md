@@ -1,14 +1,14 @@
 ---
 layout: page
-title: Meta Data
+title: Metadata - "data that provides information about other data"
 permalink: /foundations/MetaData
 ---
 
-The vsg::Object base class has support for Meta Data - user named values and objects that can be assigned to and retrieved from objects. Meta Data provides an easy way to associate application specific data with scene graph objects without requiring subclassing and extending the scene graph. Serailization support is provided so that all the user assign values can be stored and retrieved along with the rest of the standard scene graph objects.
+The vsg::Object base class has support for Metadata - user named values and objects that can be assigned to and retrieved from objects. Metadata provides an easy way to associate application specific data with scene graph objects without requiring subclassing and extending the scene graph. Serailization support is provided so that all the user assign values can be stored and retrieved along with the rest of the standard scene graph objects.
 
 ## Setting and getting named objects
 
-The foundation of vsg::Object Meta Data is a collection of setObject(key, object)/getObject(key)/getRefObject(key) methods to provide users a way of associating objects with string keys that they can later use to retrieve the objects:
+The foundation of vsg::Object Metadata is a collection of setObject(key, object)/getObject(key)/getRefObject(key) methods to provide users a way of associating objects with string keys that they can later use to retrieve the objects:
 
 ~~~ cpp
         /// assign an Object associated with key
@@ -46,7 +46,7 @@ The foundation of vsg::Object Meta Data is a collection of setObject(key, object
         void removeObject(const std::string& key);
 ~~~
 
-The vsg::Object class implements these methods using a [vsg::Auxilary](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Axuliary.h)) object. vsg::Auxliary object provides both observer_ptr<> support and the std::map<std::string, ref_ptr<Object>> that holds the user assigned objects.  The vsg::Auxiliary object is only created and assigned to an vsg::Object when an oberver_ptr<> and/or Meta Data are required, as most scene graph objects don't require either most object will just have a null Axuliary pointer.
+The vsg::Object class implements these methods using a [vsg::Auxilary](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Axuliary.h)) object. vsg::Auxliary object provides both observer_ptr<> support and the std::map<std::string, ref_ptr<Object>> that holds the user assigned objects.  The vsg::Auxiliary object is only created and assigned to an vsg::Object when an oberver_ptr<> and/or Metadata are required, as most scene graph objects don't require either most object will just have a null Axuliary pointer.
 
 ## Setting and getting named values
 

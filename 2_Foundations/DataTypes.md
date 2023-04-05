@@ -17,7 +17,7 @@ Containers that have their sized fixed at allocation time, rather than dynamical
 
 ## vsg::Data base class
 
-The [vsg::Data](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Data.h) is a pure vertiual base class that subclasses from vsg::Object to gain it's support for intrusive referfence counting, Meta Data and Run-Time Type Information (RTTI) support. Will go into the details of [Meta Data](MetaData.md) and [RTTI](Visitor.md) support later in this chapter.
+The [vsg::Data](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Data.h) is a pure vertiual base class that subclasses from vsg::Object to gain it's support for intrusive referfence counting, Metadata and Run-Time Type Information (RTTI) support. Will go into the details of [Metadata](Metadata.md) and [RTTI](Visitor.md) support later in this chapter.
 
 The vsg::Data defines a set of pure virtual methods that all concrete subclasses from vsg::Data must provide, these methods provide scene graph and applications that ability to query the size of values in the data container, ppinter to the data and dimnensions of the data. The methods are:
 
@@ -238,5 +238,5 @@ The [vsgdyamicvertex](https://github.com/vsg-dev/vsgExamples/tree/master/example
 
 **TODO**
 
-Prev: Next: [Math Types](MathTypes.md)| Next: [Meta Data](MetaData.md)
+Prev: Next: [Math Types](MathTypes.md)| Next: [Metadata](Metadata.md)
 

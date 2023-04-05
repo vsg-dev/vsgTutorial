@@ -10,5 +10,5 @@ permalink: /foundations/Allocator
 
 ---
 
-Prev: [vsg::Auxiliary and Meta Data](Auxiliary_and_Meta_Data.md)| Next: [Maths](Maths.md)
+Prev: [Metadata](Metadata.md)| Next: [Maths](Maths.md)
 
