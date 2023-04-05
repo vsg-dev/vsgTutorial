@@ -43,7 +43,7 @@ The prefix of the type describes the numerical type, the mappings are:
 
 ## Vectors
 
-The [vsg::vec2](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec2.h), [vec3](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec3.h), [vec4](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec4.h) types provide GLSL style access, with {x,y,z,w} & {r,g,b,a} and [] accessors which all map to the same underlying numerical values. All the vector types also support set(..) methods and assignment. The vector types have a range uses and the accessors used support these:
+The [vsg::vec2](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec2.h), [vec3](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec3.h), [vec4](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec4.h) types provide GLSL style access, with {x,y,z,w}, {r,g,b,a}, {s,t,p,q} and [] accessors which all map to the same underlying numerical values. All the vector types also support set(..) methods and assignment. The vector types have a range uses and the accessors used support these:
 
 ~~~ cpp
 // double precision position, good for GIS on CPU
@@ -116,7 +116,7 @@ matrix[3][1] = 200.0;
 matrix[3][2] = 300.0;
 ~~~
 
-## Geometric primtives
+## Geometric primitives
 
 The [vsg::plane](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/plane.h), [sphere](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/sphere.h) and [box](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/box.h) types do not have a direct GLSL equivlant but are very useful for geometric primitives that are used in graphics application. The conventions used follow the same patterns as used in the vector, quaternion and matrix types.
 

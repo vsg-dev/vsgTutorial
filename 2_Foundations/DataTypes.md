@@ -106,11 +106,11 @@ auto vertices = vsg::vec3Array::create(2);
 vertices->set(0, vsg::vec3(0.0f, 0.0f, 0.0f));
 vertices->set(1, vsg::vec3(1.0f, 0.0f, 0.0f));
 
-auto texcoords = vsg::vec2::create(2);
+auto texcoords = vsg::vec2Array::create(2);
 texcoords->at(0) = vsg::vec2(0.0f, 0.0f));
 texcoords->at(1) = vsg::vec2(1.0f, 0.0f));
 
-auto colors = vsg::vec3::create({
+auto colors = vsg::vec3Array::create({
         {1.0f, 0.0f, 0.0f},
         {0.0f, 1.0f, 0.0f},
         {0.0f, 0.0f, 1.0f},
@@ -145,7 +145,7 @@ image->properites.format = VK_FORMAT_R32G32B32A32_SFLOAT;
 
 ## vsg::Array3D
 
-For an fixed size 3D array of values you use the [vsg::Array3D](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array.h) template class. The full list of pre defined array3D types, the full list is found at the bottom of [vsg::Array3D](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array3D.h#L369).
+For an fixed size 3D array of values you use the [vsg::Array3D](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array3D.h) template class. The full list of pre defined array3D types, the full list is found at the bottom of [vsg::Array3D](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array3D.h#L369).
 
 Examples:
 ~~~ cpp
@@ -229,6 +229,14 @@ color->dirty();
 ~~~
 
 The [vsgdyamicvertex](https://github.com/vsg-dev/vsgExamples/tree/master/examples/state/vsgdynamicvertex) and [vsgdyamictexture](https://github.com/vsg-dev/vsgExamples/tree/master/examples/state/vsgdynamictexture) in the [vsgExamples repository](https://github.com/vsg-dev/vsgExamples) provide illustation of dyanamic upsdate of vertex arrays and texture respectively.
+
+## Seperate data storage
+
+**TODO**
+
+## Interleaved data
+
+**TODO**
 
 Prev: Next: [Math Types](MathTypes.md)| Next: [Meta Data](MetaData.md)
 
