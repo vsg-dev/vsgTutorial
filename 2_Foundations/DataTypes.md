@@ -99,7 +99,33 @@ material->value().diffuseFactor = vsg::vec4(1.0f, 0.0f, 0.0f, 1.0f);
 
 ## vsg::Array
 
+For an fixed size array of values you use the [vsg::Array](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array.h) template class. Like Value.h, Array.h provides definitions of the most command array types, the full list is found at the bottom of [vsg::Array](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array.h#L360).
+
+Examples:
+~~~ cpp
+auto vertices = vsg::vec3Array::create(2);
+vertices->set(0, vsg::vec3(0.0f, 0.0f, 0.0f));
+vertices->set(1, vsg::vec3(1.0f, 0.0f, 0.0f));
+
+auto texcoords = vsg::vec2::create(2);
+texcoords->at(0) = vsg::vec2(0.0f, 0.0f));
+texcoords->at(1) = vsg::vec2(1.0f, 0.0f));
+
+auto colors = vsg::vec3::create({
+        {1.0f, 0.0f, 0.0f},
+        {0.0f, 1.0f, 0.0f},
+        {0.0f, 0.0f, 1.0f},
+        {1.0f, 1.0f, 1.0f},
+        {1.0f, 0.0f, 0.0f},
+        {0.0f, 1.0f, 0.0f},
+        {0.0f, 0.0f, 1.0f},
+        {1.0f, 1.0f, 1.0f},
+    });
+~~~
+
 ## vsg::Array2D
+
+For an fixed size array of values you use the [vsg::Array](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array.h) template class. Like Value.h, Array.h provides definitions of the most command array types, the full list is found at the bottom of [vsg::Array](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array.h#L360)
 
 ## vsg::Array3D
 
