@@ -163,12 +163,14 @@ volume->set(1, 1, 1, 0.7f);
 
 ## Iterators
 
+The vsg::Array, Arary2D and Array3D template classes all provide begin() and end() iterators that make it easy to set/get data that works with modern C++ style for loops.
+
 ~~~ cpp
 auto colors = vsg::vec4Array2D(4, 4, VK_FORMAT_R32G32B32A32_SFLOAT);
 
 for(auto& color : colors)
 {
-    color.set(1.0f, 1.0f, 1.0f, 1.0f)
+    color.set(1.0f, 1.0f, 1.0f, 1.0f);
 }
 
 ~~~
