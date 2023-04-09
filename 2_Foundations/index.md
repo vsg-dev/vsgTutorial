@@ -6,7 +6,7 @@ permalink: /foundations/
 
 **Currently being written.**
 
-This second part of the tutorial introduce developers to foundational classes and features that the rest of the VulkanSceneGraph classes are built upon. We start with introducing the based class and smart pointers, the vector and matrix types, the data containers and meta data.
+This second part of this tutorial introduces developers to foundational classes and features that the rest of the VulkanSceneGraph classes are built upon. We start with introducing the base class and smart pointers, the vector and matrix types, the data containers and meta data.
 
 1. [vsg::ref_ptr<> & vsg::Object base class](Object_base_class_and_ref_ptr.md) - strong smart pointer with intrusive reference counting
 1. [vsg::observer_ptr<>](observer_ptr.md) - weak smart pointers

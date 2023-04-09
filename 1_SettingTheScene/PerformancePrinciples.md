@@ -22,11 +22,11 @@ Different CPUs have different strengths and weakness, some cope well with diffus
 
 Together these design decisions ensure:
 
-* minimal object size so more objects can fit in zmain memory and crucially the CPU caches - vsg::Node takes just 24 bytes vs osg::Node 208 bytes.
+* minimal object size so more objects can fit in main memory and crucially the CPU caches - vsg::Node takes just 24 bytes vs osg::Node 208 bytes.
 * objects that will be operated on togeher are stored in memory together to increase the probability that cache lines will contain objects that will be next accessed.
-* conditional statements are reserved to just the places where they are required, rather than every where just in case they might be needed, so there is less branching, and when is needed branch prediction has a better chance of following the correct path.
+* conditional statements are reserved to just the places where they are required, rather than everywhere just in case they might be needed, so there is less branching, and branch prediction has a better chance of following the correct path.
 
-The end result is scene graph traversals are around 10 times faster than the equivalent in the OpenSceneGraph. These are just a taste of the many performance related decisions in the VulkanSceneGraph, as you work through the vsgTutorial you'll be introduced to more tips and tricks that have been used, and ones that you can use in your own application development as well.
+The end result is scene graph traversals that are around 10 times faster than the equivalent in the OpenSceneGraph. These are just a taste of the many performance related decisions in the VulkanSceneGraph, as you work through the vsgTutorial you'll be introduced to more tips and tricks that have been used, and ones that you can use in your own application development as well.
 
 ---
 

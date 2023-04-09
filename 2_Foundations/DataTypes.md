@@ -4,7 +4,7 @@ title: Data Types
 permalink: /foundations/DataTypes
 ---
 
-The scene graph needs to manage data that is held on the CPU and to be able to map this data to memory GPU in a coherent way.  The types of data may a single value, 1D, 2D and 3D arrays, with a range types, and used for a wide range of tasks - repreenting vertices, normals, texture coords arrays through to 1D, 2D and 3D textures.
+The scene graph needs to manage data that is held on the CPU and to be able to map this data to memory GPU in a coherent way.  The types of data may be a single value, 1D, 2D and 3D arrays, with a range of types, and used for a wide range of tasks - representing vertices, normals, texture coords arrays through to 1D, 2D and 3D textures.
 
 The [vsg::Data](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Data.h) base class provides a common interface for all the different types of data, then a series of template classes provide support for both built-in types and user defined types for single value and fixed sized 1D, 2D and 3D arrays:
 
@@ -17,9 +17,9 @@ Containers that have their sized fixed at allocation time, rather than dynamical
 
 ## vsg::Data base class
 
-The [vsg::Data](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Data.h) is a pure vertiual base class that subclasses from vsg::Object to gain it's support for intrusive referfence counting, Metadata and Run-Time Type Information (RTTI) support. Will go into the details of [Metadata](Metadata.md) and [RTTI](Visitor.md) support later in this chapter.
+The [vsg::Data](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Data.h) is a pure virtual base class that subclasses from vsg::Object to gain it's support for intrusive reference counting, Metadata and Run-Time Type Information (RTTI) support. We will go into the details of [Metadata](Metadata.md) and [RTTI](Visitor.md) support later in this chapter.
 
-The vsg::Data defines a set of pure virtual methods that all concrete subclasses from vsg::Data must provide, these methods provide scene graph and applications that ability to query the size of values in the data container, ppinter to the data and dimnensions of the data. The methods are:
+The vsg::Data defines a set of pure virtual methods that all concrete subclasses from vsg::Data must provide, these methods provide scene graph and applications the ability to query the size of values in the data container, pointer to the data and dimnensions of the data. The methods are:
 
 ~~~ cpp
         virtual std::size_t valueSize() const = 0;
@@ -45,7 +45,7 @@ The vsg::Data defines a set of pure virtual methods that all concrete subclasses
 
 ### Data::Properites
 
-The vsg::Data::Properties struct provides the definition of data properites that the individual data values, these properties are used to set the associated Vulkan data on the GPU as well as help specify how the data is allocated and used. Follows in the definition of Data::Properties take directly from the include/vsg/core/Data.h header:
+The vsg::Data::Properties struct provides the definition of data properites that the individual data values, these properties are used to set the associated Vulkan data on the GPU as well as help specify how the data is allocated and used. The definition of Data::Properties take directly from the include/vsg/core/Data.h header:
 
 ~~~ cpp
 /* Properties used for specifying the format of the data, use of mipmaps, block compressed data and origin.
@@ -74,7 +74,7 @@ struct VSG_DECLSPEC Properties
 };
 ~~~
 
-The vsg::Data subclasses provide defaults for Data::Properites members, but in the case of the Properties.format you will need to set this to an appropriate value as this can't be determined by data type alone. When using Data objects on the CPU or when using them for vertex array and unform values the format value is not referenced so you can leave it blank, it's only when using Data objects as texture will the format be checked. However when loading data image files these will set the format for you so it's only in the case of user created image data that you'll need to set the format.  The range of values for the format member can be found in the Vulkan documentation on [VkFormat](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkFormat.html).  In the vsg::Array2D section below we'll provide an example of setting format.
+The vsg::Data subclasses provide defaults for Data::Properties members, but in the case of the Properties.format you will need to set this to an appropriate value as this can't be determined by data type alone. When using Data objects on the CPU or when using them for vertex array and uniform values the format value is not referenced so you can leave it blank, it's only when using Data objects as texture will the format be checked. However when loading data image files these will set the format for you so it's only in the case of user created image data that you'll need to set the format.  The range of values for the format member can be found in the Vulkan documentation on [VkFormat](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkFormat.html).  In the vsg::Array2D section below we'll provide an example of setting format.
 
 ## vsg::Value
 

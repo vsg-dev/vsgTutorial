@@ -4,11 +4,11 @@ title: VulkanSceneGraph Library
 permalink: /SettingTheScene/VulkanSceneGraphLibrary
 ---
 
-The [VulkanSceneGraph library](https://github.com/vsg-dev/VulkanSceneGraph/) provides the features that will be common to all graphics & compute applications - creating a viewer, windows, scene graph, reading/writing data, creating Vulkan objects and recording Vulkan commands, synchronizing with Vulkan processes and CPU threads, 3d vector maths and common utilities like computing bounds and intersection test and shader composition and cmpilation. 
+The [VulkanSceneGraph library](https://github.com/vsg-dev/VulkanSceneGraph/) provides the features that will be common to all graphics & compute applications - creating a viewer, windows, scene graph, reading/writing data, creating Vulkan objects and recording Vulkan commands, synchronizing with Vulkan processes and CPU threads, 3d vector maths and common utilities like computing bounds and intersection test and shader composition and compilation.
 
 ## Feature organization
 
-All VulkanSceneGraph projects follow the same structure - public headers can be found in include/ directories and the implementation can be found in the src/ directories. This pattern is used to make it clear to end users what part of they will interface with, and as clear demarcation to library developers & contributors that interfaces and implementations both have clear and distinct roles. When installing the software it'll only the files in the include directories and any built libraries + cmake config files that will be installed.
+All VulkanSceneGraph projects follow the same structure - public headers can be found in include/ directories and the implementation can be found in the src/ directories. This pattern is used to make it clear to end users what part they will interface with, and as clear demarcation to library developers & contributors that interfaces and implementations both have distinct roles. When installing the software it will only be the files in the include directories and any built libraries + cmake config files that will be installed.
 
 The [vsg library headers](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg) are grouped in the following [include/vsg](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/) subdirectories:
 
@@ -33,7 +33,7 @@ Application class directories:
 * [utils](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/utils) - collection of utilities such intersections through to shader composition and compilation.
 * [threading](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/threading) - threading classes and helper functions
 
-The sections of the vsgTutorial are grouped in this way so as you work through you'll be introduced to [Foundational](../foundations.md), [Scene Graph](../scenegraph.md) and [Application](../application.md) areas in turn.
+The sections of the vsgTutorial are grouped in this way so that as you work through you'll be introduced to [Foundational](../foundations.md), [Scene Graph](../scenegraph.md) and [Application](../application.md) areas in turn.
 
 ## Naming conventions
 
@@ -60,7 +60,7 @@ The class and variable naming conventions is predominatly CamelCase but as there
 
 Classes in the VulkanSceneGraph predominatly follow the declaration of scope in order of public interface through to internal implementation details. The naming of public members variables and methods follow camelCase while protected and private members variables and methods are prefixed with a _ so that their roles can be seen in the declaration and implementation.
 
-For the same reasons that headers and source files are kept in distinct include and src directories, this convention is used to make it clear to end users and to implementers that public facing variables and methods are special, as users will set, get and call them their naming and types need to be more refined and maintained over time. While the protected and private members are implementation deatils that may be more subject to change.
+For the same reasons that headers and source files are kept in distinct include and src directories, this convention is used to make it clear to end users and to implementers that public facing variables and methods are special. As end users will directly use public members and methods, priority is given to mantaining consistency of their naming and types. While the protected and private members are implementation deatils that may be more subject to change.
 
 ~~~ cpp
 

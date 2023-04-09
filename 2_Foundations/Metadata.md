@@ -46,7 +46,7 @@ The foundation of vsg::Object Metadata is a collection of setObject(key, object)
         void removeObject(const std::string& key);
 ~~~
 
-The vsg::Object class implements these methods using a [vsg::Auxilary](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Axuliary.h)) object. vsg::Auxliary object provides both observer_ptr<> support and the std::map<std::string, ref_ptr<Object>> that holds the user assigned objects.  The vsg::Auxiliary object is only created and assigned to an vsg::Object when an oberver_ptr<> and/or Metadata are required, as most scene graph objects don't require either most object will just have a null Axuliary pointer.
+The vsg::Object class implements these methods using a [vsg::Auxilary](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Axuliary.h)) object. vsg::Auxliary object provides both observer_ptr<> support and the std::map<std::string, ref_ptr<Object>> that holds the user assigned objects.  The vsg::Auxiliary object is only created and assigned to an vsg::Object when an oberver_ptr<> and/or Metadata are required, as most scene graph objects don't require either most objects will just have a null Auxliary pointer.
 
 ## Setting and getting named values
 
@@ -66,7 +66,7 @@ To provide support for standard C++ types like std::string, float and simple sce
     bool getValue(const std::string& key, T& value) const;
 ~~~
 
-These setValue(key, value)/getValue(key) methods build upon the setObject(key, value)/getObject(key) functionality using the vsg::Value<> template data class as an adapter. This adaptation is done for you so users can just focus on the basic types that wish to use.  Object::getValue(key, value) return true when the object of the matching Value<> is found in the Auxiliary::usersObjects map, otherwise it returns false.  It is important to exactly match the types between setValue(key, value) and getValue(key, value) as no implicit type conversion is supported, i.e. setting with a float get attempting to get with a double will not find a match and always return false.
+These setValue(key, value)/getValue(key) methods build upon the setObject(key, value)/getObject(key) functionality using the vsg::Value<> template data class as an adapter. This adaptation is done for you so users can just focus on the basic types they wish to use.  Object::getValue(key, value) return true when the object of the matching Value<> is found in the Auxiliary::usersObjects map, otherwise it returns false.  It is important to exactly match the types between setValue(key, value) and getValue(key, value) as no implicit type conversion is supported, i.e. setting with a float then attempting to get with a double will not find a match and return false.
 
 ~~~ cpp
 {

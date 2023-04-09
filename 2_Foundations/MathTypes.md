@@ -6,9 +6,9 @@ permalink: /foundations/MathsTypes
 
 The VulkanSceneGraph provides GLSL style vector, quaternion and matrix types which are used both to represent data that can be used to store data on the CPU and can be directly mapped to GPU memory for use by shaders, and provides range of standard vector math functions.  We'll discuss the [Math Functions](MathFunctions.md) later in this chapter, this page will discuss the data types.
 
-The math data types are found in the [include/vsg/maths](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/) directory. All the types are declared as template<> structs with definitions provided for the specific types supporting bool, 8, 16 and 32 bit int and unsigned ints, float and double versions of each type.
+The math data types are found in the [include/vsg/maths](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/) directory. All the types are declared as template<> structs with definitions provided for the specific types, supporting bool, 8, 16 and 32 bit int and unsigned ints, float and double versions of each type.
 
-Simple structs are used, only containing the data fields required for the type and are not subclassed from vsg::Object like other scene graph objects as their focus in representing low level data and supporting maths operations. All math types can all be used as part of data objects which will cover in the next page - [Data Types](DataTypes.md).
+Simple structs are used, only containing the data fields required for the type and are not subclassed from vsg::Object like other scene graph objects as their focus in representing low level data and supporting maths operations. All math types can all be used as part of data objects which we will cover in the next page - [Data Types](DataTypes.md).
 
 ## Available types and the associated headers
 
