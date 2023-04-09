@@ -4,17 +4,17 @@ title: vsg::ref_ptr<> & vsg::Object base class
 permalink: /foundations/BaseClassesAndSmartPointers
 ---
 
-To provide robust, thread-safe, high performance memory manangment the VulkanSceneGraph uses intrusive reference counting and block memory allocation. The three main classes that provide this functionality are vsg::Object base class, the vsg::ref_ptr<> smart pointer and vsg::Allocator singleton. The vsg::Auxiliary class and vsg::observer_ptr<> smart pointer provide additional meta data and weak pointer functionality.  In this section we'll convert the vsg::Object base class and the vsg::ref_ptr<> smart pointer and cover the vsg::Auxiliary, observer_ptr<> and vsg::Allocator in the follow two sections.
+To provide robust, thread-safe, high performance memory manangment the VulkanSceneGraph uses intrusive reference counting and block memory allocation. The three main classes that provide this functionality are vsg::Object base class, the vsg::ref_ptr<> smart pointer and vsg::Allocator singleton. The vsg::Auxiliary class and vsg::observer_ptr<> smart pointer provide additional meta data and weak pointer functionality.  In this section we'll convert the vsg::Object base class and the vsg::ref_ptr<> smart pointer and then cover the vsg::Auxiliary, observer_ptr<> and vsg::Allocator in the following two sections.
 
 ## Intrusive vs non-instrusive reference counting
 
-Reference counting is widely used in application to facilitate robust sharing of objects allocated on the heap.  The two main approaches used in C++ applications are itrusive and on intrusive reference counting, each have strengths and weaknesses.
+Reference counting is widely used in applications to facilitate robust sharing of objects allocated on the heap.  The two main approaches used in C++ applications are intrusive and non-intrusive reference counting, each have strengths and weaknesses.
 
 Standard C++ provides the std::shared_ptr<> smart pointer that uses non-instrusive counting. The design requires the shared_ptr<> to hold two pointers, one to the object being managed and one to a shared reference count. The advantage of non intrusive reference counting is that it can be used with all types, from bool to std::vector to user classes. The disadvantage of the shared_ptr<> is twice the size of a C pointer which has singinficant performance consequences which we'll discuss in detail below.
 
-With intrusive reference counting the count is placed into the object, in the case of the VulkanSceneGraph is this is provided by the vsg::Object base classes atomic _referneceCount member variable which is accessed via the ref() and unref() methods that increment and decrement the count and when the count goes to zero the object is automatically deleted. To ensure that the ref() and unref() methods are called consistently the vsg::ref_ptr<> smart pointer is provided, similar in role to the std::shared_ptr<>, but has the advantage that it only requires a single C pointer so is the same size as a C pointer, and half the memory footprint of the std::shared_ptr<>.  The disadvantage with intrusive reference counting is that you can not use it directly with types like bool etc.
+With intrusive reference counting the count is placed into the object, in the case of the VulkanSceneGraph is this is provided by the vsg::Object base classes atomic _referneceCount member variable which is accessed via the ref() and unref() methods that increment and decrement the count and when the count goes to zero the object is automatically deleted. To ensure that the ref() and unref() methods are called consistently the vsg::ref_ptr<> smart pointer is provided, similar in role to the std::shared_ptr<>, but having the advantage that it only requires a single C pointer so is the same size as a C pointer, and half the memory footprint of the std::shared_ptr<>.  The disadvantage with intrusive reference counting is that you can not use it directly with types like bool etc.
 
-For the case of a scene graph we have a data structure where the internal nodes of the graph are primarily pointers to data objects or other nodes in the scene graph, if you double the size of the pointer you close to double the size of internal nodes in the graph.  Increasing the size of the nodes means you require more memory and crucially can fit less nodes into cache which means more cache misses and lower CPU utilization.  Benchmarking done comparing the traversal speeds of scene graph uses std::shared_ptr<> vs one with vsg::ref_ptr<> show that the intrusive reference counted scene graph is 15% faster.
+For the case of a scene graph we have a data structure where the internal nodes of the graph are primarily pointers to data objects or other nodes in the scene graph, if you double the size of the pointer you almost double the size of internal nodes in the graph.  Increasing the size of the nodes means you require more memory and crucially can fit less nodes into cache which means more cache misses and lower CPU utilization.  Benchmarking done comparing the traversal speeds of scene graph uses std::shared_ptr<> vs one with vsg::ref_ptr<> show that the intrusive reference counted scene graph is 15% faster.
 
 ## Creating objects and smart pointers
 
@@ -33,7 +33,7 @@ struct MyClass
 auto ptr = std::make_shared<MyClass>("fred");
 ~~~
 
-While the equvilant with the VulkanSceneGraph requires MyClass to be subclass from vsg::Object to add the itrusive reference counting:
+While the equivalent with the VulkanSceneGraph requires MyClass to be subclass from vsg::Object to add the itrusive reference counting:
 
 ~~~ cpp
 struct MyClass : public vsg::Object
@@ -65,11 +65,11 @@ struct MyClass : public vsg::Inherit<vsg::Object, MyClass>
 auto ptr = MyClass::create("ginger");
 ~~~
 
-While the declaration of the MyClass is little more complicated the benefit is cleaner and more expressive object creation syntax, that requires less code to type than either of the ref_ptr<T>(new T()) and std::make_shared<T>() usage. The use of the T::create(..) method is used throughout the VulkanSceneGraph codebase - it doesn't just make it more convenient for end users, it makes life easier for the developers of software as well.
+While the declaration of the MyClass is a little more complicated the benefit is cleaner and more expressive object creation syntax, that requires less code to type than either of the ref_ptr<T>(new T()) and std::make_shared<T>() usage. The use of the T::create(..) method is used throughout the VulkanSceneGraph codebase - it doesn't just make it more convenient for end users, it makes life easier for the developers of software as well.
 
 ## The strengths of smart pointers
 
-The main reason for smart pointers is to make it easier to develop robust applications, and in the case of the vsg::ref_ptr<>/vsg:::Object combination there is no memory or performance overhead over using C pointers except for specific usage cases. Follows are a few examples of how smart_pointers leads to cleaner and more robust code.
+The main reason for smart pointers is to make it easier to develop robust applications, and in the case of the vsg::ref_ptr<>/vsg:::Object combination there is no memory or performance overhead over using C pointers except for specific usage cases. The following are a few examples of how smart_pointers leads to cleaner and more robust code.
 
 Addressing memory leaks:
 
@@ -108,7 +108,7 @@ Addressing memory leaks:
 } // when ptr destructs it automatically decrements it's referenceCount which hits 0 and leads to the object being deleted.
 ~~~
 
-With case 1 & 2 are fine as long as the code block is never exits prematurely, what happens if there is a an early return or an exception thrown in the processing section? It will leak the object allocated on the heap.  With case 3 using ref_ptr<> early return from the block will always invoke the ptr destructor and always clean up the memory associated with it - the code isn't just simpler it's far more robust as well.
+Cases 1 & 2 are fine as long as the code blocks never exit prematurely, but what happens if there is a an early return or an exception thrown in the processing section? It will leak the object allocated on the heap.  With case 3 using ref_ptr<> an early return from the block will always invoke the ref_ptr<> destructor and always clean up the memory associated with it - the code isn't just simpler it's far more robust as well.
 
 Referencing counting also helps when passing back objects out from the scope of a code block:
 
@@ -162,7 +162,7 @@ vsg::ref_ptr<MyClass> other_ptr;
 other_ptr->value = 10.0; // assignment safe as object is still on the heap
 ~~~
 
-In case 4 it is possible to fix the seg fault by moving the delete to after the last time that other_ptr is used, however if the processing section returns eary or throws an exception the memory will be lost. case 5 will work correctly as long as the processing section doesn't return early or throws an exception in which case it will leak the allocation object. Again case 6 is both cleaner and handles the early return case correctly, cleaning up any objects that have been allocated and no longer have an external reference.
+In case 4 it is possible to fix the seg fault by moving the delete to after the last time that other_ptr is used, however if the processing section returns early or throws an exception the memory will be lost. Case 5 will work correctly as long as the processing section doesn't return early or throws an exception in which case it will leak the allocation object. Again case 6 is both cleaner and handles the early return case correctly, cleaning up any objects that have been allocated and no longer have an external reference.
 
 These examples illustrate why smart pointers are so useful and why you'll find them used throughout the VulkanSceneGraph codebase and applications that use it:
 1. Less code to write
@@ -190,7 +190,7 @@ std::shared_ptr<MyClass> std_ptr(vsg_ptr.ptr());
 delete vsg_ptr.get();
 ~~~
 
-The way to prevent this misuse use a protected or private destructor when the object is always meant to be allocated on the heap.
+The way to prevent this misuse is to use a protected or private destructor when the object is always meant to be allocated on the heap.
 
 ~~~ cpp
 class MyClass : public vsg::Inherit<vsg::Object, MyClass>
@@ -212,11 +212,11 @@ std::shared_ptr<MyClass> std_ptr(vsg_ptr.ptr());
 delete vsg_ptr.get();
 ~~~
 
-The VulkanSceneGraph uses this pattern throughout codebase so when you see the destructor declared in protected or private section of the class you know that that instances of that class are meant to be only declared on the heap and meant to be used with vsg::ref_ptr<>. The T::create() support provided by vsg::Inherit<> achieves both these requirements.
+The VulkanSceneGraph uses this pattern throughout the codebase so when you see the destructor declared in protected or private section of the class you know that that instances of that class are meant to be only declared on the heap and meant to be used with vsg::ref_ptr<>. The T::create() support provided by vsg::Inherit<> achieves both these requirements.
 
 ## Don't mix stack allocation and reference counting
 
-Another potential issue when using smart pointers and refenrece counting is when objects are allocated on the stack rather than on the heap. Stack allocation happens automatically for variables within a scope and all the allocated objects are automatically destructed at the end of the scope. The examples that leverage std::shared_ptr<> and vsg::ref_ptr<> smart pointers leverage this behavior to use the destruction of the smart pointers to unreferince the objects they have shared ownership of. The problem occurs if user allocate objects on the stack and then attempt to reference count them as well.  The following example illustrates this:
+Another potential issue when using smart pointers and reference counting is when objects are allocated on the stack rather than on the heap. Stack allocation happens automatically for variables within a scope and all the allocated objects are automatically destructed at the end of the scope. The examples using std::shared_ptr<> and vsg::ref_ptr<> leverage this behavior, using the destruction of the smart pointers to unreference the objects they have shared ownership of. The problem occurs if user allocate objects on the stack and then attempt to reference count them as well.  The following example illustrates this:
 
 ~~~ cpp
 
@@ -239,7 +239,7 @@ vsg::ref_ptr<MyClass> ptr;
 ptr->value += 10.0; // seg fault as object was deleted on exiting it's scope
 ~~~
 
-This same issue occurs for std::shared_ptr<>, you simply can't prevent the destruction of objects on the stack. If you want to management your objects using smart pointer you must only use them with objects allocated on the heap.  Thankfully the same technique of declaring the destructor protected/private prevent compilation of the code works for prevent stack construction as it does for prevent use with shared_ptr<> and explicitly deleting an object.
+This same issue occurs for std::shared_ptr<>, you simply can't prevent the destruction of objects on the stack. If you want to manage your objects using smart pointer you must only use them with objects allocated on the heap.  Thankfully the same technique of declaring the destructor protected/private prevent compilation of the code works for prevent stack construction as it does for prevent use with shared_ptr<> and explicitly deleting an object.
 
 ~~~ cpp
 class MyClass : public vsg::Inherit<vsg::Object, MyClass>
