@@ -27,7 +27,7 @@ const T* cast() const { return is_compatible(typeid(T)) ? static_cast<const T*>(
 virtual int compare(const Object& rhs) const;
 ~~~
 
-The vsg::Object::className() method is implemented using the vsg::type_name<> template function, specializations of vsg::type_name<> are in turn provided by the VSG_type_name() and EVSG_type_name() macro functions that can be placed before/after a class defintion, both of these features are defined in [include/vsg/core/value_type.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/type_name.h).
+The vsg::Object::className() method is implemented using the vsg::type_name<> template function, specializations of vsg::type_name<> are in turn provided by the VSG_type_name() and EVSG_type_name() macro functions that can be placed before/after a class defintion, both of these features are defined in [include/vsg/core/value_type.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/type_name.h). The VSG_type_name() macro can be used for classes within the vsg namespace, while the EVSG_type_name() version can be used for classes defined in other namespaces, such as what you see in [vsgXchange](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/all.h#L43).
 
 The vsg::Object::type_info() methods provides a convinient way to access the std::type_info of a particular object, and vsg::Object::is_compatible(const std::type_info&) method provides a method that can not just check whether a type is the same, but whether it may be derived from that type thus compatible with treatment as that type. The vsg::Inherit<> class can be used to automatically implement the required type_info() and is_compatible() methods.
 
