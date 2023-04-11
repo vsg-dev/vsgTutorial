@@ -15,5 +15,5 @@ This second part of this tutorial introduces developers to foundational classes 
 1. [Metadata](Metadata.md) - how to use metadata
 1. [RTTI and Visitors](Visitors.md) - type safe visiting and traversal
 1. [IO](IO.md) - built-in serialization and and reading/writing data
-1. [Math Functions](MathFunctionss.md) - math functions
 1. [vsg::Allocator](Allocator.md) - Block memory allocation for good performance
+1. [Math Functions](MathFunctionss.md) - math functions

@@ -10,5 +10,5 @@ permalink: /foundations/Allocator
 
 ---
 
-Prev: [Metadata](Metadata.md)| Next: [Maths](Maths.md)
+Prev: [IO](IO.md)| Next: [Maths Functions](MathFunctions.md)
 
