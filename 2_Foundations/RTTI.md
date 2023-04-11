@@ -151,7 +151,7 @@ The console output from this block is:
     pointer = ref_ptr<vsg::Object>(astro::Body 0x7f5116bc6010), class = astro::Body, name = Sun, age = 5.603
 ~~~
 
-Note, that sort has grouped the different types in order then within the same object types they are sorted.
+Note, that sort has grouped the different types in order then within the same object types they are sorted.  With this console output we also see how VSG's smart pointers can provide richer information about pointers, the type of pointer and the type of object it points to.
 
 ---
 
