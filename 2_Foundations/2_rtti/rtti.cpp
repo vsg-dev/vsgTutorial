@@ -64,13 +64,14 @@ int main(int, char**)
     objects.push_back(spacecraft);
 
     // use the vsg::DereferenceLess functor which implements the < operator
-    /// that dereferences the ref_ptr<> and compares using the custom Object::compare(),
+    // that dereferences the ref_ptr<> and compares using the custom Object::compare(),
     std::sort(objects.begin(), objects.end(), vsg::DereferenceLess());
 
     std::cout<<"Bodies after adding extra objects and sorting"<<std::endl;
     for(auto& object : objects)
     {
         // to access the specific Body member variables we need to cast from ref_ptr<vsg::Object> to ref_ptr<astro::Body>
+        // ref_ptr<>.cast() is implemented using th vsg::Object::cast<>() to efficiently replace a dynamic_cast<>.
         if (auto body = object.cast<astro::Body>())
         {
             std::cout<<"    pointer = "<<body<<", class = "<<body->className()<<", name = "<<body->name<<", age = "<<body->age<<std::endl;
