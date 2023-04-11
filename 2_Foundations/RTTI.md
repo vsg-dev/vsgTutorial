@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Run Time Time Identification (RTTI) features
-permalink: /foundations/Visitors
+permalink: /foundations/RTTI
 ---
 
 The VulkanSceneGarph provides a number of features that provide richer and more efficient Run Time Type Information (RTTI) and type safe operations than are provided by C++ itself. These features are provided by the vsg::Object base class and by two companion bass classes, the vsg::Visitor and vsg::ConstVisitor, with the vsg::Inherit CRTP class providing convinient implementations of the required methods.  In this section we'll focus on the RTTI features provided by vsg::Object/vsg::Inherit.
