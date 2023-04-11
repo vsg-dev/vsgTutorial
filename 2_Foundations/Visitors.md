@@ -8,7 +8,7 @@ The vsg::Visitor and vsg::ConstVisitor base classes are a variation of the [Visi
 
 To resolve this the Design Pattern's Object::accept(..)/Viistor::apply() method pairing is accompanied by a Object::traverse(..) method which is coupled with the Visitor taking resonisibility of traversal calling the Ojbect::traverse() method when/where it is approproate. In this section will see how this is implemented, how you write and use your own visitors and advantages that this Visitor Design Pattern variation provides.
 
-## vsg::Object & vsg::Visitor and vsg::ConstVisitor
+## vsg::Object, vsg::Visitor and vsg::ConstVisitor API
 
 The [vsg::Object](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Object.h) class provides virtual non const and const accept() and traverse() methods that shold be implemeneted by subclasses:
 
