@@ -60,7 +60,7 @@ namespace astro
 EVSG_type_name(astro::Body)
 ~~~
 
-We can then use this functionality in application code:
+We can then use this functionality in application code, first we create our main objects, assign them to a vector of ref_ptr<astro::Body> and print them out:
 
 ~~~ cpp
     // second constructed body object
@@ -87,6 +87,20 @@ We can then use this functionality in application code:
     {
         std::cout<<"    pointer = "<<body<<", class = "<<body->className()<<", name = "<<body->name<<", age = "<<body->age<<std::endl;
     }
+~~~
+
+The console output from this block is:
+~~~
+Bodies before sorting
+    pointer = ref_ptr<astro::Body>(astro::Body 0x7f8faf5c6010), class = astro::Body, name = Sun, age = 5.603
+    pointer = ref_ptr<astro::Body>(astro::Body 0x7f8faf5c60d0), class = astro::Body, name = Mars, age = 4.603
+    pointer = ref_ptr<astro::Body>(astro::Body 0x7f8faf5c6050), class = astro::Body, name = Earth, age = 4.543
+    pointer = ref_ptr<astro::Body>(astro::Body 0x7f8faf5c6090), class = astro::Body, name = Moon, age = 4.51
+~~~
+
+To test out RTTI support we'll assign the body objects to a more generic vector<ref_ptr<Object>>, assign some extra vsg::Object instances, and then leveraging the compare() functionality sort the vector and print out the results:
+
+~~~ cpp
 
     // copy the bodies container over to a more generic objects containers,
     // to illustrate how subclassing still works with more generic types
@@ -126,6 +140,20 @@ We can then use this functionality in application code:
         }
     }
 ~~~
+
+The console output from this block is:
+
+~~~
+Bodies after adding extra objects and sorting
+    pointer = ref_ptr<vsg::Object>(vsg::Object 0x7f8faf5c6110), class = vsg::Object, name = Hubble Space Telescope
+    pointer = ref_ptr<vsg::Object>(vsg::Object 0x7f8faf5c6128), class = vsg::Object, name = Apollo 11
+    pointer = ref_ptr<astro::Body>(astro::Body 0x7f8faf5c6090), class = astro::Body, name = Moon, age = 4.51
+    pointer = ref_ptr<astro::Body>(astro::Body 0x7f8faf5c6050), class = astro::Body, name = Earth, age = 4.543
+    pointer = ref_ptr<astro::Body>(astro::Body 0x7f8faf5c60d0), class = astro::Body, name = Mars, age = 4.603
+    pointer = ref_ptr<astro::Body>(astro::Body 0x7f8faf5c6010), class = astro::Body, name = Sun, age = 5.603
+~~~
+
+Note, that sort has grouped the different types in order then within the same object types they are sorted.
 
 ---
 
