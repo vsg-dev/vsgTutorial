@@ -99,14 +99,12 @@ This cascading simplifies implementations so they only need to override specific
 
 By design none of the default apply(..) methods provide by vsg::Visitor nd vsg::ConstViisotr provide traversal support, the decision on which objects to traverse and how to traverse them is left to visitor subclasses.  The vsg::Object::traverse(..) method can be used by Visitor subclasses to handle traversal of an objects children when this is required, or Visitor subclasses can implement their own traversal of an objects children.
 
-One of the advantages of giving responsibility to the visitor implementation is you can do operations before and after traversing a subgraph, in the following [PrintVisitor](https://github.com/vsg-dev/vsgTutorial/blob/master/2_Foundations/2_PrintVisitor/) example we use this to increment/decrment a indent as we traverse a graph, and provide methods to print out speciifc properties associated with types of interest.
+One of the advantages of giving responsibility to the visitor implementation is you can do operations before and after traversing a subgraph, for instance we use this to increment/decrment a indent as we traverse a graph, follows is snippet from the PrintVisitor example that we'll expand upon later in this section.
 
 ~~~ cpp
-    // implement simply print visitor that traverses the scene graph printing out node types
     struct PrintVisitor : public vsg::Inherit<vsg::ConstVisitor, PrintVisitor>
     {
         size_t indent = 0;
-
         void apply(const vsg::Object& object) override
         {
             for(size_t i=0; i<indent; ++i) std::cout<<" ";
@@ -116,7 +114,15 @@ One of the advantages of giving responsibility to the visitor implementation is 
             object.traverse(*this);
             indent -= 4;
         }
+    ...
+    };
+~~~
 
+## PrintVisitor example
+
+The following [PrintVisitor](https://github.com/vsg-dev/vsgTutorial/blob/master/2_Foundations/2_PrintVisitor/) example does traversal of a graph and provide methods to print out speciifc properties associated with types of interest:
+
+~~~ cpp
         void apply(const vsg::stringValue& value) override
         {
             for(size_t i=0; i<indent; ++i) std::cout<<" ";
