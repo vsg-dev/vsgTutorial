@@ -74,7 +74,7 @@ int main(int, char**)
         // ref_ptr<>.cast() is implemented using th vsg::Object::cast<>() to efficiently replace a dynamic_cast<>.
         if (auto body = object.cast<astro::Body>())
         {
-            std::cout<<"    pointer = "<<body<<", class = "<<body->className()<<", name = "<<body->name<<", age = "<<body->age<<std::endl;
+            std::cout<<"    pointer = "<<object<<", class = "<<body->className()<<", name = "<<body->name<<", age = "<<body->age<<std::endl;
         }
         else
         {
