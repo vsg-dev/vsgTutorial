@@ -1,8 +1,10 @@
 ---
 layout: page
-title: Metadata - "data that provides information about other data"
+title: Metadata
 permalink: /foundations/MetaData
 ---
+
+***"data that provides information about other data"***
 
 The vsg::Object base class has support for Metadata - user named values and objects that can be assigned to and retrieved from objects. Metadata provides an easy way to associate application specific data with scene graph objects without requiring subclassing and extending the scene graph. Serailization support is provided so that all the user assign values can be stored and retrieved along with the rest of the standard scene graph objects.
 
