@@ -115,8 +115,7 @@ struct PrintVisitor : public vsg::Inherit<vsg::ConstVisitor, PrintVisitor>
     }
 };
 
-// create a scene graph
-
+// create a small graph
 auto leaf = vsg::Objects::create();
 left->addChild(vsg::vec3Vakue::create({1.0f, 2.0f, 3.0f}));
 
