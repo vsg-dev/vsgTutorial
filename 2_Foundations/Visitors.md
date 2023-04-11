@@ -1,13 +1,13 @@
 ---
 layout: page
-title: Visitors
+title: RTTI & Visitors
 permalink: /foundations/Visitors
 ---
 
-**Sorry, not yet written.**
+The VulkanSceneGarph provides a number of features that provide richer and more efficient Run Time Type Information (RTTI) and type safe operations than are provided by C++ itself.
 
 
 ---
 
-Prev: [Maths](Maths.md)| Next: [IO](IO.md)
+Prev: [Metadata](Metadata.md)| Next: [IO](IO.md)
 

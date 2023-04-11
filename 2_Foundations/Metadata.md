@@ -112,5 +112,5 @@ As the Object::setValue(key, value), getValue(key, value) functionality is built
 ~~~
 
 
-Prev: Next: [Data Types](DataTypes.md)| Next: [vsg::Allocator](Allocator.md)
+Prev: Next: [Data Types](DataTypes.md)| Next: [RTTI & Visitors](Visitors.md)
 
