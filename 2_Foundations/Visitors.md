@@ -8,7 +8,7 @@ The vsg::Visitor and vsg::ConstVisitor base classes are a variation of the [Visi
 
 To resolve this the Design Pattern's Object::accept(..)/Viistor::apply() method pairing is accompanied by a Object::traverse(..) method which is coupled with the Visitor taking resonisibility of traversal calling the Ojbect::traverse() method when/where it is approproate. In this section will see how this is implemented, how you write and use your own visitors and advantages that this Visitor Design Pattern variation provides.
 
-## vsg::Visitor and vsg::ConstVisitor
+## vsg::Object & vsg::Visitor and vsg::ConstVisitor
 
 The [vsg::Object](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Object.h) class provides virtual non const and const accept() and traverse() methods that shold be implemeneted by subclasses:
 
@@ -28,10 +28,9 @@ void accept(ConstVisitor& visitor) const override { visitor.apply(static_cast<co
 ~~~
 
 
-The [vsg::Visitor](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Visitor.h) and [vsg::ConstVisitor](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/ConstVisitor.h) based class provide virtual apply(..) methods for each type that that visitor supports. Almost all scene graph related objects have entries in the Visitor & ConstVisitor classes, follows is a small snippet of these (click the [Visitor.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Visitor.h) link for the full list) :
+The [vsg::Visitor](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Visitor.h) and [vsg::ConstVisitor](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/ConstVisitor.h) based class provide virtual apply(..) methods for each type that that visitor supports. Almost all scene graph related objects have entries in the Visitor & ConstVisitor classes, follows is a small snippet of these (click the [Visitor.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Visitor.h#L148) link for the full list):
 
 ~~~ cpp
-
 // Values
 virtual void apply(stringValue&);
 virtual void apply(boolValue&);
@@ -66,7 +65,7 @@ virtual void apply(LOD&);
 ...
 ~~~
 
-Those familiar with the OpenSceneGraph will note similarities the [osg::NodeVisitor](https://github.com/OpenSceneGraph/OpenSceneGraph/blob/master/include/osg/NodeVisitor), both implementations follow the same Visitor Design Pattern variation but the VulkanSceneGraph generalizes to work on almost all object types and has both const and non const versions, whther it's data objects, scene graph nodes through to UI events the VulkanSceneGraph Visitors can handle all these usage cases. The osg::NodeVisitor has support for 25 different node types, while the VulkanSceneGraph supports 214 different object types.
+Those familiar with the OpenSceneGraph will note similarities the [osg::NodeVisitor](https://github.com/OpenSceneGraph/OpenSceneGraph/blob/master/include/osg/NodeVisitor), both implementations follow the same Visitor Design Pattern variation but the VulkanSceneGraph generalizes it to work on almost all object types and has both const and non const versions, whther it's data objects, scene graph nodes through to UI events the VulkanSceneGraph Visitors can handle all these usage cases. The osg::NodeVisitor has support for 25 different node types, while the VulkanSceneGraph supports 214 different object types.
 
 ---
 
