@@ -67,6 +67,71 @@ virtual void apply(LOD&);
 
 Those familiar with the OpenSceneGraph will note similarities the [osg::NodeVisitor](https://github.com/OpenSceneGraph/OpenSceneGraph/blob/master/include/osg/NodeVisitor), both implementations follow the same Visitor Design Pattern variation but the VulkanSceneGraph generalizes it to work on almost all object types and has both const and non const versions, whther it's data objects, scene graph nodes through to UI events the VulkanSceneGraph Visitors can handle all these usage cases. The osg::NodeVisitor has support for 25 different node types, while the VulkanSceneGraph supports 214 different object types.
 
+## Cascading apply()
+
+The default apply(..) implementations provided by vsg::Visitor and vsg::ConstVisitor are designed to cascade from the best match back up the inheritance chain to the more and more general types, following is a edit/annotaed snipet from [Visitor.cpp](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/src/vsg/core/Visitor.cpp):
+
+~~~ cpp
+void Visitor::apply(Object&)
+{
+    // if Visitor::apply(Object&) isn't implemented by Visitor subclass this
+    // method is implemented by is a non op
+}
+
+void Visitor::apply(Data& value)
+{
+    // if Visitor::apply(Data& value) isn't implemented by Visitor subclass this
+    // default implementation will be invoked and cast to parent class Object and call above method
+    apply(static_cast<Object&>(value));
+}
+
+void Visitor::apply(stringValue& value)
+{
+    // if Visitor::apply(stringValue& value) isn't implemented by Visitor subclass this
+    // default implementation will be invoked and cast to parent class Data and call above method
+    apply(static_cast<Data&>(value));
+}
+~~~
+
+This cascading simplifies implementations so they only need to override specific apply(..) methods of interest, and let the default implementations handle all the other types for you, we'll use this in all the custom Visitor examples below.
+
+## Traversal
+
+By design none of the default apply(..) methods provide by vsg::Visitor nd vsg::ConstViisotr provide traversal support, the decision on which objects to traverse and how to traverse them is left to visitor subclasses.  The vsg::Object::traverse(..) method can be used by Visitor subclasses to handle traversal of an objects children when this is required, or Visitor subclasses can implement their own traversal of an objects children.  One of the advantages of giving responsibility to the visitor implementation is you can do operations before and after traversing a subgraph, in the following example we use this to increment/decrment a indent.
+
+~~~ cpp
+// implement simply print visitor that traverses the scene graph printing out node types
+struct PrintVisitor : public vsg::Inherit<vsg::ConstVisitor, PrintVisitor>
+{
+    size_t ident = 0;
+    void apply(vsg::Object& object)
+    {
+        for(size_t i=0; i<indent; ++i) std::cout<<" ";
+        std::cout<<"Visiting "<<object.className()<<std::endl;
+
+        indent += 4;
+        object.traverse();
+        indent -= 4;
+    }
+};
+
+// create a scene graph
+
+auto leaf = vsg::Objects::create();
+left->addChild(vsg::vec3Vakue::create({1.0f, 2.0f, 3.0f}));
+
+auto nested = vsg::Objects::create();
+nested->addChild(leaf);
+nested->addChild(vsg::doubleArray::create({4.0, 5.0, 6.0}));
+
+auto root = vsg::Objects::create();
+root->addChild(vsg::stringValue::create("Everybody Loves Raymond"));
+root->addChild(nested);
+
+PrintVisitor print;
+root->accept(print);
+~~~
+
 ---
 
 Prev: [Run Time Time Identification (RTTI)](RTTI.md)| Next: [IO](IO.md)
