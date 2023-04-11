@@ -230,7 +230,7 @@ color->dirty();
 
 The [vsgdyamicvertex](https://github.com/vsg-dev/vsgExamples/tree/master/examples/state/vsgdynamicvertex) and [vsgdyamictexture](https://github.com/vsg-dev/vsgExamples/tree/master/examples/state/vsgdynamictexture) in the [vsgExamples repository](https://github.com/vsg-dev/vsgExamples) provide illustation of dyanamic upsdate of vertex arrays and texture respectively.
 
-## Seperate data storage
+## Separate data storage
 
 **TODO**
 
