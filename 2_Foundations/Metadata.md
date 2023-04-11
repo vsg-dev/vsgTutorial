@@ -94,16 +94,6 @@ These setValue(key, value)/getValue(key) methods build upon the setObject(key, v
     {
         std::cout<<"no double value found."<<std::endl;
     }
-
-    std::string str_value;
-    if (object->getValue("value", str_value))
-    {
-        std::cout<<"found str value = "<<str_value<<std::endl;
-    }
-    else
-    {
-        std::cout<<"no std::string value found."<<std::endl;
-    }
 ~~~
 
 As the Object::setValue(key, value), getValue(key, value) functionality is built upon vsg::Value so you can also get the value object:
