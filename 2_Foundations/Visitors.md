@@ -24,5 +24,5 @@ virtual void traverse(RecordTraversal&) const {}
 
 ---
 
-Prev: [Run Time Time Identification (RTTI) features](RTTI.md)| Next: [IO](IO.md)
+Prev: [Run Time Time Identification (RTTI)](RTTI.md)| Next: [IO](IO.md)
 

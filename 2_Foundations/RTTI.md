@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Run Time Time Identification (RTTI) features
+title: Run Time Time Identification (RTTI)
 permalink: /foundations/RTTI
 ---
 
@@ -158,4 +158,3 @@ Note, that sort has grouped the different types in order then within the same ob
 ---
 
 Prev: [Metadata](Metadata.md)| Next: [Visitors](Visitors.md)
-
