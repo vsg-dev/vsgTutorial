@@ -35,8 +35,7 @@ The vsg::Object::cast<>() template methods use the Object::is_compatible() metho
 
 The vsg::Object::compare(..) method provides a way of comparing two objects, both for type and the contents of the object. The int std::memcpy(..) convention is used, with negative for A<B, zero for A==B and positive for A>B.  The vsg::Inherit<> class provides a very basic compare(..) implementation but it's recommend to implement this locally for any class that holds anything more than simple types.  The [include/vsg/core/compare.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/compare.h) header provides a range of convinience template functions to make the task easier.
 
-
-TO illustrate these features we'll declare a custom class in it's own namespace and use Inherit to implement the RTTI methods, EVSG_type_name to provide the human readable nameing and the implement compare() method.
+To illustrate these features, with the [rtti example](2_rtti/rtti.cpp) example, we'll declare a custom class in it's own namespace and use Inherit to implement the RTTI methods, EVSG_type_name to provide the human readable nameing and the implement compare() method.
 ~~~ cpp
 namespace astro
 {
