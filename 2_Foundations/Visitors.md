@@ -97,38 +97,75 @@ This cascading simplifies implementations so they only need to override specific
 
 ## Traversal
 
-By design none of the default apply(..) methods provide by vsg::Visitor nd vsg::ConstViisotr provide traversal support, the decision on which objects to traverse and how to traverse them is left to visitor subclasses.  The vsg::Object::traverse(..) method can be used by Visitor subclasses to handle traversal of an objects children when this is required, or Visitor subclasses can implement their own traversal of an objects children.  One of the advantages of giving responsibility to the visitor implementation is you can do operations before and after traversing a subgraph, in the following example we use this to increment/decrment a indent.
+By design none of the default apply(..) methods provide by vsg::Visitor nd vsg::ConstViisotr provide traversal support, the decision on which objects to traverse and how to traverse them is left to visitor subclasses.  The vsg::Object::traverse(..) method can be used by Visitor subclasses to handle traversal of an objects children when this is required, or Visitor subclasses can implement their own traversal of an objects children.
+
+One of the advantages of giving responsibility to the visitor implementation is you can do operations before and after traversing a subgraph, in the following [PrintVisitor](2_PrintVisitor/PrintVisitor.cpp) example we use this to increment/decrment a indent as we traverse a graph, and provide methods to print out speciifc properties associated with types of interest.
 
 ~~~ cpp
-// implement simply print visitor that traverses the scene graph printing out node types
-struct PrintVisitor : public vsg::Inherit<vsg::ConstVisitor, PrintVisitor>
-{
-    size_t ident = 0;
-    void apply(vsg::Object& object)
+    // implement simply print visitor that traverses the scene graph printing out node types
+    struct PrintVisitor : public vsg::Inherit<vsg::ConstVisitor, PrintVisitor>
     {
-        for(size_t i=0; i<indent; ++i) std::cout<<" ";
-        std::cout<<"Visiting "<<object.className()<<std::endl;
+        size_t indent = 0;
 
-        indent += 4;
-        object.traverse();
-        indent -= 4;
-    }
-};
+        void apply(const vsg::Object& object) override
+        {
+            for(size_t i=0; i<indent; ++i) std::cout<<" ";
+            std::cout<<"Visiting "<<object.className()<<std::endl;
 
-// create a small graph
-auto leaf = vsg::Objects::create();
-left->addChild(vsg::vec3Vakue::create({1.0f, 2.0f, 3.0f}));
+            indent += 4;
+            object.traverse(*this);
+            indent -= 4;
+        }
 
-auto nested = vsg::Objects::create();
-nested->addChild(leaf);
-nested->addChild(vsg::doubleArray::create({4.0, 5.0, 6.0}));
+        void apply(const vsg::stringValue& value) override
+        {
+            for(size_t i=0; i<indent; ++i) std::cout<<" ";
+            std::cout<<"Visiting "<<value.className()<<" "<<value.value()<<std::endl;
+        }
 
-auto root = vsg::Objects::create();
-root->addChild(vsg::stringValue::create("Everybody Loves Raymond"));
-root->addChild(nested);
+        void apply(const vsg::vec3Value& value) override
+        {
+            for(size_t i=0; i<indent; ++i) std::cout<<" ";
+            std::cout<<"Visiting "<<value.className()<<" "<<value.value()<<std::endl;
+        }
 
-PrintVisitor print;
-root->accept(print);
+        void apply(const vsg::doubleArray& array) override
+        {
+            for(size_t i=0; i<indent; ++i) std::cout<<" ";
+            std::cout<<"Visiting "<<array.className()<<" { ";
+
+            for(auto v : array) std::cout<<v<<" ";
+
+            std::cout<<"}"<<std::endl;
+        }
+    };
+
+    // create a small graph
+    auto leaf = vsg::Objects::create();
+    leaf->addChild(vsg::vec3Value::create(1.0f, 2.0f, 3.0f));
+
+    auto nested = vsg::Objects::create();
+    nested->addChild(leaf);
+    nested->addChild(vsg::doubleArray::create({4.0, 5.0, 6.0}));
+
+    auto root = vsg::Objects::create();
+    root->addChild(vsg::stringValue::create("Everybody Loves Raymond"));
+    root->addChild(nested);
+
+    // consutruct our visitor and then pass it to root node to invoke the visitor.
+    PrintVisitor print;
+    root->accept(print);
+~~~
+
+The console output from this example is:
+
+~~~
+Visiting vsg::Objects
+    Visiting vsg::stringValue Everybody Loves Raymond
+    Visiting vsg::Objects
+        Visiting vsg::Objects
+            Visiting vsg::vec3Value 1 2 3
+        Visiting vsg::doubleArray { 4 5 6 }
 ~~~
 
 ---
