@@ -111,6 +111,30 @@ As the Object::setValue(key, value), getValue(key, value) functionality is built
 }
 ~~~
 
+## Listing all meta Objects/Values
+
+The vsg::Auxiliary object assigned to a vsg::Object, in order to provide meta data support, can be querried to list all the meta Objects/Values:
+
+~~~ cpp
+auto object = vsg::Object::create();
+object->setValue("name", "Adrian Mole"
+object->setValue("age", 13.75);
+
+if (auto auxiliary = object->getAuxiliary())
+{
+    for(auto& [key, object] : auxiliary->userObjects)
+    {
+        if (auto s = dynamic_cast<vsg::stringValue*>(object.get())) std::cout<<"metadata key = "<<key<<", stringValue = "<<s->value()<<std::endl;
+        else if (auto d = dynamic_cast<vsg::doubleValue*>(object.get())) std::cout<<"metadata key = "<<key<<", doubleValue = "<<d->value()<<std::endl;
+        else std::cout<<"metadata key = "<<key<<", object = "<<object<<std::endl;
+    }
+}
+else
+{
+    std::cout<<"No vsg::Auxiliary asigned to Object."<<std::endl;
+}
+~~~
+
+In the next section we'll discover other ways of determining the type of objects which avoid the need to use the awkard and costly dynamic_cast<> between types.
 
 Prev: Next: [Data Types](DataTypes.md)| Next: [RTTI & Visitors](Visitors.md)
-
