@@ -200,7 +200,8 @@ Visiting vsg::Objects
 
 The VulkanSceneGraph uses vistors for utilities for end users as well as using them to implement core features. As well as providing useful functionality they also serve as a good example of the range of tasks you can tackle with visitors, and how to implement your own:
 
-Event handling:
+### Event handling:
+
 | Class | Header | Description |
 | CountGlyphs | [vsg/text/Text.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/text/Text.h#L63) | Utility for count text glyphs |
 | CollectEvents | [vsg/ui/CollectEvents.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/CollectEvents.h#L22) | Collects events |
@@ -212,7 +213,8 @@ Event handling:
 | CloseHandler | [vsg/app/CloseHandler.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/CloseHandler.h) | On specified event signal viewer should be closed. |
 | AnimationPathHandler | [vsg/utils/AnimationPath.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/utils/AnimationPath.h) | Updates a Camera view matrix along a path |
 
-Utilities:
+### Utilities:
+
 | Class | Header | Description |
 | ComputeTransform | [vsg/maths/transform.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/maths/transform.h#L249) | Accumulates the transforms along a node path |
 | FindCameras | [vsg/app/Camera.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/Camera.h) | Find all the Cameras in a graph |
@@ -223,7 +225,8 @@ Utilities:
 | ArrayState | [state/ArrayState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ArrayState.h) | Track the array bindings in the scene graph during traversal |
 | BuildAccelerationStructureTraversal | [raytracing/BuildAccelerationStructureTraversal.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/raytracing/BuildAccelerationStructureTraversal.h) | Build ray tracing acceleration structures |
 
-Application setup:
+### Application setup:
+
 | Class | Header | Description |
 | CollectResourceRequirements | [vsg/vk/ResourceRequirements.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master//include/vsg/vk/ResourceRequirements.h) | Collects all the resources required by a scene graph|
 | CompileTraversal | [vsg/app/CompileTraversal.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/CompileTraversal.h) | Create Vulkan objects and transfer data to the GPU |
