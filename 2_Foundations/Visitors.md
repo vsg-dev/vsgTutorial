@@ -223,7 +223,6 @@ The VulkanSceneGraph uses vistors for utilities for end users as well as using t
 | LoadPagedLOD | [utils/LoadPagedLOD.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/utils/LoadPagedLOD.h) | Preload PageLOD children |
 | Intersector | [utils/Intersector.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/utils/Intersector.h) | Intersector base class |
 | ArrayState | [state/ArrayState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ArrayState.h) | Track the array bindings in the scene graph during traversal |
-| BuildAccelerationStructureTraversal | [raytracing/BuildAccelerationStructureTraversal.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/raytracing/BuildAccelerationStructureTraversal.h) | Build ray tracing acceleration structures |
 
 ### Application setup:
 
