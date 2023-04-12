@@ -108,7 +108,7 @@ As the Object::setValue(key, value), getValue(key, value) functionality is built
     // or cast it to specific type by providing the appropriate type
     if (auto value = object->getRefObject<vsg::floatValue>("value"))
     {
-        std::cout<<"valiue = "<<value->value()<<std::emdl;
+        std::cout<<"value = "<<value->value()<<std::emdl;
     }
 }
 ~~~
