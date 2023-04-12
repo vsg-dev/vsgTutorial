@@ -207,31 +207,21 @@ The VulkanSceneGraph uses vistors for utilities for end users as well as using t
 | RecordEvents | [vsg/ui/RecordEvents.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/RecordEvents.h#L23) | Records events for later playback |
 | PrintEvents | [vsg/ui/PrintEvents.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/PrintEvents.h#L21) | Print details of events |
 | ShiftEventTime | [vsg/ui/ShiftEventTime.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/ShiftEventTime.h#L22) | Shifts the time of an event |
-| ComputeTransform | [vsg/maths/transform.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/maths/transform.h) | Accumulates the transforms along a node path |
-| CollectResourceRequirements | [include/vsg/vk/ResourceRequirements.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/ include/vsg/vk/ResourceRequirements.h) | Collects all the resources required by a scene graph|
-| Trackball | [include/vsg/app/Trackball.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/Trackball.h) | Event handler that controls the Camera view matrix |
+| ComputeTransform | [vsg/maths/transform.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/maths/transform.h#L249) | Accumulates the transforms along a node path |
+| CollectResourceRequirements | [vsg/vk/ResourceRequirements.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master//include/vsg/vk/ResourceRequirements.h) | Collects all the resources required by a scene graph|
+| Trackball | [vsg/app/Trackball.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/Trackball.h) | Event handler that controls the Camera view matrix |
 | FindCameras | [vsg/app/Camera.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/Camera.h) | Find all the Cameras in a graph |
-| CompileTraversal | [vsg/app/CompileTraversal.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/CompileTraversal.h) | |
+| CompileTraversal | [vsg/app/CompileTraversal.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/CompileTraversal.h) | Create Vulkan objects and transfer data to the GPU |
 | WindowResizeHandler | [vsg/app/WindowResizeHandler.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/WindowResizeHandler.h) | Updates the GraphicsPipeline in a scene graph for new viewport dimensions |
 | CloseHandler | [vsg/app/CloseHandler.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/CloseHandler.h) | On specified event signal viewer should be closed. |
 
-<!--
-|  | [](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/) | |
-|  | [](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/) | |
-|  | [](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/) | |
-
-
-
-include/vsg/state/ArrayState.h:    class VSG_DECLSPEC ArrayState : public Inherit<ConstVisitor, ArrayState>
-
-include/vsg/utils/ShaderCompiler.h:    class VSG_DECLSPEC ShaderCompiler : public Inherit<Visitor, ShaderCompiler>
-include/vsg/utils/ComputeBounds.h:    class VSG_DECLSPEC ComputeBounds : public Inherit<ConstVisitor, ComputeBounds>
-include/vsg/utils/AnimationPath.h:    class VSG_DECLSPEC AnimationPathHandler : public Inherit<Visitor, AnimationPathHandler>
-include/vsg/utils/LoadPagedLOD.h:    class VSG_DECLSPEC LoadPagedLOD : public vsg::Visitor
-include/vsg/utils/Intersector.h:    class VSG_DECLSPEC Intersector : public Inherit<ConstVisitor, Intersector>
-
-include/vsg/raytracing/BuildAccelerationStructureTraversal.h:    class VSG_DECLSPEC BuildAccelerationStructureTraversal : public Visitor
--->
+| ArrayState | [vsg/state/ArrayState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ArrayState.h) | Track the array bindings in the scene graph during traversal |
+| ShaderCompiler | [vsg/utils/ShaderCompiler.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/ShaderCompiler.h) | Compile GLSL shaders to SPIR-V |
+| ComputeBounds | [vsg/utils/ComputeBounds.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/utils/ComputeBounds.h) | Compute the bounds of a subgraph |
+| AnimationPathHandler | [vsg/utils/AnimationPath.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/utils/AnimationPath.h) | Updates a Camera view matrix along a path |
+| LoadPagedLOD | [vsg/utils/LoadPagedLOD.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/utils/LoadPagedLOD.h) | Preload PageLOD children |
+| Intersector | [vsg/utils/Intersector.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/utils/Intersector.h) | Intersector base class |
+| BuildAccelerationStructureTraversal | [vsg/raytracing/BuildAccelerationStructureTraversal.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/raytracing/BuildAccelerationStructureTraversal.h) | Build ray tracing acceleration structures |
 
 ---
 
