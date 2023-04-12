@@ -198,13 +198,15 @@ Visiting vsg::Objects
 
 ### Visitors provided by the VulkanSceneGraph project
 
+The VulkanSceneGraph uses vistors for utilities for end users as well as using them to implement core features. As well as providing useful functionality they also serve as a good example of the range of tasks you can tackle with visitors, and how to implement your own:
+
 | Class | Header | Description |
-| CountGlyphs | [include/vsg/text/Text.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/text/Text.h) | Utility for count text glyphs|
-| CollectEvents | [include/vsg/ui/CollectEvents.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/CollectEvents.h) | Collects events |
-| PlayEvents | [include/vsg/ui/PlayEvents.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/PlayEvents.h) | Plays events |
-| RecordEvents | [include/vsg/ui/RecordEvents.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/RecordEvents.h) | Records events for later playback |
-| PrintEvents | [include/vsg/ui/PrintEvents.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/PrintEvents.h) | Print details of events |
-| ShiftEventTime | [include/vsg/ui/ShiftEventTime.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/ShiftEventTime.h) | Shifts the time of an event |
+| CountGlyphs | [include/vsg/text/Text.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/text/Text.h#L63) | Utility for count text glyphs|
+| CollectEvents | [include/vsg/ui/CollectEvents.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/CollectEvents.h#L22) | Collects events |
+| PlayEvents | [include/vsg/ui/PlayEvents.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/PlayEvents.h#L22) | Plays events |
+| RecordEvents | [include/vsg/ui/RecordEvents.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/RecordEvents.h#L23) | Records events for later playback |
+| PrintEvents | [include/vsg/ui/PrintEvents.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/PrintEvents.h#L21) | Print details of events |
+| ShiftEventTime | [include/vsg/ui/ShiftEventTime.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/ShiftEventTime.h#L22) | Shifts the time of an event |
 
 <!--
 |  | [](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/) |
