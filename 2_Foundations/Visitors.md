@@ -203,21 +203,21 @@ The VulkanSceneGraph uses vistors for utilities for end users as well as using t
 ### Event handling:
 
 | Class | Header | Description |
-| CountGlyphs | [vsg/text/Text.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/text/Text.h#L63) | Utility for count text glyphs |
-| CollectEvents | [vsg/ui/CollectEvents.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/CollectEvents.h#L22) | Collects events |
-| PlayEvents | [vsg/ui/PlayEvents.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/PlayEvents.h#L22) | Plays events |
-| RecordEvents | [vsg/ui/RecordEvents.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/RecordEvents.h#L23) | Records events for later playback |
-| PrintEvents | [vsg/ui/PrintEvents.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/PrintEvents.h#L21) | Print details of events |
-| ShiftEventTime | [vsg/ui/ShiftEventTime.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/ShiftEventTime.h#L22) | Shifts the time of an event |
-| Trackball | [vsg/app/Trackball.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/Trackball.h) | Event handler that controls the Camera view matrix |
-| CloseHandler | [vsg/app/CloseHandler.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/CloseHandler.h) | On specified event signal viewer should be closed. |
-| AnimationPathHandler | [vsg/utils/AnimationPath.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/utils/AnimationPath.h) | Updates a Camera view matrix along a path |
+| CountGlyphs | [text/Text.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/text/Text.h#L63) | Utility for count text glyphs |
+| CollectEvents | [ui/CollectEvents.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/CollectEvents.h#L22) | Collects events |
+| PlayEvents | [ui/PlayEvents.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/PlayEvents.h#L22) | Plays events |
+| RecordEvents | [ui/RecordEvents.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/RecordEvents.h#L23) | Records events for later playback |
+| PrintEvents | [ui/PrintEvents.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/PrintEvents.h#L21) | Print details of events |
+| ShiftEventTime | [ui/ShiftEventTime.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/ShiftEventTime.h#L22) | Shifts the time of an event |
+| Trackball | [app/Trackball.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/Trackball.h) | Event handler that controls the Camera view matrix |
+| CloseHandler | [app/CloseHandler.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/CloseHandler.h) | On specified event signal viewer should be closed. |
+| AnimationPathHandler | [utils/AnimationPath.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/utils/AnimationPath.h) | Updates a Camera view matrix along a path |
 
 ### Utilities:
 
 | Class | Header | Description |
-| ComputeTransform | [vsg/maths/transform.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/maths/transform.h#L249) | Accumulates the transforms along a node path |
-| FindCameras | [vsg/app/Camera.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/Camera.h) | Find all the Cameras in a graph |
+| ComputeTransform | [maths/transform.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/maths/transform.h#L249) | Accumulates the transforms along a node path |
+| FindCameras | [app/Camera.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/Camera.h) | Find all the Cameras in a graph |
 | ShaderCompiler | [utils/ShaderCompiler.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/ShaderCompiler.h) | Compile GLSL shaders to SPIR-V |
 | ComputeBounds | [utils/ComputeBounds.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/utils/ComputeBounds.h) | Compute the bounds of a subgraph |
 | LoadPagedLOD | [utils/LoadPagedLOD.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/utils/LoadPagedLOD.h) | Preload PageLOD children |
@@ -227,9 +227,9 @@ The VulkanSceneGraph uses vistors for utilities for end users as well as using t
 ### Application setup:
 
 | Class | Header | Description |
-| CollectResourceRequirements | [vsg/vk/ResourceRequirements.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master//include/vsg/vk/ResourceRequirements.h) | Collects all the resources required by a scene graph|
-| CompileTraversal | [vsg/app/CompileTraversal.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/CompileTraversal.h) | Create Vulkan objects and transfer data to the GPU |
-| WindowResizeHandler | [vsg/app/WindowResizeHandler.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/WindowResizeHandler.h) | Updates the GraphicsPipeline in a scene graph for new viewport dimensions |
+| CollectResourceRequirements | [vk/ResourceRequirements.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master//include/vsg/vk/ResourceRequirements.h) | Collects all the resources required by a scene graph|
+| CompileTraversal | [app/CompileTraversal.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/CompileTraversal.h) | Create Vulkan objects and transfer data to the GPU |
+| WindowResizeHandler | [app/WindowResizeHandler.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/WindowResizeHandler.h) | Updates the GraphicsPipeline in a scene graph for new viewport dimensions |
 
 
 ---
