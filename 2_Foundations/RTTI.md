@@ -143,12 +143,12 @@ To test out RTTI support we'll assign the body objects to a more generic vector<
 
 The console output from this block is:
 ~~~
-    pointer = ref_ptr<vsg::Object>(vsg::Object 0x7f5116bc6110), class = vsg::Object, name = Hubble Space Telescope
-    pointer = ref_ptr<vsg::Object>(vsg::Object 0x7f5116bc6128), class = vsg::Object, name = Apollo 11
-    pointer = ref_ptr<vsg::Object>(astro::Body 0x7f5116bc6090), class = astro::Body, name = Moon, age = 4.51
-    pointer = ref_ptr<vsg::Object>(astro::Body 0x7f5116bc6050), class = astro::Body, name = Earth, age = 4.543
-    pointer = ref_ptr<vsg::Object>(astro::Body 0x7f5116bc60d0), class = astro::Body, name = Mars, age = 4.603
-    pointer = ref_ptr<vsg::Object>(astro::Body 0x7f5116bc6010), class = astro::Body, name = Sun, age = 5.603
+    pointer = ref_ptr<vsg::Object>(vsg::Object 0x7fbd421c6128), class = vsg::Object, name = Apollo 11
+    pointer = ref_ptr<vsg::Object>(vsg::Object 0x7fbd421c6110), class = vsg::Object, name = Hubble Space Telescope
+    pointer = ref_ptr<vsg::Object>(astro::Body 0x7fbd421c6090), class = astro::Body, name = Moon, age = 4.51
+    pointer = ref_ptr<vsg::Object>(astro::Body 0x7fbd421c6050), class = astro::Body, name = Earth, age = 4.543
+    pointer = ref_ptr<vsg::Object>(astro::Body 0x7fbd421c60d0), class = astro::Body, name = Mars, age = 4.603
+    pointer = ref_ptr<vsg::Object>(astro::Body 0x7fbd421c6010), class = astro::Body, name = Sun, age = 5.603
 ~~~
 
 Note, that sort has grouped the different types in order then within the same object types they are sorted.  With this console output we also see how VSG's smart pointers can provide richer information about pointers, the type of pointer and the type of object it points to.
