@@ -118,7 +118,7 @@ struct PrintVisitor : public vsg::Inherit<vsg::ConstVisitor, PrintVisitor>
 };
 ~~~
 
-The scene graph also has nodes that add 64bit node and traversal masks that can be used by visitors to determine which branches to follow, the visitor base classes provide the following members to facilitate visitors using traversal masks:
+The scene graph also has nodes that add 64bit node and traversal [masks](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Mask.h) that can be used by visitors to determine which branches to follow, the visitor base classes provide the following members to facilitate visitors using traversal masks:
 
 ~~~ cpp
 Mask traversalMask = MASK_ALL;
