@@ -177,7 +177,7 @@ for(auto& color : colors)
 
 ## Dynamic data
 
-To support synchronizing dynamic data changes with the associated GPU memory the vsg::Data class provides the Data::Properities.dataVariance setting for specifiying how the data will vary during its lifetime, and a modified count that is used to track updates to the data. The options for dataVariance are:
+To support synchronizing dynamic data changes with the associated GPU memory the vsg::Data class provides the Data::Properties.dataVariance setting for specifying how the data will vary during its lifetime, and a modified count that is used to track updates to the data. The options for dataVariance are:
 
 ~~~ cpp
 enum DataVariance : uint8_t
