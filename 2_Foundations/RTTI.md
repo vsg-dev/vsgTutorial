@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Run Time Time Identification (RTTI)
+title: Run Time Type Identification (RTTI)
 permalink: /foundations/RTTI
 ---
 

@@ -248,6 +248,7 @@ While the RecordTraversal itself is not designed to be extended, users can imple
 
 One of weakensses of the Visitor Design Pattern is that the Visitor class must have a virtual apply(..) method for each supported type, if a user presents a new subclass that isn't directly supported it will be treated as the subclasses parent class. For instance is you create a vsg::MyData subclass from vsg::Data when past to a vsg::Visitor it will be matched to the Visitor::apply(Data&) method.
 
+The vsgExmaples repository contains the [vsgvisitorcustomtype](https://github.com/vsg-dev/vsgExamples/tree/master/examples/core/vsgvisitorcustomtype] that illustrates two approaches to extending visitor types.
 
 ---
 
