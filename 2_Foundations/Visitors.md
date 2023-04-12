@@ -196,7 +196,7 @@ Visiting vsg::Objects
         Visiting vsg::doubleArray { 4 5 6 }
 ~~~
 
-### Visitors provided by the VulkanSceneGraph project
+## Visitors provided by the VulkanSceneGraph project
 
 The VulkanSceneGraph uses vistors for utilities for end users as well as using them to implement core features. As well as providing useful functionality they also serve as a good example of the range of tasks you can tackle with visitors, and how to implement your own:
 
