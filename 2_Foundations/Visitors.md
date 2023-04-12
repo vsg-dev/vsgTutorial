@@ -118,14 +118,14 @@ struct PrintVisitor : public vsg::Inherit<vsg::ConstVisitor, PrintVisitor>
 };
 ~~~
 
-The scene graph also has nodes that add 64bit node and traversal [masks](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Mask.h) that can be used by visitors to determine which branches to follow, the [visitor base classes](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Vistor.h#L140) provide the following members to facilitate visitors using traversal masks:
+The scene graph also has 64bit node and traversal [masks](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Mask.h) that can be used by visitors to determine which branches to follow, the [visitor base classes](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Vistor.h#L140) provide the following members to facilitate visitors using node/traversal masks:
 
 ~~~ cpp
 Mask traversalMask = MASK_ALL;
 Mask overrideMask = MASK_OFF;
 ~~~
 
-In the chapters 3 & 4 chapters we'll go into the use of node and traversal masks in detail when introduce the scene graph nodes and application level classes that use them. The intent is a subgraph will be visited when the result of `(nodeMask | visitor.overrideMask) & visitor.traversalMask)!=0`.
+Subgraph will be visited when the result of `(nodeMask | visitor.overrideMask) & visitor.traversalMask)!=0`. In the chapters 3 & 4 chapters we'll go into the use of node and traversal masks in detail when scene graph nodes and application level classes that use them.
 
 ## PrintVisitor example
 
@@ -195,6 +195,43 @@ Visiting vsg::Objects
             Visiting vsg::vec3Value 1 2 3
         Visiting vsg::doubleArray { 4 5 6 }
 ~~~
+
+### Visitors provided by the VulkanSceneGraph project
+
+| Class | Header | Description |
+| CountGlyphs | [include/vsg/text/Text.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/text/Text.h) | Utility for count text glyphs|
+| CollectEvents | [include/vsg/ui/CollectEvents.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/CollectEvents.h) | Collects events |
+| PlayEvents | [include/vsg/ui/PlayEvents.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/PlayEvents.h) | Plays events |
+| RecordEvents | [include/vsg/ui/RecordEvents.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/RecordEvents.h) | Records events for later playback |
+| PrintEvents | [include/vsg/ui/PrintEvents.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/PrintEvents.h) | Print details of events |
+| ShiftEventTime | [include/vsg/ui/ShiftEventTime.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/ShiftEventTime.h) | Shifts the time of an event |
+
+<!--
+|  | [](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/) |
+|  | [](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/) |
+|  | [](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/) |
+|  | [](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/) |
+
+include/vsg/maths/transform.h:    struct VSG_DECLSPEC ComputeTransform : public ConstVisitor
+
+include/vsg/vk/ResourceRequirements.h:    class VSG_DECLSPEC CollectResourceRequirements : public Inherit<ConstVisitor, CollectResourceRequirements>
+
+include/vsg/app/Trackball.h:    class VSG_DECLSPEC Trackball : public Inherit<Visitor, Trackball>
+include/vsg/app/Camera.h:    class VSG_DECLSPEC FindCameras : public Inherit<Visitor, FindCameras>
+include/vsg/app/CompileTraversal.h:    class VSG_DECLSPEC CompileTraversal : public Inherit<Visitor, CompileTraversal>
+include/vsg/app/WindowResizeHandler.h:    class VSG_DECLSPEC WindowResizeHandler : public Inherit<Visitor, WindowResizeHandler>
+include/vsg/app/CloseHandler.h:    class CloseHandler : public Inherit<Visitor, CloseHandler>
+
+include/vsg/state/ArrayState.h:    class VSG_DECLSPEC ArrayState : public Inherit<ConstVisitor, ArrayState>
+
+include/vsg/utils/ShaderCompiler.h:    class VSG_DECLSPEC ShaderCompiler : public Inherit<Visitor, ShaderCompiler>
+include/vsg/utils/ComputeBounds.h:    class VSG_DECLSPEC ComputeBounds : public Inherit<ConstVisitor, ComputeBounds>
+include/vsg/utils/AnimationPath.h:    class VSG_DECLSPEC AnimationPathHandler : public Inherit<Visitor, AnimationPathHandler>
+include/vsg/utils/LoadPagedLOD.h:    class VSG_DECLSPEC LoadPagedLOD : public vsg::Visitor
+include/vsg/utils/Intersector.h:    class VSG_DECLSPEC Intersector : public Inherit<ConstVisitor, Intersector>
+
+include/vsg/raytracing/BuildAccelerationStructureTraversal.h:    class VSG_DECLSPEC BuildAccelerationStructureTraversal : public Visitor
+-->
 
 ---
 
