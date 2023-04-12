@@ -240,7 +240,7 @@ virtual void accept(RecordTraversal& visitor) const;
 virtual void traverse(RecordTraversal&) const {}
 ~~~
 
-The part that is different is the [RecordTraversal::apply()](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/RecordTarversal.h#L97) methods are a straight forward class methods rather than virtual methods like used in visitors. This is done to reduce the number of virtual functions being invoked during the traversal that is most critical to performance, but does mean the one can't subclass from RecordTraversal and override the apply methods - the choice is to favor perfomance over extensibility.
+The part that is different is the [RecordTraversal::apply()](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/RecordTraversal.h#L97) methods are a straight forward class methods rather than virtual methods like used in visitors. This is done to reduce the number of virtual functions being invoked during the traversal that is most critical to performance, but does mean the one can't subclass from RecordTraversal and override the apply methods - the choice is to favor perfomance over extensibility.
 
 While the RecordTraversal itself is not designed to be extended, users can implement custom nodes that override the vsg::Object's virtual apply(RecordTraverasl) & travser(RecordTraverasl&) methods to customize how the RecordTraverasl handles the custom nodes.
 
