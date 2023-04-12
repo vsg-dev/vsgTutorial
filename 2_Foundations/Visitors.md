@@ -4,13 +4,13 @@ title: Visitors
 permalink: /foundations/Visitors
 ---
 
-The vsg::Visitor and vsg::ConstVisitor base classes are a variation of the [Visitor Desgin Pattern](https://en.wikipedia.org/wiki/Visitor_pattern) designed specifically for scene graphs. The particular challenge for scene graphs is that not only can there be many different types of objects in a scene graph, but how the children should be visited can also vary from node to node and from visitor to visitor.
+The vsg::Visitor and vsg::ConstVisitor base classes are a variation of the [Visitor Design Pattern](https://en.wikipedia.org/wiki/Visitor_pattern) designed specifically for scene graphs. The particular challenge for scene graphs is that not only can there be many different types of objects in a scene graph, but how the children should be visited can also vary from node to node and from visitor to visitor.
 
-To resolve this the Design Pattern's Object::accept(..)/Viistor::apply() method pairing is accompanied by a Object::traverse(..) method which is coupled with the Visitor taking resonisibility of traversal calling the Ojbect::traverse() method when/where it is approproate. In this section will see how this is implemented, how you write and use your own visitors and advantages that this Visitor Design Pattern variation provides.
+To resolve this the Design Pattern's Object::accept(..)/Viistor::apply() method pairing is accompanied by a Object::traverse(..) method which is coupled with the Visitor taking resonisibility of traversal calling the Object::traverse() method when/where it is appropriate. In this section will see how this is implemented, how you write and use your own visitors and advantages that this Visitor Design Pattern variation provides.
 
 ## vsg::Object, vsg::Visitor and vsg::ConstVisitor API
 
-The [vsg::Object](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Object.h) class provides virtual non const and const accept() and traverse() methods that shold be implemeneted by subclasses:
+The [vsg::Object](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Object.h) class provides virtual non const and const accept() and traverse() methods that should be implemented by subclasses:
 
 ~~~ cpp
 virtual void accept(Visitor& visitor);
@@ -65,11 +65,11 @@ virtual void apply(LOD&);
 ...
 ~~~
 
-Those familiar with the OpenSceneGraph will note similarities the [osg::NodeVisitor](https://github.com/OpenSceneGraph/OpenSceneGraph/blob/master/include/osg/NodeVisitor), both implementations follow the same Visitor Design Pattern variation but the VulkanSceneGraph generalizes it to work on almost all object types and has both const and non const versions, whther it's data objects, scene graph nodes through to UI events the VulkanSceneGraph Visitors can handle all these usage cases. The osg::NodeVisitor has support for 25 different node types, while the VulkanSceneGraph supports 214 different object types.
+Those familiar with the OpenSceneGraph will note similarities the [osg::NodeVisitor](https://github.com/OpenSceneGraph/OpenSceneGraph/blob/master/include/osg/NodeVisitor), both implementations follow the same Visitor Design Pattern variation but the VulkanSceneGraph generalizes it to work on almost all object types and has both const and non const versions, whether it's data objects, scene graph nodes through to UI events the VulkanSceneGraph Visitors can handle all these usage cases. The osg::NodeVisitor has support for 25 different node types, while the VulkanSceneGraph supports 214 different object types.
 
 ## Cascading apply()
 
-The default apply(..) implementations provided by vsg::Visitor and vsg::ConstVisitor are designed to cascade from the best match back up the inheritance chain to the more and more general types, following is a edit/annotaed snipet from [Visitor.cpp](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/src/vsg/core/Visitor.cpp):
+The default apply(..) implementations provided by vsg::Visitor and vsg::ConstVisitor are designed to cascade from the best match back up the inheritance chain to the more and more general types, following is a edit/annotaed snippet from [Visitor.cpp](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/src/vsg/core/Visitor.cpp):
 
 ~~~ cpp
 void Visitor::apply(Object&)
@@ -97,7 +97,7 @@ This cascading simplifies implementations so they only need to override specific
 
 ## Traversal under your control
 
-By design none of the default apply(..) methods provide by vsg::Visitor nd vsg::ConstViisotr provide traversal support, the decision on which objects to traverse and how to traverse them is left to visitor subclasses.  The vsg::Object::traverse(..) method can be used by Visitor subclasses to handle traversal of an objects children when this is required, or Visitor subclasses can implement their own traversal of an objects children.
+By design none of the default apply(..) methods provide by vsg::Visitor and vsg::ConstViisotr provide traversal support, the decision on which objects to traverse and how to traverse them is left to visitor subclasses.  The vsg::Object::traverse(..) method can be used by Visitor subclasses to handle traversal of an objects children when this is required, or Visitor subclasses can implement their own traversal of an objects children.
 
 One of the advantages of giving responsibility to the visitor implementation is you can do operations before and after traversing a subgraph, for instance we use this to increment/decrment a indent as we traverse a graph, follows is snippet from the PrintVisitor example that we'll expand upon later in this section.
 
@@ -129,7 +129,7 @@ Subgraph will be visited when the result of `(nodeMask | visitor.overrideMask) &
 
 ## PrintVisitor example
 
-The following [PrintVisitor](https://github.com/vsg-dev/vsgTutorial/blob/master/2_Foundations/2_PrintVisitor/) example does traversal of a graph and provide methods to print out speciifc properties associated with types of interest:
+The following [PrintVisitor](https://github.com/vsg-dev/vsgTutorial/blob/master/2_Foundations/2_PrintVisitor/) example does traversal of a graph and provide methods to print out specific properties associated with types of interest:
 
 ~~~ cpp
 struct PrintVisitor : public vsg::Inherit<vsg::ConstVisitor, PrintVisitor>
@@ -198,7 +198,7 @@ Visiting vsg::Objects
 
 ## Visitors provided by the VulkanSceneGraph project
 
-The VulkanSceneGraph uses vistors for utilities for end users as well as using them to implement core features. As well as providing useful functionality they also serve as a good example of the range of tasks you can tackle with visitors, and how to implement your own. When reviewing the following examples look for the apply(..) methods that override the base Visitor/ConstVisitor::apply(..) methods as guide to what type of objects that handle:
+The VulkanSceneGraph uses visitors for utilities for end users as well as using them to implement core features. As well as providing useful functionality they also serve as a good example of the range of tasks you can tackle with visitors, and how to implement your own. When reviewing the following examples look for the apply(..) methods that override the base Visitor/ConstVisitor::apply(..) methods as guide to what type of objects that handle:
 
 ### Event handling:
 
