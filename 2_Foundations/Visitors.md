@@ -231,6 +231,23 @@ The VulkanSceneGraph uses visitors for utilities for end users as well as using 
 | CompileTraversal | [app/CompileTraversal.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/CompileTraversal.h#L31) | Create Vulkan objects and transfer data to the GPU |
 | WindowResizeHandler | [app/WindowResizeHandler.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/WindowResizeHandler.h#L24) | Updates the GraphicsPipeline in a scene graph for new viewport dimensions |
 
+## RecordTraversal
+
+The RecordTraversal class is similar to the visitor classes but it's implemented with the double dispatch (two virtual functions) that the visitor classes use. The RecordTraversal is is supported by [vsg::Object](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Object.h#L85) via the two virtual methods:
+
+~~~  cpp
+virtual void accept(RecordTraversal& visitor) const;
+virtual void traverse(RecordTraversal&) const {}
+~~~
+
+The part that is different is the [RecordTraversal::apply()](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/RecordTarversal.h#L97) method are a straight forward class methods rather than virtual methods. This is done to reduce the number of virtual functions being invoked during the traversal that is most critical to performance, but does mean the one can't subclass from RecordTraversal and override the apply methods - the choice is to favor perfomance over extensibility.
+
+While the RecordTraversal itself is not designed to be extended, users can implement custom nodes that override the vsg::Object's virtual apply(RecordTraverasl) & travser(RecordTraverasl&) methods to customize how the RecordTraverasl handles the custom nodes.
+
+## Visitor and user defined subclasses
+
+One of weakensses of the Visitor Design Pattern is that the Visitor class must have a virtual apply(..) method for each supported type, if a user presents a new subclass that isn't directly supported it will be treated as the subclasses parent class. For instance is you create a vsg::MyData subclass from vsg::Data when past to a vsg::Visitor it will be matched to the Visitor::apply(Data&) method.
+
 
 ---
 
