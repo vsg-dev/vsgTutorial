@@ -198,7 +198,7 @@ Visiting vsg::Objects
 
 ## Visitors provided by the VulkanSceneGraph project
 
-The VulkanSceneGraph uses vistors for utilities for end users as well as using them to implement core features. As well as providing useful functionality they also serve as a good example of the range of tasks you can tackle with visitors, and how to implement your own:
+The VulkanSceneGraph uses vistors for utilities for end users as well as using them to implement core features. As well as providing useful functionality they also serve as a good example of the range of tasks you can tackle with visitors, and how to implement your own. When reviewing the following examples look for the apply(..) methods that override the base Visitor/ConstVisitor::apply(..) methods as guide to what type of objects that handle:
 
 ### Event handling:
 
@@ -218,7 +218,7 @@ The VulkanSceneGraph uses vistors for utilities for end users as well as using t
 | Class | Header | Description |
 | ComputeTransform | [maths/transform.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/maths/transform.h#L249) | Accumulates the transforms along a node path |
 | FindCameras | [app/Camera.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/Camera.h#L46) | Find all the Cameras in a graph |
-| ShaderCompiler | [utils/ShaderCompiler.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/utils/ShaderCompiler.h) | Compile GLSL shaders to SPIR-V |
+| ShaderCompiler | [utils/ShaderCompiler.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/utils/ShaderCompiler.h#L10) | Compile GLSL shaders to SPIR-V |
 | ComputeBounds | [utils/ComputeBounds.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/utils/ComputeBounds.h#L21) | Compute the bounds of a subgraph |
 | LoadPagedLOD | [utils/LoadPagedLOD.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/utils/LoadPagedLOD.h#L23) | Preload PageLOD children |
 | Intersector | [utils/Intersector.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/utils/Intersector.h#L21) | Intersector base class |
