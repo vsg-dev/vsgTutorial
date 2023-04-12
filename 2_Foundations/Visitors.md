@@ -118,14 +118,14 @@ struct PrintVisitor : public vsg::Inherit<vsg::ConstVisitor, PrintVisitor>
 };
 ~~~
 
-The scene graph also has nodes that add 64bit node and traversal [masks](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Mask.h) that can be used by visitors to determine which branches to follow, the visitor base classes provide the following members to facilitate visitors using traversal masks:
+The scene graph also has nodes that add 64bit node and traversal [masks](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Mask.h) that can be used by visitors to determine which branches to follow, the [visitor base classes](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Vistor.h#L140) provide the following members to facilitate visitors using traversal masks:
 
 ~~~ cpp
 Mask traversalMask = MASK_ALL;
 Mask overrideMask = MASK_OFF;
 ~~~
 
-The principle behind masks is a subgraph will be visited when the result of `(nodeMask | visitor.overrideMask) & visitor.traversalMask)!=0`. In the 3 and 4th chapters we'll go into the use of node and traversal masks in detail when introduce the scene graph nodes and application level classes that use them.
+In the chapters 3 & 4 chapters we'll go into the use of node and traversal masks in detail when introduce the scene graph nodes and application level classes that use them. The intent is a subgraph will be visited when the result of `(nodeMask | visitor.overrideMask) & visitor.traversalMask)!=0`.
 
 ## PrintVisitor example
 
