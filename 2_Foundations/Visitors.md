@@ -95,7 +95,7 @@ void Visitor::apply(stringValue& value)
 
 This cascading simplifies implementations so they only need to override specific apply(..) methods of interest, and let the default implementations handle all the other types for you, we'll use this in all the custom Visitor examples below.
 
-## Traversal
+## Traversal under your control
 
 By design none of the default apply(..) methods provide by vsg::Visitor nd vsg::ConstViisotr provide traversal support, the decision on which objects to traverse and how to traverse them is left to visitor subclasses.  The vsg::Object::traverse(..) method can be used by Visitor subclasses to handle traversal of an objects children when this is required, or Visitor subclasses can implement their own traversal of an objects children.
 
@@ -117,6 +117,15 @@ One of the advantages of giving responsibility to the visitor implementation is 
     ...
     };
 ~~~
+
+The scene graph also has nodes that add traversal and node masks that can be used by visitors to determine which branches to follow, the visitor base classes provide the following members to facilitate visitors using traversal masks:
+
+~~~ cpp
+        Mask traversalMask = MASK_ALL;
+        Mask overrideMask = MASK_OFF;
+~~~
+
+In the 3 and 4th chapters we'll go into the use of node and traversal masks in detail when introduce the scene graph nodes and application level classes that use them.
 
 ## PrintVisitor example
 

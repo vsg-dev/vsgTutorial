@@ -101,7 +101,6 @@ Bodies before sorting
 To test out RTTI support we'll assign the body objects to a more generic vector<ref_ptr<Object>>, assign some extra vsg::Object instances, and then leveraging the compare() functionality sort the vector and print out the results:
 
 ~~~ cpp
-
     // copy the bodies container over to a more generic objects containers,
     // to illustrate how subclassing still works with more generic types
     std::vector<vsg::ref_ptr<vsg::Object>> objects(bodies.begin(), bodies.end());
