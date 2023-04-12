@@ -201,24 +201,26 @@ Visiting vsg::Objects
 The VulkanSceneGraph uses vistors for utilities for end users as well as using them to implement core features. As well as providing useful functionality they also serve as a good example of the range of tasks you can tackle with visitors, and how to implement your own:
 
 | Class | Header | Description |
-| CountGlyphs | [include/vsg/text/Text.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/text/Text.h#L63) | Utility for count text glyphs|
+| CountGlyphs | [include/vsg/text/Text.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/text/Text.h#L63) | Utility for count text glyphs |
 | CollectEvents | [include/vsg/ui/CollectEvents.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/CollectEvents.h#L22) | Collects events |
 | PlayEvents | [include/vsg/ui/PlayEvents.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/PlayEvents.h#L22) | Plays events |
 | RecordEvents | [include/vsg/ui/RecordEvents.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/RecordEvents.h#L23) | Records events for later playback |
 | PrintEvents | [include/vsg/ui/PrintEvents.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/PrintEvents.h#L21) | Print details of events |
 | ShiftEventTime | [include/vsg/ui/ShiftEventTime.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/ui/ShiftEventTime.h#L22) | Shifts the time of an event |
+| ComputeTransform | [include/vsg/maths/transform.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/maths/transform.h) | Accumulates the transforms along a node path |
+| CollectResourceRequirements | [include/vsg/vk/ResourceRequirements.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/ include/vsg/vk/ResourceRequirements.h) | Collects all the resources required by a scene graph|
+| Trackball | [include/vsg/app/Trackball.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/Trackball.h) | Event handler that controls the Camera view matrix |
 
 <!--
-|  | [](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/) |
-|  | [](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/) |
-|  | [](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/) |
-|  | [](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/) |
+|  | [](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/) | |
+|  | [](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/) | |
+|  | [](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/) | |
+|  | [](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/) | |
+|  | [](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/) | |
+|  | [](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/) | |
+|  | [](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/) | |
 
-include/vsg/maths/transform.h:    struct VSG_DECLSPEC ComputeTransform : public ConstVisitor
 
-include/vsg/vk/ResourceRequirements.h:    class VSG_DECLSPEC CollectResourceRequirements : public Inherit<ConstVisitor, CollectResourceRequirements>
-
-include/vsg/app/Trackball.h:    class VSG_DECLSPEC Trackball : public Inherit<Visitor, Trackball>
 include/vsg/app/Camera.h:    class VSG_DECLSPEC FindCameras : public Inherit<Visitor, FindCameras>
 include/vsg/app/CompileTraversal.h:    class VSG_DECLSPEC CompileTraversal : public Inherit<Visitor, CompileTraversal>
 include/vsg/app/WindowResizeHandler.h:    class VSG_DECLSPEC WindowResizeHandler : public Inherit<Visitor, WindowResizeHandler>
