@@ -102,74 +102,87 @@ By design none of the default apply(..) methods provide by vsg::Visitor nd vsg::
 One of the advantages of giving responsibility to the visitor implementation is you can do operations before and after traversing a subgraph, for instance we use this to increment/decrment a indent as we traverse a graph, follows is snippet from the PrintVisitor example that we'll expand upon later in this section.
 
 ~~~ cpp
-    struct PrintVisitor : public vsg::Inherit<vsg::ConstVisitor, PrintVisitor>
+struct PrintVisitor : public vsg::Inherit<vsg::ConstVisitor, PrintVisitor>
+{
+    size_t indent = 0;
+    void apply(const vsg::Object& object) override
     {
-        size_t indent = 0;
-        void apply(const vsg::Object& object) override
-        {
-            for(size_t i=0; i<indent; ++i) std::cout<<" ";
-            std::cout<<"Visiting "<<object.className()<<std::endl;
+        for(size_t i=0; i<indent; ++i) std::cout<<" ";
+        std::cout<<"Visiting "<<object.className()<<std::endl;
 
-            indent += 4;
-            object.traverse(*this);
-            indent -= 4;
-        }
-    ...
-    };
+        indent += 4;
+        object.traverse(*this);
+        indent -= 4;
+    }
+...
+};
 ~~~
 
-The scene graph also has nodes that add traversal and node masks that can be used by visitors to determine which branches to follow, the visitor base classes provide the following members to facilitate visitors using traversal masks:
+The scene graph also has nodes that add 64bit node and traversal masks that can be used by visitors to determine which branches to follow, the visitor base classes provide the following members to facilitate visitors using traversal masks:
 
 ~~~ cpp
-        Mask traversalMask = MASK_ALL;
-        Mask overrideMask = MASK_OFF;
+Mask traversalMask = MASK_ALL;
+Mask overrideMask = MASK_OFF;
 ~~~
 
-In the 3 and 4th chapters we'll go into the use of node and traversal masks in detail when introduce the scene graph nodes and application level classes that use them.
+The principle behind masks is a subgraph will be visited when the result of ***(nodeMask | visitor.overrideMask) & visitor.traversalMask)!=***. In the 3 and 4th chapters we'll go into the use of node and traversal masks in detail when introduce the scene graph nodes and application level classes that use them.
 
 ## PrintVisitor example
 
 The following [PrintVisitor](https://github.com/vsg-dev/vsgTutorial/blob/master/2_Foundations/2_PrintVisitor/) example does traversal of a graph and provide methods to print out speciifc properties associated with types of interest:
 
 ~~~ cpp
-        void apply(const vsg::stringValue& value) override
-        {
-            for(size_t i=0; i<indent; ++i) std::cout<<" ";
-            std::cout<<"Visiting "<<value.className()<<" "<<value.value()<<std::endl;
-        }
+struct PrintVisitor : public vsg::Inherit<vsg::ConstVisitor, PrintVisitor>
+{
+    size_t indent = 0;
+    void apply(const vsg::Object& object) override
+    {
+        for(size_t i=0; i<indent; ++i) std::cout<<" ";
+        std::cout<<"Visiting "<<object.className()<<std::endl;
 
-        void apply(const vsg::vec3Value& value) override
-        {
-            for(size_t i=0; i<indent; ++i) std::cout<<" ";
-            std::cout<<"Visiting "<<value.className()<<" "<<value.value()<<std::endl;
-        }
+        indent += 4;
+        object.traverse(*this);
+        indent -= 4;
+    }
 
-        void apply(const vsg::doubleArray& array) override
-        {
-            for(size_t i=0; i<indent; ++i) std::cout<<" ";
-            std::cout<<"Visiting "<<array.className()<<" { ";
+    void apply(const vsg::stringValue& value) override
+    {
+        for(size_t i=0; i<indent; ++i) std::cout<<" ";
+        std::cout<<"Visiting "<<value.className()<<" "<<value.value()<<std::endl;
+    }
 
-            for(auto v : array) std::cout<<v<<" ";
+    void apply(const vsg::vec3Value& value) override
+    {
+        for(size_t i=0; i<indent; ++i) std::cout<<" ";
+        std::cout<<"Visiting "<<value.className()<<" "<<value.value()<<std::endl;
+    }
 
-            std::cout<<"}"<<std::endl;
-        }
-    };
+    void apply(const vsg::doubleArray& array) override
+    {
+        for(size_t i=0; i<indent; ++i) std::cout<<" ";
+        std::cout<<"Visiting "<<array.className()<<" { ";
 
-    // create a small graph
-    auto leaf = vsg::Objects::create();
-    leaf->addChild(vsg::vec3Value::create(1.0f, 2.0f, 3.0f));
+        for(auto v : array) std::cout<<v<<" ";
 
-    auto nested = vsg::Objects::create();
-    nested->addChild(leaf);
-    nested->addChild(vsg::doubleArray::create({4.0, 5.0, 6.0}));
+        std::cout<<"}"<<std::endl;
+    }
+};
 
-    auto root = vsg::Objects::create();
-    root->addChild(vsg::stringValue::create("Everybody Loves Raymond"));
-    root->addChild(nested);
+// create a small graph
+auto leaf = vsg::Objects::create();
+leaf->addChild(vsg::vec3Value::create(1.0f, 2.0f, 3.0f));
 
-    // consutruct our visitor and then pass it to root node to invoke the visitor.
-    PrintVisitor print;
-    root->accept(print);
+auto nested = vsg::Objects::create();
+nested->addChild(leaf);
+nested->addChild(vsg::doubleArray::create({4.0, 5.0, 6.0}));
+
+auto root = vsg::Objects::create();
+root->addChild(vsg::stringValue::create("Everybody Loves Raymond"));
+root->addChild(nested);
+
+// consutruct our visitor and then pass it to root node to invoke the visitor.
+PrintVisitor print;
+root->accept(print);
 ~~~
 
 The console output from this example is:
