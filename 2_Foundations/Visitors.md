@@ -6,7 +6,7 @@ permalink: /foundations/Visitors
 
 The vsg::Visitor and vsg::ConstVisitor base classes are a variation of the [Visitor Design Pattern](https://en.wikipedia.org/wiki/Visitor_pattern) designed specifically for scene graphs. The particular challenge for scene graphs is that not only can there be many different types of objects in a scene graph, but how the children should be visited can also vary from node to node and from visitor to visitor.
 
-To resolve this the Design Pattern's Object::accept(..)/Viistor::apply() method pairing is accompanied by a Object::traverse(..) method which is coupled with the Visitor taking resonisibility of traversal calling the Object::traverse() method when/where it is appropriate. In this section will see how this is implemented, how you write and use your own visitors and advantages that this Visitor Design Pattern variation provides.
+To resolve this the Design Pattern's Object::accept(..)/Visitor::apply() method pairing is accompanied by a Object::traverse(..) method which is coupled with the Visitor taking resonisibility of traversal calling the Object::traverse() method when/where it is appropriate. In this section will see how this is implemented, how you write and use your own visitors and advantages that this Visitor Design Pattern variation provides.
 
 ## vsg::Object, vsg::Visitor and vsg::ConstVisitor API
 
@@ -97,7 +97,7 @@ This cascading simplifies implementations so they only need to override specific
 
 ## Traversal under your control
 
-By design none of the default apply(..) methods provide by vsg::Visitor and vsg::ConstViisotr provide traversal support, the decision on which objects to traverse and how to traverse them is left to visitor subclasses.  The vsg::Object::traverse(..) method can be used by Visitor subclasses to handle traversal of an objects children when this is required, or Visitor subclasses can implement their own traversal of an objects children.
+By design none of the default apply(..) methods provide by vsg::Visitor and vsg::ConstVisitor provide traversal support, the decision on which objects to traverse and how to traverse them is left to visitor subclasses.  The vsg::Object::traverse(..) method can be used by Visitor subclasses to handle traversal of an objects children when this is required, or Visitor subclasses can implement their own traversal of an objects children.
 
 One of the advantages of giving responsibility to the visitor implementation is you can do operations before and after traversing a subgraph, for instance we use this to increment/decrment a indent as we traverse a graph, follows is snippet from the PrintVisitor example that we'll expand upon later in this section.
 
@@ -240,15 +240,15 @@ virtual void accept(RecordTraversal& visitor) const;
 virtual void traverse(RecordTraversal&) const {}
 ~~~
 
-The part that is different is the [RecordTraversal::apply()](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/RecordTraversal.h#L97) methods are a straight forward class methods rather than virtual methods like used in visitors. This is done to reduce the number of virtual functions being invoked during the traversal that is most critical to performance, but does mean the one can't subclass from RecordTraversal and override the apply methods - the choice is to favor perfomance over extensibility.
+The part that is different is the [RecordTraversal::apply()](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/RecordTraversal.h#L97) methods are a straight forward class methods rather than virtual methods like used in visitors. This is done to reduce the number of virtual functions being invoked during the traversal that is most critical to performance, but does mean the one can't subclass from RecordTraversal and override the apply methods - the choice is to favor performance over extensibility.
 
-While the RecordTraversal itself is not designed to be extended, users can implement custom nodes that override the vsg::Object's virtual apply(RecordTraverasl) & travser(RecordTraverasl&) methods to customize how the RecordTraverasl handles the custom nodes.
+While the RecordTraversal itself is not designed to be extended, users can implement custom nodes that override the vsg::Object's virtual apply(RecordTraversal) & travser(RecordTraversal&) methods to customize how the RecordTraversal handles the custom nodes.
 
 ## Visitor and user defined subclasses
 
 One of weakensses of the Visitor Design Pattern is that the Visitor class must have a virtual apply(..) method for each supported type, if a user presents a new subclass that isn't directly supported it will be treated as the subclasses parent class. For instance is you create a vsg::MyData subclass from vsg::Data when past to a vsg::Visitor it will be matched to the Visitor::apply(Data&) method.
 
-The vsgExmaples repository contains the [vsgvisitorcustomtype](https://github.com/vsg-dev/vsgExamples/tree/master/examples/core/vsgvisitorcustomtype] that illustrates two approaches to extending visitor types.
+The vsgExmaples repository contains the [vsgvisitorcustomtype](https://github.com/vsg-dev/vsgExamples/tree/master/examples/core/vsgvisitorcustomtype) example that illustrates two approaches to extending visitor types.
 
 ---
 

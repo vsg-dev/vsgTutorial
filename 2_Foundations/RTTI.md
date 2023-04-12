@@ -4,7 +4,7 @@ title: Run Time Type Identification (RTTI)
 permalink: /foundations/RTTI
 ---
 
-The VulkanSceneGarph provides a number of features that provide richer and more efficient Run Time Type Information (RTTI) and type safe operations than are provided by C++ itself. These features are provided by the vsg::Object base class and by two companion bass classes, the vsg::Visitor and vsg::ConstVisitor, with the vsg::Inherit CRTP class providing convenient implementations of the required methods.  In this section we'll focus on the RTTI features provided by vsg::Object/vsg::Inherit.
+The VulkanSceneGraph provides a number of features that provide richer and more efficient Run Time Type Information (RTTI) and type safe operations than are provided by C++ itself. These features are provided by the vsg::Object base class and by two companion bass classes, the vsg::Visitor and vsg::ConstVisitor, with the vsg::Inherit CRTP class providing convenient implementations of the required methods.  In this section we'll focus on the RTTI features provided by vsg::Object/vsg::Inherit.
 
 ## RTTI features provided vsg::Object
 
@@ -33,7 +33,7 @@ The vsg::Object::type_info() methods provides a convenient way to access the std
 
 The vsg::Object::cast<>() template methods use the Object::is_compatible() method to decide whether a type can by cast directly to a desired type using static_cast<> without the high CPU overhead of invoking dynamic_cast<>.
 
-The vsg::Object::compare(..) method provides a way of comparing two objects, both for type and the contents of the object. The int std::memcpy(..) convention is used, with negative for A<B, zero for A==B and positive for A>B.  The vsg::Inherit<> class provides a very basic compare(..) implementation but it's recommend to implement this locally for any class that holds anything more than simple types.  The [include/vsg/core/compare.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/compare.h) header provides a range of convenience template functions to make the task easier.
+The vsg::Object::compare(..) method provides a way of comparing two objects, both for type and the contents of the object. The int std::memcmp(..) convention is used, with negative for A<B, zero for A==B and positive for A>B.  The vsg::Inherit<> class provides a very basic compare(..) implementation but it's recommend to implement this locally for any class that holds anything more than simple types.  The [include/vsg/core/compare.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/compare.h) header provides a range of convenience template functions to make the task easier.
 
 To illustrate these features, with the [RTTI example](https://github.com/vsg-dev/vsgTutorial/blob/master/2_Foundations/2_rtti/) example, we'll declare a custom class in it's own namespace and use Inherit to implement the RTTI methods, EVSG_type_name to provide the human readable nameing and the implement compare() method.
 ~~~ cpp
