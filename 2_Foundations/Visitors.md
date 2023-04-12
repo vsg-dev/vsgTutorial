@@ -125,7 +125,7 @@ Mask traversalMask = MASK_ALL;
 Mask overrideMask = MASK_OFF;
 ~~~
 
-The principle behind masks is a subgraph will be visited when the result of ***(nodeMask | visitor.overrideMask) & visitor.traversalMask)!=***. In the 3 and 4th chapters we'll go into the use of node and traversal masks in detail when introduce the scene graph nodes and application level classes that use them.
+The principle behind masks is a subgraph will be visited when the result of '(nodeMask | visitor.overrideMask) & visitor.traversalMask)!=0'. In the 3 and 4th chapters we'll go into the use of node and traversal masks in detail when introduce the scene graph nodes and application level classes that use them.
 
 ## PrintVisitor example
 
