@@ -10,11 +10,11 @@ The VulkanSceneGraph provides extensiuble support for reading/writing scene grap
 
 The VulkanSceneGraph library provides extensible reading/writing support for scene graph and associated objects via the vsg::ReaderWriter class.  Subclasses of RenaderWriter provided by the VulkanSceneGraph library itself are:
 
-* [vsg::VSG](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/vsg.h) - reading/writing native .vsgt ascci & .vsgb binary file format
-* [vsg::spirv](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/spv.h) - reading/wiring .spv SPIRV shader files
-* [vsg::glsl](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/glsl.h) - reading GLSL shader files.
-* [vsg::txt](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/txt.h) - reading text files as vsg::stringValue for later parsing by users
-* [vsg::tile](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/tile.h) - native tile based database paging
+* [vsg::VSG](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/vsg.h#L25) - reading/writing native .vsgt ascci & .vsgb binary file format
+* [vsg::spirv](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/spirv.h#L25) - reading/wiring .spv SPIRV shader files
+* [vsg::glsl](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/glsl.h#L25) - reading GLSL shader files.
+* [vsg::txt](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/txt.h#L25) - reading text files as vsg::stringValue for later parsing by users
+* [vsg::tile](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/tile.h#L25) - native tile based database paging
 
 Developers may call ReaderWriter directly, but for must usage cases they will use the vsg::read() and read_cast<T>() functions that are found in [include/vsg/io/read.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/read.h) header. The vsg::read*() functions will invoke the appropriate ReaderWriter based on the file extension, usage:
 
