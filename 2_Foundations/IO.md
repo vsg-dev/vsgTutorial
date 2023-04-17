@@ -41,7 +41,73 @@ vsg::write(value, "value.vsgt");
 
 ## Options & vsgXchange
 
-Customization and extension of reading and writing is provided by the vsg::Options object that can be passed to the vsg;:read(..) and vsg::write(..) methods. You can pass in the ReaderWriters
+Customization and extension of reading and writing is provided by the [vsg::Options](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/write.h) object that can be passed to the vsg;:read(..) and vsg::write(..) methods. You can pass in the ReaderWriters that you wish to used, placing them in the order you want them invoked.  vsg::Options is subclass from vsg::Object so has all the standard meta data capabilities and adds some specific sttings available in vsg::Opptions:
+~~~ cpp
+class VSG_DECLSPEC Options : public Inherit<Object, Options>
+{
+public:
+    Options();
+    explicit Options(const Options& options);
+
+    template<typename... Args>
+    explicit Options(Args... args)
+    {
+        (add(args), ...);
+    }
+
+    Options& operator=(const Options& rhs) = delete;
+
+    /// read command line options, assign values to this options object to later use with reading/writing files
+    virtual bool readOptions(CommandLine& arguments);
+
+    void read(Input& input) override;
+    void write(Output& output) const override;
+
+    void add(ref_ptr<ReaderWriter> rw = {});
+    void add(const ReaderWriters& rws);
+
+    ref_ptr<SharedObjects> sharedObjects;
+    ReaderWriters readerWriters;
+    ref_ptr<OperationThreads> operationThreads;
+
+    /// Hint to use when searching for Paths with vsg::findFile(filename, options);
+    enum FindFileHint
+    {
+        CHECK_ORIGINAL_FILENAME_EXISTS_FIRST, /// check the filename exists with it's original path before trying to find it in Options::paths.
+        CHECK_ORIGINAL_FILENAME_EXISTS_LAST,  /// check the filename exists with it's original path after failing to find it in Options::paths.
+        ONLY_CHECK_PATHS                      /// only check the filename exists in the Options::paths
+    };
+    FindFileHint checkFilenameHint = CHECK_ORIGINAL_FILENAME_EXISTS_FIRST;
+
+    Paths paths;
+
+    using FindFileCallback = std::function<Path(const Path& filename, const Options* options)>;
+    FindFileCallback findFileCallback;
+
+    Path fileCache;
+
+    Path extensionHint;
+    bool mapRGBtoRGBAHint = true;
+
+    /// Coordinate convention to use for scene graph
+    CoordinateConvention sceneCoordinateConvention = CoordinateConvention::Z_UP;
+
+    /// Coordinate convention to assume for specified lower case file formats extensions
+    std::map<Path, CoordinateConvention> formatCoordinateConventions;
+
+    /// User defined ShaderSet map, loaders should check the available ShaderSet used the name of the type ShaderSet.
+    /// Standard names are :
+    ///     "pbr" will substitute for vsg::createPhysicsBasedRenderingShaderSet()
+    ///     "phong" will substitute for vsg::createPhongShaderSet()
+    ///     "flat" will substitute for vsg::createFlatShadedShaderSet()
+    ///     "text" will substitute for vsg::createTextShaderSet()
+    std::map<std::string, ref_ptr<ShaderSet>> shaderSets;
+
+protected:
+    virtual ~Options();
+};
+VSG_type_name(vsg::Options);
+~~~
 
 ## ReaderWriter
 
