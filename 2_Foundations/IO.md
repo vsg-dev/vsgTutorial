@@ -41,7 +41,31 @@ vsg::write(value, "value.vsgt");
 
 ## Options & vsgXchange
 
-Customization and extension of reading and writing is provided by the [vsg::Options](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/write.h) object that can be passed to the vsg;:read(..) and vsg::write(..) methods. You can pass in the ReaderWriters that you wish to used, placing them in the order you want them invoked.  vsg::Options is subclass from vsg::Object so has all the standard meta data capabilities and adds some specific sttings available in vsg::Opptions:
+Customization and extension of reading and writing is provided by the [vsg::Options](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/Options.h) object that can be passed to the vsg;:read(..) and vsg::write(..) methods. You can pass in the ReaderWriters that you wish to used, placing them in the order you want them invoked. vsg::Options is subclassed from vsg::Object so has all the standard meta data capabilities and adds IO specific settings. The most common task will be passing in the file paths to check to file files, and the ReaderWriters to check, such as adding in support for the ReaderWriter's provided by vsgXchange:
+
+~~~ cpp
+#include <vsg/all.h>
+#include <vsgXchange/all.h>
+
+int main(int, char**)
+{
+    auto options = vsg::Options::create();
+
+    // set up the paths
+    options->paths = vsg::getEnvPaths("VSG_FILE_PATH");
+
+    // assing the ReaderWriter's to use when read/writing
+    options->add(vsgXchange::all::create());
+
+    // load GLTF model use vsgXchange::assimp that is included in vsgXchange::all, passing in options so read knows what to use.
+    auto model = vsg::read_cast<vsg::Node>("glTF-Sample-Models/2.0/FlightHelmet/glTF/FlightHelmet.gltf", options);
+    return 0;
+}
+
+~~~
+
+
+The full options available are:
 ~~~ cpp
 class VSG_DECLSPEC Options : public Inherit<Object, Options>
 {
