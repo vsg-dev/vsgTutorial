@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Serializaton, Path and Logger
-permalink: /foundations/vsgXchange
+permalink: /foundations/Serializaton
 ---
 
 ## Serializaton
