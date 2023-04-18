@@ -41,7 +41,7 @@ vsg::write(value, "value.vsgt");
 
 ## Options & vsgXchange intro
 
-Customization and extension of reading and writing is provided by the [vsg::Options](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/Options.h) object that can be passed to the vsg;:read(..) and vsg::write(..) methods. You can pass in the ReaderWriters that you wish to used, placing them in the order you want them invoked. vsg::Options is subclassed from vsg::Object so has all the standard meta data capabilities and adds IO specific settings. The most common task will be passing in the paths to search for files, and the ReaderWriters to check, such as adding in support for the ReaderWriter's provided by vsgXchange:
+Customization and extension of reading and writing is provided by the [vsg::Options](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/Options.h) object that can be passed to the vsg;:read(..) and vsg::write(..) methods. You can pass in the ReaderWriters that you wish to used, placing them in the order you want them invoked. vsg::Options is subclassed from vsg::Object so has all the standard meta data capabilities and adds IO specific settings. The most common task will be passing in the paths to search for files, and the ReaderWriters to check, such as adding in support for the ReaderWriter's provided by vsgXchange. The usage pattern is:
 
 ~~~ cpp
 #include <vsg/all.h>
@@ -49,16 +49,18 @@ Customization and extension of reading and writing is provided by the [vsg::Opti
 
 int main(int, char**)
 {
+    // create the options object that will tell the vsg::read() function what to use when reading files/istreams
     auto options = vsg::Options::create();
 
     // set up the paths
     options->paths = vsg::getEnvPaths("VSG_FILE_PATH");
 
-    // assing the ReaderWriter's to use when read/writing
+    // assign the ReaderWriter's to use when read/writing
     options->add(vsgXchange::all::create());
 
-    // load GLTF model use vsgXchange::assimp that is included in vsgXchange::all, passing in options so read knows what to use.
+    // load GLTF model using vsgXchange::assimp that is included in vsgXchange::all, passing in options so read knows what to use
     auto model = vsg::read_cast<vsg::Node>("FlightHelmet.gltf", options);
+
     return 0;
 }
 
@@ -134,11 +136,11 @@ VSG_type_name(vsg::Options);
 
 In later chapters we'll revist the features of vsg::Options in more depth.
 
-## ReaderWriter & vsgXchange
+## ReaderWriter
 
 The vsg::ReaderWriter base class provides the mechanism for implementing support for both native and 3rd party file formats.  The [Chain of Responsibility Design Pattern](https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern) is used with each ReaderWriter implementation taking responsibility for whether it can handle reading from or writing to a file or strean. The ReaderWriter's are invoked by the vsg::read(..)/vsg::write() calls in the order that they appear in the vsg::Options::readerWriters list, and if none can handle the read/write then the built in ReaderWriter's are called as fallback.
 
-There are three types of each of virtual RaderWriter::read(..) methods that take filename, istream or block of memory as the source to read, and two type of virtual ReaderWrite::write(..) methods that take a filename or ostream to write to.  A virtual ReaderWrier::getFeatures(..) method provides a way to reporting to applications that read/write features are supported. The full public interface to [ReaderWriter](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/ReaderWriter.h) is:
+There are three types of each of virtual RaderWriter::read(..) methods that take filename, istream or block of memory as the source to read, and two type of virtual ReaderWrite::write(..) methods that take a filename or ostream to write to.  A virtual ReaderWrier::getFeatures(..) method provides a way to reporting to applications that read/write features are supported. The full public interface to [ReaderWriter](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/ReaderWriter.h#L33) is:
 ~~~ cpp
 /// Base class from providing support for reading and/or writing various file formats and IO protocols
 class VSG_DECLSPEC ReaderWriter : public Inherit<Object, ReaderWriter>
@@ -211,7 +213,11 @@ public:
 VSG_type_name(vsg::ReaderWriter);
 ~~~
 
+## vsgXchange - aliases and fascades
 
+The [vsgXchange library](https://github.com/vsg-dev/vsgXchange) is a companion library that provides support for a range of 3rd party image and model file formats and http support. A number of these features require external dependencies that are checked for by CMake when building vsgXchange, if they are found the associated ReaderWriter is built and included in the vsgXchange::all composite ReaderWriter, you can assign this to the vsg::Options object as in the example above to add support for all the available formats, or you can add each ReaderWriter individually. Doing the later allows you to control the order in which ReaderWriters are invoked as well select just the ones that are important to your application and reduce the overall footprint of your application.
+
+While the implementation of ReaderWriter that have external dependencies is only compiled when they are available, the public interface for all possible ReaderWriter is declared in the [include/vsgXchange]([vsgXchange library](https://github.com/vsg-dev/vsgXchange/blog/master/include/vsgXchange/)) directory, with the automatically generated include/vsgXchange/Export.h header provides #define's for each ReaderWriter so you can test at compile time if you so wish, and each optionally compiled ReaderWriter has a flag to say whether it's supported or not, so you can test for it at runtime.
 
 ## Serializaton
 
