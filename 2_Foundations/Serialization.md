@@ -81,7 +81,7 @@ template<typename W, typename T>
 void writeValue(const char* propertyName, T value);
 ~~~
 
-## Simple example of implement serialization support
+## Simple example of implementing serialization
 
 While the range of methods in Input and Output is extensive and potentially overwhelming if you just dive in and study the whole vsg::Input and vsg::Output class definition, usage is these classes is usually quite straight forward, with the template<> methods automatically handling support for you.
 
@@ -112,9 +112,15 @@ EVSG_type_name(nature::Animal)
 
 ## vsg::ObjectFactory
 
-When writing out objects you can simple call **object->write(input)** and the appropriate serialization will be invoked, but when you need to serializae back in a file the appropriate objects have to be created then their **object->read(input)** method can be invoked to read the object members.  The way the VulkanSceneGraph provides a means for creating objects on demand is via the [vsg::ObjectFactory](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/ObjectFactory.h#L37) singleton class, where only one instances of the Factory exists.  The vsg::ObjectFactory is an example of [Factory Method Design Pattern](https://en.wikipedia.org/wiki/Factory_method_pattern) and [Singleton Design Patterns](https://en.wikipedia.org/wiki/Singleton_pattern).
+When writing out objects you can simple call **object->write(output)** and the appropriate serialization will be invoked, but when you need to serializae back in a file the appropriate objects have to be created then their **object->read(input)** method can be invoked to read the object members.  The way the VulkanSceneGraph provides a means for creating objects on demand is via the [vsg::ObjectFactory](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/ObjectFactory.h#L24) singleton class, where only one instances of the Factory exists.  The vsg::ObjectFactory is an example of [Factory Method Design Pattern](https://en.wikipedia.org/wiki/Factory_method_pattern) and [Singleton Design Pattern](https://en.wikipedia.org/wiki/Singleton_pattern).
 
+The core scnee graph classes found VulkanSceneGraph library have methods to create them automatically assigned to the vsg::ObjectFactory, and the native VSG loaders internally use the ObjectFactory to create all the required objects so for native .vsgt and .vsgb files one doesn't need to concern yourself with the ObjectFactoryh - it's simply something used internally when loading files.
 
+For cases where applications extend the scene graph objects like with the above native::Animal example user have to register their class with the ObjectFactory so that loaders can create an instance of it for each object of that type that the loader needs to create and read into.  The ObjectFactory.h header provides the [vsg::RegisterWithObjectFactoryProxy](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/ObjectFactory.h#L54)) template helper class to make this task straight forward. The above example just needs the declare an instance the proxy object as a static object and during intialization of the application the required creation method will be automatically registered with the vsg::ObjectFactory singleton.
+
+~~~ cpp
+vsg::RegisterWithObjectFactoryProxy<nature::Animal> s_Register_Animal;
+~~~
 
 
 ## Ascii and Binary support
