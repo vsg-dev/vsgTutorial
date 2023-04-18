@@ -1,6 +1,6 @@
 ---
 layout: page
-title: vsgXchange - reading and writing 3rd party fonts, images and models
+title: vsgXchange - 3rd party formats support
 permalink: /foundations/vsgXchange
 ---
 
@@ -10,7 +10,7 @@ The [vsgXchange library](https://github.com/vsg-dev/vsgXchange) is a companion l
 
 While the implementation of ReaderWriter that have external dependencies is only compiled when they are available, the public interface for all possible ReaderWriter is declared in the [include/vsgXchange](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/) directory.  The way the fixed public interface is decoupled from optionall built implementation is using the [Fascade Design Pattern](https://en.wikipedia.org/wiki/Facade_pattern), with the public ReaderWriter classes deferring their implementations provided by either a fallback non op implementation or the full implementation when the dependency is available.  The available ReaderWriter's, the asscoiated dependencies and the formats supported are:
 
-| ReaderWriter | 3rd Dependency | Features |
+| ReaderWriter | Dependency | Features |
 | [vsgXchange::all](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/all.h#L35) | | Composite ReaderWriter that bundles all supported ReaderWriter's support by core VSG and vsgXchange |
 fonts as vsg::Font. |
 | [vsgXchange::images](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/images.h#L34) | | Bundles all supported image ReaderWriters |
@@ -18,12 +18,12 @@ fonts as vsg::Font. |
 | [vsgXchange::stbi](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/images.h#L42) |  | Support for PNG, JPEG, GIF images |
 | [vsgXchange::dds](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/images.h#L65) |  | Support for DDS images |
 | [vsgXchange::cpp](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/cpp.h#L34) | | Write objects to .cpp files for compiling into programs |
-| [vsgXchange::curl](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/curl.h#L34) | [libcurl](https://curl.se/libcurl/) | Support for reading from http and https |
-| [vsgXchange::freetype](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/freetype.h#L34) | [Freetype](https://www.freetype.org/) | Support for reading TrueType etc. |
-| [vsgXchange::GDAL](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/gdal.h#L35) | [GDAL](https://gdal.org/) | Support for reading GIS Imagery and DEM data |
-| [vsgXchange::openexr](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/images.h#L97) | [OpenEXP](https://www.openexr.com/) | Support for reading .exr images |
-| [vsgXchange::assimp](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/models.h#L41) | [assimp](https://www.assimp.org/) | Support for reading GLTF, OBJ, 3DS, LWO etc |
-| [vsgXchange::osg2vsg](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/models.h#L41) | [osg2vsg](https://github.com/vsg-dev/osg2vsg) | Support for OpenSceneGraph supported image and model formats |
+| [vsgXchange::curl](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/curl.h#L34) | [libcurl](https://curl.se/libcurl/) | reading from http and https |
+| [vsgXchange::freetype](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/freetype.h#L34) | [Freetype](https://www.freetype.org/) | reading TrueType etc. fonts |
+| [vsgXchange::GDAL](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/gdal.h#L35) | [GDAL](https://gdal.org/) | reading GIS Imagery and DEM data |
+| [vsgXchange::openexr](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/images.h#L97) | [OpenEXP](https://www.openexr.com/) | reading .exr images |
+| [vsgXchange::assimp](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/models.h#L41) | [assimp](https://www.assimp.org/) | Reading GLTF, OBJ, 3DS, LWO etc. models |
+| [vsgXchange::osg2vsg](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/models.h#L41) | [osg2vsg](https://github.com/vsg-dev/osg2vsg) | Read OpenSceneGraph supported image and model formats |
 
 vsgXchange's CMake scripts automatically generated include/vsgXchange/Version.h header provides #define's for each ReaderWriter so you can test at compile time if you so wish, and each optionally compiled ReaderWriter has a flag to say whether it's supported or not, so you can test for it at runtime, follows in what you'll see the Version.h header's if you have built against all the dependencies:
 
