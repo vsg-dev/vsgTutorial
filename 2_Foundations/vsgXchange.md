@@ -17,6 +17,7 @@ fonts as vsg::Font. |
 | [vsgXchange::models](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/models.h#L34) | | Bundles all supported model ReaderWriters |
 | [vsgXchange::stbi](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/images.h#L42) |  | Support for PNG, JPEG, GIF images |
 | [vsgXchange::dds](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/images.h#L65) |  | Support for DDS images |
+| [vsgXchange::cpp](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/cpp.h#L34) | | Write objects to .cpp files for compiling into programs |
 | [vsgXchange::curl](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/curl.h#L34) | [libcurl](https://curl.se/libcurl/) | Support for reading from http and https |
 | [vsgXchange::freetype](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/freetype.h#L34) | [Freetype](https://www.freetype.org/) | Support for reading TrueType etc. |
 | [vsgXchange::GDAL](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/gdal.h#L35) | [GDAL](https://gdal.org/) | Support for reading GIS Imagery and DEM data |
@@ -46,7 +47,19 @@ vsgXchange's CMake scripts automatically generated include/vsgXchange/Version.h 
     #define vsgXchange_OpenEXR
 ~~~
 
-At runtime to list the supported features you call the ReaderWriter::getFeatures(Features&)) method. To list all the supported features you can also run the **vsgconv** utility program in the console:
+At runtime to list the supported features you call the ReaderWriter::getFeatures(Features&)) method, this return true when the ReaderWriter is implemented and adds the supported features to the feature structure, and return false is nothing format is supported - such as when vsgXchange is not compiled against the required dependency.
+
+## vsgconv
+
+The vsgXchange library provides a **vsgconv** utility program that you can use in the console to convert between different file formats:
+
+~~~ sh
+vsgconv FlightHelmet.gltf helmet.vsgb
+
+vsgconv shader.vert shader_vert.cpp
+~~~
+
+To list all the features supported by vsgXchange you can also run the **vsgconv** utility program in the console with the --features option:
 
 ~~~ sh
 $ vsgconv --features
@@ -353,18 +366,6 @@ vsgXchange::all
         read_build_options   string
         write_build_options  string
 ~~~
-
-## vsgconv
-
-
-
-## Serializaton
-
-## vsg::Path and file system functions
-
-## i/ostream support for native types
-
-## Logger
 
 Prev: [read/write](ReaderWriter.md) | Next : [Block memory management with vsg::Allocator](../2_Foundations/Allocator.md)
 
