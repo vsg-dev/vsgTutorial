@@ -221,9 +221,9 @@ While the implementation of ReaderWriter that have external dependencies is only
 
 | ReaderWriter | 3rd Dependency | Features |
 | [vsgXchange::all](https://github.com/vsg-dev/vsgXchange/blog/master/include/vsgXchange/all.h) | | Composite ReaderWriter that bundles all supported ReaderWriter's support by core VSG and vsgXchange |
-| [vsgXchange::curl](https://github.com/vsg-dev/vsgXchange/blog/master/include/vsgXchange/curl.h) | curl | Implements support for reading from http and https |
-| [vsgXchange::image](https://github.com/vsg-dev/vsgXchange/blog/master/include/vsgXchange/image.h) | | Composite ReaderWriter that bunles all supported image ReaderWriters |
-| [vsgXchange::model](https://github.com/vsg-dev/vsgXchange/blog/master/include/vsgXchange/model.h) | | Composite ReaderWriter that bunles all supported model ReaderWriters |
+| [vsgXchange::curl](https://github.com/vsg-dev/vsgXchange/blog/master/include/vsgXchange/curl.h) | [libcurl](https://curl.se/libcurl/) | Implements support for reading from http and https |
+| [vsgXchange::images](https://github.com/vsg-dev/vsgXchange/blog/master/include/vsgXchange/images.h) | | Composite ReaderWriter that bunles all supported image ReaderWriters |
+| [vsgXchange::models](https://github.com/vsg-dev/vsgXchange/blog/master/include/vsgXchange/models.h) | | Composite ReaderWriter that bunles all supported model ReaderWriters |
 
 
 vsgXchange's CMake scripts automatically generated include/vsgXchange/Version.h header provides #define's for each ReaderWriter so you can test at compile time if you so wish, and each optionally compiled ReaderWriter has a flag to say whether it's supported or not, so you can test for it at runtime, follows in what you'll see the Version.h header's if you have built against all the dependencies:
