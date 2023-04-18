@@ -227,7 +227,8 @@ fonts as vsg::Font. |
 | [vsgXchange::stbi](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/images.h#L42) |  | Support for PNG, JPEG, GIF images |
 | [vsgXchange::dds](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/images.h#L65) |  | Support for DDS images |
 | [vsgXchange::curl](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/curl.h#L34) | [libcurl](https://curl.se/libcurl/) | Support for reading from http and https |
-| [vsgXchange::freetype](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/freetype.h#L34) | [Freetype](https://www.freetype.org/) | Support for reading TrueType etc. | [vsgXchange::GDAL](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/gdal.h#L35) | [GDAL](https://gdal.org/) | Support for reading GIS Imagery and DEM data |
+| [vsgXchange::freetype](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/freetype.h#L34) | [Freetype](https://www.freetype.org/) | Support for reading TrueType etc. |
+| [vsgXchange::GDAL](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/gdal.h#L35) | [GDAL](https://gdal.org/) | Support for reading GIS Imagery and DEM data |
 | [vsgXchange::openexr](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/images.h#L97) | [OpenEXP](https://www.openexr.com/) | Support for reading .exr images |
 | [vsgXchange::assimp](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/models.h#L41) | [assimp](https://www.assimp.org/) | Support for reading GLTF, OBJ, 3DS, LWO etc |
 | [vsgXchange::osg2vsg](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/models.h#L41) | [osg2vsg](https://github.com/vsg-dev/osg2vsg) | Support for OpenSceneGraph supported image and model formats |
