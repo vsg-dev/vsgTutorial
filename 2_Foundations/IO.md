@@ -58,12 +58,11 @@ int main(int, char**)
     options->add(vsgXchange::all::create());
 
     // load GLTF model use vsgXchange::assimp that is included in vsgXchange::all, passing in options so read knows what to use.
-    auto model = vsg::read_cast<vsg::Node>("glTF-Sample-Models/2.0/FlightHelmet/glTF/FlightHelmet.gltf", options);
+    auto model = vsg::read_cast<vsg::Node>("FlightHelmet.gltf", options);
     return 0;
 }
 
 ~~~
-
 
 The full options available are:
 ~~~ cpp
@@ -133,7 +132,84 @@ protected:
 VSG_type_name(vsg::Options);
 ~~~
 
+In later chapters we'll revist the features of vsg::Options in more depth.
+
 ## ReaderWriter & vsgXchange
+
+The vsg::ReaderWriter base class provides the mechanism for implementing support for both native and 3rd party file formats.  The [Chain of Responsibility Design Pattern](https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern) is used with each ReaderWriter implementation taking responsibility for whether it can handle reading from or writing to a file or strean. The ReaderWriter's are invoked by the vsg::read(..)/vsg::write() calls in the order that they appear in the vsg::Options::readerWriters list, and if none can handle the read/write then the built in ReaderWriter's are called as fallback.
+
+There are three types of each of virtual RaderWriter::read(..) methods that take filename, istream or block of memory as the source to read, and two type of virtual ReaderWrite::write(..) methods that take a filename or ostream to write to.  A virtual ReaderWrier::getFeatures(..) method provides a way to reporting to applications that read/write features are supported. The full public interface to [ReaderWriter](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/ReaderWriter.h) is:
+~~~ cpp
+/// Base class from providing support for reading and/or writing various file formats and IO protocols
+class VSG_DECLSPEC ReaderWriter : public Inherit<Object, ReaderWriter>
+{
+public:
+    using vsg::Object::read;
+    using vsg::Object::write;
+
+    /// convenience method for casting a read object to a specified type.
+    template<class T>
+    vsg::ref_ptr<T> read_cast(const vsg::Path& filename, vsg::ref_ptr<const vsg::Options> options = {}) const
+    {
+        auto object = read(filename, options);
+        return vsg::ref_ptr<T>(dynamic_cast<T*>(object.get()));
+    }
+
+    /// convenience method for casting a read object to a specified type.
+    template<class T>
+    vsg::ref_ptr<T> read_cast(std::istream& fin, vsg::ref_ptr<const vsg::Options> options = {}) const
+    {
+        auto object = read(fin, options);
+        return vsg::ref_ptr<T>(dynamic_cast<T*>(object.get()));
+    }
+
+    /// convenience method for casting a read object to a specified type.
+    template<class T>
+    vsg::ref_ptr<T> read_cast(const uint8_t* ptr, size_t size, vsg::ref_ptr<const vsg::Options> options = {}) const
+    {
+        auto object = read(ptr, size, options);
+        return vsg::ref_ptr<T>(dynamic_cast<T*>(object.get()));
+    }
+
+    /// read object from file, return object on success, return null ref_ptr<> if format not supported, or return ReadError on failure.
+    virtual vsg::ref_ptr<vsg::Object> read(const vsg::Path& /*filename*/, vsg::ref_ptr<const vsg::Options> = {}) const { return vsg::ref_ptr<vsg::Object>(); }
+
+    /// read object from input stream, return object on success, return null ref_ptr<> if format not supported, or return ReadError on failure.
+    virtual vsg::ref_ptr<vsg::Object> read(std::istream& /*fin*/, vsg::ref_ptr<const vsg::Options> = {}) const { return vsg::ref_ptr<vsg::Object>(); }
+
+    /// read object from memory block, return object on success, return null ref_ptr<> if format not supported, or return ReadError on failure.
+    virtual vsg::ref_ptr<vsg::Object> read(const uint8_t* /*ptr*/, size_t /*size*/, vsg::ref_ptr<const vsg::Options> = {}) const { return vsg::ref_ptr<vsg::Object>(); }
+
+    /// write object to file, return true on success, return false on failure.
+    virtual bool write(const vsg::Object* /*object*/, const vsg::Path& /*filename*/, vsg::ref_ptr<const vsg::Options> = {}) const { return false; }
+
+    /// write object to output stream, return true on success, return false on failure.
+    virtual bool write(const vsg::Object* /*object*/, std::ostream& /*fout*/, vsg::ref_ptr<const vsg::Options> = {}) const { return false; }
+
+    /// read the command line arguments for any options appropriate for this ReaderWriter
+    virtual bool readOptions(Options&, CommandLine&) const { return false; }
+
+    enum FeatureMask
+    {
+        READ_FILENAME = (1 << 0),
+        READ_ISTREAM = (1 << 1),
+        READ_MEMORY = (1 << 2),
+        WRITE_FILENAME = (1 << 3),
+        WRITE_OSTREAM = (1 << 4)
+    };
+
+    struct Features
+    {
+        std::map<vsg::Path, FeatureMask> protocolFeatureMap;
+        std::map<vsg::Path, FeatureMask> extensionFeatureMap;
+        std::map<std::string, std::string> optionNameTypeMap;
+    };
+
+    /// get the Features supported by this ReaderWriter
+    virtual bool getFeatures(Features&) const { return false; }
+};
+VSG_type_name(vsg::ReaderWriter);
+~~~
 
 
 
