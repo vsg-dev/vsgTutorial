@@ -108,8 +108,13 @@ namespace nature
     }
 }
 EVSG_type_name(nature::Animal)
-
 ~~~
+
+## vsg::ObjectFactory
+
+When writing out objects you can simple call **object->write(input)** and the appropriate serialization will be invoked, but when you need to serializae back in a file the appropriate objects have to be created then their **object->read(input)** method can be invoked to read the object members.  The way the VulkanSceneGraph provides a means for creating objects on demand is via the [vsg::ObjectFactory](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/ObjectFactory.h#L37) singleton class, where only one instances of the Factory exists.  The vsg::ObjectFactory is an example of [Factory Method Design Pattern](https://en.wikipedia.org/wiki/Factory_method_pattern) and [Singleton Design Patterns](https://en.wikipedia.org/wiki/Singleton_pattern).
+
+
 
 
 ## Ascii and Binary support
