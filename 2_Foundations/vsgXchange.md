@@ -1,6 +1,6 @@
 ---
 layout: page
-title: vsgXchange
+title: vsgXchange - reading and writing 3rd party fonts, images and models
 permalink: /foundations/vsgXchange
 ---
 
