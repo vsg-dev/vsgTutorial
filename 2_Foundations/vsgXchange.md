@@ -474,5 +474,7 @@ In the above example the vsgconv utility has automatically compiles the GLSL sha
 }
 ~~~
 
+Examples of compiling objects as part of library/application can be found in the VulkanSceneGraph codebase, for instance the text related shaders are used in [VulkanScenegraph/src/vsg/text/Text.cpp](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/src/vsg/text/Text.cpp#L69) which includes the [VulkanScenegraph/src/vsg/text/shaders/text_ShaderSet.cpp](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/src/vsg/text/shaders/text_ShaderSet.cpp).  The text_ShaderSet.cpp is created by the [vsgshaderset](https://github.com/vsg-dev/vsgExamples/tree/master/examples/utils/vsgshaderset) utility found in vsgExamples.
+
 Prev: [read/write](ReaderWriter.md) | Next : [Serialization, Paths and Logger](../2_Foundations/SerializationPathsaAndLogger.md)
 
