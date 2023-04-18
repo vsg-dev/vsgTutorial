@@ -51,7 +51,7 @@ At runtime to list the supported features you call the ReaderWriter::getFeatures
 
 ## vsgconv
 
-The vsgXchange library provides a **vsgconv** utility program that you can use in the console to convert between different file formats:
+The vsgXchange library provides a [vsgconv](https://github.com/vsg-dev/vsgXchange/blob/master/applications/vsgconv/vsgconv.cpp#L41) utility program that you can use in the console to convert between different file formats:
 
 ~~~ sh
 vsgconv FlightHelmet.gltf helmet.vsgb
