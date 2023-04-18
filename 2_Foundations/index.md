@@ -17,5 +17,7 @@ This second part of this tutorial introduces developers to foundational classes 
 1. [Visitors](Visitors.md) - type safe visiting and traversal
 1. [read/write](ReaderWriter.md) - reading/writing data
 1. [vsgXchange](vsgXchange.md) - vsgXchange library for reading 3rd party image/model formats
+1. [Serialization](Serialization.md) - extensible serialization support
+1. [Path, Streams and Logger](PathStreamsAndLogger.md) - File system and general IO support
 1. [vsg::Allocator](Allocator.md) - Block memory allocation for good performance
 1. [Math Functions](MathFunctionss.md) - math functions
