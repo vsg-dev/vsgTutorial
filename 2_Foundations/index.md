@@ -15,6 +15,7 @@ This second part of this tutorial introduces developers to foundational classes 
 1. [Metadata](Metadata.md) - how to use metadata
 1. [RTTI](RTTI.md) - Run Time Time Identification (RTTI) features
 1. [Visitors](Visitors.md) - type safe visiting and traversal
-1. [IO](IO.md) - built-in serialization and and reading/writing data
+1. [read/write](ReaderWriter.md) - reading/writing data
+1. [vsgXchange](vsgXchange.md) - vsgXchange library for reading 3rd party image/model formats
 1. [vsg::Allocator](Allocator.md) - Block memory allocation for good performance
 1. [Math Functions](MathFunctionss.md) - math functions
