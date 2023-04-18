@@ -10,5 +10,5 @@ permalink: /foundations/Allocator
 
 ---
 
-Prev: [IO](IO.md)| Next: [Maths Functions](MathFunctions.md)
+Prev: [Streams & Logger](StraemsAndLogger.md)| Next: [Maths Functions](MathFunctions.md)
 
