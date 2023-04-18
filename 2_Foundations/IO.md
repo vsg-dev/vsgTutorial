@@ -217,7 +217,36 @@ VSG_type_name(vsg::ReaderWriter);
 
 The [vsgXchange library](https://github.com/vsg-dev/vsgXchange) is a companion library that provides support for a range of 3rd party image and model file formats and http support. A number of these features require external dependencies that are checked for by CMake when building vsgXchange, if they are found the associated ReaderWriter is built and included in the vsgXchange::all composite ReaderWriter, you can assign this to the vsg::Options object as in the example above to add support for all the available formats, or you can add each ReaderWriter individually. Doing the later allows you to control the order in which ReaderWriters are invoked as well select just the ones that are important to your application and reduce the overall footprint of your application.
 
-While the implementation of ReaderWriter that have external dependencies is only compiled when they are available, the public interface for all possible ReaderWriter is declared in the [include/vsgXchange]([vsgXchange library](https://github.com/vsg-dev/vsgXchange/blog/master/include/vsgXchange/)) directory, with the automatically generated include/vsgXchange/Export.h header provides #define's for each ReaderWriter so you can test at compile time if you so wish, and each optionally compiled ReaderWriter has a flag to say whether it's supported or not, so you can test for it at runtime.
+While the implementation of ReaderWriter that have external dependencies is only compiled when they are available, the public interface for all possible ReaderWriter is declared in the [include/vsgXchange](https://github.com/vsg-dev/vsgXchange/blog/master/include/vsgXchange/) directory.  The way the fixed public interface is decoupled from optionall built implementation is using the Fascade Design Pattern, with the public ReaderWriter classes deferring their implementations provided by either a fallback non op implementation or the full implementation when the dependency is available.  The available ReaderWriter's, the asscoiated dependencies and the formats supported are:
+
+| ReaderWriter | 3rd Dependency | Features |
+| [vsgXchange::all](https://github.com/vsg-dev/vsgXchange/blog/master/include/vsgXchange/all.h) | | Composite ReaderWriter that bundles all supported ReaderWriter's support by core VSG and vsgXchange |
+| [vsgXchange::curl](https://github.com/vsg-dev/vsgXchange/blog/master/include/vsgXchange/curl.h) | curl | Implements support for reading from http and https |
+| [vsgXchange::image](https://github.com/vsg-dev/vsgXchange/blog/master/include/vsgXchange/image.h) | | Composite ReaderWriter that bunles all supported image ReaderWriters |
+| [vsgXchange::model](https://github.com/vsg-dev/vsgXchange/blog/master/include/vsgXchange/model.h) | | Composite ReaderWriter that bunles all supported model ReaderWriters |
+
+
+vsgXchange's CMake scripts automatically generated include/vsgXchange/Version.h header provides #define's for each ReaderWriter so you can test at compile time if you so wish, and each optionally compiled ReaderWriter has a flag to say whether it's supported or not, so you can test for it at runtime, follows in what you'll see the Version.h header's if you have built against all the dependencies:
+
+~~~ cpp
+    /// standard Features
+    #define vsgXchange_all
+    #define vsgXchange_images
+    #define vsgXchange_models
+    #define vsgXchange_stbi
+    #define vsgXchange_dds
+    #define vsgXchange_ktx
+    #define vsgXchange_spv
+    #define vsgXchange_cpp
+
+    /// optional Features
+    #define vsgXchange_freetype
+    #define vsgXchange_assimp
+    #define vsgXchange_OSG
+    #define vsgXchange_GDAL
+    #define vsgXchange_CURL
+    #define vsgXchange_OpenEXR
+~~~
 
 ## Serializaton
 
