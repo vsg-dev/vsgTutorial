@@ -365,7 +365,7 @@ vsgXchange::all
         write_build_options  string
 ~~~
 
-# Using cpp to create compilable objects
+# Using vsgXchange::cpp & vsgconv to create compilable objects
 
 The vsgXchange::cpp ReaderWriter enables programmers to convert all vsg::Object types to source files that can be included into build of your applications, this can be used for data, scene graphs or shaders/shadersets.  You can use vsgconv to do this conversion in the console:
 
