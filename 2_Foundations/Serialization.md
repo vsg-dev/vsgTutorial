@@ -6,7 +6,7 @@ permalink: /foundations/Serializaton
 
 The VulkanSceneGraph provides extensible serailization support so that all scene graph objects can be read/written from files and streams. This can be used with the native .vsgb binary and .vsgt ascii formats formats as well work with users defined input/ouput through to reading data compiled directly into example as illustrated in use of the vsgXchange::cpp ReaderWriter illustrated in the previous section on vsgXchange.
 
-## vsg::Object, vsg::Input and vsg::Output bas classes
+## vsg::Object, Input and Output base classes
 
 The serializtion support is built upon vsg::Object base class that provides virtual read(Input&) and write(Output&) methods that users override to implement support for their own member variables, and the vsg::Input and vsg::Output classes that provide a standarizaed interface for reading and writing data.  The [vsg::Object](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Object.h#L88) methods are:
 
@@ -80,6 +80,37 @@ void writeObject(const char* propertyName, const Object* object);
 template<typename W, typename T>
 void writeValue(const char* propertyName, T value);
 ~~~
+
+## Simple example of implement serialization support
+
+While the range of methods in Input and Output is extensive and potentially overwhelming if you just dive in and study the whole vsg::Input and vsg::Output class definition, usage is these classes is usually quite straight forward, with the template<> methods automatically handling support for you.
+
+~~~ cpp
+namespace nature
+{
+    struct Animal : public vsg::Inherit<vsg::Object, Animal>
+    {
+        std::string name;
+        double age = 0.0;
+
+        void read(vsg::Input& input) override
+        {
+            input.read("name", name);
+            input.read("age", age);
+        }
+
+        void write(vsg::Output& outpt) override
+        {
+            output.write("name", name);
+            output.write("age", age);
+        }
+
+    }
+}
+EVSG_type_name(nature::Animal)
+
+~~~
+
 
 ## Ascii and Binary support
 
