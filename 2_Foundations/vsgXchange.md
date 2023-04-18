@@ -18,11 +18,12 @@ While the implementation of ReaderWriter that have external dependencies is only
 | [vsgXchange::dds](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/images.h#L65) |  | Support for DDS images |
 | [vsgXchange::cpp](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/cpp.h#L34) | | Write objects to .cpp files for compiling into programs |
 | [vsgXchange::curl](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/curl.h#L34) | [libcurl](https://curl.se/libcurl/) | reading from http and https |
-| [vsgXchange::freetype](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/freetype.h#L34) | [Freetype](https://www.freetype.org/) | reading TrueType etc. fonts |
-| [vsgXchange::GDAL](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/gdal.h#L35) | [GDAL](https://gdal.org/) | reading GIS Imagery and DEM data |
 | [vsgXchange::openexr](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/images.h#L97) | [OpenEXP](https://www.openexr.com/) | reading .exr images |
+| [vsgXchange::freetype](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/freetype.h#L34) | [Freetype](https://www.freetype.org/) | reading TrueType etc. fonts |
 | [vsgXchange::assimp](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/models.h#L41) | [assimp](https://www.assimp.org/) | Reading GLTF, OBJ, 3DS, LWO etc. models |
-| [vsgXchange::osg2vsg](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/models.h#L41) | [osg2vsg](https://github.com/vsg-dev/osg2vsg) | Read OpenSceneGraph supported image and model formats |
+| [vsgXchange::GDAL](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/gdal.h#L35) | [GDAL](https://gdal.org/) | reading GIS Imagery and DEM data |
+| [vsgXchange::osg2vsg](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/models.h#L41) | [osg2vsg](https://github.com/vsg-dev/osg2vsg) | Read OpenSceneGraph supported image and
+model formats |
 
 vsgXchange's CMake scripts automatically generated include/vsgXchange/Version.h header provides #define's for each ReaderWriter so you can test at compile time if you so wish, and each optionally compiled ReaderWriter has a flag to say whether it's supported or not, so you can test for it at runtime, follows in what you'll see the Version.h header's if you have built against all the dependencies:
 
@@ -38,12 +39,12 @@ vsgXchange's CMake scripts automatically generated include/vsgXchange/Version.h 
     #define vsgXchange_cpp
 
     /// optional Features
+    #define vsgXchange_curl
+    #define vsgXchange_openexr
     #define vsgXchange_freetype
     #define vsgXchange_assimp
-    #define vsgXchange_OSG
     #define vsgXchange_GDAL
-    #define vsgXchange_CURL
-    #define vsgXchange_OpenEXR
+    #define vsgXchange_OSG
 ~~~
 
 At runtime to list the supported features you call the ReaderWriter::getFeatures(Features&)) method, this return true when the ReaderWriter is implemented and adds the supported features to the feature structure, and return false is nothing format is supported - such as when vsgXchange is not compiled against the required dependency.
