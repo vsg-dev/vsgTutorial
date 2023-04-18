@@ -18,6 +18,7 @@ This second part of this tutorial introduces developers to foundational classes 
 1. [read/write](ReaderWriter.md) - reading/writing data
 1. [vsgXchange](vsgXchange.md) - vsgXchange library for reading 3rd party image/model formats
 1. [Serialization](Serialization.md) - extensible serialization support
-1. [Path, Streams and Logger](PathStreamsAndLogger.md) - File system and general IO support
+1. [File System](File System.md) - File system classes and functions
+1. [Streams and Logger](StreamsAndLogger.md) - General stream and Logger support
 1. [vsg::Allocator](Allocator.md) - Block memory allocation for good performance
 1. [Math Functions](MathFunctionss.md) - math functions

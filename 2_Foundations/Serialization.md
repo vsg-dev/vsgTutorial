@@ -13,5 +13,5 @@ permalink: /foundations/Serializaton
 
 ## Ascii and Binary support
 
-Prev: [vsgXchange](vsgXchange.md) | Next : [Paths, Straems and Logger](../2_Foundations/PathsStreamsAndLogger.md)
+Prev: [vsgXchange](vsgXchange.md) | Next : [File Systems](FileSystem.md)
 
