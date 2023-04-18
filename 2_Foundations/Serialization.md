@@ -15,196 +15,70 @@ virtual void read(Input& input);
 virtual void write(Output& output) const;
 ~~~
 
-The [vsg::Input](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/Input.h#L37) base class provides the low level pure virtual methods that are implemented by the concrete implementation of Input like vsg::BinaryInput and vsg::AsciiInput as well as methods that meant to be used by the read(Input&) methods to implement the serialization of classes. The later methods take the form of input.read(proptertyName, value):
+The [vsg::Input](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/Input.h#L37) base class provides the low level pure virtual methods that are implemented by the concrete implementation of Input like vsg::BinaryInput and vsg::AsciiInput as well as set of template methods that meant to be used by the read(Input&) methods to implement the serialization of class members. The later methods take the form of input.read(proptertyName, value):
 
 ~~~ cpp
 /// treat non standard type as raw data,
 template<typename T>
-void read(const char* propertyName, ref_ptr<T>& arg)
-{
-    if (!matchPropertyName(propertyName)) return;
-    arg = read().cast<T>();
-}
+void read(const char* propertyName, ref_ptr<T>& arg);
 
 template<typename T>
-void readObjects(const char* propertyName, T& values)
-{
-    if (!matchPropertyName(propertyName)) return;
-
-    uint32_t numElements = 0;
-    read(1, &numElements);
-    values.resize(numElements);
-
-    using element_type = typename T::value_type::element_type;
-    const char* element_name = type_name<element_type>();
-
-    for (uint32_t i = 0; i < numElements; ++i)
-    {
-        read(element_name, values[i]);
-    }
-}
+void readObjects(const char* propertyName, T& values);
 
 template<typename T>
-void readValues(const char* propertyName, std::vector<T>& values)
-{
-    if (!matchPropertyName(propertyName)) return;
-
-    uint32_t numElements = 0;
-    read(1, &numElements);
-    values.resize(numElements);
-
-    for (uint32_t i = 0; i < numElements; ++i)
-    {
-        read("element", values[i]);
-    }
-}
+void readValues(const char* propertyName, std::vector<T>& values);
 
 template<typename T>
-void readValues(const char* propertyName, std::set<T>& values)
-{
-    if (!matchPropertyName(propertyName)) return;
-
-    uint32_t numElements = 0;
-    read(1, &numElements);
-
-    for (uint32_t i = 0; i < numElements; ++i)
-    {
-        T v;
-        read("element", v);
-        values.insert(v);
-    }
-}
+void readValues(const char* propertyName, std::set<T>& values);
 
 /// match property name and read value(s)
 template<typename... Args>
-void read(const char* propertyName, Args&... args)
-{
-    if (!matchPropertyName(propertyName)) return;
-
-    // use fold expression to expand arguments and map to appropriate read method
-    (read(1, &(args)), ...);
-}
+void read(const char* propertyName, Args&... args);
 
 /// read object of a particular type
-ref_ptr<Object> readObject(const char* propertyName)
-{
-    if (!matchPropertyName(propertyName)) return ref_ptr<Object>();
-
-    return read();
-}
+ref_ptr<Object> readObject(const char* propertyName);
 
 /// read object of a particular type
 template<class T>
-ref_ptr<T> readObject(const char* propertyName)
-{
-    if (!matchPropertyName(propertyName)) return ref_ptr<T>();
-
-    ref_ptr<Object> object = read();
-    return ref_ptr<T>(dynamic_cast<T*>(object.get()));
-}
+ref_ptr<T> readObject(const char* propertyName);
 
 /// read object of a particular type
 template<class T>
-void readObject(const char* propertyName, ref_ptr<T>& arg)
-{
-    if (!matchPropertyName(propertyName)) return;
-
-    arg = read().cast<T>();
-}
+void readObject(const char* propertyName, ref_ptr<T>& arg);
 
 /// read a value of particular type
 template<typename T>
-T readValue(const char* propertyName)
-{
-    T v{};
-    read(propertyName, v);
-    return v;
-}
+T readValue(const char* propertyName);
 
 /// read a value as a type, then cast it another type
 template<typename W, typename T>
-void readValue(const char* propertyName, T& value)
-{
-    W read_value{};
-    read(propertyName, read_value);
-    value = static_cast<T>(read_value);
-}
+void readValue(const char* propertyName, T& value);
 ~~~
 
-The [vsg::Output](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/Output.h#L37) base class methods mirror those in vsg::Input, providing the pure virtual methods that are used to implement the low serialization, and then higher level user facing methods that are used by end users, the later take the form output.write(property, value);
+The [vsg::Output](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/Output.h#L37) base class methods mirror those in vsg::Input, providing the pure virtual methods that are used to implement the low serialization, and then higher level user facing methods that are used by end users, the later take the form output.write(property, value):
 
 ~~~ cpp
 template<typename T>
-void write(const char* propertyName, const ref_ptr<T>& object)
-{
-    writePropertyName(propertyName);
-    write(object);
-}
+void write(const char* propertyName, const ref_ptr<T>& object);
 
 template<typename T>
-void writeObjects(const char* propertyName, const T& values)
-{
-    uint32_t numElements = static_cast<uint32_t>(values.size());
-    write(propertyName, numElements);
-
-    using element_type = typename T::value_type::element_type;
-    const char* element_name = type_name<element_type>();
-
-    for (uint32_t i = 0; i < numElements; ++i)
-    {
-        write(element_name, values[i]);
-    }
-}
+void writeObjects(const char* propertyName, const T& values);
 
 template<typename T>
-void writeValues(const char* propertyName, const std::vector<T>& values)
-{
-    uint32_t numElements = static_cast<uint32_t>(values.size());
-    write(propertyName, numElements);
-
-    for (uint32_t i = 0; i < numElements; ++i)
-    {
-        write("element", values[i]);
-    }
-}
+void writeValues(const char* propertyName, const std::vector<T>& values);
 
 template<typename T>
-void writeValues(const char* propertyName, const std::set<T>& values)
-{
-    uint32_t numElements = static_cast<uint32_t>(values.size());
-    write(propertyName, numElements);
-
-    for (auto& v : values)
-    {
-        write("element", v);
-    }
-}
+void writeValues(const char* propertyName, const std::set<T>& values);
 
 /// match propertyname and write value(s)
 template<typename... Args>
-void write(const char* propertyName, Args&... args)
-{
-    writePropertyName(propertyName);
+void write(const char* propertyName, Args&... args);
 
-    // use fold expression to expand arguments and map to appropriate write method
-    (write(1, &(args)), ...);
-
-    writeEndOfLine();
-}
-
-void writeObject(const char* propertyName, const Object* object)
-{
-    writePropertyName(propertyName);
-    write(object);
-}
+void writeObject(const char* propertyName, const Object* object);
 
 /// write a value casting it specified type i.e. output.write<uint32_t>("Value", value);
 template<typename W, typename T>
-void writeValue(const char* propertyName, T value)
-{
-    W v{static_cast<W>(value)};
-    write(propertyName, v);
-}
+void writeValue(const char* propertyName, T value);
 ~~~
 
 ## Ascii and Binary support
