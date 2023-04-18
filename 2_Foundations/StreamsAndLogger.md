@@ -8,5 +8,5 @@ permalink: /foundations/StreamsAndLogger
 
 ## Logger
 
-Prev: [File Systen](FileSystem.md) | Next : [Block memory management with vsg::Allocator](Allocator.md)
+Prev: [File System](FileSystem.md) | Next : [Block memory management with vsg::Allocator](Allocator.md)
 
