@@ -19,5 +19,8 @@ int main(int, char**)
     std::cout<<"matrix = "<<matrix<<std::endl;
     std::cout<<"place = "<<place<<std::endl;
 
+    std::string str = vsg::make_string("You can compose a string from numbers i.e PI = ", 3.14, ", and vsg types like vsg::vec3 position = ", position);
+    std::cout<<"str = "<<str<<std::endl;
+
     return 0;
 }

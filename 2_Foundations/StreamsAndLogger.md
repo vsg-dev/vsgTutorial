@@ -8,7 +8,7 @@ A significant part of developing software is the process of reporting and loggin
 
 ## iostream & iostream operators
 
-The [include/vsg/io/streams.h header](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/streams.h#L37) provides a collection of << and >> operators for a range of types making it convinient to report values to console or to streams:
+The [include/vsg/io/stream.h header](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/stream.h#L31) provides a collection of << and >> operators for a range of types making it convinient to report values to console or to streams:
 
 ~~~ cpp
 vsg::vec3 position = {1.0, 2.0, 3.0};
@@ -26,6 +26,17 @@ std::cout<<"position = "<<position<<std::endl;
 std::cout<<"rotation = "<<rotation<<std::endl;
 std::cout<<"matrix = "<<matrix<<std::endl;
 std::cout<<"place = "<<place<<std::endl;
+~~~
+
+stream.h includes a vsg::make_string(..) template function that makes it easier to compose strings from all types that support the << stream operator, including the support for vsg types.
+
+~~~ cpp
+std::string str = vsg::make_string("You can compose a string from numbers i.e PI = ", 3.14, ", and vsg types like vsg::vec3 position = ", position);
+std::cout<<"str = "<<str<<std::endl;
+~~~
+
+~~~ sh
+str = You can compose a string from numbers i.e PI = 3.14, and vsg types like vsg::vec3 position = 1 2 3
 ~~~
 
 Console output from this block of code:
