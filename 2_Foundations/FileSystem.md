@@ -8,7 +8,7 @@ C++17 in theory has almost all the file system related functionality that Vulkan
 
 ## vsg::Path
 
-The [std::filesystem::path](https://en.cppreference.com/w/cpp/filesystem/path) class equivalent is the [vsg::Path](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/Path.h#L22) class. This broadly mirrors functionality focusing on the key functionality required by the VulkanSceneGraph and it's users.
+The [std::filesystem::path](https://en.cppreference.com/w/cpp/filesystem/path) class equivalent is the [vsg::Path](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/Path.h#L22) class. This broadly mirrors functionality focusing on the key functionality required by the VulkanSceneGraph and it's users. Like std::filesystem::path the vsg::Path class uses a std::wstring under Windows and std::string under all other platforms, and where possible automatic conversion between wide strings and UTF8 strings. The difference in underlying type under Windows enable use of the Windows specific extension of std::ifstream/ofstream that take wchar_t* for filanemaes, while all other platforms just support char_t* filenames.
 
 The Path.h header also provide convinience functions for manipulation paths/filenames:
 
@@ -23,11 +23,11 @@ The Path.h header also provide convinience functions for manipulation paths/file
     /// return the filename stripped of any paths and extensions, i.e vsg::simpleFilname("path/file.vsgb") returns file
     extern VSG_DECLSPEC Path simpleFilename(const Path& path);
 
-    /// return the path minus the extension, i.e. vsg::removeExtension("path/file.png") return path/file
-    extern VSG_DECLSPEC Path removeExtension(const Path& path);
-
     /// return true if the path equals ., .. or has a trailing \.. \.., /.. or /....
     extern VSG_DECLSPEC bool trailingRelativePath(const Path& path);
+
+    /// return the path minus the extension, i.e. vsg::removeExtension("path/file.png") return path/file
+    extern VSG_DECLSPEC Path removeExtension(const Path& path);
 ~~~
 
 ## File system functions
