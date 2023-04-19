@@ -8,9 +8,9 @@ C++17 in theory has almost all the file system related functionality that Vulkan
 
 ## vsg::Path
 
-The [std::filesystem::path](https://en.cppreference.com/w/cpp/filesystem/path) class equivalent is the [vsg::Path](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/Path.h#L24) class. This broadly mirrors functionality focusing on the key functionality required by the VulkanSceneGraph and it's users.
+The [std::filesystem::path](https://en.cppreference.com/w/cpp/filesystem/path) class equivalent is the [vsg::Path](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/Path.h#L22) class. This broadly mirrors functionality focusing on the key functionality required by the VulkanSceneGraph and it's users.
 
-To compliment vsg::Path there are also filename convinience functions that are included in the [include/vsg/io/FileSystem.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/FileSystem.h#L23) header, these are:
+The Path.h header also provide convinience functions for manipulation paths/filenames:
 
 ~~~ cpp
     /// return file extension include the . prefix, i.e. vsg::fileExtension("file.vsgt") returns .vsgt
