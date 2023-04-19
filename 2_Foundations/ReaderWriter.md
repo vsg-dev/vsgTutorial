@@ -18,9 +18,6 @@ The VulkanSceneGraph library provides extensible reading/writing support for sce
 
 Developers may call ReaderWriter directly, but for must usage cases they will use the vsg::read() and read_cast() functions that are found in [include/vsg/io/read.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/read.h) header. The vsg::read*() functions will invoke the appropriate ReaderWriter based on the file extension, usage:
 
-
-Copy : that are found in [include/vsg/io/read.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/read.h) header.
-
 ~~~ cpp
 // read a file and on success return vsg::ref_ptr<vsg::Object> to the loaded object
 auto object = vsg::read("object.vsgt");
