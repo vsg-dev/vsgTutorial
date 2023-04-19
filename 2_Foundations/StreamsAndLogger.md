@@ -13,19 +13,33 @@ The [include/vsg/io/streams.h header](https://github.com/vsg-dev/VulkanSceneGrap
 ~~~ cpp
 vsg::vec3 position = {1.0, 2.0, 3.0};
 
-vsg::vec4 rotation = {1.0, 2.0, 3.0, 0.0};
+vsg::dquat rotation(vsg::radians(90.0), vsg::dvec3(0.0, 0.0, 1.0));
 
-vsg@:mat4 matrix = { 2.0, 0.0, 0.0, 0.0,
-                     0.0, 2.0, 0.0, 0.0,
-                     0.0, 0.0, 2.0, 0.0,
-                     0.0, 0.0, 0.0, 1.0};
+vsg::mat4 matrix = { 2.0, 0.0, 0.0, 0.0,
+                    0.0, 2.0, 0.0, 0.0,
+                    0.0, 0.0, 2.0, 0.0,
+                    0.0, 0.0, 0.0, 1.0};
 
-auto place = vsg::stringValue("Paris");
+auto place = vsg::stringValue::create("Paris");
 
 std::cout<<"position = "<<position<<std::endl;
 std::cout<<"rotation = "<<rotation<<std::endl;
 std::cout<<"matrix = "<<matrix<<std::endl;
 std::cout<<"place = "<<place<<std::endl;
+~~~
+
+Console output from this block of code:
+
+~~~ sh
+position = 1 2 3
+rotation = 0 0 0.707107 0.707107
+matrix =
+    2 0 0 0
+    0 2 0 0
+    0 0 2 0
+    0 0 0 1
+
+place = ref_ptr<vsg::stringValue>(vsg::stringValue 0x7fc82dac6010)
 ~~~
 
 ## vsg::Logger
