@@ -16,14 +16,14 @@ vsg::Path filename = "models/lz.vsgt";
 std::ifstream fin(filename); // wchar* used under Windows, char* used on other platforms
 ~~~
 
-If you are working with APIs that only support std::string/char* representation for filnames then you can use the vsg::Path::string() method to make sure the path is converted to a UTF8 string. For instance [Assimp](https://github.com/assimp/assimp/blob/master/include/assimp/Importer.hpp#L487) requires std::string filenames:
+If you are working with APIs that only supports std::string/char* representation for filnames then you can use the vsg::Path::string() method to make sure the path is converted to a UTF8 string. For instance [Assimp](https://github.com/assimp/assimp/blob/master/include/assimp/Importer.hpp#L487) requires std::string filenames:
 
 ~~~ cpp
 Assimp::Importer importer;
 auto scene = importer.ReadFile(filenameToUse.string(), flags);
 ~~~
 
-The [Path.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/Path.h#L210) header also provide convinience functions for manipulation paths/filenames:
+The [Path.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/Path.h#L210) header also provide convenience functions for manipulation paths/filenames:
 
 ~~~ cpp
 using Paths = std::vector<Path>;
