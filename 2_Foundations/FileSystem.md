@@ -82,5 +82,5 @@ The file system functions are group together in the [include/vsg/io/FileSystem.h
     extern VSG_DECLSPEC FILE* fopen(const Path& path, const char* mode);
 ~~~
 
-Prev: [Serialization](Serialization.md) | Next : [StreamsAndLogger](StreamsAndLogger.md)
+Prev: [Serialization](Serialization.md) | Next : [Streams & Logger](StreamsAndLogger.md)
 
