@@ -110,7 +110,19 @@ Root id=1 nature::Animal
 }
 ~~~
 
-## Ascii and Binary support
+## vsg::Input and vsg::Output subclasses
+
+Orthogonal to the task of implementing serializers for user defined classes the underlying vsg::Input and vsg::Output that implement the integration with the underlying file/stream/memory are also extensible. The native .vsgt Ascii and .vsgb Binary file formats that the vsg::VSG ReaderWriter provides are implemented via subclassing from vsg::Input and vsg::Ouput, these subclasses provide a good illustration of what is required, the following table provides links to the relevant header and source files for each of these subclasses:
+
+| base class | subclass | header | source |
+| vsg::Input | vsg::AsciiInput |
+    [include/vsg/io/AsciiInput.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/AsciiInput.h#L24) |
+    [src/vsg/io/AsciiInput.cpp](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/AsciiInput.cpp#L24) |
+| vsg::Output | vsg::AsciiOutput |
+    [include/vsg/io/AsciiOutput.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/AsciiOutput.h#L24) |
+    [src/vsg/io/AsciiOutput.cpp](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/AsciiOutput.cpp#L24) |
+
+
 
 Prev: [vsgXchange](vsgXchange.md) | Next : [File Systems](FileSystem.md)
 
