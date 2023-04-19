@@ -25,7 +25,7 @@ While the implementation of ReaderWriter that have external dependencies is only
 | [vsgXchange::osg2vsg](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/models.h#L41) | [osg2vsg](https://github.com/vsg-dev/osg2vsg) | Read OpenSceneGraph supported image and
 model formats |
 
-vsgXchange's CMake scripts automatically generated include/vsgXchange/Version.h header provides #define's for each ReaderWriter so you can test at compile time if you so wish, and each optionally compiled ReaderWriter has a flag to say whether it's supported or not, so you can test for it at runtime, follows in what you'll see the Version.h header's if you have built against all the dependencies:
+vsgXchange's CMake scripts automatically generated include/vsgXchange/Version.h header provides #define's for each ReaderWriter so you can test at compile time if you so wish, and each optionally compiled ReaderWriter has a flag to say whether it's supported or not, so you can test for it at runtime. What follows is what you'll see in the Version.h header's if you have built against all the dependencies:
 
 ~~~ cpp
     /// standard Features
@@ -47,7 +47,7 @@ vsgXchange's CMake scripts automatically generated include/vsgXchange/Version.h 
     #define vsgXchange_OSG
 ~~~
 
-At runtime to list the supported features you call the ReaderWriter::getFeatures(Features&)) method, this return true when the ReaderWriter is implemented and adds the supported features to the feature structure, and return false is nothing format is supported - such as when vsgXchange is not compiled against the required dependency.
+At runtime to list the supported features you call the ReaderWriter::getFeatures(Features&) method, this returns true when the ReaderWriter is implemented and adds the supported features to the feature structure, and returns false if the format is not supported - such as when vsgXchange is not compiled against the required dependency.
 
 ## vsgconv
 
@@ -367,7 +367,7 @@ vsgXchange::all
 
 # Using vsgXchange::cpp & vsgconv to create compilable objects
 
-The vsgXchange::cpp ReaderWriter enables programmers to convert all vsg::Object types to source files that can be included into build of your applications, this can be used for data, scene graphs or shaders/shadersets.  You can use vsgconv to do this conversion in the console:
+The vsgXchange::cpp ReaderWriter enables programmers to convert all vsg::Object types to source files that can be included into the build of your applications, this can be used for data, scene graphs or shaders/shadersets.  You can use vsgconv to do this conversion in the console:
 
 ~~~ sh
 vsgconv shaders/shader.vert shader_vert.cpp

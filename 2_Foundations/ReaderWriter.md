@@ -4,7 +4,7 @@ title: Reading and Writing
 permalink: /foundations/ReaderWriter
 ---
 
-The VulkanSceneGraph provides extensiuble support for reading/writing scene graph and asscated objects. Extensibility can be found at the low level of serializaton support for individual objects and high level with ReaderWriters that support reading/writing of single or collections of objects to files/streams.   Cross platform file system functionality is also provided where C++17 support is lacking. An extensible vsg::Logger and i/ostrream support for native types rounds out functionality found in the [include/vsg/io](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io) directory.
+The VulkanSceneGraph provides extensible support for reading/writing scene graph and associated objects. Extensibility can be found at the low level of serializaton support for individual objects and high level with ReaderWriters that support reading/writing of single or collections of objects to files/streams.   Cross platform file system functionality is also provided where C++17 support is lacking. An extensible vsg::Logger and i/ostrream support for native types rounds out functionality found in the [include/vsg/io](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io) directory.
 
 ## Reading & Writing
 
@@ -41,7 +41,7 @@ vsg::write(value, "value.vsgt");
 
 ## Options & vsgXchange intro
 
-Customization and extension of reading and writing is provided by the [vsg::Options](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/Options.h) object that can be passed to the vsg;:read(..) and vsg::write(..) methods. You can pass in the ReaderWriters that you wish to used, placing them in the order you want them invoked. vsg::Options is subclassed from vsg::Object so has all the standard meta data capabilities and adds IO specific settings. The most common task will be passing in the paths to search for files, and the ReaderWriters to check, such as adding in support for the ReaderWriter's provided by vsgXchange. The usage pattern is:
+Customization and extension of reading and writing is provided by the [vsg::Options](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/Options.h) object that can be passed to the vsg;:read(..) and vsg::write(..) methods. You can pass in the ReaderWriters that you wish to use, placing them in the order you want them invoked. vsg::Options is subclassed from vsg::Object so has all the standard meta data capabilities and adds IO specific settings. The most common task will be passing in the paths to search for files, and the ReaderWriters to check, such as adding in support for the ReaderWriter's provided by vsgXchange. The usage pattern is:
 
 ~~~ cpp
 #include <vsg/all.h>
