@@ -28,17 +28,6 @@ std::cout<<"matrix = "<<matrix<<std::endl;
 std::cout<<"place = "<<place<<std::endl;
 ~~~
 
-stream.h includes a vsg::make_string(..) template function that makes it easier to compose strings from all types that support the << stream operator, including the support for vsg types.
-
-~~~ cpp
-std::string str = vsg::make_string("You can compose a string from numbers i.e PI = ", 3.14, ", and vsg types like vsg::vec3 position = ", position);
-std::cout<<"str = "<<str<<std::endl;
-~~~
-
-~~~ sh
-str = You can compose a string from numbers i.e PI = 3.14, and vsg types like vsg::vec3 position = 1 2 3
-~~~
-
 Console output from this block of code:
 
 ~~~ sh
@@ -53,8 +42,23 @@ matrix =
 place = ref_ptr<vsg::stringValue>(vsg::stringValue 0x7fc82dac6010)
 ~~~
 
+stream.h includes a vsg::make_string(..) template function that makes it easier to compose strings from all types that support the << stream operator, including the support for vsg types.
+
+~~~ cpp
+std::string str = vsg::make_string("You can compose a string from numbers i.e PI = ", 3.14, ", and vsg types like vsg::vec3 position = ", position);
+std::cout<<"str = "<<str<<std::endl;
+~~~
+
+Console output:
+
+~~~ sh
+str = You can compose a string from numbers i.e PI = 3.14, and vsg types like vsg::vec3 position = 1 2 3
+~~~
+
+
 ## vsg::Logger
 
+The [Logger.h header](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/Logger.h#L31) provides the vsg::Logger base class and a series of subclasses that specialize it for different usage cases.
 
 
 Prev: [File System](FileSystem.md) | Next : [Block memory management with vsg::Allocator](Allocator.md)
