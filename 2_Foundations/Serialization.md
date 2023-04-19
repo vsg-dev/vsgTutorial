@@ -115,10 +115,12 @@ Root id=1 nature::Animal
 Orthogonal to the task of implementing serializers for user defined classes the underlying vsg::Input and vsg::Output that implement the integration with the underlying file/stream/memory are also extensible. The native .vsgt Ascii and .vsgb Binary file formats that the vsg::VSG ReaderWriter provides are implemented via subclassing from vsg::Input and vsg::Ouput, these subclasses provide a good illustration of what is required, the following table provides links to the relevant header and source files for each of these subclasses:
 
 | base class | subclass | header | source |
-| vsg::Input | vsg::AsciiInput | [include/vsg/io/AsciiInput.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/AsciiInput.h#L26) | [src/vsg/io/AsciiInput.cpp](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/src/vsg/io/AsciiInput.cpp#L24) |
-| vsg::Output | vsg::AsciiOutput | [include/vsg/io/AsciiOutput.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/AsciiOutput.h#L26) | [src/vsg/io/AsciiOutput.cpp](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/src/vsg/io/AsciiOutput.cpp#L24) |
+| vsg::Input | vsg::AsciiInput | [include/vsg/io/AsciiInput.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/AsciiInput.h#L26) | [src/vsg/io/AsciiInput.cpp](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/src/vsg/io/AsciiInput.cpp#L13) |
+| vsg::Output | vsg::AsciiOutput | [include/vsg/io/AsciiOutput.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/AsciiOutput.h#L24) | [src/vsg/io/AsciiOutput.cpp](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/src/vsg/io/AsciiOutput.cpp#L13) |
+| vsg::Input | vsg::BinaryInput | [include/vsg/io/BinaryInput.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/BinaryInput.h#L26) | [src/vsg/io/BinaryInput.cpp](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/src/vsg/io/BinaryInput.cpp#L13) |
+| vsg::Output | vsg::BinaryOutput | [include/vsg/io/BinaryOutput.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/BinaryOutput.h#L24) | [src/vsg/io/BinaryOutput.cpp](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/src/vsg/io/BinaryOutput.cpp#L13) |
 
-
+The vsg::VSG ReaderWriter selects the appropriate Input/Output implementation based on the file extension, so for most usage cases there is never any need to create and invoke the Input/Output classes directly in your application.  For most usage case there will also be no need to write your own subclasses from vsg::Input and vsg::Output, a possible exception would be subclassing from vsg::Input/vsg::Output to implement the refelection support required when integrating with 3rd party languages such as Lua/Python.  This type of usage is an advanced topic beyond the scope of this online book, the existing implemntations linked to above will be good starting place for seeing what would be required.
 
 Prev: [vsgXchange](vsgXchange.md) | Next : [File Systems](FileSystem.md)
 
