@@ -92,65 +92,35 @@ For cases where applications extend the scene graph objects like with the above 
 
 ## Example of implementing serialization
 
-While the range of methods in Input and Output is extensive and potentially overwhelming if you just dive in and study the whole vsg::Input and vsg::Output class definition, usage in these classes is usually quite straightforward, with the template<> methods automatically handling support for you.
+While the range of methods in Input and Output is extensive and potentially overwhelming if you just dive in and study the whole vsg::Input and vsg::Output class definition, usage is these classes is usually quite straight forward, with the template<> methods automatically handling support for you. The [serialization](https://github.com/vsg-dev/vsgTutorial/tree/master/2_Foundations/2_serialization) example illustrates how to implement custom serialization.
 
 ~~~ cpp
-namespace nature
-{
-    struct Animal : public vsg::Inherit<vsg::Object, Animal>
-    {
-        std::string name;
-        double age = 0.0;
-
-        void read(vsg::Input& input) override
-        {
-            input.read("name", name);
-            input.read("age", age);
-        }
-
-        void write(vsg::Output& output) override
-        {
-            output.write("name", name);
-            output.write("age", age);
-        }
-
-    }
-}
-EVSG_type_name(nature::Animal)
-
-// register a nature::Animal::create() method to the vsg::ObjectFactory::instance() singleton
-// so it can be used when reading files.
-vsg::RegisterWithObjectFactoryProxy<nature::Animal> s_Register_Animal;
-
-int main(int, char**)
-{
-
-    // create our animal object
-    auto animal = nature::Animal::create();
-    animal->name = "Fido";
-    animal->age = 3.5;
-
-    std::cout<<"animal = "<<animal<<", name = "<<animal->name<<", age = "<<animal->age<<std::endl;
-
-    // write the animal object to file, using the .vsgt extension to select the VSG's native ascii file format writer.
-    vsg::write(animal, "animal.vsgt");
-
-    // load
-    if (auto loaded_animal = vsg::read_cast<nature::Animal>("animal.vsgt"))
-    {
-        std::cout<<"loaded_animal = "<<loaded_animal<<", name = "<<loaded_animal->name<<", age = "<<loaded_animal->age<<std::endl;
-    }
-    else
-    {
-        std::cout<<"Failed to load animal file"<<std::endl;
-    }
-
-    return 0;
-}
-
+{% include_relative 2_serialization/serialization.cpp %}
 ~~~
 
-## Ascii and Binary support
+The output from running this example is:
+
+~~~ sh
+$ more animal.vsgt
+#vsga 1.0.5
+Root id=1 nature::Animal
+{
+  name "Fido"
+  age 3.5
+}
+~~~
+
+## vsg::Input and vsg::Output subclasses
+
+Orthogonal to the task of implementing serializers for user defined classes the underlying vsg::Input and vsg::Output that implement the integration with the underlying file/stream/memory are also extensible. The native .vsgt Ascii and .vsgb Binary file formats that the [vsg::VSG ReaderWriter](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/VSG.h#L24) provides are implemented via subclassing from vsg::Input and vsg::Output, these subclasses provide a good illustration of what is required, the following table provides links to the relevant header and source files for each of these subclasses:
+
+| base class | subclass | header | source |
+| vsg::Input | vsg::AsciiInput | [include/vsg/io/AsciiInput.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/AsciiInput.h#L26) | [src/vsg/io/AsciiInput.cpp](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/src/vsg/io/AsciiInput.cpp#L13) |
+| vsg::Output | vsg::AsciiOutput | [include/vsg/io/AsciiOutput.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/AsciiOutput.h#L24) | [src/vsg/io/AsciiOutput.cpp](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/src/vsg/io/AsciiOutput.cpp#L13) |
+| vsg::Input | vsg::BinaryInput | [include/vsg/io/BinaryInput.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/BinaryInput.h#L26) | [src/vsg/io/BinaryInput.cpp](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/src/vsg/io/BinaryInput.cpp#L13) |
+| vsg::Output | vsg::BinaryOutput | [include/vsg/io/BinaryOutput.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/BinaryOutput.h#L24) | [src/vsg/io/BinaryOutput.cpp](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/src/vsg/io/BinaryOutput.cpp#L13) |
+
+The [vsg::VSG ReaderWriter selects](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/src/vsg/io/VSG.cpp#L94) the appropriate Input/Output implementation based on the file extension, so for most usage cases there is never any need to create and invoke the Input/Output classes directly in your application.  For most usage case there will also be no need to write your own subclasses from vsg::Input and vsg::Output, a possible exception would be subclassing from vsg::Input/vsg::Output to implement the refelection support required when integrating with 3rd party languages such as Lua/Python.  This type of usage is an advanced topic beyond the scope of this online book, the existing implementations linked to above will be good starting place for seeing what would be required.
 
 Prev: [vsgXchange](vsgXchange.md) | Next : [File Systems](FileSystem.md)
 
