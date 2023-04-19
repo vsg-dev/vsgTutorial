@@ -92,62 +92,22 @@ For cases where applications extend the scene graph objects like with the above 
 
 ## Example of implementing serialization
 
-While the range of methods in Input and Output is extensive and potentially overwhelming if you just dive in and study the whole vsg::Input and vsg::Output class definition, usage is these classes is usually quite straight forward, with the template<> methods automatically handling support for you.
+While the range of methods in Input and Output is extensive and potentially overwhelming if you just dive in and study the whole vsg::Input and vsg::Output class definition, usage is these classes is usually quite straight forward, with the template<> methods automatically handling support for you. The [serialization](https://github.com/vsg-dev/vsgTutorial/tree/master/2_Foundations/2_serialization) example illustrates how to implement custom serialization.
 
 ~~~ cpp
-namespace nature
+{% include_relative 2_serialization/serialization.cpp %}
+~~~
+
+The output from running this example is:
+
+~~~ sh
+$ more animal.vsgt
+#vsga 1.0.5
+Root id=1 nature::Animal
 {
-    struct Animal : public vsg::Inherit<vsg::Object, Animal>
-    {
-        std::string name;
-        double age = 0.0;
-
-        void read(vsg::Input& input) override
-        {
-            input.read("name", name);
-            input.read("age", age);
-        }
-
-        void write(vsg::Output& output) override
-        {
-            output.write("name", name);
-            output.write("age", age);
-        }
-
-    }
+  name "Fido"
+  age 3.5
 }
-EVSG_type_name(nature::Animal)
-
-// register a nature::Animal::create() method to the vsg::ObjectFactory::instance() singleton
-// so it can be used when reading files.
-vsg::RegisterWithObjectFactoryProxy<nature::Animal> s_Register_Animal;
-
-int main(int, char**)
-{
-
-    // create our animal object
-    auto animal = nature::Animal::create();
-    animal->name = "Fido";
-    animal->age = 3.5;
-
-    std::cout<<"animal = "<<animal<<", name = "<<animal->name<<", age = "<<animal->age<<std::endl;
-
-    // write the animal object to file, using the .vsgt extension to select the VSG's native ascii file format writer.
-    vsg::write(animal, "animal.vsgt");
-
-    // load
-    if (auto loaded_animal = vsg::read_cast<nature::Animal>("animal.vsgt"))
-    {
-        std::cout<<"loaded_animal = "<<loaded_animal<<", name = "<<loaded_animal->name<<", age = "<<loaded_animal->age<<std::endl;
-    }
-    else
-    {
-        std::cout<<"Failed to load animal file"<<std::endl;
-    }
-
-    return 0;
-}
-
 ~~~
 
 ## Ascii and Binary support
