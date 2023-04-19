@@ -8,7 +8,7 @@ The VulkanSceneGraph provides a number of features that provide richer and more 
 
 ## RTTI features provided vsg::Object
 
-The vsg::Object base class provides the follow methods dedicated to RTTI:
+The vsg::Object base class provides the following methods dedicated to RTTI:
 
 ~~~ cpp
 virtual const char* className() const noexcept { return type_name<Object>(); }
@@ -29,13 +29,13 @@ virtual int compare(const Object& rhs) const;
 
 The vsg::Object::className() method is implemented using the vsg::type_name<> template function, specializations of vsg::type_name<> are in turn provided by the VSG_type_name() and EVSG_type_name() macro functions that can be placed before/after a class definition, both of these features are defined in [include/vsg/core/value_type.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/type_name.h). The VSG_type_name() macro can be used for classes within the vsg namespace like [vsg::Group](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/group.h). While the EVSG_type_name() version can be used for classes defined in other namespaces, such as what you see in [vsgXchange](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/all.h#L43).
 
-The vsg::Object::type_info() methods provides a convenient way to access the std::type_info of a particular object, and vsg::Object::is_compatible(const std::type_info&) method provides a method that can not just check whether a type is the same, but whether it may be derived from that type thus compatible with treatment as that type. The vsg::Inherit<> class can be used to automatically implement the required type_info() and is_compatible() methods.
+The vsg::Object::type_info() method provides a convenient way to access the std::type_info of a particular object, and vsg::Object::is_compatible(const std::type_info&) method provides a method that can not just check whether a type is the same, but whether it may be derived from that type and thus compatible with treatment as that type. The vsg::Inherit<> class can be used to automatically implement the required type_info() and is_compatible() methods.
 
-The vsg::Object::cast<>() template methods use the Object::is_compatible() method to decide whether a type can by cast directly to a desired type using static_cast<> without the high CPU overhead of invoking dynamic_cast<>.
+The vsg::Object::cast<>() template methods use the Object::is_compatible() method to decide whether one can directly cast to a desired type using static_cast<> without the high CPU overhead of invoking dynamic_cast<>.
 
 The vsg::Object::compare(..) method provides a way of comparing two objects, both for type and the contents of the object. The int std::memcmp(..) convention is used, with negative for A<B, zero for A==B and positive for A>B.  The vsg::Inherit<> class provides a very basic compare(..) implementation but it's recommend to implement this locally for any class that holds anything more than simple types.  The [include/vsg/core/compare.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/compare.h) header provides a range of convenience template functions to make the task easier.
 
-To illustrate these features, with the [RTTI example](https://github.com/vsg-dev/vsgTutorial/blob/master/2_Foundations/2_rtti/) example, we'll declare a custom class in it's own namespace and use Inherit to implement the RTTI methods, EVSG_type_name to provide the human readable nameing and the implement compare() method.
+To illustrate these features, with the [RTTI example](https://github.com/vsg-dev/vsgTutorial/blob/master/2_Foundations/2_rtti/) example, we'll declare a custom class in it's own namespace and use Inherit to implement the RTTI methods, EVSG_type_name to provide the human readable naming and the implement compare() method.
 ~~~ cpp
 namespace astro
 {

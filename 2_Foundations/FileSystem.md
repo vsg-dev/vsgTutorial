@@ -4,7 +4,7 @@ title: File System features
 permalink: /foundations/FileSystem
 ---
 
-C++17 in theory has almost all the file system related functionality that VulkanSceneGraph and it's user will need, but unfortunately compiler support for all the std::filesystem features across all platforms was too patchy to rely upon.  To address this definciancy the VulkanSceneGraph provides this functionality to ensure the same experience across all platforms and compatibility with older compiler,
+C++17 in theory has almost all the file system related functionality that VulkanSceneGraph and it's user will need, but unfortunately compiler support for all the std::filesystem features across all platforms was too patchy to rely upon.  To address this deficiancy the VulkanSceneGraph provides this functionality to ensure the same experience across all platforms and compatibility with older compilers,
 
 ## vsg::Path
 
@@ -51,7 +51,7 @@ extern VSG_DECLSPEC Path removeExtension(const Path& path);
 
 ## File system functions
 
-The file system functions are group together in the [include/vsg/io/FileSystem.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/FileSystem.h#L23) header, the file system functions from this header are:
+The file system functions are grouped together in the [include/vsg/io/FileSystem.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/FileSystem.h#L23) header. The file system functions from this header are:
 
 ~~~ cpp
 class Options;
