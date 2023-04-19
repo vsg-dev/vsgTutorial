@@ -58,11 +58,69 @@ str = You can compose a string from numbers i.e PI = 3.14, and vsg types like vs
 
 ## vsg::Logger
 
-The [Logger.h header](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/Logger.h#L31) provides the vsg::Logger base class and a series of subclasses that specialize it for different usage cases.
+The [Logger.h header](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/Logger.h#L25) provides the vsg::Logger base class and a series of subclasses that specialize it for different usage cases.
 
-The [vsglog](https://github.com/vsg-dev/vsgExamples/tree/master/examples/io/vsglog.cpp)) example illustrates use the the standard vsg::Logger capabilities.
+The [vsglog](https://github.com/vsg-dev/vsgExamples/blob/master/examples/io/vsglog/vsglog.cpp) example illustrates use the the standard vsg::Logger capabilities. Console output from vsglog:
 
-The vsglog_mt example illustrates multireaded vsg::Logger.
+~~~ sh
+$ vsglog
+debug: debug string
+info: info cstring
+Warning: warn cstring
+ERROR: error cstring
+info: info2 cstring
+info: time 10ms, vector = (10 20 30)
+info: second time 10ms, vector = (10 20 30)
+
+custom debug : debug string
+custom info : info string
+custom warn : warn string
+custom error : error string
+custom info : here is a matrix  = {
+    1 0 0 0
+    0 1 0 0
+    0 0 1 0
+    0 0 0 1
+}
+custom debug : string log debug
+custom debug : cstring log debug
+custom info : log info
+custom warn : log warn
+custom error : log error
+~~~
+
+The [vsglog_mt](https://github.com/vsg-dev/vsgExamples/blob/master/examples/io/vsglog/vsglog.cpp) example illustrates multireaded vsg::Logger. Console output from vsglog_mt:
+
+~~~ sh
+$ vsglog_mt -n 10 -t 3
+main | info: set thread prefix for thread::id = 140104473138752 to thread 0 |
+main | info: set thread prefix for thread::id = 140104464746048 to thread 1 |
+main | info: set thread prefix for thread::id = 140104456353344 to thread 2 |
+main | info: Adding 10 MyOperations.
+main | info: Starting to process operations.
+thread 0 | info: info() operation 0
+thread 0 | debug: log() operation 0
+thread 0 | info: info() operation 2
+thread 0 | Warning: log() operation 2
+main | info: info() operation 1
+main | info: log() operation 1
+thread 1 | info: info() operation 3
+thread 1 | ERROR: log() operation 3
+thread 2 | info: info() operation 4
+thread 2 | debug: log() operation 4
+thread 2 | info: info() operation 5
+thread 2 | info: log() operation 5
+thread 0 | info: info() operation 6
+thread 0 | Warning: log() operation 6
+thread 0 | info: info() operation 7
+thread 0 | ERROR: log() operation 7
+thread 0 | info: info() operation 9
+thread 0 | info: log() operation 9
+main | info: info() operation 8
+main | debug: log() operation 8
+main | info: Finished processing operations.
+main | info: OperationThreads destroyed.
+~~~
 
 
 Prev: [File System](FileSystem.md) | Next : [Block memory management with vsg::Allocator](Allocator.md)
