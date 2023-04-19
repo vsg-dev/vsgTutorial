@@ -26,6 +26,12 @@ auto scene = importer.ReadFile(filenameToUse.string(), flags);
 The [Path.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/Path.h#L210) header also provide convinience functions for manipulation paths/filenames:
 
 ~~~ cpp
+using Paths = std::vector<Path>;
+using PathObjects = std::map<Path, ref_ptr<Object>>;
+
+/// return path stripped of the filename or final path component.
+extern VSG_DECLSPEC Path filePath(const Path& path);
+
 /// return file extension include the . prefix, i.e. vsg::fileExtension("file.vsgt") returns .vsgt
 extern VSG_DECLSPEC Path fileExtension(const Path& path);
 
