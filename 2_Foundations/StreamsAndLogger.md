@@ -60,7 +60,7 @@ str = You can compose a string from numbers i.e PI = 3.14, and vsg types like vs
 
 The [Logger.h header](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/Logger.h#L25) provides the vsg::Logger base class and a series of subclasses that specialize it for different usage cases.
 
-The [vsglog](https://github.com/vsg-dev/vsgExamples/blob/master/examples/io/vsglog/vsglog.cpp) example illustrates use the the standard vsg::Logger capabilities. Console output from vsglog:
+The [vsglog](https://github.com/vsg-dev/vsgExamples/blob/master/examples/io/vsglog/vsglog.cpp) example illustrates use the the standard vsg::Logger capabilities and how to write a custom Logger class. Console output from vsglog:
 
 ~~~ sh
 $ vsglog
