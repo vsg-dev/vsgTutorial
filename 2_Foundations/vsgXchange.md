@@ -6,6 +6,30 @@ permalink: /foundations/vsgXchange
 
 The [vsgXchange library](https://github.com/vsg-dev/vsgXchange) is a companion library that provides support for a range of 3rd party image and model file formats and http support. A number of these features require external dependencies that are checked for by CMake when building vsgXchange, if they are found the associated ReaderWriter is built and included in the vsgXchange::all composite ReaderWriter, you can assign this to the vsg::Options object as in the example above to add support for all the available formats, or you can add each ReaderWriter individually. Doing the later allows you to control the order in which ReaderWriters are invoked as well select just the ones that are important to your application and reduce the overall footprint of your application.
 
+## Usage
+
+vsgXchange is leveraged by assigning the ReaderWriter's it provides to a vsg::Options object, then passing this to the vsg::read/write calls.  The vsgXchange::all composite ReaderWriter adds support for all the file formats provided by vsgXchange, and example of usage:
+
+~~~ cpp
+#include <vsg/all.h>
+#include <vsgXchange/all.h>
+
+{
+    // create options object that is used to guide IO operations
+    auto options = vsg::Options::create();
+    options->add(vsgXchange::all::create());
+
+    // read a GLTF model
+    auto model = vsg::read_cast<vsg::Node>("mymodel.gltf", options);
+
+    // read a JPEG image
+    auto image = vsg::read_cast<vsg::Image>("myimage.jpg", options);
+
+    // read a model from the internet leveraging the libcurl ReaderWriter
+    auto scene = vsg::read_cast<vsg::Node>("https://www.myserver.com/mypageddatabase.vsgb", options);
+}
+~~~
+
 ## Supported formats
 
 While the implementation of ReaderWriter that have external dependencies is only compiled when they are available, the public interface for all possible ReaderWriter is declared in the [include/vsgXchange](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/) directory.  The way the fixed public interface is decoupled from optionally built implementation is using the [Fascade Design Pattern](https://en.wikipedia.org/wiki/Facade_pattern), with the public ReaderWriter classes deferring their implementations provided by either a fallback non op implementation or the full implementation when the dependency is available.  The available ReaderWriter's, the asscoiated dependencies and the formats supported are:
