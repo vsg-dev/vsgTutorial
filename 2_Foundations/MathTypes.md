@@ -63,9 +63,9 @@ normal.set(0.0f, 1.0f, 0.0f);
 // colours
 vsg::vec4 color(1.0f, 0.0f, 0.0f, 1.0f); // float vec4 representing opqaue red
 color.r *= 0.5f; // half the red intensity
-color[3] = 1.0f; // set the b channel to 1.0
+color[3] = 1.0f; // set the a channel to 1.0
 
-vsg::ubvec4 packed_color(0, 255, 0, 127)l // unsigned byte semi-transparent green
+vsg::ubvec4 packed_color(0, 255, 0, 127); // unsigned byte semi-transparent green
 packed_color = vsg::ubvec4(255, 255, 255, 255); // assign an all white color
 
 // you can use .x, .r & [0] etc. access interchangeably
@@ -128,7 +128,7 @@ vsg::plane pl(0.0f, 0.0, 1.0f, -1.0f);
 // create unit cube polytope from planes
 std::vector<vsg::dplane> poltope = {
     {1.0, 0.0, 0.0, 1.0}, // left plane at x=-1, pointing right
-    {-1.0, 0.0, 0.0, 1.0}, // left plane at x=1, pointing left
+    {-1.0, 0.0, 0.0, 1.0}, // right plane at x=1, pointing left
     {0.0, 1.0, 0.0, 1.0}, // front plane at y=-1, pointing forward
     {0.0, -1.0, 0.0, 1.0}, // back plane at y=1, pointing backward
     {0.0, 0.0, 1.0, 1.0}, // bottom plane at z=-1, pointing upwards

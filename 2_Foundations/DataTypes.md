@@ -128,7 +128,7 @@ For an fixed size 2D array of values you use the [vsg::Array2D](https://github.c
 
 Example:
 ~~~ cpp
-auto image = vsg::vec4Array2D::create({
+auto image = vsg::vec4Array2D::create(2, 4, {
         {1.0f, 0.0f, 0.0f, 1.0f},
         {0.0f, 1.0f, 0.0f, 1.0f},
         {0.0f, 0.0f, 1.0f, 1.0f},
