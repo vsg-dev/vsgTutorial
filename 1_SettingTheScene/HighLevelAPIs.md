@@ -8,7 +8,7 @@ Developers wishing to add graphics capabilities to their applications have to ei
 
 ### Scene Graphs
 
-A common concept utilized by high-level graphics APIs is a Scene Graph. Scene Graphs are an example of Directed Acylic Graph (DAG), where a tree like hierarchy is used to represent the scene.  Nodes in the graph made be internal group nodes, support culling, such as view frustum or level of detail culling, through to behavior like switches or sequences, or represent state or geometries that are passed to the GPU for rendering.
+A common concept utilized by high-level graphics APIs is a Scene Graph. Scene Graphs are an example of Directed Acyclic Graph (DAG), where a tree like hierarchy is used to represent the scene.  Nodes in the graph made be internal group nodes, support culling, such as view frustum or level of detail culling, through to behavior like switches or sequences, or represent state or geometries that are passed to the GPU for rendering.
 
 ### Features vs Generality
 
