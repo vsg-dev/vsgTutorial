@@ -15,7 +15,7 @@ Different CPUs have different strengths and weakness, some cope well with diffus
 
 * From the vsg::Object base class through to scene graphs nodes are kept as small as possible. Data members like names, description, masks and callbacks are avoided in most commonly used classes.
 * A flexible meta data scheme is provided by a vsg::Auxiliary class that can be used on all objects when required, but in most cases will simply be the overhead of a null pointer.  This allows developers the flexibility to add names, descriptions etc when needed, without all objects paying the memory penalty.
-* Scene graph callbacks are eliminated, with easy subclassing from scene graph nodes making this possible. Not having scene graph callbacks on nodes avoids the need to hold pointers to them and to check those pointers to see if custom behaivor is required.
+* Scene graph callbacks are eliminated, with easy subclassing from scene graph nodes making this possible. Not having scene graph callbacks on nodes avoids the need to hold pointers to them and to check those pointers to see if custom behaviour is required.
 * Scene graph node masks only exist on specific node types where they are most useful, again this reduces memory footprint of nodes and avoids conditional statements.
 * Dedicated nodes for scene graph culling like view frustum and LOD culling rather than having this functionality on all nodes avoids the need for a bounding volume data member on all scene graph nodes, and avoids the need for checking if a cull test is required and any branching based on a cull test.
 * Block memory allocator, vsg::Allocator, groups objects of similar type together into pre allocated blocks in memory. Nodes are packed together, geometry and texture data are packed together etc.
@@ -23,7 +23,7 @@ Different CPUs have different strengths and weakness, some cope well with diffus
 Together these design decisions ensure:
 
 * minimal object size so more objects can fit in main memory and crucially the CPU caches - vsg::Node takes just 24 bytes vs osg::Node 208 bytes.
-* objects that will be operated on togeher are stored in memory together to increase the probability that cache lines will contain objects that will be next accessed.
+* objects that will be operated on together are stored in memory together to increase the probability that cache lines will contain objects that will be next accessed.
 * conditional statements are reserved to just the places where they are required, rather than everywhere just in case they might be needed, so there is less branching, and branch prediction has a better chance of following the correct path.
 
 The end result is scene graph traversals that are around 10 times faster than the equivalent in the OpenSceneGraph. These are just a taste of the many performance related decisions in the VulkanSceneGraph, as you work through the vsgTutorial you'll be introduced to more tips and tricks that have been used, and ones that you can use in your own application development as well.
