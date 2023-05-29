@@ -19,10 +19,10 @@ Features that all applications developers using Vulkan will need, so provided by
 * support for views, cameras and control of them
 * support for commonly used graphics pipelines - flat shaded, phong and physics based rendering
 
-## Ecosystem centered around vsg-dev github account
+## Ecosystem centred around vsg-dev GitHub account
 
-The [vsg-dev](https://github.com/vsg-dev) github account hosts the following projects which are officially supported as part the VulkanSceneGraph project, the three main projects that majority of developers will need to use are:
-* [VulkanSceneGraph](https://github.com/vsg-dev/VulkanSceneGraph) - The VulkanSceneGraph library itself is capable of being used on it's own for standalone graphics applications, and for embedded platforms this may be the desired approach as it will minimize the code base that needs to be QA'd for sercurity and robustness, and minimizes the final executable size.
+The [vsg-dev](https://github.com/vsg-dev) GitHub account hosts the following projects which are officially supported as part the VulkanSceneGraph project, the three main projects that majority of developers will need to use are:
+* [VulkanSceneGraph](https://github.com/vsg-dev/VulkanSceneGraph) - The VulkanSceneGraph library itself is capable of being used on its own for standalone graphics applications, and for embedded platforms this may be the desired approach as it will minimize the code base that needs to be QA'd for security and robustness, and minimizes the final executable size.
 * [vsgXchange](https://github.com/vsg-dev/vsgXchange)  
 It is expected for most desktop applications users will also want to load a range of 2D image and 3D model data, to support this usage the library adds support for a wide range of image and 3d model formats, using assimp, as well as support for reading data from http/https using libcurl, and reading/writing/processing of GIS imagery and DEMS through the optional GDAL integration.
 * [vsgExamples](https://github.com/vsg-dev/vsgExamples)  
@@ -45,7 +45,7 @@ Also hosted on vsg-dev are more specialist projects:
 
 ## 3rd party dependencies
 
-The VulkanSceneGraph library uses Vulkan, C++17 and CMake as external dependencies. The Vulkan C headers are used rather then the Vulkan C++ header which is unnecessary as the Vulkan scene graph provideds its own encapsulation of Vulkan objects in a way that is consistent with how they are used in the scene graph.
+The VulkanSceneGraph library uses Vulkan, C++17 and CMake as external dependencies. The Vulkan C headers are used rather then the Vulkan C++ header which is unnecessary as the Vulkan scene graph provides its own encapsulation of Vulkan objects in a way that is consistent with how they are used in the scene graph.
 
 For runtime shader compilation support the [glslang](https://github.com/KhronosGroup/glslang) library, originally an optionally external dependency, but since VulkanSceneGraph-1.0.3 is now built internally as a submodule, this is compiled in by default but can be toggled off by setting the CMake VSG_SUPPORTS_ShaderCompiler variable to 0 before building the source. Compiling glslang within the VulkanSceneGraph library resolved problems with inconsistent 3rd party packaging of glslang, so now users can have seamlessly experience across platforms.
 
