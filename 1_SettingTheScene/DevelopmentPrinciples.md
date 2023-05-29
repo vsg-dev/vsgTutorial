@@ -37,7 +37,7 @@ The VulkanSceneGraph library only has C++17, CMake and Vulkan as external depend
 
 For runtime shader compilation support the VulkanSceneGraph library uses the [glslang](https://github.com/KhronosGroup/glslang) library. Originally integrated as an optional external dependency, it is now built internally as a submodule. While gslang support is compiled in by default it can be toggled off by setting the CMake VSG_SUPPORTS_ShaderCompiler variable to 0 before building the source. Compiling glslang within the VulkanSceneGraph library resolved problems with inconsistent 3rd party packaging of glslang, so now users can have seamless experience across platforms.
 
-During the initial development of VulkanSceneGraph various other 3rd party dependencies, like gm and glfw, were considered for features like math and windowing, but in each of these cases it was decided to implement the required features within the project rather than add an external dependency.  The reasons for implementing the functionality within the project:
+During the initial development of VulkanSceneGraph various other 3rd party dependencies, like gm and glfw, were considered for features like maths and windowing, but in each of these cases it was decided to implement the required features within the project rather than add an external dependency.  The reasons for implementing the functionality within the project:
 
 * Coherent class interfaces and naming
 * Coherent memory management
