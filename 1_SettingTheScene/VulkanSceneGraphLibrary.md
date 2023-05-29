@@ -13,14 +13,14 @@ All VulkanSceneGraph projects follow the same structure - public headers can be 
 The [vsg library headers](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg) are grouped in the following [include/vsg](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/) subdirectories:
 
 Foundational class directories:
-* [core](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core) - base classes, smart pointer, data continers, allocators and visitor base classes
+* [core](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core) - base classes, smart pointer, data containers, allocators and visitor base classes
 * [maths](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths) - GLSL style maths classes, similar to glm
 * [io](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io) - serialization and built-in reader/writers.
 
 Scene graph class directories:
 * [commands](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/commands) - scene graph nodes for Vulkan Commands
 * [state](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/state) - scene graph objects for setting Vulkan state.
-* [nodes](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/) - scene graph nodes like groups, swtiches & transforms
+* [nodes](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/) - scene graph nodes like groups, switches & transforms
 * [text](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/text) - text scene graph nodes
 * [meshshaders](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/meshshaders) - Khronos Mesh Shader support
 * [raytracing](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/raytracing) - Khronos Ray Tracing support
@@ -37,7 +37,7 @@ The sections of the vsgTutorial are grouped in this way so that as you work thro
 
 ## Naming conventions
 
-All VulkanSceneGraph projects use the following naming convnetions:
+All VulkanSceneGraph projects use the following naming conventions:
 
 | **Project** | **Library** | **Namespace** | **CMake package**|
 | VulkanSceneGraph | vsg | vsg:: | find_package(vsg) |
@@ -54,13 +54,13 @@ All Vulkan related classes in the VulkanSceneGraph follow the naming conventions
 | vkFramebuffer | vsg::Framebuffer |
 | vkSurface | vsg::Surface |
 
-The class and variable naming conventions is predominatly CamelCase but as there are cases where we use snake_case. If a function/template or struct mirrors a Standard C++ feature then snake_case may be used.  For the GLSL inspired math support structs are used and have a leading lower case letter i.e. vsg::vec3 and vsg::mat4.
+The class and variable naming conventions is predominantly CamelCase but as there are cases where we use snake_case. If a function/template or struct mirrors a Standard C++ feature, then snake_case may be used. For the GLSL inspired math support structs are used and have a leading lower case letter i.e. vsg::vec3 and vsg::mat4.
 
 ## Public/Protected/Private scope conventions
 
-Classes in the VulkanSceneGraph predominatly follow the declaration of scope in order of public interface through to internal implementation details. The naming of public members variables and methods follow camelCase while protected and private members variables and methods are prefixed with a _ so that their roles can be seen in the declaration and implementation.
+Classes in the VulkanSceneGraph predominantly follow the declaration of scope in order of public interface through to internal implementation details. The naming of public members variables and methods follow camelCase while protected and private members variables and methods are prefixed with a _ so that their roles can be seen in the declaration and implementation.
 
-For the same reasons that headers and source files are kept in distinct include and src directories, this convention is used to make it clear to end users and to implementers that public facing variables and methods are special. As end users will directly use public members and methods, priority is given to mantaining consistency of their naming and types. While the protected and private members are implementation deatils that may be more subject to change.
+For the same reasons that headers and source files are kept in distinct `include` and `src` directories, this convention is used to make it clear to end users and to implementers that public facing variables and methods are special. As end users will directly use public members and methods, priority is given to maintaining consistency of their naming and types. While the protected and private members are implementation details that may be more subject to change.
 
 ~~~ cpp
 
@@ -89,7 +89,7 @@ struct KeepItSimple
 };
 ~~~
 
-For cases where data members have a dependency a protected or private member is used and access is managed through public methods:
+For cases where data members have a dependency, a protected or private member is used and access is managed through public methods:
 
 ~~~ cpp
 class AnotherClass
