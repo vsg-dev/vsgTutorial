@@ -23,7 +23,7 @@ vsgXchange is leveraged by assigning the ReaderWriter's it provides to a vsg::Op
     auto model = vsg::read_cast<vsg::Node>("mymodel.gltf", options);
 
     // read a JPEG image
-    auto image = vsg::read_cast<vsg::Image>("myimage.jpg", options);
+    auto image = vsg::read_cast<vsg::Data>("myimage.jpg", options);
 
     // read a model from the internet leveraging the libcurl ReaderWriter
     auto scene = vsg::read_cast<vsg::Node>("https://www.myserver.com/mypageddatabase.vsgb", options);

@@ -25,7 +25,7 @@ EVSG_type_name(nature::Animal)
 
 // register a nature::Animal::create() method to the vsg::ObjectFactory::instance() singleton
 // so it can be used when reading files.
-vsg::RegisterWithObjectFactoryProxy<nature::Animal> s_Register_Animal;
+static vsg::RegisterWithObjectFactoryProxy<nature::Animal> s_Register_Animal;
 
 int main(int, char**)
 {
