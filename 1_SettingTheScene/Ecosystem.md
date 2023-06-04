@@ -33,7 +33,7 @@ Also hosted on vsg-dev are more specialist projects:
 * [osg2vsg](https://github.com/vsg-dev/osg2vsg) - osg2vsg library for converting data and integrating OpenGL/OSG and Vulkan/VSG applications. vsgXchange will automatically add support for reading data using the the OpenSceneGraph's loader when osg2vsg has been built and installed before vsgXchange.
 * [vsgImGui](https://github.com/vsg-dev/vsgImGui) - ImGui and ImPlot integration with the VulkanSceneGraph
 * [vsgQt](https://github.com/vsg-dev/vsgQt) - Qt5/Qt6 integration with the VulkanSceneGraph
-* [vsgPoints](https://github.com/vsg-dev/vsgPoints) 3d point cloud loading and rendering for VulkanScneneGraph.
+* [vsgPoints](https://github.com/vsg-dev/vsgPoints) 3d point cloud loading and rendering for VulkanSceneGraph.
 * [vsgUnity](https://github.com/vsg-dev/vsgUnity) - plugin for the Unity Editor for exporting VulkanSceneGraph models
 * [MyFirstVsgApplication](https://github.com/vsg-dev/MyFirstVsgApplication) - simple standalone example illustrating the CMake and C++ required.
 * [vsgFramework](https://github.com/vsg-dev/vsgFramework) - template project that uses CMake FetchContent to pull in all the main libraries associated with VulkanSceneGraph and dependencies and builds them together.
