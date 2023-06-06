@@ -29,28 +29,23 @@ vsg_matrix(column, row) = value;
 vsg::dvec3 vsg_dask = matrix * vsg_vec
 ~~~
 
-
-## Recap of available types
+## Headers and associated types/functionality
 
 | header | types |
 | --- | --- |
 | *vector and quaternion* | |
-| [include/vsg/maths/vec2.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec2.h) | vsg::vec2 class  |
-| [include/vsg/maths/vec3.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec3.h) | vsg::vec3 class  |
-| [include/vsg/maths/vec4.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec4.h) | vsg::vec4 class  |
-| [include/vsg/maths/quat.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/quat.h) | quaternion |
-| *matrices* | |
+| [include/vsg/maths/vec2.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec2.h) | vsg::vec2 |
+| [include/vsg/maths/vec3.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec3.h) | vsg::vec3 |
+| [include/vsg/maths/vec4.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec4.h) | vsg::vec4 |
+| [include/vsg/maths/quat.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/quat.h) | vsg::quat |
+| *matrix types* | |
 | [include/vsg/maths/mat3.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/mat3.h) | vsg::mat3 |
 | [include/vsg/maths/mat4.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/mat4.h) | vsg::mat3 |
 | *geometric primitive types* | |
 | [include/vsg/maths/plane.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/plane.h) | vsg::plane |
 | [include/vsg/maths/sphere.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/sphere.h) | vsg::sphere |
 | [include/vsg/maths/sphere.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/box.h) | vsg::box |
-
-## Functions
-
-| header | functionality |
-| --- | --- |
+| *functions* | |
 | [include/vsg/maths/clamp.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/clamp.h) | clamp and repeat texture coord style functions |
 | [include/vsg/maths/color.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/color.h) | color helper functions |
 | [include/vsg/maths/common.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/common.h) | angle, square, smoothstep and mix helper functions |
