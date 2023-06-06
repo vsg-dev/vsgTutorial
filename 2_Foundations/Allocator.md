@@ -13,7 +13,7 @@ In the earlier sections of this chapter we discussed how scene graph object size
 
 ## Allocator example
 
-The [vsgallocator](https://github.com/vsg-dev/vsgExamples/tree/master/examples/core/vsgallocator.cpp) example illustrates how to write a custom vsg::Allocator class, how to report memory usage from the vsg::Allocator and control the block sizes and performance reporting.
+The [vsgallocator](https://github.com/vsg-dev/vsgExamples/tree/master/examples/core/vsgallocator/vsgallocator.cpp) example illustrates how to write a custom vsg::Allocator class, how to report memory usage from the vsg::Allocator and control the block sizes and performance reporting.
 
 ---
 
