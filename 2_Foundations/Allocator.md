@@ -11,6 +11,9 @@ Memory bandwidth is fundemental bottleneck for graphics applications, both on th
 
 In the earlier sections of this chapter we discussed how scene graph object size is kept to a minimum, in this section we'll discuss how the [vsg::Allocator](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Allocator.h) provides block allocation and binning similar object types within the same blocks.
 
+## Allocator example
+
+The [vsgallocator](https://github.com/vsg-dev/vsgExamples/tree/master/examples/core/vsgallocator.cpp) example illustrates how to write a custom vsg::Allocator class, how to report memory usage from the vsg::Allocator and control the block sizes and performance reporting.
 
 ---
 
