@@ -21,4 +21,4 @@ This second part of this tutorial introduces developers to foundational classes 
 1. [File System](FileSystem.md) - File system classes and functions
 1. [Streams and Logger](StreamsAndLogger.md) - General stream and Logger support
 1. [vsg::Allocator](Allocator.md) - Block memory allocation for good performance
-1. [Math Functions](MathFunctionss.md) - math functions
+1. [Math Functions](MathFunctions.md) - math functions
