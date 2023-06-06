@@ -46,13 +46,19 @@ Matrix and vector multiplication:
    vsg::dvec3 clip_coord = projection * modelview * object_coord;
 ~~~
 
-Dot and corss products:
+Dot and cross products:
 
 ~~~ cpp
     vsg::vec3 a(1.0f, 0.0f, 0.0f);
     vsg::vec3 b(0.0f, 1.0f, 0.0f);
     vsg::vec3 c = vsg::cross(a, b);
     float d = vsg::dot(a, b);
+~~~
+
+Transform related functions:
+
+~~~ cpp
+    vsg::dmat4 matrix = vsg::translate(x, y, z) * vsg::rotate(angle_radians, rx, ry, rz) * vsg::scale(sx, sy, sz);
 ~~~
 
 ## Difference with OpenSceneGraph conventions
@@ -72,6 +78,8 @@ vsg::dmat4 vsg_matrix;
 vsg_matrix(column, row) = value;
 vsg::dvec3 vsg_dask = matrix * vsg_vec
 ~~~
+
+The OpenSceneGraph also implements the dot product and cross product functions as * and ^ operators while the VulkanSceneGraph follows GLSL's convention of using [dot](https://registry.khronos.org/OpenGL-Refpages/gl4/html/dot.xhtml) and [cross](https://registry.khronos.org/OpenGL-Refpages/gl4/html/cross.xhtml) functions.
 
 ---
 
