@@ -63,7 +63,7 @@ Transform related functions:
 
 ## Difference with OpenSceneGraph conventions
 
-The use of column major contrats that of the OpenSceneGraph that uses row major, this not only affects order for access elements of matrices but also the transformation order you'll use. The row major convention used by the OpenSceneGraph was adopted prior to the existance of GLSL which unfortunately chose the opposite convention, leaving the OpenSceneGraph in an awkawrd situation where C++ and shaders follow differing convnetions.
+The use of column major contrats that of the OpenSceneGraph that uses row major, this not only affects order for access elements of matrices but also the transformation order you'll use. The row major convention used by the OpenSceneGraph was adopted prior to the existence of GLSL which unfortunately chose the opposite convention, leaving the OpenSceneGraph in an awkawrd situation where C++ and shaders follow differing convnetions.
 
 ~~~ cpp
 // OpenSceneGraph use row major
