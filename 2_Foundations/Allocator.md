@@ -13,7 +13,7 @@ In the earlier sections of this chapter we discussed how scene graph object size
 
 ## How vsg::Allocator works
 
-The vsg::Allocator a singleton that invoked by vsg::allocate(..) and vsg::deallocate(...) function calls, which users can use like malloc(..)/free(..), but in normal usage will be called for you by custom new/delete implementations for vsg::Node, vsg::Data and vsg::Object respectively.  The custom new/delete implementations will be invoked automatically when you call *new vsg::Group" as well as the standard usage of *vsg::Group::create()*.
+The vsg::Allocator a singleton that invoked by vsg::allocate(..) and vsg::deallocate(...) function calls, which users can use like malloc(..)/free(..), but in normal usage will be called for you by custom new/delete implementations for vsg::Node, vsg::Data and vsg::Object respectively.  The custom new/delete implementations will be invoked automatically when you call **new vsg::Group** as well as the standard usage of **vsg::Group::create()**. This integration means that VukanSceneGraph users need not do anything to enable use of the vsg::Allocator - it all works out of the box.
 
 The custom new/delete call vsg::allocate() with the type of object so that the vsg::Allocator can allocate the memory from preallocated blocks associated with the object type, this ensures that all vsg::Node subclasses get allocated within memory blocks alongside other nodes, all vsg::Data get allocated in data blocks and all other vsg::Object subclasses get allocated together.
 
@@ -63,4 +63,3 @@ While we see significant improvements in performance for scene graph traversals 
 ---
 
 Prev: [Streams & Logger](StreamsAndLogger.md)| Next: [Maths Functions](MathFunctions.md)
-
