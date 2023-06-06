@@ -11,7 +11,7 @@ The VulkanSceneGraph maths types and functions are found in the [include/vsg/mat
 The VulkanSceneGraph follows the GLSL convention of [Right Hand Rule](https://en.wikipedia.org/wiki/Right-hand_rule) and [Column Major](https://en.wikipedia.org/wiki/Row-_and_column-major_order) matrices. The GLSL conventions are followed to make it easier to move code between shaders and C++ code, and to make it easier to follow 3rd party coding examples.
 
 
-## VulkanSceneGraph vs OpenSceneGraph conventions
+## Difference with OpenSceneGraph conventions
 
 The use of column major contrats that of the OpenSceneGraph that uses row major, this not only affects order for access elements of matrices but also the transformation order you'll use. The row major convention used by the OpenSceneGraph was adopted prior to the existance of GLSL which unfortunately chose the opposite convention, leaving the OpenSceneGraph in an awkawrd situation where C++ and shaders follow differing convnetions.
 
@@ -34,15 +34,15 @@ vsg::dvec3 vsg_dask = matrix * vsg_vec
 
 | header | types |
 | --- | --- |
-| ~vector and quaternion~ | |
+| *vector and quaternion* | |
 | [include/vsg/maths/vec2.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec2.h) | vsg::vec2 class  |
 | [include/vsg/maths/vec3.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec3.h) | vsg::vec3 class  |
 | [include/vsg/maths/vec4.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec4.h) | vsg::vec4 class  |
 | [include/vsg/maths/quat.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/quat.h) | quaternion |
-| ~matrices~ | |
+| *matrices* | |
 | [include/vsg/maths/mat3.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/mat3.h) | vsg::mat3 |
 | [include/vsg/maths/mat4.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/mat4.h) | vsg::mat3 |
-| ~geometric primitive types~ | |
+| *geometric primitive types* | |
 | [include/vsg/maths/plane.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/plane.h) | vsg::plane |
 | [include/vsg/maths/sphere.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/sphere.h) | vsg::sphere |
 | [include/vsg/maths/sphere.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/box.h) | vsg::box |
