@@ -25,7 +25,7 @@ Matrix types:
 Geometric primitive types:
 * vsg::plane [include/vsg/maths/plane.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/plane.h)
 * vsg::sphere [include/vsg/maths/sphere.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/sphere.h)
-* vsg::box [include/vsg/maths/sphere.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/box.h)
+* vsg::box [include/vsg/maths/box.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/box.h)
 
 ## Prefix naming convention
 

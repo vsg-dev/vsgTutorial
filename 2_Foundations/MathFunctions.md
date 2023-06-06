@@ -44,7 +44,7 @@ vsg::dvec3 vsg_dask = matrix * vsg_vec
 | *geometric primitive types* | |
 | [include/vsg/maths/plane.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/plane.h) | vsg::plane |
 | [include/vsg/maths/sphere.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/sphere.h) | vsg::sphere |
-| [include/vsg/maths/sphere.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/box.h) | vsg::box |
+| [include/vsg/maths/box.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/box.h) | vsg::box |
 | *functions* | |
 | [include/vsg/maths/clamp.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/clamp.h) | clamp and repeat texture coord style functions |
 | [include/vsg/maths/color.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/color.h) | color helper functions |
