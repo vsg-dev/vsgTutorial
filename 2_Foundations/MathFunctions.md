@@ -4,7 +4,7 @@ title: Maths Functions
 permalink: /foundations/MathsFunctions
 ---
 
-The VulkanSceneGraph maths types and functions are found in the [include/vsg/maths](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/) directory. The conventions broadly follow GLSL conventions with additions that are helpful for scene graph usage.  In the [Math Types] (MathTypes.md) section, earlier in this chapter, the vec2, vec3, vec4, mat3, mat4, quat, plane, box and sphere classes were introduced. In this section we build upon this with tour of the range of helper functions available and an explanation of the conventions used.
+The VulkanSceneGraph maths types and functions are found in the [include/vsg/maths](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/) directory. The conventions broadly follow GLSL conventions with additions that are helpful for scene graph usage.  In the [Math Types](MathTypes.md) section, earlier in this chapter, the vec2, vec3, vec4, mat3, mat4, quat, plane, box and sphere classes were introduced. In this section we build upon this with tour of the range of helper functions available and an explanation of the conventions used.
 
 ## Conventions
 
@@ -58,7 +58,9 @@ Dot and cross products:
 Transform related functions:
 
 ~~~ cpp
-    vsg::dmat4 matrix = vsg::translate(x, y, z) * vsg::rotate(angle_radians, rx, ry, rz) * vsg::scale(sx, sy, sz);
+    vsg::dmat4 matrix = vsg::translate(x, y, z) *
+                        vsg::rotate(angle_radians, rx, ry, rz) *
+                        vsg::scale(sx, sy, sz);
 ~~~
 
 ## Difference with OpenSceneGraph conventions
