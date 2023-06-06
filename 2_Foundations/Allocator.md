@@ -4,18 +4,18 @@ title: Block allocation with vsg::Allocator
 permalink: /foundations/Allocator
 ---
 
-Memory bandwidth is fundamental bottleneck for graphics applications, both on the CPU in main memory and on the GPU. On the CPU side the scene graph traversal stresses the CPU cache and memory bandwidth, over the decades CPUs have got faster at a quicker rate than memory bandidth so the issue of CPUs stalled waiting for instructions and data to be pulled from main memory has become an even more critical bottleneck. The VulkanSceneGraph minimizes cache misses and bandwidth load in two main ways:
+Memory bandwidth is a fundamental bottleneck for graphics applications, both on the CPU in main memory and on the GPU. On the CPU side the scene graph traversal stresses the CPU cache and memory bandwidth, over the decades CPUs have got faster at a quicker rate than memory bandwidth so the issue of CPUs stalled waiting for instructions and data to be pulled from main memory has become an even more critical bottleneck. The VulkanSceneGraph minimizes cache misses and bandwidth load in two main ways:
 
-1. Minmizing scene graph object size
+1. Minimizing scene graph object size
 2. Block allocation of similar object types within the same memory blocks
 
 In the earlier sections of this chapter we discussed how scene graph object size is kept to a minimum, in this section we'll discuss how the [vsg::Allocator](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Allocator.h) provides block allocation and binning similar object types within the same blocks.
 
 ## How vsg::Allocator works
 
-The vsg::Allocator a singleton that invoked by vsg::allocate(..) and vsg::deallocate(...) function calls, which users can use like malloc(..)/free(..), but in normal usage will be called for you by custom new/delete implementations for vsg::Node, vsg::Data and vsg::Object respectively.  The custom new/delete implementations will be invoked automatically when you call **new vsg::Group** as well as the standard usage of **vsg::Group::create()**. This integration means that VukanSceneGraph users need not do anything to enable use of the vsg::Allocator - it all works out of the box.
+The vsg::Allocator is a singleton that is invoked by vsg::allocate(..) and vsg::deallocate(...) function calls, which users can use like malloc(..)/free(..), but in normal usage will be called for you by custom new/delete implementations for vsg::Node, vsg::Data and vsg::Object respectively.  The custom new/delete implementations will be invoked automatically when you call **new vsg::Group** as well as the standard usage of **vsg::Group::create()**. This integration means that VukanSceneGraph users need not do anything to enable use of the vsg::Allocator - it all works out of the box.
 
-The custom new/delete call vsg::allocate() with the type of object so that the vsg::Allocator can allocate the memory from preallocated blocks associated with the object type, this ensures that all vsg::Node subclasses get allocated within memory blocks alongside other nodes, all vsg::Data get allocated in data blocks and all other vsg::Object subclasses get allocated together.
+The custom new/delete implementations call vsg::allocate() with the type of object so that the vsg::Allocator can allocate the memory from preallocated blocks associated with the object type, this ensures that all vsg::Node subclasses get allocated within memory blocks alongside other nodes, all vsg::Data get allocated in data blocks and all other vsg::Object subclasses get allocated together.
 
 A default block size of 16Mb, users can override this by calling [vsg::Allocator::setBlockSize(AllocatorAffinity, size_t)](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Allocator.h#L115) i.e.
 
@@ -29,7 +29,7 @@ A default block size of 16Mb, users can override this by calling [vsg::Allocator
 
 The [vsgallocator](https://github.com/vsg-dev/vsgExamples/tree/master/examples/core/vsgallocator/vsgallocator.cpp) example illustrates how to write a custom vsg::Allocator class, how to report memory usage from the vsg::Allocator and control the block sizes and performance reporting.
 
-One of the roles of vsgallocator has been to test the performance impact of the different allocator, follows are tests of loading a big city model then running 10,000 traversals through the whole scene graph to collect node and state stats, the first run below is the default allocator that the VulkanSceneGraph provides, the second is using standard C++ new/delete - the vsg::Allocator provides a 90% speed up of tarversals just from allocator nodes, objects and data in their own blocks.
+One of the roles of vsgallocator has been to test the performance impact of the different allocators, the following are tests of loading a big city model then running 10,000 traversals through the whole scene graph to collect node and state stats, the first run below is the default allocator that the VulkanSceneGraph provides, the second is using standard C++ new/delete - the vsg::Allocator provides a 90% speed up of tarversals just from allocator nodes, objects and data in their own blocks.
 
 ~~~ sh
 # default block allocator
