@@ -6,6 +6,8 @@ permalink: /scenegraph/Nodes
 
 The class definitions for the Internal nodes of the scene graph can bound found the [VulkanSceneGraph/include/vsg/nodes](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/) directory.
 
+## Node Base class
+
 | Class | Header | Functionality |
 | vsg::Node | [Node.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/Node.h) | Node base class |
 
@@ -25,7 +27,7 @@ The class definitions for the Internal nodes of the scene graph can bound found 
 | vsg::PagedLOD | [PagedLOD.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/PagedLOD.h) | Level of Detall node that has a low res child and high res child with file reference  |
 | vsg::TileDatabase | [TileDatabase.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/TileDatabase.h) | |
 
-## Transformantion nodes
+## Transformation nodes
 
 | Transformation nodes| Header | Functionality |
 | vsg::Transform| [Transform.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/Transform..h) | Transform base class node that provides a interface for definiting transforms of a subgraph  |
@@ -45,11 +47,12 @@ The class definitions for the Internal nodes of the scene graph can bound found 
 | vsg::StateGroup | [StateGroup.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/StateGroup.h) | State group node that provides a list of StateCommands to decorate a subgraph |
 | vsg::Light | [Light.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/Light.h) | Light node provides all the settings for positing and controlling the type, color of a light source |
 
-| Draw order control | |
-| vsg::Bin | [Bin.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/Bin.h) | |
-| vsg::DepthSorted | [DepthSorted.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/DepthSorted.h) | |
-| | |
-| vsg::Compileable | [Compilable.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/Compilable.h) | |
+## Draw order control
+
+| Draw order control | Header | Functionality |
+| vsg::Bin | [Bin.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/Bin.h) | Bin node provides a way of controlling the record order of its children |
+| vsg::DepthSorted | [DepthSorted.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/DepthSorted.h) | Depth sorted node provides controls for depth sorting of it's subgraph |
+
 
 Prev: [Scene Graph](index.md)| Next: [Commands](Commands.md)
 

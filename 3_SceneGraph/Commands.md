@@ -7,13 +7,15 @@ permalink: /scenegraph/Commands
 The class definitions for the Vulkan command nodes of the scene graph can bound found the [VulkanSceneGraph/include/vsg/commands](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/) directory.
 
 | Class | Header | Functionality |
+| vsg::Compileable | [Compilable.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/Compilable.h) | Base class for objects that can be compiled |
+| | [Command.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/) | |
+| | [Commands.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/) | |
+
 | | [BeginQuery.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/) | |
 | | [BindIndexBuffer.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/) | |
 | | [BindVertexBuffers.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/) | |
 | | [BlitImage.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/) | |
 | | [ClearAttachments.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/) | |
-| | [Command.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/) | |
-| | [Commands.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/) | |
 | | [CopyAndReleaseBuffer.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/) | |
 | | [CopyAndReleaseImage.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/) | |
 | | [CopyImage.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/) | |
