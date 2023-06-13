@@ -4,7 +4,7 @@ title: Nodes
 permalink: /scenegraph/Nodes
 ---
 
-The class definitions for the Internal nodes of the scene graph can bound found the [VulkanSceneGraph/include/vsg/nodes](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/) directory.
+The class definitions for the internal nodes of the scene graph can be found the [VulkanSceneGraph/include/vsg/nodes](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/) directory. All scene graph nodes are subclassed from the vsg::Node base class.
 
 ## Node Base class
 
