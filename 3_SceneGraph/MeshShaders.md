@@ -4,11 +4,12 @@ title: Mesh Shaders
 permalink: /scenegraph/MeshShaders
 ---
 
-Discuss mesh shader nodes of the scene graph
+The class definitions for the Vulkan mesh shader nodes of the scene graph can bound found the [VulkanSceneGraph/include/vsg/meshshaders](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/meshshaders/) directory.
 
-DrawMeshTasks.h
-DrawMeshTasksIndirectCount.h
-DrawMeshTasksIndirect.h
+| Class | Header | Functionality |
+| | [DrawMeshTasks.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/meshshaders/) | |
+| | [DrawMeshTasksIndirectCount.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/meshshaders/) | |
+| | [DrawMeshTasksIndirect.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/) | |
 
 Prev: [State](State.md)| Next : [Ray Tracing](RayTracing.md)
 
