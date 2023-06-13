@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Scene Graph Nodes
+title: Nodes
 permalink: /scenegraph/Nodes
 ---
 
