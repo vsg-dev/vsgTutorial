@@ -11,3 +11,5 @@ At the heart of the VulkanSceneGraph is classes that make up the scene graph, al
 1. [Nodes](Nodes.md) - internal nodes of the scene graph
 2. [Commands](Commands.md) - Vulkan commands for doing operations on the GPU such as draw and compute dispatch
 3. [State](State.md) - Vulkan state for setting data and programs on the GPU such as shaders, textures, uniforms
+4. [Mesh Shaders](MeshShaders.md) - Vulkan mesh shader extensions nodes
+5. [Ray Tracing](RayTracing.md) - Vulkan ray tracing extensions nodes
