@@ -61,7 +61,7 @@ vsg::vec3 normal(0.0f, 0.0f, 1.0f); // floating point vec3
 normal.set(0.0f, 1.0f, 0.0f);
 
 // colours
-vsg::vec4 color(1.0f, 0.0f, 0.0f, 1.0f); // float vec4 representing opqaue red
+vsg::vec4 color(1.0f, 0.0f, 0.0f, 1.0f); // float vec4 representing opaque red
 color.r *= 0.5f; // half the red intensity
 color[3] = 1.0f; // set the a channel to 1.0
 
@@ -70,7 +70,7 @@ packed_color = vsg::ubvec4(255, 255, 255, 255); // assign an all white color
 
 // you can use .x, .r & [0] etc. access interchangeably
 std::cout<<"color : red = "<<color[0]<<", green = "<<color.g<<", blue = "<<color.z<<", alpha = "<<color.a<<std::endl;
-std::cout<<"number of components : color.size() = "<<color.size()<<std::emdl; // will be 4 for vec4 types
+std::cout<<"number of components : color.size() = "<<color.size()<<std::endl; // will be 4 for vec4 types
 ~~~
 
 ## Quaternion
@@ -118,7 +118,7 @@ matrix[3][2] = 300.0;
 
 ## Geometric primitives
 
-The [vsg::plane](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/plane.h), [sphere](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/sphere.h) and [box](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/box.h) types do not have a direct GLSL equivlant but are very useful for geometric primitives that are used in graphics application. The conventions used follow the same patterns as used in the vector, quaternion and matrix types.
+The [vsg::plane](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/plane.h), [sphere](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/sphere.h) and [box](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/box.h) types do not have a direct GLSL equivalent but are very useful for geometric primitives that are used in graphics applications. The conventions used follow the same patterns as used in the vector, quaternion and matrix types.
 
 ~~~ cpp
 
@@ -135,7 +135,7 @@ std::vector<vsg::dplane> poltope = {
     {0.0, 0.0, -1.0, 1.0} // top plane at z=1, pointing downwards
 };
 
-// double precision sphere at {10, 20, 30) with radius 40 units
+// double precision sphere at {10, 20, 30) with radius of 40 units
 vsg::dsphere bounding_sphere(10.0, 20.0, 30.0, 40.0);
 
 // default constructed single precision box representing an undefined box
@@ -144,7 +144,7 @@ vsg::dsphere bounding_sphere(10.0, 20.0, 30.0, 40.0);
 // when min.x value > max.x then box is treated as undefined/invalid/empty.
 vsg::box bounding_box;
 
-// use the vsg::box::add(..) method to compute the bounding box that enclosies points
+// use the vsg::box::add(..) method to compute the bounding box that encloses points
 bounding_box.add(vsg::vec3(0.0f, 0.0f, 0.0f));
 bounding_box.add(vsg::vec3(10.0f, 0.0f, 0.0f));
 bounding_box.add(vsg::vec3(0.0f, 5.0f, 0.0f));
