@@ -52,7 +52,7 @@ int main(int, char**)
     nested->addChild(vsg::doubleArray::create({4.0, 5.0, 6.0}));
 
     auto root = vsg::Objects::create();
-    root->addChild(vsg::stringValue::create("Everyone Loves Raymond"));
+    root->addChild(vsg::stringValue::create("Everybody Loves Raymond"));
     root->addChild(nested);
 
     // consutruct our visitor and then pass it to root node to invoke the visitor.

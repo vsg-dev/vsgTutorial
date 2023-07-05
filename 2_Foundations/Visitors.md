@@ -177,7 +177,7 @@ nested->addChild(leaf);
 nested->addChild(vsg::doubleArray::create({4.0, 5.0, 6.0}));
 
 auto root = vsg::Objects::create();
-root->addChild(vsg::stringValue::create("Everyone Loves Raymond"));
+root->addChild(vsg::stringValue::create("Everybody Loves Raymond"));
 root->addChild(nested);
 
 // consutruct our visitor and then pass it to root node to invoke the visitor.
@@ -189,7 +189,7 @@ The console output from this example is:
 
 ~~~
 Visiting vsg::Objects
-    Visiting vsg::stringValue Everyone Loves Raymond
+    Visiting vsg::stringValue Everybody Loves Raymond
     Visiting vsg::Objects
         Visiting vsg::Objects
             Visiting vsg::vec3Value 1 2 3
