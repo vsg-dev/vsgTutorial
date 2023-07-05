@@ -4,7 +4,7 @@ title: Data Types
 permalink: /foundations/DataTypes
 ---
 
-The scene graph needs to manage data that is held on the CPU and to be able to map this data to memory GPU in a coherent way.  The types of data may be a single value, 1D, 2D and 3D arrays, with a range of types, and used for a wide range of tasks - representing vertices, normals, texture coords arrays through to 1D, 2D and 3D textures.
+The scene graph needs to manage data that is held on the CPU and needs to be able to map this data to memory GPU in a coherent way.  The types of data may be a single value, 1D, 2D and 3D arrays, with a range of types, and used for a wide range of tasks - representing vertices, normals, texture coords arrays through to 1D, 2D and 3D textures.
 
 The [vsg::Data](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Data.h) base class provides a common interface for all the different types of data, then a series of template classes provide support for both built-in types and user defined types for single value and fixed sized 1D, 2D and 3D arrays:
 
@@ -13,7 +13,7 @@ The [vsg::Data](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/
 * [vsg::Array2D](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array2D.h) - 2D array
 * [vsg::Array3D](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array3D.h) - 3D array
 
-Containers that have their sized fixed at allocation time, rather than dynamically resizable containers like std::vector<>, are used to ensure coherency with the fixed sized GPU resources they will map to.
+Containers that have their size fixed at allocation time, rather than dynamically resizable containers like std::vector<>, are used to ensure coherency with the fixed sized GPU resources they will map to.
 
 ## vsg::Data base class
 
