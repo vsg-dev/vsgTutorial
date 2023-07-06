@@ -9,7 +9,7 @@ The class definitions for the Vulkan command nodes of the scene graph can bound 
 ## Command base and group classes
 
 | Class | Header | Functionality |
-| ----------------- | ----------------- | ----------------- |
+| :-----------------: | :-----------------: | :-----------------: |
 | vsg::Compileable | [Compilable.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/Compilable.h) | Base class for objects that can be compiled |
 | vsg::Command | [Command.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/Command.h) | Base class for vkCmd* types|
 | vsg::Commands | [Commands.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/Commands.h) | Group of vsg::Command |
