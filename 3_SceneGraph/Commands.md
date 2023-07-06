@@ -19,7 +19,7 @@ The class definitions for the Vulkan command nodes of the scene graph can bound 
 | Class | Header | Functionality |
 | --- | --- | --- |
 | vsg::BindIndexBuffer | [BindIndexBuffer.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/BindIndexBuffer.h) | [vkCmdBindIndexBuffer](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdBindIndexBuffer.html) |
-| vsg::BindVertexBuffers | [BindVertexBuffers.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/BindVertexBuffers) | [vkCmdBindVertexBuffers](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdBindVertexBuffers.html) |
+| vsg::BindVertexBuffers | [BindVertexBuffers.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/BindVertexBuffers.h) | [vkCmdBindVertexBuffers](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdBindVertexBuffers.html) |
 
 ## Draw primitive commands
 
