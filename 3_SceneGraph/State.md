@@ -37,15 +37,15 @@ The class definitions for the Vulkan state nodes of the scene graph can bound fo
 
 | Class | Header | Functionality |
 | --- | --- | --- |
-| vsg::ColorBlendState | [ColorBlendState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ColorBlendState.h) | Settings for [VkPipelineColorBlendStateCreateInfo](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPipelineColorBlendStateCreateInfo.html) |
-| vsg::DepthStencilState | [DepthStencilState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DepthStencilState.h) | |
-| vsg::InputAssemblyState| [InputAssemblyState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/InputAssemblyState.h) | |
-| vsg::DynamicState | [DynamicState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DynamicState.h) | |
-| vsg::MultisampleState | [MultisampleState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/MultisampleState.h) | |
-| vsg::RasterizationState | [RasterizationState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/RasterizationState.h) | |
-| vsg::TessellationState | [TessellationState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/TessellationState.h) | |
-| vsg::VertexInputState | [VertexInputState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/VertexInputState.h) | |
-| vsg::ViewportState| [ViewportState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ViewportState.h) | |
+| vsg::ColorBlendState | [ColorBlendState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ColorBlendState.h) | [VkPipelineColorBlendStateCreateInfo](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPipelineColorBlendStateCreateInfo.html) |
+| vsg::DepthStencilState | [DepthStencilState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DepthStencilState.h) | [VkPipelineDepthStencilStateCreateInfo](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPipelineDepthStencilStateCreateInfo.html)|
+| vsg::InputAssemblyState| [InputAssemblyState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/InputAssemblyState.h) | [VkPipelineInputAssemblyStateCreateInfo](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPipelineInputAssemblyStateCreateInfo.html) |
+| vsg::DynamicState | [DynamicState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DynamicState.h) | [VkPipelineDynamicStateCreateInfo](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPipelineDynamicStateCreateInfo.html) |
+| vsg::MultisampleState | [MultisampleState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/MultisampleState.h) | [VkPipelineMultisampleStateCreateInfo](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPipelineMultisampleStateCreateInfo.html) |
+| vsg::RasterizationState | [RasterizationState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/RasterizationState.h) | [VkPipelineRasterizationStateCreateInfo](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPipelineRasterizationStateCreateInfo.html) |
+| vsg::TessellationState | [TessellationState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/TessellationState.h) | [VkPipelineTessellationStateCreateInfo](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPipelineTessellationStateCreateInfo.html) |
+| vsg::VertexInputState | [VertexInputState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/VertexInputState.h) | [VkPipelineVertexInputStateCreateInfo](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPipelineVertexInputStateCreateInfo.html) |
+| vsg::ViewportState| [ViewportState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ViewportState.h) | [VkPipelineViewportStateCreateInfo](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPipelineViewportStateCreateInfo.html) |
 
 ## Descriptor state
 
@@ -66,15 +66,15 @@ The class definitions for the Vulkan state nodes of the scene graph can bound fo
 | vsg::ImageInfo | [ImageInfo.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ImageInfo.h) | |
 | vsg::ImageView.| [ImageView.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ImageView.h) | |
 | vsg::material | [material.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/material.h) | Material vsg::Data types |
-| vsg::QueryPool | [QueryPool.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/QueryPool.h) | |
 
 ## General support classes
 
 | Class | Header | Functionality |
 | --- | --- | --- |
-| vsg::ResourceHints etc. | [ResourceHints.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ResourceHints.h) | Resource requirement hints |
+| vsg::ResourceHints etc. | [ResourceHints.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ResourceHints.h) | Hints that can be assigned to a scene graph as user data to specify the GPU resources required. |
 | vsg::ArrayState etc. | [ArrayState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ArrayState.h) | vsg::ArrayState base class for mapping vertex shader behavior on CPU |
 | vsg::ViewDependentState etc. | [ViewDependentState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ViewDependentState.h) | View dependent state classes |
+| vsg::QueryPool | [QueryPool.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/QueryPool.h) | Encapsulates VkQueryPool, used with vsg::BeginQuery etc. |
 
 Prev: [Commands](Commands.md)| Next : [Mesh Shaders](MeshShaders.md)
 
