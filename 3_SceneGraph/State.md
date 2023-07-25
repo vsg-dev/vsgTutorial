@@ -58,9 +58,9 @@ The class definitions for the Vulkan state nodes of the scene graph can bound fo
 | vsg::Buffer | [Buffer.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/Buffer.h) | |
 | vsg::BufferInfo | [BufferInfo.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/BufferInfo.h) | |
 | vsg::BufferView | [BufferView.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/BufferView.h) | Encapsulation of [VkBufferView](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkBufferView.html) |
-| vsg::Sampler | [Sampler.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/Sampler.h) | |
+| vsg::Sampler | [Sampler.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/Sampler.h) | Encapsulation of [VkSampler](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkSamplerCreateInfo.html) |
 | vsg::DescriptorImage | [DescriptorImage.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorImage.h) | Encapsulation of [VkDescriptorImageInfo](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkDescriptorImageInfo.html) |
-| vsg::DescriptorTexelBufferView | [DescriptorTexelBufferView.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorTexelBufferView.h) | |
+| vsg::DescriptorTexelBufferView | [DescriptorTexelBufferView.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorTexelBufferView.h) | Encapsulates [VkWriteDescriptorSet.pTexelBufferViews](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkWriteDescriptorSet.html) |
 | vsg::Image | [Image.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/Image.h) | Encpasulation of [vkImage](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkImageCreateInfo.html) |
 | vsg::ImageView.| [ImageView.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ImageView.h) | Encpasulation of [vkImageView](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkImageViewCreateInfo.html) |
 | vsg::ImageInfo | [ImageInfo.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ImageInfo.h) | |
