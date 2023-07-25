@@ -52,7 +52,7 @@ The class definitions for the Vulkan state nodes of the scene graph can bound fo
 | Class | Header | Functionality |
 | --- | --- | --- |
 | vsg::BindDescriptorSet etc. | [BindDescriptorSet.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/BindDescriptorSet.h) | Encapsulates [vkCmdBindDescriptors](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdBindDescriptorSets.html) |
-| vsg::DescriptorSet | [DescriptorSet.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorSet.h) | |
+| vsg::DescriptorSet | [DescriptorSet.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorSet.h) | Encapsulates [vkDescriptorSet](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkDescriptorSetAllocateInfo.html)|
 | vsg::Descriptor | [Descriptor.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/Descriptor.h) | Base class for [Descriptors](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkWriteDescriptorSet.html) |
 | vsg::DescriptorBuffer | [DescriptorBuffer.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorBuffer.h) | Encapsulates [VkWriteDescriptorSet.pBufferInfo](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkWriteDescriptorSet.html) |
 | vsg::DescriptorImage | [DescriptorImage.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorImage.h) | Encapsulates [VkWriteDescriptorSet.pImageInfo](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkWriteDescriptorSet.html) |
