@@ -18,21 +18,20 @@ The class definitions for the Vulkan state nodes of the scene graph can bound fo
 
 | Class | Header | Functionality |
 | --- | --- | --- |
-| vsg::BindComputePipeline | [ComputePipeline.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) | |
-| vsg::BindGraphicsPipeline | [GraphicsPipeline.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) | |
-| vsg::BindDescriptorSet | [BindDescriptorSet.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) | |
-| vsg::PushConstants | [PushConstants.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) | |
-| vsg::StateSwitch | [StateSwitch.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) | |
+| vsg::BindComputePipeline | [ComputePipeline.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ComputePipeline.h) | Bind the compute pipeline |
+| vsg::BindGraphicsPipeline | [GraphicsPipeline.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/GraphicsPipeline.h) | Bind the graphics pipeline |
+| vsg::BindDescriptorSet | [BindDescriptorSet.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/BindDescriptorSet.h) | Bind descriptors sets to current pipelin |
+| vsg::PushConstants | [PushConstants.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/PushConstants.h) |  apply push constants using vkPushConstants |
+| vsg::StateSwitch | [StateSwitch.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/StateSwitch.h) | applies child state commands which pass mask test |
 
 ## Shaders, Descriptor and Pipeline layout
 
 | Class | Header | Functionality |
 | --- | --- | --- |
-| | [ShaderModule.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) | |
-| | [ShaderStage.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) | |
-| | [DescriptorSetLayout.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) | |
-| | [PipelineLayout.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) | |
-
+| vsg::ShaderModule | [ShaderModule.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ShaderModule.h) | Settings for vkShaderModule |
+| vsg::ShaderStage | [ShaderStage.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ShaderStage.h) | Settings for vkShaderStage |
+| vsg::DescriptorSetLayout | [DescriptorSetLayout.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorSetLayout.h) | Settings for descriptor set layout |
+| vsg::PipelineLayout | [PipelineLayout.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/PipelineLayout.h) | Settings for pipeline layout |
 
 ## Graphics pipeline state
 
