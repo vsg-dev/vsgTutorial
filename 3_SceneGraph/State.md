@@ -28,9 +28,9 @@ The class definitions for the Vulkan state nodes of the scene graph can bound fo
 
 | Class | Header | Functionality |
 | --- | --- | --- |
-| vsg::ShaderModule | [ShaderModule.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ShaderModule.h) | Settings for vkShaderModule |
-| vsg::ShaderStage | [ShaderStage.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ShaderStage.h) | Settings for vkShaderStage |
-| vsg::DescriptorSetLayout | [DescriptorSetLayout.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorSetLayout.h) | Settings for descriptor set layout |
+| vsg::ShaderModule etc. | [ShaderModule.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ShaderModule.h) | Settings for [vkShaderModule](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkShaderModuleCreateInfo.html) |
+| vsg::ShaderStage | [ShaderStage.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ShaderStage.h) | Settings for [vkShaderStage](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPipelineShaderStageCreateInfo.html) |
+| vsg::DescriptorSetLayout | [DescriptorSetLayout.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorSetLayout.h) | Settings for [descriptor set layout](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkDescriptorSetLayoutCreateInfo.html) |
 | vsg::PipelineLayout | [PipelineLayout.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/PipelineLayout.h) | Settings for pipeline layout |
 
 ## Graphics pipeline state
