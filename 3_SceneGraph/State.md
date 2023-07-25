@@ -37,7 +37,7 @@ The class definitions for the Vulkan state nodes of the scene graph can bound fo
 
 | Class | Header | Functionality |
 | --- | --- | --- |
-| vsg::ColorBlendState | [ColorBlendState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ColorBlendState.h) | |
+| vsg::ColorBlendState | [ColorBlendState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ColorBlendState.h) | Settings for [VkPipelineColorBlendStateCreateInfo](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPipelineColorBlendStateCreateInfo.html) |
 | vsg::DepthStencilState | [DepthStencilState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DepthStencilState.h) | |
 | vsg::InputAssemblyState| [InputAssemblyState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/InputAssemblyState.h) | |
 | vsg::DynamicState | [DynamicState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DynamicState.h) | |
@@ -51,30 +51,30 @@ The class definitions for the Vulkan state nodes of the scene graph can bound fo
 
 | Class | Header | Functionality |
 | --- | --- | --- |
-| | [BindDescriptorSet.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) | |
-| | [DescriptorSetLayout.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) | |
-| | [Descriptor.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) | |
-| | [DescriptorBuffer.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) | |
-| | [Buffer.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) | |
-| | [BufferInfo.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) | |
-| | [BufferView.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) | |
-| | [Sampler.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) | |
-| | [DescriptorImage.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) | |
-| | [DescriptorSet.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) | |
-| | [DescriptorTexelBufferView.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) | |
-| | [Image.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) | |
-| | [ImageInfo.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) | |
-| | [ImageView.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) | |
-| | [material.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) | |
-| | [QueryPool.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) | |
+| vsg::BindDescriptorSet | [BindDescriptorSet.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/BindDescriptorSet.h) | |
+| vsg::DescriptorSetLayout | [DescriptorSetLayout.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorSetLayout.h) | |
+| vsg::Descriptor | [Descriptor.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/Descriptor.h) | |
+| vsg::DescriptorBuffer | [DescriptorBuffer.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorBuffer.h) | |
+| vsg::Buffer | [Buffer.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/Buffer.h) | |
+| vsg::BufferInfo | [BufferInfo.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/BufferInfo.h) | |
+| vsg::BufferView | [BufferView.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/BufferView.h) | |
+| vsg::Sampler | [Sampler.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/Sampler.h) | |
+| vsg::DescriptorImage | [DescriptorImage.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorImage.h) | |
+| vsg::DescriptorSet | [DescriptorSet.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorSet.h) | |
+| vsg::DescriptorTexelBufferView | [DescriptorTexelBufferView.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorTexelBufferView.h) | |
+| vsg::Image | [Image.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/Image.h) | |
+| vsg::ImageInfo | [ImageInfo.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ImageInfo.h) | |
+| vsg::ImageView.| [ImageView.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ImageView.h) | |
+| vsg::material | [material.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/material.h) | Material vsg::Data types |
+| vsg::QueryPool | [QueryPool.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/QueryPool.h) | |
 
 ## General support classes
 
 | Class | Header | Functionality |
 | --- | --- | --- |
-| | [ResourceHints.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) | |
-| | [ArrayState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) | |
-| | [ViewDependentState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) | |
+| vsg::ResourceHints etc. | [ResourceHints.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ResourceHints.h) | Resource requirement hints |
+| vsg::ArrayState etc. | [ArrayState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ArrayState.h) | vsg::ArrayState base class for mapping vertex shader behavior on CPU |
+| vsg::ViewDependentState etc. | [ViewDependentState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ViewDependentState.h) | View dependent state classes |
 
 Prev: [Commands](Commands.md)| Next : [Mesh Shaders](MeshShaders.md)
 
