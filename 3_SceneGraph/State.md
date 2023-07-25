@@ -51,15 +51,14 @@ The class definitions for the Vulkan state nodes of the scene graph can bound fo
 
 | Class | Header | Functionality |
 | --- | --- | --- |
-| vsg::BindDescriptorSet | [BindDescriptorSet.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/BindDescriptorSet.h) | |
-| vsg::DescriptorSetLayout | [DescriptorSetLayout.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorSetLayout.h) | |
-| vsg::Descriptor | [Descriptor.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/Descriptor.h) | |
-| vsg::DescriptorBuffer | [DescriptorBuffer.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorBuffer.h) | |
+| vsg::BindDescriptorSet etc. | [BindDescriptorSet.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/BindDescriptorSet.h) | Encapsulation of [vkCmdBindDescriptors](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdBindDescriptorSets.html) |
+| vsg::Descriptor | [Descriptor.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/Descriptor.h) | Base class from [Descriptors](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkWriteDescriptorSet.html) |
+| vsg::DescriptorBuffer | [DescriptorBuffer.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorBuffer.h) | Encapsulation of [VkDescriptorBufferInfo](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkDescriptorBufferInfo.html) |
 | vsg::Buffer | [Buffer.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/Buffer.h) | |
 | vsg::BufferInfo | [BufferInfo.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/BufferInfo.h) | |
-| vsg::BufferView | [BufferView.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/BufferView.h) | |
+| vsg::BufferView | [BufferView.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/BufferView.h) | Encapsulation of [VkBufferView](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkBufferView.html) |
 | vsg::Sampler | [Sampler.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/Sampler.h) | |
-| vsg::DescriptorImage | [DescriptorImage.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorImage.h) | |
+| vsg::DescriptorImage | [DescriptorImage.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorImage.h) | Encapsulation of [VkDescriptorImageInfo](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkDescriptorImageInfo.html) |
 | vsg::DescriptorSet | [DescriptorSet.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorSet.h) | |
 | vsg::DescriptorTexelBufferView | [DescriptorTexelBufferView.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorTexelBufferView.h) | |
 | vsg::Image | [Image.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/Image.h) | |
