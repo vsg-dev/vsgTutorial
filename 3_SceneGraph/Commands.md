@@ -4,7 +4,7 @@ title: Commands
 permalink: /scenegraph/Commands
 ---
 
-The class definitions for the Vulkan command nodes of the scene graph can bound found the [VulkanSceneGraph/include/vsg/commands](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/) directory.
+The class definitions for the Vulkan command nodes of the scene graph can bound found in the [VulkanSceneGraph/include/vsg/commands](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/) directory. Examples that illustate use of various state classes can be found in the [vsgExamples/examples/commands](https://github.com/vsg-dev/vsgExamples/tree/master/examples/commands) directory,
 
 ## Command base and group classes
 
