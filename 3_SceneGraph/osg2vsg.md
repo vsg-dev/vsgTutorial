@@ -87,10 +87,15 @@ permalink: /scenegraph/osg2vsg
 
 | OSG | VSG | Notes |
 | --- | --- | --- |
+| [`osg::Camera`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Camera.h) | [`vsg::Camera`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/Camear.h)  |  |
 | [`osgViewer::View`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgViewer/View.h) | [`vsg::View`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/View.h)  |  |
 | [`osgViewer::Viewer`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgViewer/Viewer.h) | [`vsg::Viewer`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/Viewer.h)  |  |
 | [`osgViewer::CompositeViewer`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgViewer/CompositeViewer.h) | [`vsg::Viewer`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/Viewer.h)  |  |
-| [`osgViewer::`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgViewer/) | [`vsg::`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/)  |  |
+| [`osgGA::Trackball`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgGA/Trackball) | [`vsg::Trackball`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/Trackball.h)  |  |
+| | [`vsg::CommandGraph`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/CommandGraph.h)  | No OSG equvalent |
+| | [`vsg::RenderGraph`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/RenderGraph.h)  | No OSG equvalent |
+| | [`vsg::RecordAndSubmitTask`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/RecordAndSubmitTask.h)  | No OSG equvalent |
+| | [`vsg::ExecuteCommands`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/ExecuteCommands.h)  | No OSG equvalent |
 
 ## Threading
 
@@ -104,11 +109,12 @@ permalink: /scenegraph/osg2vsg
 | [`OpenThreads::Barrier`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Barrier) | [`vsg::Barrier`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/Barrier.h) | |
 | [`OpenThreads::Block`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Block) | [`vsg::Latch`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/Latch.h) | |
 VulkanSceneGraph/blob/master/include/vsg/threading/Affinity.h) | |
+| [`OpenThreads::Affinity`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Affinity) | [`vsg::Affinity`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/Affinity.h) | |
 |  [`osg::OperationThread`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/osg/OperationThread) | [`vsg::OperationThread`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/OperationThread.h) |  |
 |  [`osg::OperationThread`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/osg/OperationThread) | [`vsg::OperationQueue`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/OperationQueue.h) |  |
 |  [`osg::Operation`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/osg/OperationThread) | [`vsg::Operation`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/OperationQueue.h) |  |
 |  | [`vsg::ActivityStatus`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/ActivityStatus.h) | No OSG equvalent, used to cooperatively release barriers & blocks. |
 | | [`vsg::FrameBlock`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/FrameBlock.h) | No direct OSG equvalent, loosely OpenThreds::Block. |
-| [`OpenThreads::Affinity`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Affinity) | [`vsg::Affinity`](https://github.com/vsg-dev/
+
 Prev : [Ray Tracing](RayTracing.md) | Next : [Next Chapter : Application](../4_Application/index.md)
 
