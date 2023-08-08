@@ -16,10 +16,10 @@ permalink: /scenegraph/osg2vsg
 
 | OSG | VSG | Notes |
 | --- | --- | --- |
-| osg::Image | vsg::Value<T>, vsg::Array<T>, vsg::Array2D<>, vsg::Array<3D>  |  |
-| osg::Uniform | vsg::Value<T>, vsg::Array<T>, vsg::Array2D<>, vsg::Array<3D> |  |
-| [osg::Array<T>](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Array) | [vsg::Array<T>](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Array.h) |  |
-| osg::IndexArray<T> | vsg::Array<T> |  |
+| `osg::Image` | `vsg::Value<T>`, `vsg::Array<T>`, `vsg::Array2D<>`, `vsg::Array3D<T>`  |  |
+| `osg::Uniform` | `vsg::Value<T>`, `vsg::Array<T>`, `vsg::Array2D<>`, `vsg::Array3D<T>` |  |
+| [`osg::Array<T>`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Array) | [`vsg::Array<T>`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Array.h) |  |
+| `osg::IndexArray<T>` | `vsg::Array<T>` |  |
 
 ## Scene graph nodes
 
