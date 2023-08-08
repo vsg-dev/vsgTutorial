@@ -4,6 +4,13 @@ title: OpenSceneGraph to VulkanSceneGraph
 permalink: /scenegraph/osg2vsg
 ---
 
+## Smart pointers
+
+| OSG | VSG | Notes |
+| --- | --- | --- |
+| [`osg::ref_ptr<T>`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/ref_ptr) | [`vsg::ref_ptr<T>`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/ref_ptr.h) |  |
+| [`osg::observer_ptr<T>`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/observer_ptr) | [`vsg::observer_ptr<T>`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/observer_ptr.h)  |
+
 
 ## Base classes
 
