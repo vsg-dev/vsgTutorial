@@ -9,11 +9,17 @@ permalink: /scenegraph/osg2vsg
 
 | OSG | VSG | Notes |
 | --- | --- | --- |
+| osg::Referenced | vsg::Object |  |
+| osg::Object | vsg::Object |  |
 
 ## Data classes
 
 | OSG | VSG | Notes |
 | --- | --- | --- |
+| osg::Image | osg::Data subclasses |  |
+| osg::Uniform | osg::Data subclasses |  |
+| osg::Array<T> | vsg::Array<T> |  |
+| osg::IndexArray<T> | vsg::Array<T> |  |
 
 ## Scene graph nodes
 
