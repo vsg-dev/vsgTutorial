@@ -32,26 +32,31 @@ permalink: /scenegraph/osg2vsg
 
 | OSG | VSG | Notes |
 | --- | --- | --- |
+| [`osg::`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/) | [`vsg::``](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/)  |  |
 
 ## State
 
 | OSG | VSG | Notes |
 | --- | --- | --- |
+| [`osg::`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/) | [`vsg::``](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/)  |  |
 
 ## Geometry
 
 | OSG | VSG | Notes |
 | --- | --- | --- |
+| [`osg::`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/) | [`vsg::``](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/)  |  |
 
 ## IO
 
 | OSG | VSG | Notes |
 | --- | --- | --- |
+| [`osgDB::`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/) | [`vsg::``](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/)  |  |
 
 ## Application
 
 | OSG | VSG | Notes |
 | --- | --- | --- |
+| [`osgViewer::`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgViewer/) | [`vsg::``](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/)  |  |
 
 Prev : [Ray Tracing](RayTracing.md) | Next : [Next Chapter : Application](../4_Application/index.md)
 
