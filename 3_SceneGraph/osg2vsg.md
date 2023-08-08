@@ -40,7 +40,7 @@ permalink: /scenegraph/osg2vsg
 | [`osg::PagedLOD`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/PagedLOD) | [`vsg::PagedLOD`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/PagedLOD.h)  |  |
 | [`osg::Transform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Transform) | [`vsg::Transform`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/Transform,h)  | Both base classes for providing model transforms |
 | [`osg::MatrixTransform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/MatrixTransform) | [`vsg::MatrixTransform`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/MatrixTransform,h)  |  |
-| [`osg::MatrixTransform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/MatrixTransform.) | [`vsg::AbsoluteTransform`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/AbsoluteTransform,h)  |  osg::MatrixTransform::setReferenceFrame(ABSOLUTE_RF) equivalent to vsg::AbsoluteTransform |
+| [`osg::MatrixTransform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/MatrixTransform) | [`vsg::AbsoluteTransform`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/AbsoluteTransform,h)  |  osg::MatrixTransform::setReferenceFrame(ABSOLUTE_RF) equivalent to vsg::AbsoluteTransform |
 | [`osg::PositionAttitudeTransform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/PositionAttitudeTransform) |  | No VSG equivalent |
 | [`osg::AutoTransform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/AutoTransform) |  | No VSG equivalent |
 | [`osg::Billboard`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Billboard) |  | No VSG equivalent - use instanced geometry and vertex shader. |
@@ -55,13 +55,13 @@ permalink: /scenegraph/osg2vsg
 
 | OSG | VSG | Notes |
 | --- | --- | --- |
-| [`osg::Drawable`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Drawable.h) | [`vsg::Command`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/Command.h)  |  |
-| [`osg::Geometry`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Geometry.h) | [`vsg::Geometry`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/Geometry.h)  |  |
-| [`vsg::PrimitiveSet`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/PrimitiveSet.h) | [`vsg::Draw`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/Draw.h) |  |
-| [`vsg::PrimitiveSet`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/PrimitiveSet.h) | [`vsg::DrawIndex`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/DrawIndexed.h) |  |
+| [`osg::Drawable`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Drawable) | [`vsg::Command`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/Command.h)  |  |
+| [`osg::Geometry`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Geometry) | [`vsg::Geometry`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/Geometry.h)  |  |
+| [`vsg::DrawArrays`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/PrimitiveSet#L221) | [`vsg::Draw`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/Draw.h) |  |
+| [`vsg::DrawElements`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/PrimitiveSet#L336) | [`vsg::DrawIndex`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/DrawIndexed.h) |  |
 | | [`vsg::Commands`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/Commands.h) | No OSG equivalent. |
-| | [`vsg::VertexDraw`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/)  |  No direct OSG equivalent, closest is osg::Geometry |
-| | [`vsg::VertexIndexDraw`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/)  |  No OSG equivalent, closest is osg::Geometry. |
+| | [`vsg::VertexDraw`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/VertexDraw)  |  No direct OSG equivalent, closest is osg::Geometry |
+| | [`vsg::VertexIndexDraw`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/VertexIndexDraw.h)  |  No OSG equivalent, closest is osg::Geometry. |
 | | [`vsg::BindVerteBuffers`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/BindVerteBuffers.h) | No OSG equivalent. |
 | | [`vsg::BindIndexBuffers`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/BindIndexBuffers.h) | No OSG equivalent. |
 
