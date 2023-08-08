@@ -51,7 +51,14 @@ permalink: /scenegraph/osg2vsg
 | OSG | VSG | Notes |
 | --- | --- | --- |
 | [`osg::Drawable`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Drawable.h) | [`vsg::Command`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/Command.h)  |  |
-| [`osg::Geometry`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/) | [`vsg::Geometry`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/)  |  |
+| [`osg::Geometry`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Geometry.h) | [`vsg::Geometry`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/Geometry.h)  |  |
+| [`vsg::PrimitiveSet`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/PrimitiveSet.h) | [`vsg::Draw`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/Draw.h) |  |
+| [`vsg::PrimitiveSet`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/PrimitiveSet.h) | [`vsg::DrawIndex`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/DrawIndexed.h) |  |
+| | [`vsg::Commands`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/Commands.h) | No OSG equivalent. |
+| | [`vsg::VertexDraw`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/)  |  No direct OSG equivalent, closest is osg::Geometry |
+| | [`vsg::VertexIndexDraw`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/)  |  No OSG equivalent, closest is osg::Geometry. |
+| | [`vsg::BindVerteBuffers`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/BindVerteBuffers.h) | No OSG equivalent. |
+| | [`vsg::BindIndexBuffers`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/BindIndexBuffers.h) | No OSG equivalent. |
 
 ## IO
 
@@ -68,7 +75,7 @@ permalink: /scenegraph/osg2vsg
 | [`osgDB::ObjectCache`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/ObjectCache) | [`vsg::SharedObjects`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/utils/SharedObjects.h)  |  |
 | [`osgDB::ReaderWriter`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/ReaderWriter) | [`vsg::ReaderWriter`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/ReaderWriter.h)  |  |
 | [`osgDB::Registry`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/Registry) | [`vsg::ObjectFactory`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/ObjectFactory.h)  |  |
-| [`std::string & UTF8`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/UTF8) | [`vsg::Path`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/Path.h)  |  |
+| [`std::string & UTF8`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/ConvertUTF8) | [`vsg::Path`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/Path.h)  |  OSG must be compiled with OSG_USE_UTF8_FILENAME, vsg::Path works like std::filesystem::path |
 
 ## Application
 
