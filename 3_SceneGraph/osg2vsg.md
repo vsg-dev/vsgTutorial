@@ -51,17 +51,18 @@ permalink: /scenegraph/osg2vsg
 
 | OSG | VSG | Notes |
 | --- | --- | --- |
-| [`osgDB::readObjectFile(..)`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/ReadFile) | [`vsg::read(..)`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/read.h)  |  |
-| [`osgDB::readNodeFile(..)`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/ReadFile) | [`vsg::read_cast<vsg::Node>(..)`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/read.h)  |  |
-| [`osgDB::readImageFile(..)`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/ReadFile) | [`vsg::read_cast<vsg::Data>(..)`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/read.h)  |  |
-| [`osgDB::writeObjectFile(..)`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/ReadFile) | [`vsg::write(..)`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/write.h)  |  |
-| [`osgDB::writeNodeFile(..)`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/ReadFile) | [`vsg::write(..)`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/write.h)  |  |
-| [`osgDB::writeImageFile(..)`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/ReadFile) | [`vsg::write(..)`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/write.h)  |  |
+| [`osgDB::readObjectFile(..)`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/ReadFile#L232) | [`vsg::read(..)`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/read.h)  |  |
+| [`osgDB::readNodeFile(..)`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/ReadFile#L308) | [`vsg::read_cast<vsg::Node>(..)`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/read.h)  |  |
+| [`osgDB::readImageFile(..)`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/ReadFile#L268) | [`vsg::read_cast<vsg::Data>(..)`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/read.h)  |  |
+| [`osgDB::writeObjectFile(..)`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/WriteFile) | [`vsg::write(..)`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/write.h)  |  |
+| [`osgDB::writeNodeFile(..)`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/WriteFile) | [`vsg::write(..)`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/write.h)  |  |
+| [`osgDB::writeImageFile(..)`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/WriteFile) | [`vsg::write(..)`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/write.h)  |  |
 | [`osgDB::Options`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/Options) | [`vsg::Options`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/Options.h)  |  |
 | [`osgDB::FileCache`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/FileCache) | [`vsg::Options::fileCache`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/Options.h#L75)  |  |
-| [`osgDB::ObjectCache`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/Options) | [`vsg::SharedObjects`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/utils/SharedObjects.h)  |  |
-| [`osgDB::ReaderWriter`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/) | [`vsg::ReaderWriter`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/)  |  |
-| [`osgDB::Registry`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/Registry.h) | [`vsg::ObjectFactory`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/ObjectFactory.h)  |  |
+| [`osgDB::ObjectCache`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/ObjectCache) | [`vsg::SharedObjects`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/utils/SharedObjects.h)  |  |
+| [`osgDB::ReaderWriter`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/ReaderWriter) | [`vsg::ReaderWriter`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/ReaderWriter.h)  |  |
+| [`osgDB::Registry`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/Registry) | [`vsg::ObjectFactory`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/ObjectFactory.h)  |  |
+| [`std::string & UTF8`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/UTF8) | [`vsg::Path`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/Path.h)  |  |
 
 ## Application
 
