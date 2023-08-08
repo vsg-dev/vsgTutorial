@@ -72,6 +72,14 @@ permalink: /scenegraph/osg2vsg
 | [`osg::Uniform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Uniform) | [`vsg::DescriptorBuffer`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorBuffer.h)  |  |
 | [`osg::Light`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Light.h), vsg::LightSource | [`vsg::Light`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorBuffer.h), vsg::AbmientLight, vsg::DirectionalLight, vsg;:PointLight, vsg::SpotLight  |  |
 
+## Text
+
+| OSG | VSG | Notes |
+| --- | --- | --- |
+| [`osgText::Font`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgText/Font) | [`vsg::Font`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/text/Font.h)  |  |
+| [`osgText::Text`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgText/Text) | [`vsg::Text`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/text/Text.h)  |  |
+| [`osgText::Text3D`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgText/Text3D) |  | No VSG equivalent |
+| | [`vsg::TextGroup`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/text/Text.h)  | No OSG equivalent for efficient rendering of large number of labels |
 
 ## IO
 
