@@ -96,19 +96,19 @@ permalink: /scenegraph/osg2vsg
 
 | OSG | VSG | Notes |
 | --- | --- | --- |
-| (`OpenThreads::Thread`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Thread) | std::thread | |
-| (`OpenThreads::Mutex`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Mutex) | std::mutex| |
-| (`OpenThreads::ScopedLock`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Block.h) | std::lock | |
-| (`OpenThreads::Atomoic`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Atomic) | std::atomic | |
-| (`OpenThreads::Condition`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Condition) | std::condition_variable | |
-| (`OpenThreads::Barrier`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Barrier) | [`vsg::Barrier`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/Barrier.h) | |
-| (`OpenThreads::Block`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Block) | [`vsg::Latch`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/Latch.h) | |
+| [`OpenThreads::Thread`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Thread) | std::thread | |
+| [`OpenThreads::Mutex`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Mutex) | std::mutex| |
+| [`OpenThreads::ScopedLock`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Block.h) | std::lock | |
+| [`OpenThreads::Atomoic`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Atomic) | std::atomic | |
+| [`OpenThreads::Condition`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Condition) | std::condition_variable | |
+| [`OpenThreads::Barrier`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Barrier) | [`vsg::Barrier`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/Barrier.h) | |
+| [`OpenThreads::Block`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Block) | [`vsg::Latch`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/Latch.h) | |
 VulkanSceneGraph/blob/master/include/vsg/threading/Affinity.h) | |
 |  [`osg::OperationThread`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/osg/OperationThread) | [`vsg::OperationThread`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/OperationThread.h) |  |
 |  [`osg::OperationThread`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/osg/OperationThread) | [`vsg::OperationQueue`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/OperationQueue.h) |  |
 |  [`osg::Operation`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/osg/OperationThread) | [`vsg::Operation`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/OperationQueue.h) |  |
 |  | [`vsg::ActivityStatus`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/ActivityStatus.h) | No OSG equvalent, used to cooperatively release barriers & blocks. |
 | | [`vsg::FrameBlock`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/FrameBlock.h) | No direct OSG equvalent, loosely OpenThreds::Block. |
-| (`OpenThreads::Affinity`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Affinity) | [`vsg::Affinity`](https://github.com/vsg-dev/
+| [`OpenThreads::Affinity`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Affinity) | [`vsg::Affinity`](https://github.com/vsg-dev/
 Prev : [Ray Tracing](RayTracing.md) | Next : [Next Chapter : Application](../4_Application/index.md)
 
