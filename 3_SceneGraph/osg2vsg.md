@@ -33,12 +33,17 @@ permalink: /scenegraph/osg2vsg
 
 | OSG | VSG | Notes |
 | --- | --- | --- |
-| [`osg::Node`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Node.h) | [`vsg::Node`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/Node.h)  |  |
-| [`osg::Transform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Transform.h) | [`vsg::Transform`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/Transform,h)  |  |
-| [`osg::MatrixTransform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/MatrixTransform.h) | [`vsg::MatrixTransform`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/MatrixTransform,h)  |  |
-| [`osg::MatrixTransform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/MatrixTransform.h) | [`vsg::AbsoluteTransform`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/AbsoluteTransform,h)  |  osg::MatrixTransform::setReferenceFrame(ABSOLUTE_RF) equivalent to vsg::AbsoluteTransform |
-| [`osg::AutoTransform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/AutoTransform.h) |  | No VSG equivalent |
-| [`osg::Billboard`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Billboard.h) |  | No VSG equivalent - use instanced geometry and vertex shader. |
+| [`osg::Node`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Node) | [`vsg::Node`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/Node.h)  |  |
+| [`osg::Group`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Group) | [`vsg::Group`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/Group.h)  |  |
+| [`osg::Switch`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Switch) | [`vsg::Switch`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/Switch.h)  |  |
+| [`osg::LOD`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/LOD) | [`vsg::LOD`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/LOD.h)  |  |
+| [`osg::PagedLOD`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/PagedLOD) | [`vsg::PagedLOD`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/PagedLOD.h)  |  |
+| [`osg::Transform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Transform) | [`vsg::Transform`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/Transform,h)  | Both base classes for providing model transforms |
+| [`osg::MatrixTransform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/MatrixTransform) | [`vsg::MatrixTransform`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/MatrixTransform,h)  |  |
+| [`osg::MatrixTransform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/MatrixTransform.) | [`vsg::AbsoluteTransform`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/AbsoluteTransform,h)  |  osg::MatrixTransform::setReferenceFrame(ABSOLUTE_RF) equivalent to vsg::AbsoluteTransform |
+| [`osg::PositionAttitudeTransform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/PositionAttitudeTransform) |  | No VSG equivalent |
+| [`osg::AutoTransform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/AutoTransform) |  | No VSG equivalent |
+| [`osg::Billboard`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Billboard) |  | No VSG equivalent - use instanced geometry and vertex shader. |
 
 ## State
 
@@ -76,6 +81,7 @@ permalink: /scenegraph/osg2vsg
 | [`osgDB::ReaderWriter`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/ReaderWriter) | [`vsg::ReaderWriter`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/ReaderWriter.h)  |  |
 | [`osgDB::Registry`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/Registry) | [`vsg::ObjectFactory`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/ObjectFactory.h)  |  |
 | [`std::string & UTF8`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/ConvertUTF8) | [`vsg::Path`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/Path.h)  |  OSG must be compiled with OSG_USE_UTF8_FILENAME, vsg::Path works like std::filesystem::path |
+| [`osgDB::DatabasePager`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/DatabasePager) | [`vsg::DatabasePager`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/DatabasePager.h)  |  |
 
 ## Application
 
