@@ -45,12 +45,6 @@ permalink: /scenegraph/osg2vsg
 | [`osg::AutoTransform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/AutoTransform) |  | No VSG equivalent |
 | [`osg::Billboard`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Billboard) |  | No VSG equivalent - use instanced geometry and vertex shader. |
 
-## State
-
-| OSG | VSG | Notes |
-| --- | --- | --- |
-| [`osg::`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/) | [`vsg::`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/)  |  |
-
 ## Geometry
 
 | OSG | VSG | Notes |
@@ -64,6 +58,16 @@ permalink: /scenegraph/osg2vsg
 | | [`vsg::VertexIndexDraw`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/VertexIndexDraw.h)  |  No OSG equivalent, closest is osg::Geometry. |
 | | [`vsg::BindVerteBuffers`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/BindVerteBuffers.h) | No OSG equivalent. |
 | | [`vsg::BindIndexBuffers`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/BindIndexBuffers.h) | No OSG equivalent. |
+
+## State
+
+| OSG | VSG | Notes |
+| --- | --- | --- |
+| [`osg::StateSet`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/StateSet) | [`vsg::StateGroup`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/StateGroup.h)  |  osg::Group with an osg::StateSet is broadly similar to vsg::StateGroup |
+| [`osg::StateAttribute`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/StateAttribute) | [`vsg::StateCommand`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/)  |  Both state base classes, but only vaguely similar |
+| [`osg::Texture`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Texture), Textrue1D, Texture2D, Texture3D, TextureCubeMap, Texture2DArray | [`vsg::DescriptorImage`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorImage.h)  |  |
+
+| [`osg::Uniform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/) | [`vsg::DescriptorBuffer`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorBuffer.h)  |  |
 
 ## IO
 
