@@ -117,7 +117,6 @@ permalink: /scenegraph/osg2vsg
 | [`OpenThreads::Condition`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Condition) | std::condition_variable | |
 | [`OpenThreads::Barrier`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Barrier) | [`vsg::Barrier`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/Barrier.h) | |
 | [`OpenThreads::Block`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Block) | [`vsg::Latch`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/Latch.h) | |
-VulkanSceneGraph/blob/master/include/vsg/threading/Affinity.h) | |
 | [`OpenThreads::Affinity`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Affinity) | [`vsg::Affinity`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/Affinity.h) | |
 |  [`osg::OperationThread`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/osg/OperationThread) | [`vsg::OperationThread`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/OperationThread.h) |  |
 |  [`osg::OperationThread`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/osg/OperationThread) | [`vsg::OperationQueue`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/OperationQueue.h) |  |
