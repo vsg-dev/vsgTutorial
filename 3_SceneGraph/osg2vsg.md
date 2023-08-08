@@ -41,9 +41,9 @@ permalink: /scenegraph/osg2vsg
 | [`osg::Switch`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Switch) | [`vsg::Switch`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/Switch.h)  |  |
 | [`osg::LOD`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/LOD) | [`vsg::LOD`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/LOD.h)  |  |
 | [`osg::PagedLOD`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/PagedLOD) | [`vsg::PagedLOD`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/PagedLOD.h)  |  |
-| [`osg::Transform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Transform) | [`vsg::Transform`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/Transform,h)  | Both base classes for providing model transforms |
-| [`osg::MatrixTransform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/MatrixTransform) | [`vsg::MatrixTransform`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/MatrixTransform,h)  |  |
-| [`osg::MatrixTransform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/MatrixTransform) | [`vsg::AbsoluteTransform`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/AbsoluteTransform,h)  |  osg::MatrixTransform::[setReferenceFrame(ABSOLUTE_RF)](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Transform#97) equivalent to vsg::AbsoluteTransform |
+| [`osg::Transform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Transform) | [`vsg::Transform`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/Transform.h)  | Both base classes for providing model transforms |
+| [`osg::MatrixTransform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/MatrixTransform) | [`vsg::MatrixTransform`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/MatrixTransform.h)  |  |
+| [`osg::MatrixTransform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/MatrixTransform) | [`vsg::AbsoluteTransform`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/AbsoluteTransform.h)  |  osg::MatrixTransform::[setReferenceFrame(ABSOLUTE_RF)](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Transform#97) equivalent to vsg::AbsoluteTransform |
 | [`osg::PositionAttitudeTransform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/PositionAttitudeTransform) |  | No VSG equivalent |
 | [`osg::AutoTransform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/AutoTransform) |  | No VSG equivalent |
 | [`osg::Billboard`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Billboard) |  | No VSG equivalent - use instanced geometry and vertex shader. |
@@ -79,7 +79,7 @@ permalink: /scenegraph/osg2vsg
 | [`osgText::Font`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgText/Font) | [`vsg::Font`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/text/Font.h)  |  |
 | [`osgText::Text`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgText/Text) | [`vsg::Text`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/text/Text.h)  |  |
 | [`osgText::Text3D`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgText/Text3D) |  | No VSG equivalent |
-| | [`vsg::TextGroup`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/text/Text.h)  | No OSG equivalent for efficient rendering of large number of labels |
+| | [`vsg::TextGroup`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/text/TextGroup.h)  | No OSG equivalent for efficient rendering of large number of labels |
 
 ## IO
 
@@ -107,7 +107,7 @@ permalink: /scenegraph/osg2vsg
 | [`osgViewer::View`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgViewer/View.h) | [`vsg::View`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/View.h)  |  |
 | [`osgViewer::Viewer`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgViewer/Viewer.h) | [`vsg::Viewer`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/Viewer.h)  |  |
 | [`osgViewer::CompositeViewer`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgViewer/CompositeViewer.h) | [`vsg::Viewer`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/Viewer.h)  |  |
-| [`osgGA::Trackball`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgGA/Trackball) | [`vsg::Trackball`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/Trackball.h)  |  |
+| [`osgGA::TrackballManipulator`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgGA/TrackballManipulator) | [`vsg::Trackball`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/Trackball.h)  |  |
 | | [`vsg::CommandGraph`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/CommandGraph.h)  | No OSG equvalent |
 | | [`vsg::RenderGraph`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/RenderGraph.h)  | No OSG equvalent |
 | | [`vsg::RecordAndSubmitTask`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/RecordAndSubmitTask.h)  | No OSG equvalent |
