@@ -17,12 +17,13 @@ permalink: /scenegraph/osg2vsg
 | OSG | VSG | Notes |
 | --- | --- | --- |
 | [`osg::Referenced`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Referenced) | [`vsg::Object`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Object.h) |  |
-| [`osg::Object`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Object) | [`vsg::Object`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Object.h)  |
+| [`osg::Object`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Object) | [`vsg::Object`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Object.h)  | |
 
 ## Data classes
 
 | OSG | VSG | Notes |
 | --- | --- | --- |
+| | [`vsg::Data`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Data.h) | Base class with no OSG equivalent |
 | [`osg::Image`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Image) | [`vsg::Value<T>`, `vsg::Array<T>`, `vsg::Array2D<>`, `vsg::Array3D<T>`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/)  |  |
 | [`osg::Uniform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Uniform) | `vsg::Value<T>`, `vsg::Array<T>`, `vsg::Array2D<>`, `vsg::Array3D<T>` |  |
 | [`osg::Array<T>`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Array) | [`vsg::Array<T>`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Array.h) |  |
@@ -32,7 +33,12 @@ permalink: /scenegraph/osg2vsg
 
 | OSG | VSG | Notes |
 | --- | --- | --- |
-| [`osg::`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/) | [`vsg::`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/)  |  |
+| [`osg::Node`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Node.h) | [`vsg::Node`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/Node.h)  |  |
+| [`osg::Transform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Transform.h) | [`vsg::Transform`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/Transform,h)  |  |
+| [`osg::MatrixTransform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/MatrixTransform.h) | [`vsg::MatrixTransform`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/MatrixTransform,h)  |  |
+| [`osg::MatrixTransform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/MatrixTransform.h) | [`vsg::AbsoluteTransform`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/AbsoluteTransform,h)  |  osg::MatrixTransform::setReferenceFrame(ABSOLUTE_RF) equivalent to vsg::AbsoluteTransform |
+| [`osg::AutoTransform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/AutoTransform.h) |  | No VSG equivalent |
+| [`osg::Billboard`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Billboard.h) |  | No VSG equivalent - use instanced geometry and vertex shader. |
 
 ## State
 
