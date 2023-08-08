@@ -69,7 +69,6 @@ permalink: /scenegraph/osg2vsg
 | [`osg::StateSet`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/StateSet) | [`vsg::StateGroup`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/StateGroup.h)  |  osg::Group with an osg::StateSet is broadly similar to vsg::StateGroup |
 | [`osg::StateAttribute`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/StateAttribute) | [`vsg::StateCommand`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/)  |  Both state base classes, but only vaguely similar |
 | [`osg::Texture`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Texture), osg::Textrue1D, osg::Texture2D, osg::Texture3D, osg::TextureCubeMap, Texture2DArray | [`vsg::DescriptorImage`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorImage.h), vsg::ImageView, vsg::Image  | No direct mapping but together fullfil the same role. |
-
 | [`osg::Uniform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Uniform) | [`vsg::DescriptorBuffer`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorBuffer.h)  |  |
 | [`osg::Light`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Light.h), vsg::LightSource | [`vsg::Light`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorBuffer.h), vsg::AbmientLight, vsg::DirectionalLight, vsg;:PointLight, vsg::SpotLight  |  |
 
