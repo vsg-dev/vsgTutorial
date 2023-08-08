@@ -50,6 +50,7 @@ permalink: /scenegraph/osg2vsg
 
 | OSG | VSG | Notes |
 | --- | --- | --- |
+| [`osgDB::readObjectFile(filename, options)`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/ReadFile) | [`vsg::read(filename, options)``](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/read.h)  |  |
 | [`osgDB::`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgDB/) | [`vsg::``](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/)  |  |
 
 ## Application
