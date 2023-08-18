@@ -4,11 +4,10 @@ title: Maths Types
 permalink: /foundations/MathsTypes
 ---
 
-The VulkanSceneGraph provides GLSL style vector, quaternion and matrix types which are used both to represent data that can be used to store data on the CPU and can be directly mapped to GPU memory for use by shaders, and provides range of standard vector math functions.  We'll discuss the [Math Functions](MathFunctions.md) later in this chapter, this page will discuss the data types.
-
+The VulkanSceneGraph provides GLSL style vector, quaternion and matrix types which are used to represent data, they can be used both to store data on the CPU and directly mapped to GPU memory for use by shaders. A range of standard vector [Math Functions](MathFunctions.md) are provided that we'll discuss later in this chapter, this page will discuss the data types.
 The math data types are found in the [include/vsg/maths](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/) directory. All the types are declared as template<> structs with definitions provided for the specific types, supporting bool, 8, 16 and 32 bit int and unsigned ints, float and double versions of each type.
 
-Simple structs are used, only containing the data fields required for the type and are not subclassed from vsg::Object like other scene graph objects as their focus in representing low level data and supporting maths operations. All math types can all be used as part of data objects which we will cover in the next page - [Data Types](DataTypes.md).
+Simple structs are used, only containing the data fields required for the type. They are not subclassed from vsg::Object like other scene graph objects as they focus on representing low level data and supporting maths operations. All math types can be used as part of data objects which we will cover in the next page - [Data Types](DataTypes.md).
 
 ## Available types and the associated headers
 
@@ -43,7 +42,7 @@ The prefix of the type describes the numerical type, the mappings are:
 
 ## Vectors
 
-The [vsg::vec2](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec2.h), [vec3](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec3.h), [vec4](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec4.h) types provide GLSL style access, with {x,y,z,w}, {r,g,b,a}, {s,t,p,q} and [] accessors which all map to the same underlying numerical values. All the vector types also support set(..) methods and assignment. The vector types have a range uses and the accessors used support these:
+The [vsg::vec2](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec2.h), [vec3](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec3.h), [vec4](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec4.h) types provide GLSL style access, with {x,y,z,w}, {r,g,b,a}, {s,t,p,q} and [] accessors which all map to the same underlying numerical values. All the vector types also support set(..) methods and assignment. The vector types have a range of uses and the accessors used support these:
 
 ~~~ cpp
 // double precision position, good for GIS on CPU
@@ -98,7 +97,7 @@ for(size_t i=0; i<rot.size(); ++i) std::cout<<" "<<rot[i]<<std::endl;
 
 ## Matrices
 
-The [vsg::mat3](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/mat3.h), [mat4](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/mat4.h) types provide GLSL style access, with [element] & [column][row] accessors which all map to the same underlying numerical values. The vector types have a range uses and the accessors used support these:
+The [vsg::mat3](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/mat3.h), [mat4](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/mat4.h) types provide GLSL style access, with [element] & [column][row] accessors which all map to the same underlying numerical values. The matrix types have a range of uses and the accessors used support these:
 
 ~~~ cpp
 // single precision 3x3 matrix useful for rotation
@@ -107,7 +106,7 @@ vsg::mat3 rotation_matrix(1.0f, 0.0f, 0.0f,
                           0.0f, 0.0f, 1.0f);
 
 // double precision 4x4 matrix useful for homogeneous transformations
-// default constructed provides an identity matrix.
+// default constructor provides an identity matrix.
 vsg::dmat4 matrix;
 
 // set the translation of 100, 200, 300 units.
@@ -126,7 +125,7 @@ The [vsg::plane](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include
 vsg::plane pl(0.0f, 0.0, 1.0f, -1.0f);
 
 // create unit cube polytope from planes
-std::vector<vsg::dplane> poltope = {
+std::vector<vsg::dplane> polytope = {
     {1.0, 0.0, 0.0, 1.0}, // left plane at x=-1, pointing right
     {-1.0, 0.0, 0.0, 1.0}, // right plane at x=1, pointing left
     {0.0, 1.0, 0.0, 1.0}, // front plane at y=-1, pointing forward
@@ -135,7 +134,7 @@ std::vector<vsg::dplane> poltope = {
     {0.0, 0.0, -1.0, 1.0} // top plane at z=1, pointing downwards
 };
 
-// double precision sphere at {10, 20, 30) with radius of 40 units
+// double precision sphere at {10, 20, 30} with radius of 40 units
 vsg::dsphere bounding_sphere(10.0, 20.0, 30.0, 40.0);
 
 // default constructed single precision box representing an undefined box

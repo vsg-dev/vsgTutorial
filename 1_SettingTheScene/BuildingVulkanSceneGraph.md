@@ -6,9 +6,9 @@ permalink: /SettingTheScene/BuildingVulkanSceneGraph
 
 To conclude this chapter, we'll look at building the VulkanSceneGraph projects and a minimal standalone **hello world** application.
 
-All VulkanSceneGraph projects, including the vsgTutorial exercises, are written in C++17 and using CMake as the cross-platform build system. To aid integration of the VulkanSceneGraph projects with other software, CMake config files are installed along with headers and libraries. CMake config files provide details of the libraries, header locations and any compiler definitions that are required when building software that use VulkanSceneGraph libraries and help to avoid issues when working across different platforms and with differences in static and dynamic library builds.
+All VulkanSceneGraph projects, including the vsgTutorial exercises, are written in C++17 and use CMake as the cross-platform build system. To aid integration of the VulkanSceneGraph projects with other software, CMake config files are installed along with headers and libraries. CMake config files provide details of the libraries, header locations and any compiler definitions that are required when building software that uses VulkanSceneGraph libraries and help to avoid issues when working across different platforms and with differences in static and dynamic library builds.
 
-The first task is to check out the main repositories and vsgTutorial for its exercises, for brevity we'll assume you have a Debian-based system and install headers, libraries and CMake files locally and set env paths up to find the install locations, this way there is no need to install to system directories. If you have other types of system, use one of the alternative build instructions:
+The first task is to check out the main repositories and vsgTutorial for its exercises, for brevity we'll assume you have a Debian-based system and install headers, libraries and CMake files locally and set env paths up to find the install locations, this way there is no need to install to system directories. If you have other types of systems, use one of the alternative build instructions:
 * Windows - to be written (looking for volunteers to write this.)
 * macOS - to be written (looking for volunteers to write this.)
 
@@ -44,7 +44,7 @@ sudo apt-get install libvulkan-dev vulkan-tools vulkan-validationlayers
 sudo apt-get install libassimp-dev libfreetype-dev libopenexr-dev
 ~~~
 
-If you want to use the VulkanSDK instead of distro vulkan package you download it from [LunarG](https://vulkan.lunarg.com/sdk/home):
+If you want to use the VulkanSDK instead of the distro vulkan package, download it from [LunarG](https://vulkan.lunarg.com/sdk/home):
 
 ~~~ sh
 wget https://sdk.lunarg.com/sdk/download/1.3.239.0/linux/vulkansdk-linux-x86_64-1.3.239.0.tar.gz
@@ -87,7 +87,7 @@ To test out examples:
 ~~~ sh
 vsgdraw
 vsgviewer models/lz.vsgt
-vsgdynamictextures
+vsgdynamictexture
 ~~~
 
 ---
