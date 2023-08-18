@@ -18,7 +18,7 @@ permalink: /scenegraph/osg2vsg
 | --- | --- | --- |
 | [`osg::Referenced`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Referenced) | [`vsg::Object`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Object.h) |  |
 | [`osg::Object`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Object) | [`vsg::Object`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Object.h)  | |
-| [`META_Object`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Object), [`META_Node`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Node) | [`vsg::Inherit<T>`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Inherit.h)  | OSG uses C macros while VSG uses Curiously Reacurring Template Pattern |
+| [`META_Object`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Object), [`META_Node`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Node) | [`vsg::Inherit<T>`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Inherit.h)  | OSG uses C macros while VSG uses Curiously Recurring Template Pattern |
 |  | [`vsg::Allocator`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Allocator.h)  | Only VSG has memory allocator.  |
 
 
@@ -54,12 +54,12 @@ permalink: /scenegraph/osg2vsg
 | --- | --- | --- |
 | [`osg::Drawable`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Drawable) | [`vsg::Command`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/Command.h)  |  |
 | [`osg::Geometry`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Geometry) | [`vsg::Geometry`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/Geometry.h)  |  |
-| [`vsg::DrawArrays`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/PrimitiveSet#L221) | [`vsg::Draw`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/Draw.h) |  |
-| [`vsg::DrawElements`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/PrimitiveSet#L336) | [`vsg::DrawIndex`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/DrawIndexed.h) |  |
+| [`osg::DrawArrays`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/PrimitiveSet#L221) | [`vsg::Draw`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/Draw.h) |  |
+| [`osg::DrawElements`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/PrimitiveSet#L336) | [`vsg::DrawIndexed`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/DrawIndexed.h) |  |
 | | [`vsg::Commands`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/Commands.h) | No OSG equivalent. |
 | | [`vsg::VertexDraw`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/VertexDraw)  |  No direct OSG equivalent, closest is osg::Geometry |
 | | [`vsg::VertexIndexDraw`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/VertexIndexDraw.h)  |  No OSG equivalent, closest is osg::Geometry. |
-| | [`vsg::BindVerteBuffers`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/BindVerteBuffers.h) | No OSG equivalent. |
+| | [`vsg::BindVertexBuffers`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/BindVerteBuffers.h) | No OSG equivalent. |
 | | [`vsg::BindIndexBuffers`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/BindIndexBuffers.h) | No OSG equivalent. |
 
 ## State
@@ -67,10 +67,10 @@ permalink: /scenegraph/osg2vsg
 | OSG | VSG | Notes |
 | --- | --- | --- |
 | [`osg::StateSet`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/StateSet) | [`vsg::StateGroup`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/StateGroup.h)  |  osg::Group with an osg::StateSet is broadly similar to vsg::StateGroup |
-| [`osg::StateAttribute`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/StateAttribute) | [`vsg::StateCommand`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/)  |  Both state base classes, but only vaguely similar |
-| [`osg::Texture`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Texture), osg::Textrue1D, osg::Texture2D, osg::Texture3D, osg::TextureCubeMap, Texture2DArray | [`vsg::DescriptorImage`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorImage.h), vsg::ImageView, vsg::Image  | No direct mapping but together fullfil the same role. |
+| [`osg::StateAttribute`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/StateAttribute) | [`vsg::StateCommand`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/)  |  Both are state base classes, but only vaguely similar |
+| [`osg::Texture`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Texture), osg::Texture1D, osg::Texture2D, osg::Texture3D, osg::TextureCubeMap, Texture2DArray | [`vsg::DescriptorImage`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorImage.h), vsg::ImageView, vsg::Image  | No direct mapping but together fulfill the same role. |
 | [`osg::Uniform`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Uniform) | [`vsg::DescriptorBuffer`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorBuffer.h)  |  |
-| [`osg::Light`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Light.h), vsg::LightSource | [`vsg::Light`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorBuffer.h), vsg::AbmientLight, vsg::DirectionalLight, vsg;:PointLight, vsg::SpotLight  |  |
+| [`osg::Light`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Light.h), osg::LightSource | [`vsg::Light`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/DescriptorBuffer.h), vsg::AmbientLight, vsg::DirectionalLight, vsg;:PointLight, vsg::SpotLight  |  |
 
 ## Text
 
@@ -108,28 +108,28 @@ permalink: /scenegraph/osg2vsg
 | [`osgViewer::Viewer`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgViewer/Viewer.h) | [`vsg::Viewer`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/Viewer.h)  |  |
 | [`osgViewer::CompositeViewer`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgViewer/CompositeViewer.h) | [`vsg::Viewer`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/Viewer.h)  |  |
 | [`osgGA::TrackballManipulator`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osgGA/TrackballManipulator) | [`vsg::Trackball`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/Trackball.h)  |  |
-| | [`vsg::CommandGraph`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/CommandGraph.h)  | No OSG equvalent |
-| | [`vsg::RenderGraph`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/RenderGraph.h)  | No OSG equvalent |
-| | [`vsg::RecordAndSubmitTask`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/RecordAndSubmitTask.h)  | No OSG equvalent |
-| | [`vsg::ExecuteCommands`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/ExecuteCommands.h)  | No OSG equvalent |
+| | [`vsg::CommandGraph`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/CommandGraph.h)  | No OSG equivalent |
+| | [`vsg::RenderGraph`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/RenderGraph.h)  | No OSG equivalent |
+| | [`vsg::RecordAndSubmitTask`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/RecordAndSubmitTask.h)  | No OSG equivalent |
+| | [`vsg::ExecuteCommands`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/app/ExecuteCommands.h)  | No OSG equivalent |
 
 ## Threading
 
 | OSG | VSG | Notes |
 | --- | --- | --- |
-| [`OpenThreads::Thread`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Thread) | std::thread | |
-| [`OpenThreads::Mutex`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Mutex) | std::mutex| |
-| [`OpenThreads::ScopedLock`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Block.h) | std::lock | |
-| [`OpenThreads::Atomoic`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Atomic) | std::atomic | |
-| [`OpenThreads::Condition`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Condition) | std::condition_variable | |
-| [`OpenThreads::Barrier`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Barrier) | [`vsg::Barrier`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/Barrier.h) | |
-| [`OpenThreads::Block`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Block) | [`vsg::Latch`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/Latch.h) | |
-| [`OpenThreads::Affinity`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThraeds/Affinity) | [`vsg::Affinity`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/Affinity.h) | |
+| [`OpenThreads::Thread`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThreads/Thread) | std::thread | |
+| [`OpenThreads::Mutex`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThreads/Mutex) | std::mutex| |
+| [`OpenThreads::ScopedLock`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThreads/Block.h) | std::lock_guard | |
+| [`OpenThreads::Atomic`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThreads/Atomic) | std::atomic | |
+| [`OpenThreads::Condition`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThreads/Condition) | std::condition_variable | |
+| [`OpenThreads::Barrier`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThreads/Barrier) | [`vsg::Barrier`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/Barrier.h) | |
+| [`OpenThreads::Block`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThreads/Block) | [`vsg::Latch`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/Latch.h) | |
+| [`OpenThreads::Affinity`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/OpenThreads/Affinity) | [`vsg::Affinity`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/Affinity.h) | |
 |  [`osg::OperationThread`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/osg/OperationThread) | [`vsg::OperationThread`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/OperationThread.h) |  |
 |  [`osg::OperationThread`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/osg/OperationThread) | [`vsg::OperationQueue`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/OperationQueue.h) |  |
 |  [`osg::Operation`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/osg/OperationThread) | [`vsg::Operation`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/OperationQueue.h) |  |
-|  | [`vsg::ActivityStatus`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/ActivityStatus.h) | No OSG equvalent, used to cooperatively release barriers & blocks. |
-| | [`vsg::FrameBlock`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/FrameBlock.h) | No direct OSG equvalent, loosely OpenThreds::Block. |
+|  | [`vsg::ActivityStatus`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/ActivityStatus.h) | No OSG equivalent, used to cooperatively release barriers & blocks. |
+| | [`vsg::FrameBlock`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/FrameBlock.h) | No direct OSG equivalent, loosely OpenThreads::Block. |
 
 Prev : [Ray Tracing](RayTracing.md) | Next : [Next Chapter : Application](../4_Application/index.md)
 

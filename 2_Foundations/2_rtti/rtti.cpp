@@ -29,7 +29,7 @@ int main(int, char**)
     // second constructed body object
     auto sun = astro::Body::create();
     sun->name = "Sun";
-    sun->age = 5.603; // 4.603 billion years
+    sun->age = 5.603; // 5.603 billion years
 
     auto earth = astro::Body::create();
     earth->name = "Earth";
@@ -37,7 +37,7 @@ int main(int, char**)
 
     auto moon = astro::Body::create();
     moon->name = "Moon";
-    moon->age = 4.51; // 4,51 billion years
+    moon->age = 4.51; // 4.51 billion years
 
     auto mars = astro::Body::create();
     mars->name = "Mars";
@@ -51,7 +51,7 @@ int main(int, char**)
         std::cout<<"    pointer = "<<body<<", class = "<<body->className()<<", name = "<<body->name<<", age = "<<body->age<<std::endl;
     }
 
-    // copy the bodies container over to a more generic objects containers,
+    // copy the bodies container over to a more generic objects container,
     // to illustrate how subclassing still works with more generic types
     std::vector<vsg::ref_ptr<vsg::Object>> objects(bodies.begin(), bodies.end());
 
@@ -71,7 +71,7 @@ int main(int, char**)
     for(auto& object : objects)
     {
         // to access the specific Body member variables we need to cast from ref_ptr<vsg::Object> to ref_ptr<astro::Body>
-        // ref_ptr<>.cast() is implemented using th vsg::Object::cast<>() to efficiently replace a dynamic_cast<>.
+        // ref_ptr<>.cast() is implemented using the vsg::Object::cast<>() to efficiently replace a dynamic_cast<>.
         if (auto body = object.cast<astro::Body>())
         {
             std::cout<<"    pointer = "<<object<<", class = "<<body->className()<<", name = "<<body->name<<", age = "<<body->age<<std::endl;

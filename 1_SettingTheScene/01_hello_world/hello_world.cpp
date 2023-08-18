@@ -37,14 +37,14 @@ int main(int, char**)
     // add close handler to respond to pressing the window close window button and pressing escape
     viewer->addEventHandler(vsg::CloseHandler::create(viewer));
 
-    // add a trackball event handler to control the camera view use the mouse
+    // add a trackball event handler to control the camera view using the mouse
     viewer->addEventHandler(vsg::Trackball::create(camera));
 
     // create a command graph to render the scene on specified window
     auto commandGraph = vsg::createCommandGraphForView(window, camera, scene);
     viewer->assignRecordAndSubmitTaskAndPresentation({commandGraph});
 
-    // compile all the the Vulkan objects and transfer data required to render the scene
+    // compile all the Vulkan objects and transfer data required to render the scene
     viewer->compile();
 
 //
@@ -61,7 +61,7 @@ int main(int, char**)
         // record the commands in the scene graph and submit the completed command buffers to the vulkan queue
         viewer->recordAndSubmit();
 
-        // wait for completion of the rendering and present the result color buffer to the Windows swap chain.
+        // wait for completion of the rendering and present the resulting color buffer to the Window's swap chain.
         viewer->present();
     }
 

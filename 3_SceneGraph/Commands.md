@@ -4,17 +4,17 @@ title: Commands
 permalink: /scenegraph/Commands
 ---
 
-The class definitions for the Vulkan command nodes of the scene graph can bound found in the [VulkanSceneGraph/include/vsg/commands](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/) directory. Examples that illustate use of various state classes can be found in the [vsgExamples/examples/commands](https://github.com/vsg-dev/vsgExamples/tree/master/examples/commands) directory,
+The class definitions for the Vulkan command nodes of the scene graph can be found in the [VulkanSceneGraph/include/vsg/commands](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/) directory. Examples that illustrate use of various command classes can be found in the [vsgExamples/examples/commands](https://github.com/vsg-dev/vsgExamples/tree/master/examples/commands) directory.
 
 ## Command base and group classes
 
 | Class | Header | Functionality |
 | --- | --- | --- |
-| vsg::Compileable | [Compilable.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/Compilable.h) | Base class for objects that can be compiled |
+| vsg::Compilable | [Compilable.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/Compilable.h) | Base class for objects that can be compiled |
 | vsg::Command | [Command.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/Command.h) | Base class for vkCmd* types|
 | vsg::Commands | [Commands.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/Commands.h) | Group of vsg::Command |
 
-## Binding index and vertex arrays buffers
+## Binding index and vertex array buffers
 
 | Class | Header | Functionality |
 | --- | --- | --- |
