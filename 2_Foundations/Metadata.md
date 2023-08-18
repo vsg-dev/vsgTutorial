@@ -48,7 +48,7 @@ The foundation of vsg::Object Metadata is a collection of setObject(key, object)
         void removeObject(const std::string& key);
 ~~~
 
-The vsg::Object class implements these methods using a [vsg::Auxiliary](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Auxiliary.h)) object. vsg::Auxiliary object provides both observer_ptr<> support and the std::map<std::string, ref_ptr<Object>> that holds the user assigned objects. The vsg::Auxiliary object is only created and assigned to an vsg::Object when an oberver_ptr<> and/or Metadata are required, as most scene graph objects don't require either; most objects will just have a null Auxiliary pointer.
+The vsg::Object class implements these methods using a [vsg::Auxiliary](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Auxiliary.h) object that provides both observer_ptr<> support and the std::map<std::string, ref_ptr<Object>> that holds the user assigned objects. The vsg::Auxiliary object is only created and assigned to a vsg::Object when an observer_ptr<> and/or Metadata are required. As most scene graph objects don't require either, most objects will just have a null Auxiliary pointer.
 
 ## Setting and getting named values
 
@@ -68,7 +68,7 @@ To provide support for standard C++ types like std::string, float and simple sce
     bool getValue(const std::string& key, T& value) const;
 ~~~
 
-These setValue(key, value)/getValue(key) methods build upon the setObject(key, value)/getObject(key) functionality using the vsg::Value<> template data class as an adapter. This adaptation is done for you so users can just focus on the basic types they wish to use. Object::getValue(key, value) return true when the object of the matching Value<> is found in the Auxiliary::userObjects map, otherwise it returns false. It is important to exactly match the types between setValue(key, value) and getValue(key, value) as no implicit type conversion is supported, i.e. setting with a float then attempting to get with a double will not find a match and return false.
+These setValue(key, value)/getValue(key) methods build upon the setObject(key, value)/getObject(key) functionality using the vsg::Value<> template data class as an adapter. This adaptation is done for users so they can just focus on the basic types they wish to use. Object::getValue(key, value) returns true when the object of the matching Value<> is found in the Auxiliary::userObjects map, otherwise it returns false. It is important to exactly match the types between setValue(key, value) and getValue(key, value) as no implicit type conversion is supported, i.e. setting with a float then attempting to get with a double will not find a match and return false.
 
 ~~~ cpp
 {
@@ -98,7 +98,7 @@ These setValue(key, value)/getValue(key) methods build upon the setObject(key, v
     }
 ~~~
 
-As the Object::setValue(key, value), getValue(key, value) functionality is built upon vsg::Value so you can also get the value object:
+As the Object::setValue(key, value), getValue(key, value) functionality is built upon vsg::Value, you can also get the value object:
 
 ~~~ cpp
     // you can get the underlying object using the same key:
@@ -119,7 +119,7 @@ The vsg::Auxiliary object assigned to a vsg::Object, in order to provide meta da
 
 ~~~ cpp
 auto object = vsg::Object::create();
-object->setValue("name", "Adrian Mole"
+object->setValue("name", "Adrian Mole");
 object->setValue("age", 13.75);
 
 if (auto auxiliary = object->getAuxiliary())

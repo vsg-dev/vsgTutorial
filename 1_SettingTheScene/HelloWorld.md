@@ -28,7 +28,7 @@ The hello world exercise is just a single main() function that has three section
 
 1. create the scene graph
 1. create and setup the viewer to render the scene graph
-1. executes the frame loop which does the handling of GUI events and rendering.
+1. execute the frame loop which does the handling of GUI events and rendering.
 
 ~~~ cpp
 {% include_relative 01_hello_world/hello_world.cpp %}

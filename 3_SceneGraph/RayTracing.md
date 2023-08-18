@@ -4,7 +4,7 @@ title: Ray Tracing
 permalink: /scenegraph/RayTracing
 ---
 
-The class definitions for the Vulkan ray tracing nodes of the scene graph can bound found the [VulkanSceneGraph/include/vsg/raytracing](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/raytracing/) directory.
+The class definitions for the Vulkan ray tracing nodes of the scene graph can be found in the [VulkanSceneGraph/include/vsg/raytracing](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/raytracing/) directory.
 
 | Class | Header | Functionality |
 | | [AccelerationGeometry.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/raytracing/) | |
