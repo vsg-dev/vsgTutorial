@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Serializaton
+title: Serialization
 permalink: /foundations/Serializaton
 ---
 
@@ -8,14 +8,14 @@ The VulkanSceneGraph provides extensible serialization support so that all scene
 
 ## vsg::Object, Input and Output base classes
 
-The serializtion support is built upon vsg::Object base class that provides virtual read(Input&) and write(Output&) methods that users override to implement support for their own member variables, and the vsg::Input and vsg::Output classes that provide a standarizaed interface for reading and writing data.  The [vsg::Object](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Object.h#L88) methods are:
+The serialization support is built upon the vsg::Object base class that provides virtual read(Input&) and write(Output&) methods that users override to implement support for their own member variables, and the vsg::Input and vsg::Output classes that provide a standardized interface for reading and writing data. The [vsg::Object](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Object.h#L88) methods are:
 
 ~~~ cpp
 virtual void read(Input& input);
 virtual void write(Output& output) const;
 ~~~
 
-The [vsg::Input](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/Input.h#L37) base class provides the low level pure virtual methods that are implemented by the concrete implementation of Input like vsg::BinaryInput and vsg::AsciiInput as well as set of template methods that meant to be used by the read(Input&) methods to implement the serialization of class members. The later methods take the form of input.read(proptertyName, value):
+The [vsg::Input](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/Input.h#L37) base class provides the low level pure virtual methods that are implemented by the concrete implementation of Input like vsg::BinaryInput and vsg::AsciiInput as well as a set of template methods that are meant to be used by the read(Input&) methods to implement the serialization of class members. The later methods take the form of input.read(propertyName, value):
 
 ~~~ cpp
 /// treat non standard type as raw data,
@@ -84,11 +84,11 @@ void writeValue(const char* propertyName, T value);
 
 ## vsg::ObjectFactory
 
-When writing out objects you can simply call **object->write(output)** and the appropriate serialization will be invoked, but when you need to serialize back in a file the appropriate objects have to be created then their **object->read(input)** method can be invoked to read the object members.  The way the VulkanSceneGraph provides a means for creating objects on demand is via the [vsg::ObjectFactory](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/ObjectFactory.h#L24) singleton class, where only one instance of the Factory exists.  The vsg::ObjectFactory is an example of [Factory Method Design Pattern](https://en.wikipedia.org/wiki/Factory_method_pattern) and [Singleton Design Pattern](https://en.wikipedia.org/wiki/Singleton_pattern).
+When writing out objects you can simply call **object->write(output)** and the appropriate serialization will be invoked, but when you need to serialize back into a file the appropriate objects have to be created first before their **object->read(input)** method can be invoked to read the object members. The way the VulkanSceneGraph provides a means for creating objects on demand is via the [vsg::ObjectFactory](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/ObjectFactory.h#L24) singleton class, where only one instance of the Factory exists. The vsg::ObjectFactory is an example of [Factory Method Design Pattern](https://en.wikipedia.org/wiki/Factory_method_pattern) and [Singleton Design Pattern](https://en.wikipedia.org/wiki/Singleton_pattern).
 
-The core scene graph classes found in the VulkanSceneGraph library have methods to create them automatically assigned to the vsg::ObjectFactory, and the native VSG loaders internally use the ObjectFactory to create all the required objects, so for native .vsgt and .vsgb files one doesn't need to concern oneself with the ObjectFactory - it's simply something used internally by the VSG when loading files.
+The core scene graph classes found in the VulkanSceneGraph library have creation methods automatically assigned to the vsg::ObjectFactory, and the native VSG loaders internally use the ObjectFactory to create all the required objects, so for native .vsgt and .vsgb files one doesn't need to concern oneself with the ObjectFactory - it's simply something used internally by the VSG when loading files.
 
-For cases where applications extend the scene graph objects like with the above native::Animal example, users have to register their class with the ObjectFactory so that loaders can create an instance of it for each object of that type that the loader needs to create and read into.  The ObjectFactory.h header provides the [vsg::RegisterWithObjectFactoryProxy](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/ObjectFactory.h#L54) template helper class to make this task straightforward. The following example includes a static declaration of the proxy object sp during initialization of the application, the required creation method will be automatically registered with the vsg::ObjectFactory singleton.
+For cases where applications extend the scene graph objects (like with the native::Animal example below), users have to register their class with the ObjectFactory so that loaders can create an instance of it for each object of that type that the loader needs to create and read into. The ObjectFactory.h header provides the [vsg::RegisterWithObjectFactoryProxy](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/ObjectFactory.h#L54) template helper class to make this task straightforward. The following example includes a static declaration of the proxy object so that during initialization of the application, the required creation method will be automatically registered with the vsg::ObjectFactory singleton.
 
 ## Example of implementing serialization
 
@@ -120,7 +120,7 @@ Orthogonal to the task of implementing serializers for user defined classes the 
 | [vsg::Input](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/Input.h#L40) | vsg::BinaryInput | [include/vsg/io/BinaryInput.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/BinaryInput.h#L26) | [src/vsg/io/BinaryInput.cpp](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/src/vsg/io/BinaryInput.cpp#L13) |
 | [vsg::Output](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/Output.h#L37) | vsg::BinaryOutput | [include/vsg/io/BinaryOutput.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/BinaryOutput.h#L24) | [src/vsg/io/BinaryOutput.cpp](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/src/vsg/io/BinaryOutput.cpp#L13) |
 
-The [vsg::VSG ReaderWriter selects](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/src/vsg/io/VSG.cpp#L94) the appropriate Input/Output implementation based on the file extension, so for most usage cases there is never any need to create and invoke the Input/Output classes directly in your application.  For most usage case there will also be no need to write your own subclasses from vsg::Input and vsg::Output, a possible exception would be subclassing from vsg::Input/vsg::Output to implement the reflection support required when integrating with 3rd party languages such as Lua/Python.  This type of usage is an advanced topic beyond the scope of this online book, the existing implementations linked to above will be good starting place for seeing what would be required.
+The [vsg::VSG ReaderWriter selects](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/src/vsg/io/VSG.cpp#L94) the appropriate Input/Output implementation based on the file extension, so for most use cases there is never any need to create and invoke the Input/Output classes directly in your application. For most use case there will also be no need to write your own subclasses from vsg::Input and vsg::Output, a possible exception would be subclassing from vsg::Input/vsg::Output to implement the reflection support required when integrating with 3rd party languages such as Lua or Python. This type of usage is an advanced topic beyond the scope of this online book, the existing implementations linked to above will be good starting place for seeing what would be required.
 
 Prev: [vsgXchange](vsgXchange.md) | Next : [File Systems](FileSystem.md)
 

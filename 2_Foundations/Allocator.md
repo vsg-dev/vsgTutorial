@@ -13,7 +13,7 @@ In the earlier sections of this chapter we discussed how scene graph object size
 
 ## How vsg::Allocator works
 
-The vsg::Allocator is a singleton that is invoked by vsg::allocate(..) and vsg::deallocate(...) function calls, which users can use like malloc(..)/free(..), but in normal usage will be called for you by custom new/delete implementations for vsg::Node, vsg::Data and vsg::Object respectively.  The custom new/delete implementations will be invoked automatically when you call **new vsg::Group** as well as the standard usage of **vsg::Group::create()**. This integration means that VukanSceneGraph users need not do anything to enable use of the vsg::Allocator - it all works out of the box.
+The vsg::Allocator is a singleton that is invoked by vsg::allocate(..) and vsg::deallocate(...) function calls, which users can use like malloc(..)/free(..), but in normal usage will be called for you by custom new/delete implementations for vsg::Node, vsg::Data and vsg::Object respectively. The custom new/delete implementations will be invoked automatically when you call **new vsg::Group** as well as the standard usage of **vsg::Group::create()**. This integration means that VukanSceneGraph users need not do anything to enable use of the vsg::Allocator - it all works out of the box.
 
 The custom new/delete implementations call vsg::allocate() with the type of object so that the vsg::Allocator can allocate the memory from preallocated blocks associated with the object type, this ensures that all vsg::Node subclasses get allocated within memory blocks alongside other nodes, all vsg::Data get allocated in data blocks and all other vsg::Object subclasses get allocated together.
 
@@ -58,7 +58,7 @@ delete duration  = 0.00416ms
 Average frame rate = 1143.24fps
 ~~~
 
-While we see significant improvements in performance for scene graph traversals and rendering performance the vsg::Allocator does presently add an overhead when allocating and deleting objects as see by the slightly longer load, release and delete times show above. The initial focus in development of the vsg::Allocator been improving performance of traversals and rendering of the scene graph rather than lowering start up/shutdown speed, longer term it is planned to optimize the allocation and deallocation algorithm to lower this overhead.
+While we see significant improvements in performance for scene graph traversals and rendering performance the vsg::Allocator does presently add an overhead when allocating and deleting objects as seen by the slightly longer load, release and delete times show above. The initial focus in development of the vsg::Allocator has been improving performance of traversals and rendering of the scene graph rather than lowering start up/shutdown speed, longer term it is planned to optimize the allocation and deallocation algorithm to lower this overhead.
 
 ---
 

@@ -4,11 +4,11 @@ title: Reading and Writing
 permalink: /foundations/ReaderWriter
 ---
 
-The VulkanSceneGraph provides extensible support for reading/writing scene graph and associated objects. Extensibility can be found at the low level of serializaton support for individual objects and high level with ReaderWriters that support reading/writing of single or collections of objects to files/streams.   Cross platform file system functionality is also provided where C++17 support is lacking. An extensible vsg::Logger and i/ostrream support for native types rounds out functionality found in the [include/vsg/io](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io) directory.
+The VulkanSceneGraph provides extensible support for reading/writing scene graph and associated objects. Extensibility can be found at the low level of serializaton support for individual objects and high level with ReaderWriters that support reading/writing of single or collections of objects to files/streams. Cross platform file system functionality is also provided where C++17 support is lacking. An extensible vsg::Logger and i/ostrream support for native types rounds out functionality found in the [include/vsg/io](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io) directory.
 
 ## Reading & Writing
 
-The VulkanSceneGraph library provides extensible reading/writing support for scene graph and associated objects via the vsg::ReaderWriter class.  Subclasses of RenaderWriter provided by the VulkanSceneGraph library itself are:
+The VulkanSceneGraph library provides extensible reading/writing support for scene graph and associated objects via the vsg::ReaderWriter class. Subclasses of ReaderWriter provided by the VulkanSceneGraph library itself are:
 
 * [vsg::VSG](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/vsg.h#L25) - reading/writing native .vsgt ascci & .vsgb binary file format
 * [vsg::spirv](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/spirv.h#L25) - reading/wiring .spv SPIRV shader files
@@ -16,7 +16,7 @@ The VulkanSceneGraph library provides extensible reading/writing support for sce
 * [vsg::txt](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/txt.h#L25) - reading text files as vsg::stringValue for later parsing by users
 * [vsg::tile](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/tile.h#L25) - native tile based database paging
 
-Developers may call ReaderWriter directly, but for must usage cases they will use the vsg::read() and read_cast() functions that are found in [include/vsg/io/read.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/read.h) header. The vsg::read*() functions will invoke the appropriate ReaderWriter based on the file extension, usage:
+Developers may call ReaderWriter directly, but for must use cases they will use the vsg::read() and read_cast() functions that are found in the [include/vsg/io/read.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/read.h) header. The vsg::read*() functions will invoke the appropriate ReaderWriter based on the file extension, usage:
 
 ~~~ cpp
 // read a file and on success return vsg::ref_ptr<vsg::Object> to the loaded object
@@ -29,7 +29,7 @@ auto data = vsg::read_cast<vsg::Data>("image.vsgt");
 auto vertexShader = vsg::read_cast<vsg::ShaderStage>("shader.vert");
 ~~~
 
-Write function are found in [include/vsg/io/write.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/write.h), usage is in form:
+Write functions are found in [include/vsg/io/write.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/write.h), usage is in the form:
 
 ~~~ cpp
 // create an object
@@ -138,9 +138,9 @@ In later chapters we'll revist the features of vsg::Options in more depth.
 
 ## ReaderWriter
 
-The vsg::ReaderWriter base class provides the mechanism for implementing support for both native and 3rd party file formats.  The [Chain of Responsibility Design Pattern](https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern) is used with each ReaderWriter implementation taking responsibility for whether it can handle reading from or writing to a file or strean. The ReaderWriter's are invoked by the vsg::read(..)/vsg::write() calls in the order that they appear in the vsg::Options::readerWriters list, and if none can handle the read/write then the built in ReaderWriter's are called as fallback.
+The vsg::ReaderWriter base class provides the mechanism for implementing support for both native and 3rd party file formats. The [Chain of Responsibility Design Pattern](https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern) is used with each ReaderWriter implementation taking responsibility for whether it can handle reading from or writing to a file or stream. The ReaderWriter's are invoked by the vsg::read(..)/vsg::write() calls in the order that they appear in the vsg::Options::readerWriters list, and if none can handle the read/write then the built in ReaderWriter's are called as fallback.
 
-There are three types of each of virtual RaderWriter::read(..) methods that take filename, istream or block of memory as the source to read, and two type of virtual ReaderWrite::write(..) methods that take a filename or ostream to write to.  A virtual ReaderWrier::getFeatures(..) method provides a way to reporting to applications that read/write features are supported. The full public interface to [ReaderWriter](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/ReaderWriter.h#L33) is:
+There are three types of each of virtual ReaderWriter::read(..) methods that take filename, istream or a block of memory as the source to read, and two types of virtual ReaderWrite::write(..) methods that take a filename or ostream to write to. A virtual ReaderWriter::getFeatures(..) method provides a way to reporting to applications whether read/write features are supported. The full public interface to [ReaderWriter](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/io/ReaderWriter.h#L33) is:
 ~~~ cpp
 /// Base class from providing support for reading and/or writing various file formats and IO protocols
 class VSG_DECLSPEC ReaderWriter : public Inherit<Object, ReaderWriter>

@@ -65,7 +65,7 @@ virtual void apply(LOD&);
 ...
 ~~~
 
-Those familiar with the OpenSceneGraph will note similarities the [osg::NodeVisitor](https://github.com/OpenSceneGraph/OpenSceneGraph/blob/master/include/osg/NodeVisitor), both implementations follow the same Visitor Design Pattern variation but the VulkanSceneGraph generalizes it to work on almost all object types and has both const and non const versions, whether it's data objects, scene graph nodes through to UI events the VulkanSceneGraph Visitors can handle all these usage cases. The osg::NodeVisitor has support for 25 different node types, while the VulkanSceneGraph supports 214 different object types.
+Those familiar with the OpenSceneGraph will note similarities to the [osg::NodeVisitor](https://github.com/OpenSceneGraph/OpenSceneGraph/blob/master/include/osg/NodeVisitor), both implementations follow the same Visitor Design Pattern variation but the VulkanSceneGraph generalizes it to work on almost all object types and has both const and non const versions, whether it's data objects, scene graph nodes through to UI events the VulkanSceneGraph Visitors can handle all these usage cases. The osg::NodeVisitor has support for 25 different node types, while the VulkanSceneGraph supports 214 different object types.
 
 ## Cascading apply()
 
@@ -97,7 +97,7 @@ This cascading simplifies implementations so they only need to override specific
 
 ## Traversal under your control
 
-By design none of the default apply(..) methods provided by vsg::Visitor and vsg::ConstVisitor provide traversal support, the decision on which objects to traverse and how to traverse them is left to visitor subclasses.  The vsg::Object::traverse(..) method can be used by Visitor subclasses to handle traversal of an objects children when this is required, or Visitor subclasses can implement their own traversal of an objects children.
+By design none of the default apply(..) methods provided by vsg::Visitor and vsg::ConstVisitor provide traversal support, the decision on which objects to traverse and how to traverse them is left to visitor subclasses. The vsg::Object::traverse(..) method can be used by Visitor subclasses to handle traversal of an object's children when this is required, or Visitor subclasses can implement their own traversal of an object's children.
 
 One of the advantages of giving responsibility to the visitor implementation is you can do operations before and after traversing a subgraph, for instance we use this to increment/decrement an indent as we traverse a graph. The following is a snippet from the PrintVisitor example that we'll expand upon later in this section.
 
@@ -125,7 +125,7 @@ Mask traversalMask = MASK_ALL;
 Mask overrideMask = MASK_OFF;
 ~~~
 
-A subgraph will be visited when the result of `(nodeMask | visitor.overrideMask) & visitor.traversalMask)!=0`. In chapters 3 & 4 we'll go into the use of node and traversal masks in detail when scene graph nodes and application level classes that use them.
+A subgraph will be visited when the result of `(nodeMask | visitor.overrideMask) & visitor.traversalMask)!=0`. In chapters 3 & 4 we'll go into the use of node and traversal masks in detail when scene graph nodes and application level classes use them.
 
 ## PrintVisitor example
 
@@ -198,7 +198,7 @@ Visiting vsg::Objects
 
 ## Visitors provided by the VulkanSceneGraph project
 
-The VulkanSceneGraph uses visitors for utilities for end users as well as using them to implement core features. In addition to providing useful functionality they also serve as a good example of the range of tasks you can tackle with visitors, and how to implement your own. When reviewing the following examples look for the apply(..) methods that override the base Visitor/ConstVisitor::apply(..) methods as guide to what type of objects that handle:
+The VulkanSceneGraph employs visitors for utilities for end users as well as using them to implement core features. In addition to providing useful functionality they also serve as a good example of the range of tasks you can tackle with visitors, and how to implement your own. When reviewing the following examples look for the apply(..) methods that override the base Visitor/ConstVisitor::apply(..) methods as guide to what type of objects that handle:
 
 ### Event handling:
 
@@ -233,7 +233,7 @@ The VulkanSceneGraph uses visitors for utilities for end users as well as using 
 
 ## RecordTraversal
 
-The RecordTraversal class is similar to the visitor classes but it's implemented with the double dispatch (two virtual functions) that the visitor classes use. The RecordTraversal is is supported by [vsg::Object](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Object.h#L85) via the two virtual methods:
+The RecordTraversal class is similar to the visitor classes but it's implemented without the double dispatch (two virtual functions) that the visitor classes use. The RecordTraversal is is supported by [vsg::Object](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Object.h#L85) via the two virtual methods:
 
 ~~~  cpp
 virtual void accept(RecordTraversal& visitor) const;

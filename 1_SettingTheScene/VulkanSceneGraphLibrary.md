@@ -79,7 +79,7 @@ private:
 };
 ~~~
 
-Where data members can vary independently those members are simply declared in the public scope and can be set directly, this mirrors Vulkan CreateInfo structs used to set up Vulkan objects, as well as keeping the usage easy to use and the code base clean and minimal.  This coherence with Vulkan also means it's easier to reuse Vulkan documentation. If a class only has public scope we simply declare it as a struct.
+Where data members can vary independently those members are simply declared in the public scope and can be set directly, this mirrors Vulkan CreateInfo structs used to set up Vulkan objects, as well as keeping the usage easy to use and the code base clean and minimal. This coherence with Vulkan also means it's easier to reuse Vulkan documentation. If a class only has public scope we simply declare it as a struct.
 
 ~~~ cpp
 struct KeepItSimple

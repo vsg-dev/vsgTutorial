@@ -4,11 +4,11 @@ title: VulkanSceneGraph Ecosystem
 permalink: /SettingTheScene/Ecosystem
 ---
 
-One of the weaknesses of the OpenSceneGraph project is that, while it started as small scene graph library, step by step it encompassed a wider range of features and dependencies. While the OpenSceneGraph stops short of providing all the functionality of a Game Engine it is bloated for the needs of many application developers.  Early in the VulkanSceneGraph project the decision was made to create an ecosystem built on a general purpose scene graph library and a collection of companion libraries each focused on specific features that users can easily compile and use in their applications if they need them.
+One of the weaknesses of the OpenSceneGraph project is that, while it started as small scene graph library, step by step it encompassed a wider range of features and dependencies. While the OpenSceneGraph stops short of providing all the functionality of a Game Engine it is bloated for the needs of many application developers. Early in the VulkanSceneGraph project the decision was made to create an ecosystem built on a general purpose scene graph library and a collection of companion libraries each focused on specific features that users can easily compile and use in their applications if they need them.
 
 ## Foundation for all VulkanSceneGraph applications
 
-Features that all applications developers using Vulkan will need, so provided by the VulkanSceneGraph library:
+Features that all application developers using Vulkan will need, so provided by the VulkanSceneGraph library:
 * robustly create and cleanup data
 * serialization of scene graph objects to native ascii and binary file formats
 * extensible mechanism for reading/writing 3rd party data.
@@ -21,10 +21,10 @@ Features that all applications developers using Vulkan will need, so provided by
 
 ## Ecosystem centred around vsg-dev GitHub account
 
-The [vsg-dev](https://github.com/vsg-dev) GitHub account hosts the following projects which are officially supported as part the VulkanSceneGraph project, the three main projects that majority of developers will need to use are:
+The [vsg-dev](https://github.com/vsg-dev) GitHub account hosts the following projects which are officially supported as part the VulkanSceneGraph project, the three main projects the majority of developers will need to use are:
 * [VulkanSceneGraph](https://github.com/vsg-dev/VulkanSceneGraph) - The VulkanSceneGraph library itself is capable of being used on its own for standalone graphics applications, and for embedded platforms this may be the desired approach as it will minimize the code base that needs to be QA'd for security and robustness, and minimizes the final executable size.
 * [vsgXchange](https://github.com/vsg-dev/vsgXchange)
-It is expected for most desktop applications users will also want to load a range of 2D image and 3D model data, to support this usage the library adds support for a wide range of image and 3d model formats, using assimp, as well as support for reading data from http/https using libcurl, and reading/writing/processing of GIS imagery and DEMS through the optional GDAL integration.
+It is expected that most desktop application users will also want to load a range of 2D image and 3D model data, to support this usage the library adds support for a wide range of image and 3d model formats, using assimp, as well as support for reading data from http/https using libcurl, and reading/writing/processing of GIS imagery and DEMS through the optional GDAL integration.
 * [vsgExamples](https://github.com/vsg-dev/vsgExamples)
 A collection of 59 examples (as of 20th March 2023) that have been written to help test VulkanSceneGraph features as they are developed and as an educational tool for new users.
 

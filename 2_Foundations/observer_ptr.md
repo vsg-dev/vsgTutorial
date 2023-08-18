@@ -41,10 +41,10 @@ struct Animal : public vsg::Inherit<vsg::Object, Animal>
 }
 // parent is destructed decrements the parent object to 0 and the object's destructor is called.
 // the destructor deletes the children list and decrements the child's reference count to 1.
-// the child is destructed and decrements it's reference count to 0, deleting the child.
+// the child is destructed and decrements its reference count to 0, deleting the child.
 ~~~
 
-While the use of C pointer breaks the chain in this instance, it has it's own pitfalls - if a parent gets deleted but a child remains due to other references to it the Animal::parent member will become a dangling pointer.To fix this one has to reset the Animal::parent pointer when the child is removed but do this robustly requires careful management of adding/removing of child to/from the Animal::children list.
+While the use of C pointer breaks the chain in this instance, it has its own pitfalls - if a parent gets deleted but a child remains due to other references to it the Animal::parent member will become a dangling pointer.To fix this one has to reset the Animal::parent pointer when the child is removed but do this robustly requires careful management of adding/removing of child to/from the Animal::children list.
 
 A common way to do this would be by adding a Animal::addChild(Animial*) and Animal::removeChild(Animal*) method. To protect from misuse one would also move the Animal::children container into protected scope to avoid misuse. However, this all adds complexity and requires tight integration of the various classes that you wish to connect.
 
@@ -69,7 +69,7 @@ struct Animal : public vsg::Inherit<vsg::Object, Animal>
 }
 // parent pointer is destructed and decrements the parent object's ref count to 0 and the parent object destructor is called.
 // The destructor deletes the children list which decrements the child's reference count to 1.
-// The child pointer is destructed and decrements it's reference count to 0, deleting the child.
+// The child pointer is destructed and decrements its reference count to 0, deleting the child.
 ~~~
 
 ## Using observer_ptr<> & ref_ptr<> together
@@ -80,7 +80,7 @@ The vsg::observer_ptr<> is also useful for cases where applications want to keep
 {% include_relative 2_observer_ptr/observer_ptr.cpp %}
 ~~~
 
-When we compile and run the [observer_ptr](https://github.com/vsg-dev/vsgTutorial/tree/master/2_Foundations/2_observer_ptr) exercise we should see, note the changing reference count as the background thread converts it's observer_ptr to ref_ptr.
+When we compile and run the [observer_ptr](https://github.com/vsg-dev/vsgTutorial/tree/master/2_Foundations/2_observer_ptr) exercise we should see, note the changing reference count as the background thread converts its observer_ptr to ref_ptr.
 
 ~~~
 Main thread : scene = ref_ptr<vsg::Object>(vsg::Object 0x7f8d8c585010) referenceCount = 1

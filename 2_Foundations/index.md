@@ -4,7 +4,7 @@ title: Foundations
 permalink: /foundations/
 ---
 
-**The first draft of this chapter is now complete.  We'll make corrections and refine it over the coming weeks**
+**The first draft of this chapter is now complete. We'll make corrections and refine it over the coming weeks**
 
 This second part of this tutorial introduces developers to foundational classes and features that the rest of the VulkanSceneGraph classes are built upon. We start with introducing the base class and smart pointers, the vector and matrix types, the data containers and meta data.
 

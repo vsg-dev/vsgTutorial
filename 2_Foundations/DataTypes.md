@@ -4,7 +4,7 @@ title: Data Types
 permalink: /foundations/DataTypes
 ---
 
-The scene graph needs to manage data that is held on the CPU and needs to be able to map this data to memory GPU in a coherent way.  The types of data may be a single value, 1D, 2D and 3D arrays, with a range of types, and used for a wide range of tasks - representing vertices, normals, texture coords arrays through to 1D, 2D and 3D textures.
+The scene graph needs to manage data that is held on the CPU and needs to be able to map this data to memory GPU in a coherent way. The types of data may be a single value, 1D, 2D and 3D arrays, with a range of types, and used for a wide range of tasks - representing vertices, normals, texture coords arrays through to 1D, 2D and 3D textures.
 
 The [vsg::Data](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Data.h) base class provides a common interface for all the different types of data, then a series of template classes provide support for both built-in types and user defined types for single value and fixed sized 1D, 2D and 3D arrays:
 
@@ -17,9 +17,9 @@ Containers that have their size fixed at allocation time, rather than dynamicall
 
 ## vsg::Data base class
 
-The [vsg::Data](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Data.h) is a pure virtual base class that subclasses from vsg::Object to gain it's support for intrusive reference counting, Metadata and Run-Time Type Information (RTTI) support. We will go into the details of [Metadata](Metadata.md) and [RTTI](Visitor.md) support later in this chapter.
+The [vsg::Data](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Data.h) is a pure virtual base class that subclasses from vsg::Object to gain its support for intrusive reference counting, Metadata and Run-Time Type Information (RTTI) support. We will go into the details of [Metadata](Metadata.md) and [RTTI](Visitor.md) support later in this chapter.
 
-The vsg::Data defines a set of pure virtual methods that all concrete subclasses from vsg::Data must provide, these methods provide scene graph and applications the ability to query the size of values in the data container, pointer to the data and dimnensions of the data. The methods are:
+The vsg::Data defines a set of pure virtual methods that all concrete subclasses from vsg::Data must provide, these methods provide scene graph and applications the ability to query the size of values in the data container, pointer to the data and dimensions of the data. The methods are:
 
 ~~~ cpp
         virtual std::size_t valueSize() const = 0;
@@ -43,9 +43,9 @@ The vsg::Data defines a set of pure virtual methods that all concrete subclasses
         virtual std::uint32_t depth() const = 0;
 ~~~
 
-### Data::Properites
+### Data::Properties
 
-The vsg::Data::Properties struct provides the definition of data properites that the individual data values, these properties are used to set the associated Vulkan data on the GPU as well as help specify how the data is allocated and used. The definition of Data::Properties take directly from the include/vsg/core/Data.h header:
+The vsg::Data::Properties struct provides the definition of data properties that the individual data values, these properties are used to set the associated Vulkan data on the GPU as well as help specify how the data is allocated and used. The definition of Data::Properties take directly from the include/vsg/core/Data.h header:
 
 ~~~ cpp
 /* Properties used for specifying the format of the data, use of mipmaps, block compressed data and origin.
@@ -74,7 +74,7 @@ struct VSG_DECLSPEC Properties
 };
 ~~~
 
-The vsg::Data subclasses provide defaults for Data::Properties members, but in the case of the Properties.format you will need to set this to an appropriate value as this can't be determined by data type alone. When using Data objects on the CPU or when using them for vertex array and uniform values the format value is not referenced so you can leave it blank, it's only when using Data objects as texture will the format be checked. However when loading data image files these will set the format for you so it's only in the case of user created image data that you'll need to set the format.  The range of values for the format member can be found in the Vulkan documentation on [VkFormat](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkFormat.html).  In the vsg::Array2D section below we'll provide an example of setting format.
+The vsg::Data subclasses provide defaults for Data::Properties members, but in the case of the Properties.format you will need to set this to an appropriate value as this can't be determined by data type alone. When using Data objects on the CPU or when using them for vertex array and uniform values the format value is not referenced so you can leave it blank, it's only when using Data objects as texture will the format be checked. However when loading data image files these will set the format for you so it's only in the case of user created image data that you'll need to set the format. The range of values for the format member can be found in the Vulkan documentation on [VkFormat](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkFormat.html). In the vsg::Array2D section below we'll provide an example of setting format.
 
 ## vsg::Value
 
@@ -124,7 +124,7 @@ auto colors = vsg::vec3Array::create({
 
 ## vsg::Array2D
 
-For an fixed size 2D array of values you use the [vsg::Array2D](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array2D.h) template class. The full list of pre defined array3D types, the full list is found at the bottom of [vsg::Array2D](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array2D.h#L350).
+For an fixed size 2D array of values you use the [vsg::Array2D](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array2D.h) template class. The full list of pre defined Array2D types is found at the bottom of [vsg::Array2D](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array2D.h#L350).
 
 Example:
 ~~~ cpp
@@ -140,12 +140,12 @@ auto image = vsg::vec4Array2D::create(2, 4, {
     });
 
 // we must set the format for texture image so that Vulkan knows how to store it
-image->properites.format = VK_FORMAT_R32G32B32A32_SFLOAT;
+image->properties.format = VK_FORMAT_R32G32B32A32_SFLOAT;
 ~~~
 
 ## vsg::Array3D
 
-For an fixed size 3D array of values you use the [vsg::Array3D](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array3D.h) template class. The full list of pre defined array3D types, the full list is found at the bottom of [vsg::Array3D](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array3D.h#L369).
+For an fixed size 3D array of values you use the [vsg::Array3D](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array3D.h) template class. The full list of pre defined Array3D types is found at the bottom of [vsg::Array3D](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array3D.h#L369).
 
 Examples:
 ~~~ cpp
@@ -217,7 +217,7 @@ Typical usage:
 
 // create data value on heap and set the property to dynamic
 auto color = vsg::vec4Value::create();
-color->properites.dataVariance = vsg::DYNAMIC_DATA;
+color->properties.dataVariance = vsg::DYNAMIC_DATA;
 
 // create viewer and compile scene graph to Vulkan, the compile traversal will collate all dynamic data into a vsg::TransferTask so they can be checked each frame.
 

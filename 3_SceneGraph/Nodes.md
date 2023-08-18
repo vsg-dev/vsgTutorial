@@ -58,7 +58,7 @@ The class definitions for the internal nodes of the scene graph can be found in 
 | Class | Header | Functionality |
 | --- | --- | --- |
 | vsg::Bin | [Bin.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/Bin.h) | Bin node provides a way of controlling the record order of its children |
-| vsg::DepthSorted | [DepthSorted.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/DepthSorted.h) | Depth sorted node provides controls for depth sorting of it's subgraph |
+| vsg::DepthSorted | [DepthSorted.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/nodes/DepthSorted.h) | Depth sorted node provides controls for depth sorting of its subgraph |
 
 
 Prev: [Scene Graph](index.md)| Next: [Commands](Commands.md)
