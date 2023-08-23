@@ -4,7 +4,7 @@ title: Streams & Logger
 permalink: /foundations/StreamsAndLogger
 ---
 
-A significant part of developing software is the process of reporting and logging results for the purpose of QA and debugging. C++ provides the std::ostream/std::istream operators for convenient textual formatting of output and input of standard types, and the VulkanSceneGraph extends this to include native types. The library then adds additional support for textual recording with an extensible thread safe logger class.
+A significant part of developing software is the process of reporting and logging results for the purpose of QA and debugging.  C++ provides the std::ostream/std::istream operators for convenient textual formatting of output and input of standard types, and the VulkanSceneGraph extends this to include native types.  The library then adds additional support for textual recording with an extensible thread safe logger class.
 
 ## istream & ostream operators
 
@@ -60,7 +60,7 @@ str = You can compose a string from numbers i.e PI = 3.14, and vsg types like vs
 
 The [Logger.h header](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/Logger.h#L25) provides the vsg::Logger base class and a series of subclasses that specialize it for different usage cases.
 
-The [vsglog](https://github.com/vsg-dev/vsgExamples/blob/master/examples/io/vsglog/vsglog.cpp) example illustrates the use of the standard vsg::Logger capabilities and how to write a custom Logger class. Console output from vsglog:
+The [vsglog](https://github.com/vsg-dev/vsgExamples/blob/master/examples/io/vsglog/vsglog.cpp) example illustrates the use of the standard vsg::Logger capabilities and how to write a custom Logger class.  Console output from vsglog:
 
 ~~~ sh
 $ vsglog
@@ -89,7 +89,7 @@ custom warn : log warn
 custom error : log error
 ~~~
 
-The [vsglog_mt](https://github.com/vsg-dev/vsgExamples/blob/master/examples/io/vsglog/vsglog.cpp) example illustrates a multithreaded vsg::Logger. Console output from vsglog_mt:
+The [vsglog_mt](https://github.com/vsg-dev/vsgExamples/blob/master/examples/io/vsglog/vsglog.cpp) example illustrates a multithreaded vsg::Logger.  Console output from vsglog_mt:
 
 ~~~ sh
 $ vsglog_mt -n 10 -t 3

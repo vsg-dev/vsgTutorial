@@ -4,7 +4,7 @@ title: State
 permalink: /scenegraph/State
 ---
 
-The class definitions for the Vulkan state nodes of the scene graph can be found in the [VulkanSceneGraph/include/vsg/state](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) directory. Examples that illustrate use of various state classes can be found in the [vsgExamples/examples/state](https://github.com/vsg-dev/vsgExamples/tree/master/examples/state) directory,
+The class definitions for the Vulkan state nodes of the scene graph can be found in the [VulkanSceneGraph/include/vsg/state](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/) directory.  Examples that illustrate use of various state classes can be found in the [vsgExamples/examples/state](https://github.com/vsg-dev/vsgExamples/tree/master/examples/state) directory,
 
 ## Scene graph state nodes
 

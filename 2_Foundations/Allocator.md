@@ -4,7 +4,7 @@ title: Block allocation with vsg::Allocator
 permalink: /foundations/Allocator
 ---
 
-Memory bandwidth is a fundamental bottleneck for graphics applications, both on the CPU in main memory and on the GPU. On the CPU side the scene graph traversal stresses the CPU cache and memory bandwidth, over the decades CPUs have become faster at a quicker rate than memory bandwidth so the issue of CPUs stalled waiting for instructions and data to be pulled from main memory has become an even more critical bottleneck. The VulkanSceneGraph minimizes cache misses and bandwidth load in two main ways:
+Memory bandwidth is a fundamental bottleneck for graphics applications, both on the CPU in main memory and on the GPU.  On the CPU side the scene graph traversal stresses the CPU cache and memory bandwidth, over the decades CPUs have become faster at a quicker rate than memory bandwidth so the issue of CPUs stalled waiting for instructions and data to be pulled from main memory has become an even more critical bottleneck.  The VulkanSceneGraph minimizes cache misses and bandwidth load in two main ways:
 
 1. Minimizing scene graph object size
 2. Block allocation of similar object types within the same memory blocks
@@ -13,7 +13,7 @@ In the earlier sections of this chapter we discussed how scene graph object size
 
 ## How vsg::Allocator works
 
-The vsg::Allocator is a singleton that is invoked by vsg::allocate(..) and vsg::deallocate(..) function calls, which users can use like malloc(..)/free(..), but in normal usage will be called for you by custom new/delete implementations for vsg::Node, vsg::Data and vsg::Object respectively. The custom new/delete implementations will be invoked automatically when you call **new vsg::Group** as well as the standard usage of **vsg::Group::create()**. This integration means that VukanSceneGraph users need not do anything to enable use of the vsg::Allocator - it all works out of the box.
+The vsg::Allocator is a singleton that is invoked by vsg::allocate(..) and vsg::deallocate(..) function calls, which users can use like malloc(..)/free(..), but in normal usage will be called for you by custom new/delete implementations for vsg::Node, vsg::Data and vsg::Object respectively.  The custom new/delete implementations will be invoked automatically when you call **new vsg::Group** as well as the standard usage of **vsg::Group::create()**.  This integration means that VukanSceneGraph users need not do anything to enable use of the vsg::Allocator - it all works out of the box.
 
 The custom new/delete implementations call vsg::allocate() with the type of object so that the vsg::Allocator can allocate the memory from preallocated blocks associated with the object type, this ensures that all vsg::Node subclasses get allocated within memory blocks alongside other nodes, all vsg::Data get allocated in data blocks and all other vsg::Object subclasses get allocated together.
 
@@ -58,7 +58,7 @@ delete duration  = 0.00416ms
 Average frame rate = 1143.24fps
 ~~~
 
-While we see significant improvements in performance for scene graph traversals and rendering performance the vsg::Allocator does presently add an overhead when allocating and deleting objects as seen by the slightly longer load, release and delete times shown above. The initial focus in development of the vsg::Allocator has been improving performance of traversals and rendering of the scene graph rather than lowering start up/shutdown speed, longer term it is planned to optimize the allocation and deallocation algorithm to lower this overhead.
+While we see significant improvements in performance for scene graph traversals and rendering performance the vsg::Allocator does presently add an overhead when allocating and deleting objects as seen by the slightly longer load, release and delete times shown above.  The initial focus in development of the vsg::Allocator has been improving performance of traversals and rendering of the scene graph rather than lowering start up/shutdown speed, longer term it is planned to optimize the allocation and deallocation algorithm to lower this overhead.
 
 ---
 

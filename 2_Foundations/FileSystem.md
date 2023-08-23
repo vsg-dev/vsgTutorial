@@ -4,11 +4,11 @@ title: File System features
 permalink: /foundations/FileSystem
 ---
 
-C++17 in theory has almost all the file system related functionality that VulkanSceneGraph and its users will need, but unfortunately compiler support for all the std::filesystem features across all platforms was too patchy to rely upon. To address this deficiancy the VulkanSceneGraph provides this functionality to ensure the same experience across all platforms and compatibility with older compilers.
+C++17 in theory has almost all the file system related functionality that VulkanSceneGraph and its users will need, but unfortunately compiler support for all the std::filesystem features across all platforms was too patchy to rely upon.  To address this deficiancy the VulkanSceneGraph provides this functionality to ensure the same experience across all platforms and compatibility with older compilers.
 
 ## vsg::Path
 
-The [std::filesystem::path](https://en.cppreference.com/w/cpp/filesystem/path) class equivalent is the [vsg::Path](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/Path.h#L27) class. This broadly mirrors std::filesystem functionality focusing on the key functionality required by the VulkanSceneGraph and its users. Like std::filesystem::path the vsg::Path class uses std::wstring under Windows and std::string on all other platforms, and where possible automatic conversion between wide strings and UTF8 strings is done. The difference in underlying type under Windows enables use of the Windows specific extensions of std::ifstream/ofstream that take wchar_t* for filenames, while all other platforms just support char_t* filenames. The vsg::Path automatically passes the native representation when using ifstream/ofstream.
+The [std::filesystem::path](https://en.cppreference.com/w/cpp/filesystem/path) class equivalent is the [vsg::Path](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/Path.h#L27) class.  This broadly mirrors std::filesystem functionality focusing on the key functionality required by the VulkanSceneGraph and its users.  Like std::filesystem::path the vsg::Path class uses std::wstring under Windows and std::string on all other platforms, and where possible automatic conversion between wide strings and UTF8 strings is done.  The difference in underlying type under Windows enables use of the Windows specific extensions of std::ifstream/ofstream that take wchar_t* for filenames, while all other platforms just support char_t* filenames.  The vsg::Path automatically passes the native representation when using ifstream/ofstream.
 
 ~~~ cpp
 vsg::Path filename = "models/lz.vsgt";
@@ -16,7 +16,7 @@ vsg::Path filename = "models/lz.vsgt";
 std::ifstream fin(filename); // wchar* used under Windows, char* used on other platforms
 ~~~
 
-If you are working with APIs that only support std::string/char* representation for filenames then you can use the vsg::Path::string() method to make sure the path is converted to a UTF8 string. For instance [Assimp](https://github.com/assimp/assimp/blob/master/include/assimp/Importer.hpp#L487) requires std::string filenames:
+If you are working with APIs that only support std::string/char* representation for filenames then you can use the vsg::Path::string() method to make sure the path is converted to a UTF8 string.  For instance [Assimp](https://github.com/assimp/assimp/blob/master/include/assimp/Importer.hpp#L487) requires std::string filenames:
 
 ~~~ cpp
 Assimp::Importer importer;
@@ -51,7 +51,7 @@ extern VSG_DECLSPEC Path removeExtension(const Path& path);
 
 ## File system functions
 
-The file system functions are grouped together in the [include/vsg/io/FileSystem.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/FileSystem.h#L23) header. The file system functions from this header are:
+The file system functions are grouped together in the [include/vsg/io/FileSystem.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/io/FileSystem.h#L23) header.  The file system functions from this header are:
 
 ~~~ cpp
 class Options;

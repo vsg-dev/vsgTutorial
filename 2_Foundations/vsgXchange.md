@@ -4,11 +4,11 @@ title: vsgXchange - 3rd party formats support
 permalink: /foundations/vsgXchange
 ---
 
-The [vsgXchange library](https://github.com/vsg-dev/vsgXchange) is a companion library that provides support for a range of 3rd party image and model file formats and http support. A number of these features require external dependencies that are checked for by CMake when building vsgXchange, if they are found the associated ReaderWriter is built and included in the vsgXchange::all composite ReaderWriter, you can assign this to the vsg::Options object as in the example below to add support for all the available formats, or you can add each ReaderWriter individually. Doing the latter allows you to control the order in which ReaderWriters are invoked as well as to select just the ones that are important to your application in order to reduce the overall footprint of your application.
+The [vsgXchange library](https://github.com/vsg-dev/vsgXchange) is a companion library that provides support for a range of 3rd party image and model file formats and http support.  A number of these features require external dependencies that are checked for by CMake when building vsgXchange, if they are found the associated ReaderWriter is built and included in the vsgXchange::all composite ReaderWriter, you can assign this to the vsg::Options object as in the example below to add support for all the available formats, or you can add each ReaderWriter individually.  Doing the latter allows you to control the order in which ReaderWriters are invoked as well as to select just the ones that are important to your application in order to reduce the overall footprint of your application.
 
 ## Usage
 
-vsgXchange is leveraged by assigning the ReaderWriters it provides to a vsg::Options object, then passing this to the vsg::read/write calls. The vsgXchange::all composite ReaderWriter adds support for all the file formats provided by vsgXchange. Here's an example of usage:
+vsgXchange is leveraged by assigning the ReaderWriters it provides to a vsg::Options object, then passing this to the vsg::read/write calls.  The vsgXchange::all composite ReaderWriter adds support for all the file formats provided by vsgXchange.  Here's an example of usage:
 
 ~~~ cpp
 #include <vsg/all.h>
@@ -32,7 +32,7 @@ vsgXchange is leveraged by assigning the ReaderWriters it provides to a vsg::Opt
 
 ## Supported formats
 
-While the implementation of ReaderWriters that have external dependencies are only compiled in when they are available, the public interface for all possible ReaderWriter is declared in the [include/vsgXchange](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/) directory. The way the fixed public interface is decoupled from the optionally built implementation is using the [Fascade Design Pattern](https://en.wikipedia.org/wiki/Facade_pattern), with the public ReaderWriter classes deferring their implementations, they are provided by either a fallback non op implementation or the full implementation when the dependency is available. The available ReaderWriters, the associated dependencies and the formats supported are:
+While the implementation of ReaderWriters that have external dependencies are only compiled in when they are available, the public interface for all possible ReaderWriter is declared in the [include/vsgXchange](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/) directory.  The way the fixed public interface is decoupled from the optionally built implementation is using the [Fascade Design Pattern](https://en.wikipedia.org/wiki/Facade_pattern), with the public ReaderWriter classes deferring their implementations, they are provided by either a fallback non op implementation or the full implementation when the dependency is available.  The available ReaderWriters, the associated dependencies and the formats supported are:
 
 | ReaderWriter | Dependency | Features |
 | [vsgXchange::all](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/all.h#L35) | | Composite ReaderWriter that bundles all ReaderWriters supported by core VSG and vsgXchange |
@@ -49,7 +49,7 @@ While the implementation of ReaderWriters that have external dependencies are on
 | [vsgXchange::osg2vsg](https://github.com/vsg-dev/vsgXchange/blob/master/include/vsgXchange/models.h#L41) | [osg2vsg](https://github.com/vsg-dev/osg2vsg) | Read OpenSceneGraph supported image and
 model formats |
 
-vsgXchange's CMake scripts automatically generate the include/vsgXchange/Version.h header that provides #define's for each ReaderWriter so you can test at compile time if you so wish, and each optionally compiled ReaderWriter has a flag to say whether it's supported or not, so you can test for it at runtime. What follows is what you'll see in the Version.h header if you have built against all the dependencies:
+vsgXchange's CMake scripts automatically generate the include/vsgXchange/Version.h header that provides #define's for each ReaderWriter so you can test at compile time if you so wish, and each optionally compiled ReaderWriter has a flag to say whether it's supported or not, so you can test for it at runtime.  What follows is what you'll see in the Version.h header if you have built against all the dependencies:
 
 ~~~ cpp
     /// standard Features
@@ -391,7 +391,7 @@ vsgXchange::all
 
 # Using vsgXchange::cpp & vsgconv to create compilable objects
 
-The vsgXchange::cpp ReaderWriter enables programmers to convert all vsg::Object types to source files that can be included into the build of your applications, this can be used for data, scene graphs or shaders/shadersets. You can use vsgconv to do this conversion in the console:
+The vsgXchange::cpp ReaderWriter enables programmers to convert all vsg::Object types to source files that can be included into the build of your applications, this can be used for data, scene graphs or shaders/shadersets.  You can use vsgconv to do this conversion in the console:
 
 ~~~ sh
 vsgconv shaders/shader.vert shader_vert.cpp
@@ -485,7 +485,7 @@ return io.read_cast<vsg::ShaderStage>(reinterpret_cast<const uint8_t*>(str), siz
 };
 ~~~
 
-In the above example the vsgconv utility has automatically compiled the GLSL shader source to SPIRV code for you, so at runtime there is no need for the VSG to compile the shader. You can then invoke this from your C++ code:
+In the above example the vsgconv utility has automatically compiled the GLSL shader source to SPIRV code for you, so at runtime there is no need for the VSG to compile the shader.  You can then invoke this from your C++ code:
 
 ~~~ cpp
 
@@ -498,7 +498,7 @@ In the above example the vsgconv utility has automatically compiled the GLSL sha
 }
 ~~~
 
-Examples of compiling objects into libraries/applications can be found in the VulkanSceneGraph codebase, for instance the text related shaders are used in [VulkanSceneGraph/src/vsg/text/Text.cpp](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/src/vsg/text/Text.cpp#L69) which includes the [VulkanSceneGraph/src/vsg/text/shaders/text_ShaderSet.cpp](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/src/vsg/text/shaders/text_ShaderSet.cpp). The text_ShaderSet.cpp is created by the [vsgshaderset](https://github.com/vsg-dev/vsgExamples/tree/master/examples/utils/vsgshaderset) utility found in vsgExamples.
+Examples of compiling objects into libraries/applications can be found in the VulkanSceneGraph codebase, for instance the text related shaders are used in [VulkanSceneGraph/src/vsg/text/Text.cpp](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/src/vsg/text/Text.cpp#L69) which includes the [VulkanSceneGraph/src/vsg/text/shaders/text_ShaderSet.cpp](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/src/vsg/text/shaders/text_ShaderSet.cpp).  The text_ShaderSet.cpp is created by the [vsgshaderset](https://github.com/vsg-dev/vsgExamples/tree/master/examples/utils/vsgshaderset) utility found in vsgExamples.
 
 Prev: [read/write](ReaderWriter.md) | Next : [Serialization](../2_Foundations/Serialization.md)
 

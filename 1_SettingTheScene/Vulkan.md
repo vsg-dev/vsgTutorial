@@ -13,7 +13,7 @@ The standards body [Khronos](https://www.khronos.org/) released the successor to
 Designed from the ground up for multi-threading, with state localized within command buffers and explicit synchronisation primitives.
 
 * Cross platform: [source Wikipedia](https://en.wikipedia.org/wiki/Vulkan)
-"Vulkan runs natively on Android, Linux, BSD Unix, QNX, Haiku, Nintendo Switch, Raspberry Pi, Stadia, Fuchsia, Tizen, and Windows 7, 8, 10, and 11. MoltenVK provides freely-licensed third-party support for macOS, iOS and tvOS by wrapping over Apple's Metal API."
+"Vulkan runs natively on Android, Linux, BSD Unix, QNX, Haiku, Nintendo Switch, Raspberry Pi, Stadia, Fuchsia, Tizen, and Windows 7, 8, 10, and 11.  MoltenVK provides freely-licensed third-party support for macOS, iOS and tvOS by wrapping over Apple's Metal API."
 
 * Runtime extension system, enabling fine-grained support for latest hardware features, including:
     * Ray Tracing
