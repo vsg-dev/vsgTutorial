@@ -4,11 +4,11 @@ title: Maths Functions
 permalink: /foundations/MathsFunctions
 ---
 
-The VulkanSceneGraph's maths types and functions are found in the [include/vsg/maths](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/) directory. The conventions broadly follow GLSL conventions with additions that are helpful for scene graph usage.  In the [Math Types](MathTypes.md) section, earlier in this chapter, the vec2, vec3, vec4, mat3, mat4, quat, plane, box and sphere classes were introduced. In this section we build upon this with a tour of the range of helper functions available and an explanation of the conventions used.
+The VulkanSceneGraph's maths types and functions are found in the [include/vsg/maths](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/) directory.  The conventions broadly follow GLSL conventions with additions that are helpful for scene graph usage.  In the [Math Types](MathTypes.md) section, earlier in this chapter, the vec2, vec3, vec4, mat3, mat4, quat, plane, box and sphere classes were introduced.  In this section we build upon this with a tour of the range of helper functions available and an explanation of the conventions used.
 
 ## Conventions
 
-The VulkanSceneGraph follows the GLSL convention of [Right Hand Rule](https://en.wikipedia.org/wiki/Right-hand_rule) and [Column Major](https://en.wikipedia.org/wiki/Row-_and_column-major_order) matrices. The GLSL conventions are followed to make it easier to move code between shaders and C++ code, and to make it easier to follow 3rd party coding examples.
+The VulkanSceneGraph follows the GLSL convention of [Right Hand Rule](https://en.wikipedia.org/wiki/Right-hand_rule) and [Column Major](https://en.wikipedia.org/wiki/Row-_and_column-major_order) matrices.  The GLSL conventions are followed to make it easier to move code between shaders and C++ code, and to make it easier to follow 3rd party coding examples.
 
 ## Headers and associated types/functionality
 
@@ -65,7 +65,7 @@ Transform related functions:
 
 ## Difference with OpenSceneGraph conventions
 
-The use of column major contrasts that of the OpenSceneGraph that uses row major, this not only affects order of access for elements of matrices but also the transformation order you'll use. The row major convention used by the OpenSceneGraph was adopted prior to the existence of GLSL which unfortunately chose the opposite convention, leaving the OpenSceneGraph in an awkward situation where C++ and shaders follow differing conventions.
+The use of column major contrasts that of the OpenSceneGraph that uses row major, this not only affects order of access for elements of matrices but also the transformation order you'll use.  The row major convention used by the OpenSceneGraph was adopted prior to the existence of GLSL which unfortunately chose the opposite convention, leaving the OpenSceneGraph in an awkward situation where C++ and shaders follow differing conventions.
 
 ~~~ cpp
 // OpenSceneGraph uses row major

@@ -19,7 +19,7 @@ permalink: /scenegraph/osg2vsg
 | [`osg::Referenced`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Referenced) | [`vsg::Object`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Object.h) |  |
 | [`osg::Object`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Object) | [`vsg::Object`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Object.h)  | |
 | [`META_Object`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Object), [`META_Node`](https://github.com/openscenegraph/OpenSceneGraph/blob/master/include/osg/Node) | [`vsg::Inherit<T>`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Inherit.h)  | OSG uses C macros while VSG uses Curiously Recurring Template Pattern |
-|  | [`vsg::Allocator`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Allocator.h)  | Only VSG has memory allocator.  |
+|  | [`vsg::Allocator`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Allocator.h)  | Only VSG has memory allocator. |
 
 
 ## Data classes

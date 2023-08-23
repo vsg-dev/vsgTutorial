@@ -6,7 +6,7 @@ permalink: /foundations/MetaData
 
 ***"data that provides information about other data"***
 
-The vsg::Object base class has support for Metadata - user named values and objects that can be assigned to and retrieved from objects. Metadata provides an easy way to associate application specific data with scene graph objects without requiring subclassing and extending the scene graph. Serialization support is provided so that all the user assigned values can be stored and retrieved along with the rest of the standard scene graph objects.
+The vsg::Object base class has support for Metadata - user named values and objects that can be assigned to and retrieved from objects.  Metadata provides an easy way to associate application specific data with scene graph objects without requiring subclassing and extending the scene graph.  Serialization support is provided so that all the user assigned values can be stored and retrieved along with the rest of the standard scene graph objects.
 
 ## Setting and getting named objects
 
@@ -48,7 +48,7 @@ The foundation of vsg::Object Metadata is a collection of setObject(key, object)
         void removeObject(const std::string& key);
 ~~~
 
-The vsg::Object class implements these methods using a [vsg::Auxiliary](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Auxiliary.h) object that provides both observer_ptr<> support and the std::map<std::string, ref_ptr<Object>> that holds the user assigned objects.  The vsg::Auxiliary object is only created and assigned to a vsg::Object when an observer_ptr<> and/or Metadata are required. As most scene graph objects don't require either, most objects will just have a null Auxiliary pointer.
+The vsg::Object class implements these methods using a [vsg::Auxiliary](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Auxiliary.h) object that provides both observer_ptr<> support and the std::map<std::string, ref_ptr<Object>> that holds the user assigned objects.  The vsg::Auxiliary object is only created and assigned to a vsg::Object when an observer_ptr<> and/or Metadata are required.  As most scene graph objects don't require either, most objects will just have a null Auxiliary pointer.
 
 ## Setting and getting named values
 
@@ -68,7 +68,7 @@ To provide support for standard C++ types like std::string, float and simple sce
     bool getValue(const std::string& key, T& value) const;
 ~~~
 
-These setValue(key, value)/getValue(key) methods build upon the setObject(key, value)/getObject(key) functionality using the vsg::Value<> template data class as an adapter. This adaptation is done for users so they can just focus on the basic types they wish to use. Object::getValue(key, value) returns true when the object of the matching Value<> is found in the Auxiliary::userObjects map, otherwise it returns false.  It is important to exactly match the types between setValue(key, value) and getValue(key, value) as no implicit type conversion is supported, i.e. setting with a float then attempting to get with a double will not find a match and return false.
+These setValue(key, value)/getValue(key) methods build upon the setObject(key, value)/getObject(key) functionality using the vsg::Value<> template data class as an adapter.  This adaptation is done for users so they can just focus on the basic types they wish to use.  Object::getValue(key, value) returns true when the object of the matching Value<> is found in the Auxiliary::userObjects map, otherwise it returns false.  It is important to exactly match the types between setValue(key, value) and getValue(key, value) as no implicit type conversion is supported, i.e. setting with a float then attempting to get with a double will not find a match and return false.
 
 ~~~ cpp
 {
