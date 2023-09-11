@@ -389,6 +389,12 @@ vsgXchange::all
         write_build_options  string
 ~~~
 
+Options specific to a ReaderWriter are specified on the commandline using two dashes:
+
+~~~ sh
+vsgconv FlightHelmet.gltf helmet.vsgb --discard_empty_nodes false
+~~~
+
 # Using vsgXchange::cpp & vsgconv to create compilable objects
 
 The vsgXchange::cpp ReaderWriter enables programmers to convert all vsg::Object types to source files that can be included into the build of your applications, this can be used for data, scene graphs or shaders/shadersets.  You can use vsgconv to do this conversion in the console:
