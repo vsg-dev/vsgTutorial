@@ -19,7 +19,7 @@ First we'll set up some environment variable, for ease of use you may wish to pu
 export INSTALL_DIR=~/Install
 export PROJECT_DIR=~/Projects
 export PATH=${PATH}:${INSTALL_DIR}/bin
-export LD_LIBRARY_PATH=${D_LIBRARY_PATH}:${INSTALL_DIR}/lib
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${INSTALL_DIR}/lib
 
 # env vars that are used to find example data, and locating where to cache files downloaded from HTTP during database paging
 export VSG_FILE_PATH=${PROJECT_DIR}/vsgExamples/data
