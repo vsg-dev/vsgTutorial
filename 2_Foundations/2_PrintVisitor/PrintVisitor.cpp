@@ -5,7 +5,7 @@
 
 int main(int, char**)
 {
-    // implement simply print visitor that traverses the scene graph printing out node types
+    // implement simple print visitor that traverses the scene graph printing out node types
     struct PrintVisitor : public vsg::Inherit<vsg::ConstVisitor, PrintVisitor>
     {
         size_t indent = 0;
@@ -55,7 +55,7 @@ int main(int, char**)
     root->addChild(vsg::stringValue::create("Everybody Loves Raymond"));
     root->addChild(nested);
 
-    // consutruct our visitor and then pass it to root node to invoke the visitor.
+    // construct our visitor and then pass it to root node to invoke the visitor.
     PrintVisitor print;
     root->accept(print);
 

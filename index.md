@@ -7,21 +7,21 @@ layout: home
 
 **CURRENTLY IN DEVELOPMENT: expect missing sections and rough and ready state.**
 
-The goal of this tutorial is to teach developers how to use the [VulkanSceneGraph](https://github.com/vsg-dev/VulkanSceneGraph) effectively in their graphics and compute applications. The tutorial assumes developers have prior knowledge of using CMake and C++ to build and write applications.  Knowledge of scene graphs, real-time graphics and Vulkan are not assumed, though teaching real-time graphics and Vulkan at depth is beyond the scope of this tutorial, links to 3rd party resources for further learning will be provided.
+The goal of this tutorial is to teach developers how to use the [VulkanSceneGraph](https://github.com/vsg-dev/VulkanSceneGraph) effectively in their graphics and compute applications.  The tutorial assumes developers have prior knowledge of using CMake and C++ to build and write applications.  Knowledge of scene graphs, real-time graphics and Vulkan are not assumed, though teaching real-time graphics and Vulkan at depth is beyond the scope of this tutorial, links to 3rd party resources for further learning will be provided.
 
-Each chapter of the tutorial is coupled with exercises so that developers can learn about each topic then test out what they have learned. The topics covered are:
+Each chapter of the tutorial is coupled with exercises so that developers can learn about each topic then test out what they have learned.  The topics covered are:
 
-1. [Setting The Scene](1_SettingTheScene/index.md) **First Draft**  
-We introduce you to world of scene graphs with a brief tour of low and high-level APIs from IrisGL & Inventor to Vulkan & VulkanSceneGraph. The chapter then turns to the software design and performance principles used in the development of the VulkanSceneGraph, the ecosystem building up around the project, high-level features and conventions you'll get with the core VulkanSceneGraph library and wraps up with how to build the software and run the first exercise - a scene graph take on Hello World.
+1. [Setting The Scene](1_SettingTheScene/index.md) **First Draft**
+We introduce you to the world of scene graphs with a brief tour of low and high-level APIs from IrisGL & Inventor to Vulkan & VulkanSceneGraph.  The chapter then turns to the software design and performance principles used in the development of the VulkanSceneGraph, the ecosystem building up around the project, high-level features and conventions you'll get with the core VulkanSceneGraph library and wraps up with how to build the software and run the first exercise - a scene graph take on Hello World.
 
-2. [Foundations](2_Foundations/index.md) **Currently being written.**  
+2. [Foundations](2_Foundations/index.md) **First Draft**
 This chapter covers the foundational base classes, memory management, maths and IO support that the rest of the scene graph functionality is built upon.
 
-3. [Scene Graph](3_SceneGraph/index.md) **To be written**  
+3. [Scene Graph](3_SceneGraph/index.md) **Currently being written**
 This chapter introduces the scene graph classes - the internal nodes through to the geometry and state.
 
-4. [Application](4_Application/index.md) **To be written**  
+4. [Application](4_Application/index.md) **To be written**
 This chapter focuses on application level classes - the viewer, windows, views, cameras, event handling, rendering loop and threading.
 
-5. [Developing Skills](5_DevelopingSkills/index.md) **To be written**  
+5. [Developing Skills](5_DevelopingSkills/index.md) **To be written**
 The final chapter wraps up with guidance on trouble shooting and debugging VulkanSceneGraph applications, through to how to improve performance & lower power consumption.

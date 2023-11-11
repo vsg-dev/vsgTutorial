@@ -6,7 +6,7 @@ permalink: /SettingTheScene/
 
 **The first draft of this chapter is now complete.  We'll make corrections and refine it over the coming weeks**
 
-This chaper introduces developers to the world of Vulkan, Scene Graphs, and how the VulkanSceneGraph combines these technologies to improve productivity and deliver high performance graphics and compute applications, takes you through downloading, building and install software and running the first exercise. The topic is broken down into the following sections:
+This chaper introduces developers to the world of Vulkan, Scene Graphs, and how the VulkanSceneGraph combines these technologies to improve productivity and deliver high performance graphics and compute applications, takes you through downloading, building and installing the software and running the first exercise.  The topic is broken down into the following sections:
 
 1. [Low-level APIs](LowLevelAPIs.md)
 1. [Vulkan](Vulkan.md)

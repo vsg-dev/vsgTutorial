@@ -11,19 +11,19 @@ int main(int, char**)
         std::cout<<"   Background thread : has started."<<std::endl;
         while(true)
         {
-            // get reference pointer to scene object to make sure it stays live while we analyse it.
+            // get reference pointer to scene object to make sure it stays alive while we analyse it.
             if (auto ref_scene = in_scene.ref_ptr())
             {
                 // do analysis of the scene
                 std::cout<<"   Background thread : has ref_scene = "<<ref_scene<<", referenceCount = "<<ref_scene->referenceCount()<<std::endl;
-            } // ref_scene ref_ptr<> pointer will destruct and release refernece
+            } // ref_scene ref_ptr<> pointer will destruct and release reference
             else
             {
                 std::cout<<"    Background thread : no longer has scene object to work on, so returning."<<std::endl;
                 return;
             }
 
-            // sleep for a second, any time the actual scene object could detruct
+            // sleep for a second, any time the actual scene object could destruct
             std::this_thread::sleep_for(std::chrono::seconds(1));
         }
     };
