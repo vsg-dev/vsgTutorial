@@ -22,12 +22,12 @@ Designed from the ground up for multi-threading, with state localized within com
 * Vulkan layers that can be enabled at runtime:
     * Validation layers
     * API output layers
-    * Best practise guides
+    * Best practice guides
 
 ### Cons:
 
 * Low level, responsibility for many tasks moves from driver into application scope.
-Developers must explicitly configure settings, allocate and manage memory, manage transfering of data to/from GPU and dispatching and synchronizing CPU and GPU operations.
+Developers must explicitly configure settings, allocate and manage memory, manage transferring of data to/from GPU and dispatching and synchronizing CPU and GPU operations.
 
 * Requires more knowledge and code to implement even simple features - 1500 lines of code to just render a textured triangle!
 
@@ -56,5 +56,5 @@ provides a single package with headers and libs for Windows, Linux and macOS.
 
 ---
 
-Prev: [Low Level APIs](LowLevelAPIs.md) | Next :[High Level APIs](HighLevelAPIs.md)
+Prev: [Low Level APIs](LowLevelAPIs.md) | Next: [High Level APIs](HighLevelAPIs.md)
 

@@ -139,4 +139,4 @@ else
 
 In the next section we'll discover other ways of determining the type of objects which avoid the need to use the awkward and costly dynamic_cast<> between types.
 
-Prev: Next: [Data Types](DataTypes.md)| Next: [Run-Time Type Information (RTTI)](RTTI.md)
+Prev: [Data Types](DataTypes.md)| Next: [Run-Time Type Information (RTTI)](RTTI.md)

@@ -11,5 +11,5 @@ The class definitions for the Vulkan mesh shader nodes of the scene graph can be
 | | [DrawMeshTasksIndirectCount.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/meshshaders/) | |
 | | [DrawMeshTasksIndirect.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/commands/) | |
 
-Prev: [State](State.md)| Next : [Ray Tracing](RayTracing.md)
+Prev: [State](State.md)| Next: [Ray Tracing](RayTracing.md)
 

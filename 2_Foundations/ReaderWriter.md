@@ -212,5 +212,5 @@ public:
 VSG_type_name(vsg::ReaderWriter);
 ~~~
 
-Prev: [Visitors](Visitors.md) | Next : [vsgXchange](../2_Foundations/vsgXchange.md)
+Prev: [Visitors](Visitors.md) | Next: [vsgXchange](../2_Foundations/vsgXchange.md)
 

@@ -6,7 +6,7 @@ permalink: /SettingTheScene/
 
 **The first draft of this chapter is now complete.  We'll make corrections and refine it over the coming weeks**
 
-This chaper introduces developers to the world of Vulkan, Scene Graphs, and how the VulkanSceneGraph combines these technologies to improve productivity and deliver high performance graphics and compute applications, takes you through downloading, building and installing the software and running the first exercise.  The topic is broken down into the following sections:
+This chapter introduces developers to the world of Vulkan, Scene Graphs, and how the VulkanSceneGraph combines these technologies to improve productivity and deliver high performance graphics and compute applications, takes you through downloading, building and installing the software and running the first exercise.  The topic is broken down into the following sections:
 
 1. [Low-level APIs](LowLevelAPIs.md)
 1. [Vulkan](Vulkan.md)
@@ -15,7 +15,7 @@ This chaper introduces developers to the world of Vulkan, Scene Graphs, and how 
 1. [Performance Principles](PerformancePrinciples.md)
 1. [VulkanSceneGraph Ecosystem](Ecosystem.md)
 1. [VulkanSceneGraph Library](VulkanSceneGraphLibrary.md)
-1. [Building the VulkanScenegraph projects](BuildingVulkanSceneGraph.md)
+1. [Building the VulkanSceneGraph projects](BuildingVulkanSceneGraph.md)
 1. [Hello World](HelloWorld.md)
 
 With completion of this chapter you will be able run the Hello World application:

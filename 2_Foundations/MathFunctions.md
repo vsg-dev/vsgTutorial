@@ -85,4 +85,4 @@ The OpenSceneGraph also implements the dot product and cross product functions a
 
 ---
 
-Prev: [Block memory management with vsg::Allocator](Allocator.md)| Next : [Next Chapter : Scene Graph](../3_SceneGraph/index.md)
+Prev: [Block memory management with vsg::Allocator](Allocator.md)| Next: [Next Chapter : Scene Graph](../3_SceneGraph/index.md)
