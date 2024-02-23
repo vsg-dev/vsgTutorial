@@ -131,5 +131,5 @@ permalink: /scenegraph/osg2vsg
 |  | [`vsg::ActivityStatus`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/ActivityStatus.h) | No OSG equivalent, used to cooperatively release barriers & blocks. |
 | | [`vsg::FrameBlock`](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/threading/FrameBlock.h) | No direct OSG equivalent, loosely OpenThreads::Block. |
 
-Prev : [Ray Tracing](RayTracing.md) | Next : [Next Chapter : Application](../4_Application/index.md)
+Prev : [Ray Tracing](RayTracing.md) | Next: [Next Chapter : Application](../4_Application/index.md)
 

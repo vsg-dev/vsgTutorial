@@ -122,5 +122,5 @@ Orthogonal to the task of implementing serializers for user defined classes the 
 
 The [vsg::VSG ReaderWriter selects](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/src/vsg/io/VSG.cpp#L94) the appropriate Input/Output implementation based on the file extension, so for most use cases there is never any need to create and invoke the Input/Output classes directly in your application.  For most use cases there will also be no need to write your own subclasses from vsg::Input and vsg::Output, a possible exception would be subclassing from vsg::Input/vsg::Output to implement the reflection support required when integrating with 3rd party languages such as Lua or Python.  This type of usage is an advanced topic beyond the scope of this online book, the existing implementations linked to above will be a good starting place for seeing what would be required.
 
-Prev: [vsgXchange](vsgXchange.md) | Next : [File Systems](FileSystem.md)
+Prev: [vsgXchange](vsgXchange.md) | Next: [File Systems](FileSystem.md)
 

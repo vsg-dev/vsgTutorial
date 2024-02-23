@@ -75,5 +75,5 @@ The class definitions for the Vulkan state nodes of the scene graph can be found
 | vsg::ViewDependentState etc. | [ViewDependentState.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/ViewDependentState.h) | View dependent state classes |
 | vsg::QueryPool | [QueryPool.h](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/state/QueryPool.h) | Encapsulates VkQueryPool, used with vsg::BeginQuery etc. |
 
-Prev: [Commands](Commands.md)| Next : [Mesh Shaders](MeshShaders.md)
+Prev: [Commands](Commands.md)| Next: [Mesh Shaders](MeshShaders.md)
 

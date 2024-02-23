@@ -9,15 +9,15 @@ One of the weaknesses of the OpenSceneGraph project is that, while it started as
 ## Foundation for all VulkanSceneGraph applications
 
 Features that all application developers using Vulkan will need, so provided by the VulkanSceneGraph library:
-* robustly create and cleanup data
-* serialization of scene graph objects to native ascii and binary file formats
-* extensible mechanism for reading/writing 3rd party data.
-* vector math classes and associated functions
-* robust management of the lifetime of Vulkan objects including support for Vulkan extensions
-* scene graph internal nodes, state and geometry
-* creation and management of Vulkan capable windows, offscreen buffers and event handling
-* support for views, cameras and control of them
-* support for commonly used graphics pipelines - flat shaded, phong and physics based rendering
+* Robustly create and cleanup data
+* Serialization of scene graph objects to native ascii and binary file formats
+* Extensible mechanism for reading/writing 3rd party data.
+* Vector math classes and associated functions
+* Robust management of the lifetime of Vulkan objects including support for Vulkan extensions
+* Scene Graph internal nodes, state and geometry
+* Creation and management of Vulkan capable windows, offscreen buffers and event handling
+* Support for views, cameras and control of them
+* Support for commonly used graphics pipelines - flat shaded, phong and physics based rendering
 
 ## Ecosystem centred around vsg-dev GitHub account
 
@@ -55,7 +55,7 @@ The additional VulkanSceneGraph projects add their own dependencies:
 | Project | Required | Optional |
 | [VulkanSceneGraph](https://github.com/vsg-dev/VulkanSceneGraph) | C++17, CMake, Vulkan | glslang integrated as a submodule |
 | [vsgXchange](https://github.com/vsg-dev/vsgXchange) | VulkanSceneGraph | curl, assimp, gdal, freetype, OpenEXR, osg2vsg |
-| [vsgImGui](https://github.com/vsg-dev/vsgImGui) | VulkanScenegraph, ImGui & ImPlot integrated as a submodule | |
+| [vsgImGui](https://github.com/vsg-dev/vsgImGui) | VulkanSceneGraph, ImGui & ImPlot integrated as a submodule | |
 | [vsgQt](https://github.com/vsg-dev/vsgQt) | VulkanSceneGraph, Qt5.10 or later, Qt6 | |
 | [vsgPoints](https://github.com/vsg-dev/vsgPoints) | VulkanSceneGraph |  |
 | [vsgExamples](https://github.com/vsg-dev/vsgExamples) | VulkanSceneGraph | vsgXchange, vsgImGui |

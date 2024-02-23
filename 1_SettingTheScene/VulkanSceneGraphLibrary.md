@@ -106,4 +106,4 @@ protected:
 };
 ~~~
 
-Prev: [Ecosystem](Ecosystem.md) | Next: [Building the VulkanScenegraph projects and vsgTutorial exercises](BuildingVulkanSceneGraph.md)
+Prev: [Ecosystem](Ecosystem.md) | Next: [Building the VulkanSceneGraph projects and vsgTutorial exercises](BuildingVulkanSceneGraph.md)
