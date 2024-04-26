@@ -41,7 +41,7 @@ sudo apt-get install cmake cmake-curses-gui
 sudo apt-get install libvulkan-dev vulkan-tools vulkan-validationlayers
 
 # dependencies used by vsgXchange
-sudo apt-get install libassimp-dev libfreetype-dev libopenexr-dev
+sudo apt-get install libassimp-dev libfreetype-dev libopenexr-dev libcurl4-openssl-dev
 ~~~
 
 If you want to use the VulkanSDK instead of the distro vulkan package, download it from [LunarG](https://vulkan.lunarg.com/sdk/home):
