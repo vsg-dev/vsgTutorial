@@ -4,7 +4,7 @@
 int main(int, char**)
 {
 //
-// Section 1: Create the scene graph    
+// Section 1: Create the scene graph
 //
     // create options object that is used to guide IO operations
     auto options = vsg::Options::create();
@@ -55,7 +55,7 @@ int main(int, char**)
         // pass any events into EventHandlers assigned to the Viewer
         viewer->handleEvents();
 
-        // update the scene graph, such as adding/removing database pager tiles 
+        // update the scene graph, such as adding/removing database pager tiles
         viewer->update();
 
         // record the commands in the scene graph and submit the completed command buffers to the vulkan queue
