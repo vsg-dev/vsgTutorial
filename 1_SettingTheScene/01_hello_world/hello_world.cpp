@@ -1,8 +1,15 @@
 #include <vsg/all.h>
 #include <vsgXchange/all.h>
+#include <iostream>
 
 int main(int, char**)
 {
+#ifndef vsgXchange_curl
+    std::cerr<<"vsgXchange::curl not available, so can not load OpenStreetMap data over http."<<std::endl;
+    std::cerr<<"Please install libcurl-dev and rebuild vsgXchange, then rebuild hello_world."<<std::endl;
+    return 1;
+#endif
+
 //
 // Section 1: Create the scene graph
 //
