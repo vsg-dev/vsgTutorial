@@ -123,5 +123,5 @@ main | info: OperationThreads destroyed.
 ~~~
 
 
-Prev: [File System](FileSystem.md) | Next : [Block memory management with vsg::Allocator](Allocator.md)
+Prev: [File System](FileSystem.md) | Next: [Block memory management with vsg::Allocator](Allocator.md)
 

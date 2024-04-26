@@ -101,5 +101,5 @@ extern VSG_DECLSPEC Path executableFilePath();
 extern VSG_DECLSPEC FILE* fopen(const Path& path, const char* mode);
 ~~~
 
-Prev: [Serialization](Serialization.md) | Next : [Streams & Logger](StreamsAndLogger.md)
+Prev: [Serialization](Serialization.md) | Next: [Streams & Logger](StreamsAndLogger.md)
 

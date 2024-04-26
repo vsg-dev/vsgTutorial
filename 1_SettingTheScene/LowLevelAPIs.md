@@ -4,7 +4,7 @@ title: Low-level APIs
 permalink: /SettingTheScene/LowLevelAPIs
 ---
 
-Low-level graphics and compute APIs provide an interface with hardware drivers that manage data transfers and processing on highly parallelized graphics and compute hardware.  Low-level APIs may be tied to specific operatings systems and/or specific sets of hardware, through to being capable of running on multiple operating systems and across a wide range of hardware.  OpenGL and Vulkan are examples of the latter that are OS agnostic and provide extensible hardware abstraction.
+Low-level graphics and compute APIs provide an interface with hardware drivers that manage data transfers and processing on highly parallelized graphics and compute hardware.  Low-level APIs may be tied to specific operating systems and/or specific sets of hardware, through to being capable of running on multiple operating systems and across a wide range of hardware.  OpenGL and Vulkan are examples of the latter that are OS agnostic and provide extensible hardware abstraction.
 
 ### Level of Hardware Abstraction vs Complexity
 
@@ -34,10 +34,10 @@ In 2013 AMD started working on [Mantle](https://en.wikipedia.org/wiki/Mantle_(AP
 
 In 2014, after many years of supporting OpenGL, Apple joined the vendor lock-in game, creating its own low-level [Metal API](https://en.wikipedia.org/wiki/Metal_(API)), and began a march towards deprecating OpenGL on Apple systems.
 
-Khnoros adopted Mantle as the basis for a new cross-vendor, cross platform successor to OpenGL, releasing the [Vulkan-1.0](https://en.wikipedia.org/wiki/Vulkan) spec in February 2016.  Vulkan is lower level than OpenGL, applications take over more responsibilities that previously OpenGL drivers would have had to manage, but provides more freedom and control, such as multi-threaded control of data and commands being passed to/from the GPU.  Vulkan combines Compute and Graphics in one single coherent API.
+Khronos adopted Mantle as the basis for a new cross-vendor, cross platform successor to OpenGL, releasing the [Vulkan-1.0](https://en.wikipedia.org/wiki/Vulkan) spec in February 2016.  Vulkan is lower level than OpenGL, applications take over more responsibilities that previously OpenGL drivers would have had to manage, but provides more freedom and control, such as multi-threaded control of data and commands being passed to/from the GPU.  Vulkan combines Compute and Graphics in one single coherent API.
 
 In February 2018 the MoltenVK library was released enabling Vulkan to run on top of Metal on macOS and iOS systems breaking the vendor lock-in and enabling Vulkan to work on all major hardware and software platforms.
 
 ---
 
-Prev :[Introduction](index.md) | Next :[Vulkan](Vulkan.md)
+Prev: [Introduction](index.md) | Next: [Vulkan](Vulkan.md)
