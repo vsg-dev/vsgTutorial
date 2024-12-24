@@ -78,7 +78,7 @@ osg::Vec3d osg_dash = osg_vec * matrix;
 vsg::dvec3 vsg_vec;
 vsg::dmat4 vsg_matrix;
 vsg_matrix(column, row) = value;
-vsg::dvec3 vsg_dask = matrix * vsg_vec
+vsg::dvec3 vsg_dash = matrix * vsg_vec
 ~~~
 
 The OpenSceneGraph also implements the dot product and cross product functions as * and ^ operators while the VulkanSceneGraph follows GLSL's convention of using [dot](https://registry.khronos.org/OpenGL-Refpages/gl4/html/dot.xhtml) and [cross](https://registry.khronos.org/OpenGL-Refpages/gl4/html/cross.xhtml) functions.

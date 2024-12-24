@@ -96,7 +96,7 @@ class AnotherClass
 {
 public:
     void setValue(float v) { _value = v; ++_modifiedCount; }
-    float getValue() const { return _value = v;}
+    float getValue() const { return _value;}
 
     int getModifiedCount() const { return _modifiedCount; }
 
