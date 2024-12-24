@@ -38,7 +38,7 @@ The prefix of the type describes the numerical type, the mappings are:
 | ub | unsigned byte | std::uint8_t | vsg::ubvec4 |
 | s | signed short | std::int16_t | vsg::svec2 |
 | us | unsigned short | std::uint16_t | vsg::usvec2 |
-| i | signed int | std::int32_t | vsg::vec3 |
+| i | signed int | std::int32_t | vsg::ivec3 |
 | ui | unsigned int | std::uint32_t | vsg::uivec3 |
 
 ## Vectors
@@ -155,4 +155,4 @@ std::cout<<"bounding_box min = ("<<bounding_box.min<<"), max = ("<<bounding_box.
 
 ---
 
-Prev: [vsg::observer_ptr](observer_ptr.md)| Next: [Data Tpes](DataTypes.md)
+Prev: [vsg::observer_ptr](observer_ptr.md)| Next: [Data Types](DataTypes.md)
