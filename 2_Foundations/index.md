@@ -11,6 +11,7 @@ The second part of this tutorial introduces developers to foundational classes a
 1. [vsg::ref_ptr<> & vsg::Object base class](Object_base_class_and_ref_ptr.md) - strong smart pointer with intrusive reference counting
 1. [vsg::observer_ptr<>](observer_ptr.md) - weak smart pointers
 1. [Math Types](MathTypes.md) - GLSL style data types
+1. [Math Functions](MathFunctions.md) - math functions
 1. [Data Types](DataTypes.md) - vsg::Value, Array, Array2D & Array3D
 1. [Metadata](Metadata.md) - how to use metadata
 1. [RTTI](RTTI.md) - Run Time Type Information (RTTI) features
@@ -21,4 +22,3 @@ The second part of this tutorial introduces developers to foundational classes a
 1. [File System](FileSystem.md) - File system classes and functions
 1. [Streams and Logger](StreamsAndLogger.md) - General stream and Logger support
 1. [vsg::Allocator](Allocator.md) - Block memory allocation for good performance
-1. [Math Functions](MathFunctions.md) - math functions

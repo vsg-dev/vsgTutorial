@@ -155,4 +155,4 @@ std::cout<<"bounding_box min = ("<<bounding_box.min<<"), max = ("<<bounding_box.
 
 ---
 
-Prev: [vsg::observer_ptr](observer_ptr.md)| Next: [Data Types](DataTypes.md)
+Prev: [vsg::observer_ptr](observer_ptr.md) | Next: [Maths Functions](MathFunctions.md)

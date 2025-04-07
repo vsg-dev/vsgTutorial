@@ -238,5 +238,5 @@ The [vsgdyamicvertex](https://github.com/vsg-dev/vsgExamples/tree/master/example
 
 **TODO**
 
-Prev: Next: [Math Types](MathTypes.md)| Next: [Metadata](Metadata.md)
+Prev: [Maths Functions](MathFunctions.md) | Next: [Metadata](Metadata.md)
 

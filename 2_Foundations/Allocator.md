@@ -58,8 +58,7 @@ delete duration  = 0.00416ms
 Average frame rate = 1143.24fps
 ~~~
 
-While we see significant improvements in performance for scene graph traversals and rendering performance the vsg::Allocator does presently add an overhead when allocating and deleting objects as seen by the slightly longer load, release and delete times shown above.  The initial focus in development of the vsg::Allocator has been improving performance of traversals and rendering of the scene graph rather than lowering start up/shutdown speed, longer term it is planned to optimize the allocation and deallocation algorithm to lower this overhead.
-
 ---
 
-Prev: [Streams & Logger](StreamsAndLogger.md)| Next: [Maths Functions](MathFunctions.md)
+Prev: [Streams & Logger](StreamsAndLogger.md)| [Next Chapter : Scene Graph](../3_SceneGraph/index.md)
+
