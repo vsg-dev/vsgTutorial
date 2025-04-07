@@ -12,13 +12,13 @@ The VulkanSceneGraph follows the GLSL convention of [Right Hand Rule](https://en
 
 ## Headers and associated types/functionality
 
-| header | types |
+| header | types & functions |
 | --- | --- |
 | *vector and quaternion* | |
-| [include/vsg/maths/vec2.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec2.h) | vsg::vec2 |
-| [include/vsg/maths/vec3.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec3.h) | vsg::vec3 |
-| [include/vsg/maths/vec4.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec4.h) | vsg::vec4 |
-| [include/vsg/maths/quat.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/quat.h) | vsg::quat |
+| [include/vsg/maths/vec2.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec2.h) | vsg::vec2 ==, != <, +, -, *, /, dot, cross, length, length2, mix & normalize |
+| [include/vsg/maths/vec3.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec3.h) | vsg::vec3 ==, != <, +, -, *, /, dot, cross, length, length2, mix & normalize |
+| [include/vsg/maths/vec4.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/vec4.h) | vsg::vec4 ==, != <, +, -, *, /, dot, cross, length, length2, mix & normalize |
+| [include/vsg/maths/quat.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/quat.h) | vsg::quat ==, != <, +, -, *, /, dot, cross, length, mix, normalize, conjugate & inverse |
 | *matrix types* | |
 | [include/vsg/maths/mat3.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/mat3.h) | vsg::mat3 |
 | [include/vsg/maths/mat4.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/mat4.h) | vsg::mat3 |
