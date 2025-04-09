@@ -19,6 +19,7 @@ Vector & quaternion:
 * vsg::quat [include/vsg/maths/quat.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/quat.h)
 
 Matrix types:
+* vsg::mat2 [include/vsg/maths/mat2.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/mat2.h)
 * vsg::mat3 [include/vsg/maths/mat3.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/mat3.h)
 * vsg::mat4 [include/vsg/maths/mat4.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/maths/mat4.h)
 
