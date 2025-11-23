@@ -103,7 +103,7 @@ As the Object::setValue(key, value), getValue(key, value) functionality is built
 ~~~ cpp
     // you can get the underlying object using the same key:
     auto object = object->getRefObject("value");
-    std::cout<<"object = "<<object<<std::end;
+    std::cout<<"object = "<<object<<std::endl;
 
     // or cast it to specific type by providing the appropriate type
     if (auto value = object->getRefObject<vsg::floatValue>("value"))
