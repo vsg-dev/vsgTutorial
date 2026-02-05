@@ -18,7 +18,7 @@ Different CPUs have different strengths and weaknesses, some cope well with diff
 * Scene graph callbacks are eliminated, with easy subclassing from scene graph nodes making this possible.  Not having scene graph callbacks on nodes avoids the need to hold pointers to them and to check those pointers to see if custom behaviour is required.
 * Scene graph node masks only exist on specific node types where they are most useful, again reducing memory footprint of nodes and avoiding conditional statements.
 * Dedicated nodes for scene graph culling like view frustum and LOD culling rather than having this functionality on all nodes avoids the need for a bounding volume data member on all scene graph nodes, and avoids the need for checking if a cull test is required and any branching based on a cull test.
-* A block memory allocator, the [https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Allocator.h](vsg::Allocator), groups objects of similar type together into pre allocated blocks in memory.  Nodes are packed together, geometry and texture data are packed together etc.
+* A block memory allocator, the [vsg::Allocator](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/include/vsg/core/Allocator.h), groups objects of similar type together into pre allocated blocks in memory.  Nodes are packed together, geometry and texture data are packed together etc.
 
 Together these design decisions ensure:
 
