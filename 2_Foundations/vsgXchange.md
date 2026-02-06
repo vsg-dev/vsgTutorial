@@ -84,7 +84,7 @@ vsgconv FlightHelmet.gltf helmet.vsgb
 To list all the features supported by vsgXchange you can also run the **vsgconv** utility program in the console with the --features option:
 
 ~~~ sh
-$ vsgconv --features
+vsgconv --features
 vsgXchange::all
     vsgXchange::curl provides support for 0 extensions, and 2 protocols.
         Protocols       Supported ReaderWriter methods
