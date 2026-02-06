@@ -75,7 +75,7 @@ To list the supported features at runtime, you call the ReaderWriter::getFeature
 
 ## vsgconv
 
-The vsgXchange library provides a [vsgconv](https://github.com/vsg-dev/vsgXchange/blob/master/applications/vsgconv/vsgconv.cpp#L41) utility program that you can use in the console to convert between different file formats:
+The vsgXchange library provides a [vsgconv](https://github.com/vsg-dev/vsgXchange/blob/master/applications/vsgconv/vsgconv.cpp) utility program that you can use in the console to convert between different file formats:
 
 ~~~ sh
 vsgconv FlightHelmet.gltf helmet.vsgb
@@ -84,7 +84,7 @@ vsgconv FlightHelmet.gltf helmet.vsgb
 To list all the features supported by vsgXchange you can also run the **vsgconv** utility program in the console with the --features option:
 
 ~~~ sh
-$ vsgconv --features
+vsgconv --features
 vsgXchange::all
     vsgXchange::curl provides support for 0 extensions, and 2 protocols.
         Protocols       Supported ReaderWriter methods
@@ -504,7 +504,7 @@ In the above example the vsgconv utility has automatically compiled the GLSL sha
 }
 ~~~
 
-Examples of compiling objects into libraries/applications can be found in the VulkanSceneGraph codebase, for instance the text related shaders are used in [VulkanSceneGraph/src/vsg/text/Text.cpp](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/src/vsg/text/Text.cpp#L69) which includes the [VulkanSceneGraph/src/vsg/text/shaders/text_ShaderSet.cpp](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/src/vsg/text/shaders/text_ShaderSet.cpp).  The text_ShaderSet.cpp is created by the [vsgshaderset](https://github.com/vsg-dev/vsgExamples/tree/master/examples/utils/vsgshaderset) utility found in vsgExamples.
+Examples of compiling objects into libraries/applications can be found in the VulkanSceneGraph codebase, for instance the text related shaders are used in [VulkanSceneGraph/src/vsg/text/Text.cpp](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/src/vsg/text/Text.cpp) which includes the [VulkanSceneGraph/src/vsg/text/shaders/text_ShaderSet.cpp](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/src/vsg/text/shaders/text_ShaderSet.cpp).  The text_ShaderSet.cpp is created by the [vsgshaderset](https://github.com/vsg-dev/vsgExamples/tree/master/examples/utils/vsgshaderset) utility found in vsgExamples.
 
 Prev: [read/write](ReaderWriter.md) | Next: [Serialization](../2_Foundations/Serialization.md)
 

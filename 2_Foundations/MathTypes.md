@@ -48,12 +48,12 @@ The [vsg::vec2](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/
 
 ~~~ cpp
 // double precision position, good for GIS on CPU
-vsg::dvec3 position{1.0, 2.0, 3.0);
+vsg::dvec3 position(1.0, 2.0, 3.0);
 position.x = 1.0; // equivalent to position[0] = 1.0
 position.y = 2.0; // equivalent to position[1] = 2.0
 
 // float vertex, good for GPU work
-vsg::vec3 vertex{1.0f, 2.0f, 3.0f);
+vsg::vec3 vertex(1.0f, 2.0f, 3.0f);
 vertex.x = 1.0f; // equivalent to position[0] = 1.0f
 vertex[1] = 2.0f; // equivalent to position.y = 2.0f
 

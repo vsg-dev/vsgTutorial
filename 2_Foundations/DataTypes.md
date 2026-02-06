@@ -80,7 +80,7 @@ The vsg::Data subclasses provide defaults for Data::Properties members, but in t
 
 When you need a single value, either for just CPU only needs, or for mapping to GPU memory such as a single per instance vertex attribute or uniform value you can use the [vsg::Value](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Value.h) template class.  The Value.h header also provides a set of pre-defined types that wrap the most common basic types you'd use with the scene graph, from vsg::boolValue to vsg::dboxValue.
 
-For the list of types defined look at the bottom of the [Value.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Value.h#L169) header.  Additional material related versions are provided by the [material.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/state/material.h) header.
+For the list of types defined look at the bottom of the [Value.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Value.h#L206) header.  Additional material related versions are provided by the [material.h](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/state/material.h) header.
 
 ~~~ cpp
 // create a vec3Value object using user specified initializer on the heap
@@ -98,7 +98,7 @@ material->value().diffuseFactor = vsg::vec4(1.0f, 0.0f, 0.0f, 1.0f);
 
 ## vsg::Array
 
-For a fixed size array of values you should use the [vsg::Array](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array.h) template class.  Like Value.h, Array.h provides definitions of the most common array types, the full list is found at the bottom of [vsg::Array](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array.h#L360).
+For a fixed size array of values you should use the [vsg::Array](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array.h) template class.  Like Value.h, Array.h provides definitions of the most common array types, the full list is found at the bottom of [vsg::Array](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array.h#L386).
 
 Examples:
 ~~~ cpp
@@ -124,7 +124,7 @@ auto colors = vsg::vec3Array::create({
 
 ## vsg::Array2D
 
-For a fixed size 2D array of values you should use the [vsg::Array2D](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array2D.h) template class.  The full list of pre defined Array2D types is found at the bottom of [vsg::Array2D](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array2D.h#L350).
+For a fixed size 2D array of values you should use the [vsg::Array2D](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array2D.h) template class.  The full list of pre defined Array2D types is found at the bottom of [vsg::Array2D](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array2D.h#L382).
 
 Example:
 ~~~ cpp
@@ -145,7 +145,7 @@ image->properties.format = VK_FORMAT_R32G32B32A32_SFLOAT;
 
 ## vsg::Array3D
 
-For a fixed size 3D array of values you should use the [vsg::Array3D](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array3D.h) template class.  The full list of pre defined Array3D types is found at the bottom of [vsg::Array3D](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array3D.h#L369).
+For a fixed size 3D array of values you should use the [vsg::Array3D](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array3D.h) template class.  The full list of pre defined Array3D types is found at the bottom of [vsg::Array3D](https://github.com/vsg-dev/VulkanSceneGraph/tree/master/include/vsg/core/Array3D.h#L399).
 
 Examples:
 ~~~ cpp
